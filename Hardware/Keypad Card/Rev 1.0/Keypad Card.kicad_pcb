@@ -159,7 +159,7 @@
 				)
 			)
 		)
-		(attr through_hole)
+		(attr through_hole exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start 13.68 -1.33)
@@ -1049,7 +1049,7 @@
 				)
 			)
 		)
-		(attr through_hole)
+		(attr through_hole exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start 1.56 49.59)
