@@ -1,7 +1,7 @@
 6502-KIM
 ========
 
-<!-- ![6502-KIM.png](./Images/6502-KIM.png) -->
+![6502-KIM.png](./Images/6502-KIM.png)
 
 An **AC6502** retro-style 8-bit computer based on the **65C02** microprocessor.
 
