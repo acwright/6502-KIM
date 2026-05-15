@@ -11,7 +11,7 @@ An **AC6502** retro-style 8-bit computer based on the **65C02** microprocessor.
 
 The AC6502 ecosystem is a family of open-source, 65C02-based computers sharing a common architecture, memory map, and [BIOS](https://github.com/acwright/6502-BIOS). Each computer in the family is purpose-built for a different use case but runs the same software and firmware.
 
-The **KIM** (Keypad Input Monitor) is a complete, self-contained 65C02 computer built around the **[Main Board](https://github.com/acwright/6502-VCS)** from the VCS project, the **[Serial Card](https://github.com/acwright/6502-COB)** and **[Backplane Helper](https://github.com/acwright/6502-COB)** from the COB project, and the **Keypad Card** — a new board that the **Keypad Helper** (keypad matrix) and **Keypad LCD Helper** (16x2 LCD display) attach to.
+The **KIM** (Keypad Input Monitor) is a complete, self-contained 65C02 computer built around the **[Main Board](https://github.com/acwright/6502-VCS)** from the VCS project, the **[Serial Card](https://github.com/acwright/6502-COB)** and **[Backplane Helper](https://github.com/acwright/6502-COB)** from the COB project, and the **Keypad Card** — a card that the **Keypad Helper** (keypad matrix) and **Keypad LCD Helper** (16x2 LCD display) attach to.
 
 ---
 
@@ -27,9 +27,31 @@ All AC6502 computers share:
 
 ---
 
+## Systems
+
+| Project | Description |
+|---------|-------------|
+| [6502-ACE](https://github.com/acwright/6502-ACE) | All-in-one Computer Experience — A single board computer |
+| [6502-COB](https://github.com/acwright/6502-COB) | Computer On a Backplane — Modular desktop computer with expandable card slots |
+| [6502-DEV](https://github.com/acwright/6502-DEV) | Development Environment Vehicle — Emulation-based dev system |
+| [6502-KIM](https://github.com/acwright/6502-KIM) | Keyboard Input Monitor - KIM-1 inspired minimal computer (YOU ARE HERE) |
+| [6502-VCS](https://github.com/acwright/6502-VCS) | Video Computer System — Cartridge-based retro gaming console |
+
+---
+
+## Software
+
+| Project | Description |
+|---------|-------------|
+| [6502-BIOS](https://github.com/acwright/6502-BIOS) | The shared BIOS (kernel, monitor, BASIC) for all AC6502 computers |
+| [6502-PRG](https://github.com/acwright/6502-PRG) | Template project for writing assembly language programs |
+| [6502-CRT](https://github.com/acwright/6502-CRT) | Template project for writing assembly language cartridges |
+| [6502-EMULATOR](https://github.com/acwright/6502-EMULATOR) | Node.js-based AC6502 emulator |
+| [6502-WEBULATOR](https://github.com/acwright/6502-WEBULATOR) | Web-based AC6502 emulator |
+
 ## Hardware
 
-This repository contains KiCad 7.0+ PCB designs for the KIM-specific hardware. The KIM also uses boards from the [6502-VCS](https://github.com/acwright/6502-VCS) and [6502-COB](https://github.com/acwright/6502-COB) projects.
+This repository contains KiCad 7.0+ PCB designs for the KIM-specific hardware. The KIM also uses boards, cards and helpers from the [6502-VCS](https://github.com/acwright/6502-VCS) and [6502-COB](https://github.com/acwright/6502-COB) projects.
 
 ### Main Board
 [`Hardware/Main Board/`](https://github.com/acwright/6502-VCS/tree/main/Hardware/Main%20Board) *(6502-VCS)*
@@ -103,30 +125,6 @@ PDF schematics for all KIM hardware.
 `Libraries/`
 
 Shared KiCad symbol and footprint libraries used across all AC6502 hardware projects.
-
----
-
-## AC6502 Projects
-
-| Project | Description |
-|---------|-------------|
-| [6502-BIOS](https://github.com/acwright/6502-BIOS) | The shared BIOS (kernel, monitor, BASIC) for all AC6502 computers |
-| [6502-PRG](https://github.com/acwright/6502-PRG) | Template for writing assembly language programs |
-| [6502-CRT](https://github.com/acwright/6502-CRT) | Template for writing assembly language cartridges |
-| [6502-EMULATOR](https://github.com/acwright/6502-EMULATOR) | Node.js-based AC6502 emulator |
-| [6502-WEBULATOR](https://github.com/acwright/6502-WEBULATOR) | Web-based AC6502 emulator |
-
----
-
-## AC6502 Systems
-
-| Project | Description |
-|---------|-------------|
-| [6502-KIM](https://github.com/acwright/6502-KIM) | All-in-one single-PCB computer — the COB experience without the backplane |
-| [6502-COB](https://github.com/acwright/6502-COB) | Computer on a Backplane — modular desktop computer with expandable card slots |
-| [6502-DEV](https://github.com/acwright/6502-DEV) | Development Environment Vehicle — emulation-based dev system |
-| [6502-KIM](https://github.com/acwright/6502-KIM) | KIM-1 inspired minimal computer (you are here) |
-| [6502-VCS](https://github.com/acwright/6502-VCS) | Video Computer System — cartridge-based retro gaming console |
 
 ---
 
