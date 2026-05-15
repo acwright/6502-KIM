@@ -13,8 +13,6 @@ The AC6502 ecosystem is a family of open-source, 65C02-based computers sharing a
 
 The **KIM** (Keypad Input Monitor) is a complete, self-contained 65C02 computer built around the **[Main Board](https://github.com/acwright/6502-VCS)** from the VCS project, the **[Serial Card](https://github.com/acwright/6502-COB)** and **[Backplane Helper](https://github.com/acwright/6502-COB)** from the COB project, and the **Keypad Card** — a card that the **Keypad Helper** (keypad matrix) and **Keypad LCD Helper** (16x2 LCD display) attach to.
 
----
-
 ## Architecture
 
 All AC6502 computers share:
@@ -25,8 +23,6 @@ All AC6502 computers share:
 - **Bus**: 16-bit address bus, 8-bit bidirectional data bus, standard 65C02 control signals (RW, PHI2, RESET, IRQ, NMI, RDY, SYNC)
 - **BIOS**: A common [BIOS](https://github.com/acwright/6502-BIOS) provides the kernel, monitor, and BASIC interpreter across all systems
 
----
-
 ## Systems
 
 | Project | Description |
@@ -36,8 +32,6 @@ All AC6502 computers share:
 | [6502-DEV](https://github.com/acwright/6502-DEV) | Development Environment Vehicle — Emulation-based dev system |
 | [6502-KIM](https://github.com/acwright/6502-KIM) | Keyboard Input Monitor - KIM-1 inspired minimal computer (YOU ARE HERE) |
 | [6502-VCS](https://github.com/acwright/6502-VCS) | Video Computer System — Cartridge-based retro gaming console |
-
----
 
 ## Software
 
@@ -90,43 +84,31 @@ Keyboard controller companion board with an integrated LCD display that attaches
 - **Input**: PS/2 keyboard connector and 8×8 keyboard matrix header
 - **Display**: Integrated LCD panel
 
----
-
 ## Firmware
 
 `Firmware/KC Monitor/`
 
 The **KC Monitor** is a 6502 assembly language cartridge ROM for the KIM system.
 
----
-
 ## CAD
 `CAD/`
 
 3D-printable enclosure bases and laser-cut top panels for the KIM system.
-
----
 
 ## Production
 `Production/`
 
 JLCPCB-ready Gerber files and BOM/CPL for PCB fabrication and assembly.
 
----
-
 ## Schematics
 `Schematics/`
 
 PDF schematics for all KIM hardware.
 
----
-
 ## Libraries
 `Libraries/`
 
 Shared KiCad symbol and footprint libraries used across all AC6502 hardware projects.
-
----
 
 ## License
 
