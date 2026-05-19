@@ -7,6 +7,30 @@ An **AC6502** retro-style 8-bit computer based on the **65C02** microprocessor.
 
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Architecture](#architecture)
+- [Systems](#systems)
+- [Software](#software)
+- [Hardware](#hardware)
+  - [Main Board](#main-board)
+  - [Serial Card](#serial-card)
+  - [Backplane Helper](#backplane-helper)
+  - [Keypad Card](#keypad-card)
+  - [Keypad Helper](#keypad-helper)
+  - [Keypad LCD Helper](#keypad-lcd-helper)
+- [Firmware](#firmware)
+- [CAD](#cad)
+- [Production](#production)
+- [Schematics](#schematics)
+- [Libraries](#libraries)
+- [Bill of Materials](#bill-of-materials)
+  - [Keypad Card](#keypad-card-1)
+  - [Keypad Helper](#keypad-helper-1)
+  - [Keypad LCD Helper](#keypad-lcd-helper-1)
+- [License](#license)
+
 ## Overview
 
 The AC6502 ecosystem is a family of open-source, 65C02-based computers sharing a common architecture, memory map, and [BIOS](https://github.com/acwright/6502-BIOS). Each computer in the family is purpose-built for a different use case but runs the same software and firmware.
@@ -109,6 +133,40 @@ PDF schematics for all KIM hardware.
 `Libraries/`
 
 Shared KiCad symbol and footprint libraries used across all AC6502 hardware projects.
+
+## Bill of Materials
+
+### Keypad Card
+
+| Reference | Qty | Value | Description | LCSC | DigiKey | Mouser | Other |
+|-----------|-----|-------|-------------|------|---------|--------|-------|
+| C1–C4 | 4 | 100nF | SMD Capacitor 0805 | [C49678](https://www.lcsc.com/search?q=C49678) | | | |
+| J2, J3 | 2 | PORT A/B | Box Header 2×6 2.54mm | | [2057-BHR-12-VUA-ND](https://www.digikey.com/en/products/filter?keywords=2057-BHR-12-VUA-ND) | | |
+| U1, U2 | 2 | 74HC138 | 3-to-8 Line Decoder | [C5602](https://www.lcsc.com/search?q=C5602) | | | |
+| U3 | 1 | 65C21 | Peripheral Interface Adapter | | | [955-W65C21N6TPG-14](https://www.mouser.com/ProductDetail/955-W65C21N6TPG-14) | |
+| U4 | 1 | AT28C64 | 8K×8 EEPROM | | [AT28C64B-15PU-ND](https://www.digikey.com/en/products/filter?keywords=AT28C64B-15PU-ND) | [556-AT28C64B15PU](https://www.mouser.com/ProductDetail/556-AT28C64B15PU) | |
+
+### Keypad Helper
+
+| Reference | Qty | Value | Description | DigiKey | Mouser | Other |
+|-----------|-----|-------|-------------|---------|--------|-------|
+| C1, C2, C4 | 3 | 100nF | Disc Capacitor | [478-5732-ND](https://www.digikey.com/en/products/filter?keywords=478-5732-ND) | | |
+| C3 | 1 | 1µF | Disc Capacitor | [478-7667-ND](https://www.digikey.com/en/products/filter?keywords=478-7667-ND) | | |
+| D1, D2 | 2 | 1N914 | Small Signal Diode | [1N914FS-ND](https://www.digikey.com/en/products/filter?keywords=1N914FS-ND) | | |
+| J1 | 1 | PORT | Box Header 2×6 2.54mm | [2057-BHR-12-VUA-ND](https://www.digikey.com/en/products/filter?keywords=2057-BHR-12-VUA-ND) | | [AMAZON](https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2) |
+| R1, R2 | 2 | 100kΩ | Resistor | | | [AMAZON](https://www.amazon.com/ALLECIN-8W-Metal-Film-Resistor/dp/B0C77TM3NR) |
+| SW1–SW24 | 24 | 0–23 | Cherry MX Switch 1.00u | [CH196-ND](https://www.digikey.com/en/products/filter?keywords=CH196-ND) | | [AMAZON](https://www.amazon.com/dp/B0FYR5TV3X) |
+| U1 | 1 | MM74C922 | 16-Key Encoder | | | [AMAZON](https://www.amazon.com/Todiys-74C922N-MM74C922N-Encoder-MM74C922/dp/B08MCJY9LP) |
+| U2 | 1 | 74HC00 | Quad 2-Input NAND Gate | [296-1563-5-ND](https://www.digikey.com/en/products/filter?keywords=296-1563-5-ND) | [595-SN74HC00N](https://www.mouser.com/ProductDetail/595-SN74HC00N) | |
+
+### Keypad LCD Helper
+
+| Reference | Qty | Value | Description | DigiKey | Mouser | Other |
+|-----------|-----|-------|-------------|---------|--------|-------|
+| J1, J2, J3 | 3 | PORT A/B/KEYPAD | Box Header 2×6 2.54mm | [2057-BHR-12-VUA-ND](https://www.digikey.com/en/products/filter?keywords=2057-BHR-12-VUA-ND) | | [AMAZON](https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2) |
+| R1 | 1 | R | Resistor | | | |
+| U2 | 1 | LCD-16X2 | 16×2 LCD Display | | | [AMAZON](https://www.amazon.com/MECCANIXITY-Display-Backlight-Interface-Adapter/dp/B0DSFXK7QK) |
+| VR1 | 1 | 10kΩ | Potentiometer | [3386F-103LF-ND](https://www.digikey.com/en/products/filter?keywords=3386F-103LF-ND) | | |
 
 ## License
 
