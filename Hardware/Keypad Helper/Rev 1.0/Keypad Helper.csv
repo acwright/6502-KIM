@@ -1,6 +1,6 @@
 "Reference","Qty","Value","Description","Footprint","Digikey","Mouser","Other"
-"C1,C2,C4","3","100nF","Unpolarized capacitor","Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm","478-5732-ND","",""
-"C3","1","1uF","Unpolarized capacitor","Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm","478-7667-ND","",""
+"C1,C2,C4","3","100nF","Unpolarized capacitor","Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm","478-5732-ND","","https://www.amazon.com/PANMILED-Multilayer-Monolithic-Capacitors-Assortment/dp/B0CYQ1Z4G5"
+"C3","1","1uF","Unpolarized capacitor","Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm","478-7667-ND","","https://www.amazon.com/PANMILED-Multilayer-Monolithic-Capacitors-Assortment/dp/B0CYQ1Z4G5"
 "D1,D2","2","1N914","100V 0.3A Small Signal Fast Switching Diode, DO-35","Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal","1N914FS-ND","",""
 "J1","1","PORT","Generic connector, double row, 02x06, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)","6502 Parts:6502 GPIO Connector","2057-BHR-12-VUA-ND","","https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2"
 "R1,R2","2","100k","Resistor","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","","","https://www.amazon.com/ALLECIN-8W-Metal-Film-Resistor/dp/B0C77TM3NR"
