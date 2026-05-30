@@ -1,4 +1,4 @@
-TARGET = KE\ Monitor
+TARGET = KC\ Monitor
 CONFIG = 6502
 
 .PHONY: all clean
@@ -6,14 +6,14 @@ CONFIG = 6502
 all: build
 
 build: $(TARGET).asm
-	cl65 -t none -C $(CONFIG).cfg -l $(TARGET).lst -o $(TARGET).crt $(TARGET).asm 
+	cl65 -t none -C $(CONFIG).cfg -l $(TARGET).lst -o $(TARGET).bin $(TARGET).asm 
 	
 view:
-	hexdump -C $(TARGET).crt
+	hexdump -C $(TARGET).bin
 
 eeprom:
-	minipro -p AT28C256	-w $(TARGET).crt
+	minipro -p AT28C64B -w $(TARGET).bin
 
 clean:
-	rm $(TARGET).crt
+	rm $(TARGET).bin
 	rm $(TARGET).lst

@@ -1,77 +1,96 @@
-6502-CRT
-========
+KC Monitor
+==========
 
-A 6502 assembly language cartridge template for the [A.C. Wright 6502 project](https://github.com/acwright/6502).
+A KIM-1-style keypad/LCD memory monitor for the **Keypad Card (KC)** of the
+[A.C. Wright 6502-KIM project](https://github.com/acwright/6502-KIM).
 
-## Overview
+KC Monitor is a 6502 cartridge ROM that turns the Keypad Card into a standalone
+hex monitor. You can inspect and edit memory, navigate the address space, and
+execute code directly from the 24-key keypad and 16×2 LCD. A concurrent, 
+Wozmon-compatible serial monitor runs at the same time
+over the Serial Card, so memory can also be examined, deposited, and executed
+from a terminal while the keypad UI stays live.
 
-Cartridges for this system overlay the ROM address space from `$C000–$FFFF`, replacing the Monitor, BASIC interpreter, Wozmon, and CPU vectors with custom code. The Kernal (`$A000–$B7FF`) and character set (`$B800–$BFFF`) remain accessible, providing hardware initialization, character I/O, video, sound, storage, and other system services through a stable jump table.
+## Features
 
-### How It Works
+- **KIM-1-style keypad monitor** — navigate addresses, edit bytes one nibble at
+  a time, and run code from the keypad.
+- **16×2 HD44780 LCD display** — shows the current address and the byte stored
+  there, plus mode/help on the second line.
+- **Execute & return** — launch a program with `UP`; it runs as a subroutine and
+  returns to the monitor on `RTS`.
+- **ESC = break-to-monitor** — press `ESC` to abort a running program from
+  anywhere (keypad- or serial-launched) and return to the live monitor.
+- **Concurrent Wozmon serial monitor** — a faithful Apple-1 Wozmon command set
+  over the Serial Card, running alongside the keypad UI on shared memory.
+- **bin2woz compatible** — stream the output of
+  [bin2woz](https://github.com/acwright/bin2woz) into the serial port to "upload"
+  a binary, then run it with `XXXX R`.
 
-1. The cartridge ROM physically overrides the BIOS ROM in the `$C000–$FFFF` range
-2. The CPU fetches the RESET vector from `$FFFC–$FFFD` — now supplied by the cartridge
-3. The cartridge's reset handler calls `KernalInit` (`$A072`) to initialize all hardware
-4. After init, the cartridge takes full control — display its own UI, run its program, etc.
+## Hardware
 
-### Memory Layout
+KC Monitor targets the Keypad Card, a cartridge that overlays the `$C000–$FFFF`
+address space. It drives:
+
+- A **16×2 HD44780 LCD** and a **24-key keypad** through a **65C21 PIA**.
+- The **Serial Card** (R65C51 ACIA) for the concurrent serial monitor.
 
 | Range | Contents |
 |-------|----------|
-| `$0000–$7FFF` | RAM (32 KB — zero page, stack, input buffer, variables, program space) |
-| `$8000–$9FFF` | I/O hardware registers (directly addressable) |
-| `$A000–$A0FF` | **Kernal jump table** — stable API entry points (available to cartridges) |
-| `$A100–$BFFF` | Kernal implementation + character set (available to cartridges) |
-| `$C000–$FFF9` | **Cartridge ROM** — your code goes here |
-| `$FFFA–$FFFF` | **CPU vectors** — NMI, RESET, IRQ (supplied by cartridge) |
+| `$C000–$DFFF` | PIA registers (mirrored I/O window) |
+| `$E000–$FFF9` | Cartridge ROM (AT28C64, 8 KB) |
+| `$FFFA–$FFFF` | CPU vectors (NMI, RESET, IRQ) |
 
-### Kernal Services
+The PIA is mapped with A0=RS0, A1=RS1: `$C000` PORTA/DDRA, `$C001` CRA,
+`$C002` PORTB/DDRB, `$C003` CRB. Port A carries the keypad code (PA0–PA4) and the
+LCD control lines (PA5=RS, PA6=R/W, PA7=E); Port B is the LCD data bus. Keypad
+input is interrupt driven via the 74C922 encoder's data-available signal on CA1.
 
-After calling `KernalInit`, the full Kernal jump table is available. Key entry points:
+### Keypad Layout
 
-| Address | Routine | Description |
-|---------|---------|-------------|
-| `$A078` | `KernalInit` | Initialize all hardware; caller must reset stack pointer first. Returns via RTS (no CLI, no splash) |
-| `$A07B` | `KernalVersion` | Get BIOS version (A=major, X=minor) |
-| `$A000` | `Chrout` | Output character (routed by IO_MODE) |
-| `$A003` | `Chrin` | Read character from input buffer |
-| `$A030` | `Beep` | Play startup beep (skips if no SID) |
-| `$A018` | `VideoClear` | Clear screen and reset cursor |
-| `$A01E` | `VideoSetCursor` | Set cursor position (X=col, Y=row) |
-| `$A00F` | `SetIOMode` | Set console output mode (A=0 video, A=1 serial) |
+The 24 keys map to monitor functions:
 
-See `6502.inc` for the complete jump table and hardware register definitions.
+| Key | Function |
+|-----|----------|
+| `0`–`F` | Enter a hex nibble (address or data) |
+| `LEFT` / `RIGHT` | Move the current address ∓1 |
+| `PGUP` / `PGDN` | Move the current address ∓`$0100` |
+| `INS` | Toggle insert (data-edit) mode |
+| `DEL` | Write `$00` at the current address |
+| `UP` | Execute code at the current address (returns on `RTS`) |
+| `ESC` | Abort a running program back to the monitor |
 
-### Interrupt Handling
+In navigation mode, hex keys shift the current address one nibble at a time
+(KIM-1 style). In `INS` mode, hex keys edit the byte at the current address.
 
-The cartridge owns the hardware vectors at `$FFFA–$FFFF`. The template uses trampoline routines that jump through the RAM-based vectors (`IRQ_PTR` at `$0300`, `NMI_PTR` at `$0304`) which `KernalInit` sets to the default Kernal handlers. This means:
+### Serial Monitor
 
-- **Keyboard input works out of the box** — the default IRQ handler processes keyboard scancodes
-- **Custom IRQ handling** — override `IRQ_PTR` after `KernalInit` to install your own handler
-- **Direct vectors** — alternatively, point the hardware vector directly at your handler (bypasses the RAM indirection)
+The serial monitor speaks the Apple-1 Wozmon command language at **19200 baud,
+8-N-1**. The only difference from original Wozmon is the prompt, which is `>`
+(not `\`).
 
-### Hardware Detection
+| Input | Action |
+|-------|--------|
+| `XXXX` | Examine the byte at address `XXXX` |
+| `XXXX.YYYY` | Examine the range `XXXX` through `YYYY` |
+| `XXXX: BB BB …` | Deposit bytes starting at `XXXX` |
+| `XXXX R` | Run the program at `XXXX` |
 
-After `KernalInit`, read `HW_PRESENT` (`$030D`) to discover installed hardware:
-
-```asm
-lda HW_PRESENT
-and #HW_VID            ; Is video card present?
-beq @NoVideo           ; Skip video-specific code if not
-```
+Because the serial and keypad monitors share the same memory, a serial deposit is
+visible on the LCD at the next refresh, and vice versa.
 
 ## Building
 
 ### Prerequisites
 
-#### CC65 Compiler
+#### cc65 toolchain
 
-On macOS, install via Homebrew:
+KC Monitor is assembled with [cc65](https://github.com/cc65/cc65) (the `cl65`
+driver). On macOS:
+
 ```bash
 brew install cc65
 ```
-
-For other platforms, see the [cc65 project](https://github.com/cc65/cc65).
 
 #### Optional: minipro (for EEPROM burning)
 
@@ -83,9 +102,9 @@ brew install minipro
 
 | Command | Description |
 |---------|-------------|
-| `make` | Build the cartridge ROM (`Cart.crt`) |
-| `make view` | Display hexdump of the built ROM |
-| `make eeprom` | Write the ROM to an AT28C256 EEPROM via TL866 programmer |
+| `make` | Assemble the cartridge ROM (`KC Monitor.bin`) |
+| `make view` | Display a hexdump of the built ROM |
+| `make eeprom` | Burn the ROM to an AT28C64 EEPROM via a TL866 programmer |
 | `make clean` | Remove build artifacts |
 
 ### Build Output
@@ -95,8 +114,9 @@ make
 ```
 
 Produces:
-- `Cart.crt` — 32 KB ROM image (`$8000–$FFFF`), ready to burn to a 28C256 or 27C256 PROM
-- `Cart.lst` — Assembly listing file for debugging
+
+- `KC Monitor.bin` — 8 KB ROM image (`$E000–$FFFF`), ready to burn to an AT28C64.
+- `KC Monitor.lst` — assembly listing file for debugging.
 
 ### Programming the EEPROM
 
@@ -104,21 +124,18 @@ Produces:
 make eeprom
 ```
 
-Burns `Cart.crt` to an AT28C256 EEPROM using a TL866-compatible programmer and minipro.
+Burns `KC Monitor.bin` to an AT28C64 EEPROM using a TL866-compatible programmer
+and minipro.
 
-## Template Structure
+## Project Structure
 
 | File | Purpose |
 |------|---------|
-| `Cart.asm` | Main cartridge source — entry point, example code, vectors |
-| `6502.inc` | System include file — Kernal jump table, hardware registers, constants |
-| `6502.cfg` | Linker configuration — memory layout for cartridge ROM |
+| `KC Monitor.asm` | Firmware source — LCD driver, keypad input, monitor state machine, serial monitor, vectors |
+| `6502.inc` | System include — Kernal jump table, hardware registers, constants |
+| `6502.cfg` | Linker configuration — 8 KB ROM at `$E000` plus CPU vectors |
 | `Makefile` | Build system |
 
-## Customizing
+## License
 
-1. Edit `Cart.asm` — replace the example code after `cli` with your program
-2. The `CartReset` label is called on power-on; `KernalInit` is already called for you
-3. Add additional `.asm` files and `.include` them from `Cart.asm` as needed
-4. The cartridge has ~16 KB of ROM space (`$C000–$FFF9`) for code and data
-
+See [LICENSE](LICENSE).
