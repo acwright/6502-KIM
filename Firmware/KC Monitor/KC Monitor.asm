@@ -155,8 +155,8 @@ SER_LINEBUF         := INPUT_BUFFER      ; $0200 — Wozmon line accumulation bu
 ;   Kernal RAM vectors and probe the base system, overrides the BRK vector so
 ;   a BRK from executed user code returns cleanly instead of diving into the
 ;   now-overlaid BIOS monitor, brings up the LCD and keypad PIA, seeds the
-;   monitor state, shows the splash screen, and waits for ESC before entering
-;   the monitor loop.
+;   monitor state, shows the splash screen, then enters the monitor loop
+;   directly (no ESC gate).
 ;
 ;   Key entry is interrupt driven, so after init it repoints IRQ_PTR at the
 ;   local KeyIrq handler and enables interrupts (CLI) before showing the
@@ -205,7 +205,7 @@ CartReset:
   ; LCD splash first — it must never depend on the serial terminal being
   ; connected.  (SerialChrout/our serial TX blocks on TDRE, which the R65C51
   ; gates on /CTS; with no terminal connected the serial banner would stall.)
-  jsr ShowSplash                ; hold the splash until ESC starts the monitor
+  jsr ShowSplash                ; brief splash while the serial banner emits
 
   ; Serial startup banner + first Wozmon prompt.  Emitted through the
   ; non-blocking SerPutc path, so a missing/disconnected terminal just drops
@@ -217,11 +217,17 @@ CartReset:
   jsr SerPrintStr               ; "KIM MONITOR v1.0"
   jsr SerPrompt                 ; CR/LF + "> "
 
-@WaitEsc:
-  jsr KeyPoll                   ; drain & ignore keys (ESC is intercepted by
-  jsr SerService                ; KeyIrq -> WarmStart -> MonitorLoop).  Keep the
-  stz SER_DIRTY                 ; serial monitor live, but do not disturb the
-  bra @WaitEsc                  ; LCD splash with a RefreshDisplay yet.
+  ; Splash gate: hold on the splash until the user starts the monitor.  The
+  ; prompt says "ESC TO START", but ANY keypad key (KeyPoll) begins — and an
+  ; ESC from the keypad OR the serial terminal jumps to WarmStart from inside
+  ; KeyIrq and enters the monitor the same way.  Accepting any key keeps the
+  ; marginal ESC key switch from trapping us here: a clean ESC is no longer
+  ; required to boot.
+@WaitStart:
+  jsr KeyPoll                   ; C=1 -> a keypad key was pressed
+  bcc @WaitStart                ; (the press is consumed, just dismisses splash)
+  jsr RefreshDisplay            ; first paint of the monitor screen
+  jmp MonitorLoop
 
 
 ; =============================================================================
@@ -505,38 +511,38 @@ ShowSplash:
 ; =============================================================================
 
 ; -----------------------------------------------------------------------------
-;   LcdDelay — short software busy delay (~2 ms at a few MHz)
+;   LcdDelay — short software busy delay (~640 us @ 1 MHz)
 ; -----------------------------------------------------------------------------
 ;   Used in place of busy-flag polling so the driver does not depend on the
-;   LCD R/W read-back path (PA6) working.  Generous enough to cover a normal
-;   instruction's execution time (~37 us); callers add extra delay for the
-;   slow clear/home commands.
-;   Modifies: A, X, Y
+;   LCD R/W read-back path (PA6) working.  An HD44780 finishes a normal
+;   command/data write in ~37 us, so this single ~640 us loop carries a wide
+;   margin while staying short enough that a full RefreshDisplay (~34 writes)
+;   completes in ~22 ms — fast enough to keep the keypad responsive.  Callers
+;   add LcdLongDelay for the slow clear/home commands (~1.5 ms).
+;   Modifies: A, X
 ; -----------------------------------------------------------------------------
 LcdDelay:
-  ldx #$10
-@Outer:
-  ldy #$00
-@Inner:
-  dey
-  bne @Inner
+  ldx #$80                      ; 128 * 5 cycles ≈ 640 us @ 1 MHz
+@Loop:
   dex
-  bne @Outer
+  bne @Loop
   rts
 
 ; -----------------------------------------------------------------------------
 ;   LcdLongDelay — generous software delay for the power-on init ritual
 ; -----------------------------------------------------------------------------
 ;   Covers the HD44780 power-on timing (>15 ms first delay, >4.1 ms / >100 us
-;   between the function-set writes).  Self-contained — does not depend on
-;   KernalInit / SysDelay (and therefore not on HW_PRESENT / the VIA timer).
-;   ~325k cycles (≈325 ms @1 MHz, ≈65 ms @5 MHz) — deliberately overkill.
+;   between the function-set writes) and the slow clear/home commands (~1.5 ms).
+;   Self-contained — does not depend on KernalInit / SysDelay (and therefore
+;   not on HW_PRESENT / the VIA timer).  ~41 ms @ 1 MHz: comfortably above the
+;   >15 ms power-on minimum, yet short enough that boot (run with IRQs masked)
+;   no longer swallows early ESC presses.
 ;   Modifies: A, X, Y
 ; -----------------------------------------------------------------------------
 LcdLongDelay:
-  ldx #$FF
+  ldx #$20                      ; 32 * 256 * 5 cycles ≈ 41 ms @ 1 MHz
 @Outer:
-  ldy #$FF
+  ldy #$00
 @Inner:
   dey
   bne @Inner
@@ -652,7 +658,8 @@ LcdInit:
 LcdClear:
   lda #$01
   jsr LcdCmd
-  rts
+  jsr LcdLongDelay              ; clear/home is slow (~1.5 ms) — LcdDelay alone
+  rts                           ;   is now too short to cover it
 
 ; -----------------------------------------------------------------------------
 ;   LcdSetPos — move the cursor to (column, row)
