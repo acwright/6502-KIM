@@ -1,7 +1,0 @@
-"Reference","Qty","Value","Description","Footprint","Digikey","Mouser","Other"
-"J1","1","PORT A","Generic connector, double row, 02x06, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)","6502 Parts:6502 GPIO Connector","2057-BHR-12-VUA-ND","","https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2"
-"J2","1","PORT B","Generic connector, double row, 02x06, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)","6502 Parts:6502 GPIO Connector","2057-BHR-12-VUA-ND","","https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2"
-"J3","1","KEYPAD HELPER","Generic connector, double row, 02x06, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)","6502 Parts:6502 GPIO Connector","2057-BHR-12-VUA-ND","","https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2"
-"R1","1","R","Resistor","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","","",""
-"U2","1","LCD-16X2","","6502 Parts:LCD-16X2","","","https://www.amazon.com/MECCANIXITY-Display-Backlight-Interface-Adapter/dp/B0DSFXK7QK"
-"VR1","1","10k","Potentiometer","6502 Parts:3386F-1-103LF","3386F-103LF-ND","",""
