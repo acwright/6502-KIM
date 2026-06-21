@@ -3,6 +3,8 @@
 
 ![6502-KIM.png](./Images/6502-KIM.png)
 
+*(Image shows the alternative Main Board configuration — preferred Backplane/Backplane Pro build pictured separately)*
+
 An **AC6502** retro-style 8-bit computer based on the **65C02** microprocessor.
 
 ---
@@ -14,12 +16,15 @@ An **AC6502** retro-style 8-bit computer based on the **65C02** microprocessor.
 - [Systems](#systems)
 - [Software](#software)
 - [Hardware](#hardware)
-  - [Main Board](#main-board)
+  - [Backplane / Backplane Pro](#backplane--backplane-pro) *(preferred)*
+  - [CPU Card](#cpu-card) *(preferred)*
+  - [Memory Card](#memory-card) *(preferred)*
   - [Serial Card](#serial-card)
   - [Backplane Helper](#backplane-helper)
   - [Keypad Card](#keypad-card)
   - [Keypad Helper](#keypad-helper)
   - [Keypad LCD Helper](#keypad-lcd-helper)
+  - [Main Board](#main-board) *(alternative)*
 - [Firmware](#firmware)
 - [CAD](#cad)
 - [Production](#production)
@@ -29,13 +34,14 @@ An **AC6502** retro-style 8-bit computer based on the **65C02** microprocessor.
   - [Keypad Card](#keypad-card-1)
   - [Keypad Helper](#keypad-helper-1)
   - [Keypad LCD Helper](#keypad-lcd-helper-1)
+- [Purchase](#purchase)
 - [License](#license)
 
 ## Overview
 
 The AC6502 ecosystem is a family of open-source, 65C02-based computers sharing a common architecture, memory map, and [BIOS](https://github.com/acwright/6502-BIOS). Each computer in the family is purpose-built for a different use case but runs the same software and firmware.
 
-The **KIM** (Keypad Input Monitor) is a complete, self-contained 65C02 computer built around the **[Main Board](https://github.com/acwright/6502-VCS)** from the VCS project, the **[Serial Card](https://github.com/acwright/6502-COB)** and **[Backplane Helper](https://github.com/acwright/6502-COB)** from the COB project, and the **Keypad Card** — a card that the **Keypad Helper** (keypad matrix) and **Keypad LCD Helper** (16x2 LCD display) attach to.
+The **KIM** (Keypad Input Monitor) is a complete, self-contained 65C02 computer. The preferred way to build it is using a **[Backplane or Backplane Pro](https://github.com/acwright/6502-COB)**, **[CPU Card](https://github.com/acwright/6502-COB)**, and **[Memory Card](https://github.com/acwright/6502-COB)** from the COB project, along with the **[Serial Card](https://github.com/acwright/6502-COB)** and **[Backplane Helper](https://github.com/acwright/6502-COB)** (also from COB) and the **Keypad Card** — a card that the **Keypad Helper** (keypad matrix) and **Keypad LCD Helper** (16x2 LCD display) attach to. As an alternative, the **[Main Board](https://github.com/acwright/6502-VCS)** from the VCS project can be substituted for the Backplane/CPU/Memory combination.
 
 ## Architecture
 
@@ -69,12 +75,22 @@ All AC6502 computers share:
 
 ## Hardware
 
-This repository contains KiCad 7.0+ PCB designs for the KIM-specific hardware. The KIM also uses boards, cards and helpers from the [6502-VCS](https://github.com/acwright/6502-VCS) and [6502-COB](https://github.com/acwright/6502-COB) projects.
+This repository contains KiCad 7.0+ PCB designs for the KIM-specific hardware. The KIM also uses boards, cards, and helpers from the [6502-COB](https://github.com/acwright/6502-COB) project, and optionally from the [6502-VCS](https://github.com/acwright/6502-VCS) project.
 
-### Main Board
-[`Hardware/Main Board/`](https://github.com/acwright/6502-VCS/tree/main/Hardware/Main%20Board) *(6502-VCS)*
+### Backplane / Backplane Pro
+[`Hardware/Backplane/`](https://github.com/acwright/6502-COB/tree/main/Hardware/Backplane) *(6502-COB — preferred)*
 
-The core board containing the 65C02 CPU, 32KB SRAM, 32KB EEPROM, clock, and reset circuitry. Runs at 1 MHz and provides the bus connection for the other boards.
+Passive backplane providing 5 card slots with full bus interconnect across all slots. The **Backplane Pro** is an enhanced variant with integrated clock generation, reset circuitry, and power distribution.
+
+### CPU Card
+[`Hardware/CPU Card/`](https://github.com/acwright/6502-COB/tree/main/Hardware/CPU%20Card) *(6502-COB — preferred)*
+
+Hosts the 65C02 CPU in a card form factor. Plugs into the Backplane or Backplane Pro.
+
+### Memory Card
+[`Hardware/Memory Card/`](https://github.com/acwright/6502-COB/tree/main/Hardware/Memory%20Card) *(6502-COB — preferred)*
+
+Provides 32KB SRAM and 32KB EEPROM with address decoding logic. Plugs into the Backplane or Backplane Pro.
 
 ### Serial Card
 [`Hardware/Serial Card/`](https://github.com/acwright/6502-COB/tree/main/Hardware/Serial%20Card) *(6502-COB)*
@@ -84,7 +100,12 @@ RS-232 serial communication via 65C51 ACIA and MAX232 level shifter.
 ### Backplane Helper
 [`Hardware/Backplane Helper/`](https://github.com/acwright/6502-COB/tree/main/Hardware/Backplane%20Helper) *(6502-COB)*
 
-Adds additional card slots to interconnect the Main Board, Serial Card, and Keypad Card on the KIM system.
+Adds additional card slots to expand the total backplane configuration.
+
+### Main Board
+[`Hardware/Main Board/`](https://github.com/acwright/6502-VCS/tree/main/Hardware/Main%20Board) *(6502-VCS — alternative)*
+
+An all-in-one board containing the 65C02 CPU, 32KB SRAM, 32KB EEPROM, clock, and reset circuitry. Can be used in place of the Backplane + CPU Card + Memory Card combination.
 
 ### Keypad Card
 `Hardware/Keypad Card/`
@@ -167,6 +188,12 @@ Shared KiCad symbol and footprint libraries used across all AC6502 hardware proj
 | R1 | 1 | R | Resistor | | | |
 | U2 | 1 | LCD-16X2 | 16×2 LCD Display | | | [AMAZON](https://www.amazon.com/MECCANIXITY-Display-Backlight-Interface-Adapter/dp/B0DSFXK7QK) |
 | VR1 | 1 | 10kΩ | Potentiometer | [3386F-103LF-ND](https://www.digikey.com/en/products/filter?keywords=3386F-103LF-ND) | | |
+
+## Purchase
+
+I have a few PCBs available on Tindie for those interested in building their own AC6502 system without ordering from a fab directly.
+
+<a href="https://www.tindie.com/stores/acwrightdesign/?ref=offsite_badges&utm_source=sellers_acwrightdesign&utm_medium=badges&utm_campaign=badge_medium"><img src="https://static.tindie.com/badges/tindie-mediums.png" alt="I sell on Tindie" width="150" height="78"></a>
 
 ## License
 
