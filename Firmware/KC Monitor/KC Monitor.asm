@@ -798,7 +798,9 @@ PiaInit:
 ;   and the keypad CA1 edge.  Serial is serviced first so a fast host stream
 ;   is never dropped while a key is also pending: if SC_STATUS shows RDRF, the
 ;   byte is read; an ESC byte triggers a break-to-monitor abort (WarmStart),
-;   any other byte is pushed into the SER_RXBUF ring.  Then, on a keypad CA1
+;   any other byte is pushed into the SER_RXBUF ring.  The serial half is
+;   skipped entirely when no Serial Card was probed (HW_SC clear), so a
+;   keypad-only machine never reads a floating bus here.  Then, on a keypad CA1
 ;   edge it reads PORTA *once*, right at the data-available edge where the
 ;   74C922 outputs are valid, masks the 5-bit keycode, rejects out-of-range
 ;   phantom codes, and either aborts on the ESC key or stores the keycode in
@@ -839,6 +841,9 @@ KeyIrq:
 
   ; --- Serial RX source (R65C51 ACIA) ---------------------------------------
 @Serial:
+  lda HW_PRESENT
+  and #HW_SC                    ; no Serial Card -> $9001 is open bus, and a
+  beq @Exit                     ;   floating RDRF would inject phantom bytes
   lda SC_STATUS                 ; reading status also clears the ACIA IRQ flag
   and #SC_STATUS_RDRF           ; RX data register full?
   beq @Exit                     ; nothing buffered in the ACIA — done
@@ -949,10 +954,19 @@ KeyToHex:
 ; -----------------------------------------------------------------------------
 ;   SerInit — bring up the serial card and reset the Wozmon parser state
 ;   Called from CartReset before interrupts are enabled.
+;
+;   The Serial Card is optional hardware, so the ACIA is only touched when the
+;   boot probe actually found one (HW_PRESENT bit HW_SC), matching the guarding
+;   convention the Kernal uses for every other card.  The parser state is reset
+;   either way, so the Ser* routines stay safe to call on a keypad-only build.
 ;   Modifies: A
 ; -----------------------------------------------------------------------------
 SerInit:
+  lda HW_PRESENT
+  and #HW_SC                    ; Serial Card fitted?  (it is optional hardware)
+  beq @NoCard                   ; no — leave $9000 alone, run keypad-only
   jsr InitSC                    ; BIOS: 8-N-1, 19200 baud, RX IRQ enabled
+@NoCard:
   stz SER_RXHEAD                ; empty RX ring
   stz SER_RXTAIL
   stz SER_IDX                   ; empty line buffer
@@ -1226,6 +1240,10 @@ SerPutc:
   pha                           ; save the byte on the stack
   phx
   phy
+  lda HW_PRESENT
+  and #HW_SC                    ; Serial Card fitted?
+  beq @Drop                     ; no — drop the byte without touching $9000
+                                ;   (and without paying the TDRE timeout)
   ldx #$08                      ; bounded TDRE wait (~16-bit countdown)
 @WaitHi:
   ldy #$00
@@ -1238,6 +1256,7 @@ SerPutc:
   dex
   bne @WaitHi
   ; timeout — no terminal; drop the byte
+@Drop:
   ply
   plx
   pla

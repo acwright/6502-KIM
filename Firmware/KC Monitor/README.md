@@ -33,7 +33,10 @@ KC Monitor targets the Keypad Card, a cartridge that overlays the `$C000–$FFFF
 address space. It drives:
 
 - A **16×2 HD44780 LCD** and a **24-key keypad** through a **65C21 PIA**.
-- The **Serial Card** (R65C51 ACIA) for the concurrent serial monitor.
+- The **Serial Card** (R65C51 ACIA) for the concurrent serial monitor. The
+  Serial Card is optional: the ACIA is only touched when the BIOS boot probe
+  set `HW_SC` in `HW_PRESENT`, so a machine assembled without it comes up as a
+  keypad-only monitor rather than reading a floating bus at `$9000`.
 
 | Range | Contents |
 |-------|----------|

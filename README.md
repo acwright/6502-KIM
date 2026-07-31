@@ -102,7 +102,7 @@ Provides 32KB SRAM and 32KB EEPROM with address decoding logic. Plugs into the B
 ### Serial Card
 [`Hardware/Serial Card/`](https://github.com/acwright/6502-COB/tree/main/Hardware/Serial%20Card) *(6502-COB)*
 
-RS-232 serial communication via 65C51 ACIA and MAX232 level shifter.
+RS-232 serial communication via 65C51 ACIA and MAX232 level shifter. Optional — usually fitted, and required for the KC Monitor's serial monitor, but the KIM runs keypad-only without it.
 
 ### Backplane Helper
 [`Hardware/Backplane Helper/`](https://github.com/acwright/6502-COB/tree/main/Hardware/Backplane%20Helper) *(6502-COB)*
@@ -117,30 +117,52 @@ An all-in-one board containing the 65C02 CPU, 32KB SRAM, 32KB EEPROM, clock, and
 ### Keypad Card
 `Hardware/Keypad Card/`
 
-Interface card that the Keypad Helper and Keypad LCD Helper attach to. Connects the keypad accessories to the AC6502 bus via the Backplane Helper.
+The card that makes the KIM a KIM. A cartridge card carrying its own ROM and I/O, which the Keypad Helper and Keypad LCD Helper attach to. Provides:
+
+- **PIA**: 65C21 — Port A carries the keypad code (PA0–PA4) and the LCD control lines (PA5 = RS, PA6 = R/W, PA7 = E); Port B is the LCD data bus. CA1 is the keypad data-available interrupt, CA2 the keypad encoder's output enable.
+- **ROM**: AT28C64 8KB EEPROM holding the cartridge firmware — see [Firmware](#firmware)
+- **Decoding**: two 74HC138 decoders
+- **Ports**: PORT A and PORT B headers for the keypad accessories
+
+Unlike every other card in the family, the Keypad Card **overlays the top of the address space**. Its ROM replaces BASIC, the Monitor, Wozmon and the CPU vectors, while the BIOS Kernal at `$A000–$BFFF` stays reachable and is called into by the cartridge:
+
+| Range | Contents |
+|-------|----------|
+| `$A000–$BFFF` | BIOS Kernal (unchanged, still callable) |
+| `$C000–$DFFF` | PIA registers (mirrored I/O window) |
+| `$E000–$FFF9` | Cartridge ROM (AT28C64, 8KB) |
+| `$FFFA–$FFFF` | CPU vectors (NMI, RESET, IRQ) — the cartridge's own |
+
+This takeover is the reason the KIM behaves differently from every other system in the family, and it is why the KIM is not currently emulated by the [emulator](https://github.com/acwright/6502-EMULATOR) or the [DEV board](https://github.com/acwright/6502-DEV).
 
 ### Keypad Helper
 `Hardware/Keypad Helper/`
 
-Keyboard controller companion board that attaches to the Keypad Card. Provides:
+The keypad itself, attaching to the Keypad Card — either directly to PORT A, or through the pass-through header on the Keypad LCD Helper. Provides:
 
-- **Keyboard Controller**: ATmega1284P running KIM Controller firmware
-- **Input**: PS/2 keyboard connector and 8×8 keyboard matrix header
+- **Input**: 24 Cherry MX key switches wired as a 4×6 matrix
+- **Encoder**: MM74C922 16-key encoder, extended to 24 keys with a 74HC00
+- **Output**: 5-bit keycode plus a data-available strobe over a 2×6 PORT header
+
+Scanning, debounce and encoding are all done in hardware. The helper carries no microcontroller and runs no firmware of its own.
 
 ### Keypad LCD Helper
 `Hardware/Keypad LCD Helper/`
 
-Keyboard controller companion board with an integrated LCD display that attaches to the Keypad Card. Provides:
+Display companion board that sits between the Keypad Card and the Keypad Helper. Provides:
 
-- **Keyboard Controller**: ATmega1284P running KIM Controller firmware
-- **Input**: PS/2 keyboard connector and 8×8 keyboard matrix header
-- **Display**: Integrated LCD panel
+- **Display**: 16×2 HD44780 LCD with a 10kΩ contrast trimmer, driven from PORT A (RS, R/W, E) and PORT B (8-bit data bus)
+- **Pass-through**: a KEYPAD header carrying PA0–PA4, CA1 and CA2 straight through to the Keypad Helper
+
+Like the Keypad Helper, this board carries no microcontroller and runs no firmware — the LCD is driven directly by the Keypad Card's PIA.
 
 ## Firmware
 
 `Firmware/KC Monitor/`
 
-The **KC Monitor** is a 6502 assembly language cartridge ROM for the KIM system.
+The **KC Monitor** is a 6502 assembly language cartridge ROM for the KIM system. It burns to the Keypad Card's AT28C64 and turns the card into a KIM-1-style hex monitor: browse and edit memory and execute code from the 24-key keypad and 16×2 LCD, with a concurrent Wozmon-compatible serial monitor over the Serial Card when one is fitted. See [`Firmware/KC Monitor/README.md`](./Firmware/KC%20Monitor/README.md).
+
+It is the only firmware in this repository — the Keypad Helper and Keypad LCD Helper are hardware-only boards and run no code.
 
 ## CAD
 `CAD/`
