@@ -9,8 +9,8 @@ Current file: KC Monitor.asm
 000000r 2               ;   6502.inc — External include file for the 6502 system
 000000r 2               ; =============================================================================
 000000r 2               ;
-000000r 2               ;   CPU:       WDC 65C02
-000000r 2               ;   BIOS:      v1.0
+000000r 2               ;   CPU:       WDC 65C02S
+000000r 2               ;   BIOS:      v1.4
 000000r 2               ;   Assembler: ca65 (cc65 toolchain) — uses := for absolute symbols
 000000r 2               ;
 000000r 2               ;   Include this file in external projects to access Kernal routines,
@@ -20,12 +20,13 @@ Current file: KC Monitor.asm
 000000r 2               ;   ----------
 000000r 2               ;   $0000-$0003   Zero Page: System pointers (see below)
 000000r 2               ;   $0004-$0023   Zero Page: Reserved by BASIC interpreter
-000000r 2               ;   $0024-$0035   Zero Page: System scratch (CF, serial, delay, monitor)
-000000r 2               ;   $0036-$00FF   Zero Page: Free for user programs
+000000r 2               ;   $0024-$0039   Zero Page: System scratch (CF, serial, delay, monitor, XModem)
+000000r 2               ;   $003A-$00FF   Zero Page: Free for user programs
 000000r 2               ;   $0100-$01FF   CPU Stack
 000000r 2               ;   $0200-$02FF   Input Buffer (ring buffer, managed by Kernal)
 000000r 2               ;   $0300-$03FF   Kernal Variables (vectors, cursor, HW flags, etc.)
-000000r 2               ;   $0400-$07FF   User Variables / BASIC workspace
+000000r 2               ;   $0400-$05FF   User Variables / BASIC workspace
+000000r 2               ;   $0600-$07FF   FS sector buffer (clobbered by any FS/St routine call)
 000000r 2               ;   $0800-$7FFF   Program RAM (30 KB — load address for user code)
 000000r 2               ;   $8000-$83FF   IO 1: Banked RAM Low  (256 × ~1 KB banks)
 000000r 2               ;   $8400-$87FF   IO 2: Banked RAM High (256 × ~1 KB banks)
@@ -38,8 +39,8 @@ Current file: KC Monitor.asm
 000000r 2               ;   $A000-$A0FF   Kernal Jump Table (stable entry points)
 000000r 2               ;   $A100-$B7FF   Kernal Implementation
 000000r 2               ;   $B800-$BFFF   Character Set ROM (2 KB, 256 × 8-byte patterns)
-000000r 2               ;   $C000-$E7FF   BASIC Interpreter
-000000r 2               ;   $E800-$FEFF   Machine Code Monitor
+000000r 2               ;   $C000-$EDFF   BASIC Interpreter
+000000r 2               ;   $EE00-$FEFF   Machine Code Monitor
 000000r 2               ;   $FF00-$FFF9   Wozmon (mini monitor)
 000000r 2               ;   $FFFA-$FFFF   CPU Vectors (NMI, RESET, IRQ)
 000000r 2               ;
@@ -54,12 +55,22 @@ Current file: KC Monitor.asm
 000000r 2               ;   Otherwise a console check halts if no video/serial is found, then
 000000r 2               ;   the splash screen and boot menu are displayed.  ENTER launches
 000000r 2               ;   BASIC; ESC enters the Monitor.  A 5-second timeout auto-boots BASIC.
+000000r 2               ;   The splash is drawn on whichever console is active — centred on the
+000000r 2               ;   40-column screen, or left-aligned as plain text over serial.
+000000r 2               ;
+000000r 2               ;   GRACEFUL DEGRADATION
+000000r 2               ;   --------------------
+000000r 2               ;   Every Kernal routine that drives a card checks HW_PRESENT first, so
+000000r 2               ;   a call on a machine without that card is safe rather than a crash.
+000000r 2               ;   Routines with nothing to report back return silently (video and SID);
+000000r 2               ;   routines that move data report failure in the carry (CompactFlash).
+000000r 2               ;   The per-routine notes below say which behaviour each one has.
 000000r 2               ;
 000000r 2               ;   CARTRIDGE SUPPORT
 000000r 2               ;   -----------------
 000000r 2               ;   Cartridges overlay $C000-$FFFF (BASIC, Monitor, Wozmon, vectors).
 000000r 2               ;   The Kernal ($A000-$B7FF) and character set ($B800-$BFFF) remain
-000000r 2               ;   accessible.  Use KernalInit ($A072) to initialize all hardware and
+000000r 2               ;   accessible.  Use KernalInit ($A078) to initialize all hardware and
 000000r 2               ;   return via RTS — interrupts are left disabled so the cart can set
 000000r 2               ;   up its own handlers first.  See usage patterns in the BIOS README.
 000000r 2               ;
@@ -94,7 +105,7 @@ Current file: KC Monitor.asm
 000000r 2               ; =============================================================================
 000000r 2               ; These zero page locations are used by the Kernal.  External programs may
 000000r 2               ; use STR_PTR and CF_BUF_PTR/CF_LBA as parameters to Kernal calls.
-000000r 2               ; Locations $36-$FF are free for user programs.
+000000r 2               ; Locations $3A-$FF are free for user programs.
 000000r 2               
 000000r 2               STR_PTR             := $02               ; 2 bytes — String pointer (used by FsLoadFile, FsSaveFile, FsDeleteFile, etc.)
 000000r 2               CF_BUF_PTR          := $24               ; 2 bytes — CF sector data buffer pointer
@@ -103,7 +114,8 @@ Current file: KC Monitor.asm
 000000r 2               
 000000r 2               ; Safe zero page range for user programs:
 000000r 2               ; $3A-$FF (198 bytes free)
-000000r 2               ; Note: $36-$39 are used internally by XModemLoad/XModemSave and must not be relied upon across those calls
+000000r 2               ; Note: $2E-$35 belong to the Monitor and $36-$39 to XModemLoad/XModemSave;
+000000r 2               ;       neither range survives a call into those routines
 000000r 2               
 000000r 2               
 000000r 2               ; =============================================================================
@@ -119,6 +131,7 @@ Current file: KC Monitor.asm
 000000r 2               VID_CURSOR_Y        := $0308             ; 1 byte  — Video cursor row (0-23)
 000000r 2               
 000000r 2               HW_PRESENT          := $030D             ; 1 byte  — Hardware present bitmask (set during boot probe)
+000000r 2               CF_DISK             := $030F             ; 1 byte  — Current CF disk bank (0–255); base LBA = CF_DISK × FS_DISK_SECTORS; reset to 0 on boot
 000000r 2               
 000000r 2               ; HW_PRESENT bit definitions (bit order matches IO slot numbers):
 000000r 2               HW_RAM_L            = %00000001          ; Bit 0: RAM card low  (IO 1, $8000-$83FF)
@@ -149,6 +162,18 @@ Current file: KC Monitor.asm
 000000r 2               BOOT_VECTOR         := $035B             ; 2 bytes — Boot redirect address (0=normal boot)
 000000r 2                                                        ;   Set after KernalInit to redirect Reset flow
 000000r 2                                                        ;   KernalInit zeroes this; write after init returns
+000000r 2               FS_IO_ADDR          := $037F             ; 2 bytes — Load/save target address for FsLoadFileAddr / FsSaveFileAddr
+000000r 2               FS_FILE_SIZE        := $034A             ; 2 bytes — File size in bytes (set by caller for FsSaveFileAddr; populated by FsLoadFileAddr)
+000000r 2               
+000000r 2               ; Program image handoff (v1.3):
+000000r 2               PRG_IMAGE_END       := $038E             ; 2 bytes — End address of a program image placed at
+000000r 2                                                        ;   PROGRAM_START by a loader running outside BASIC
+000000r 2                                                        ;   (e.g. the Monitor's L command); 0 = none.
+000000r 2                                                        ;   KernalInit zeroes it; BASIC consumes and re-zeroes it
+000000r 2                                                        ;   on entry, so a stale value is never acted on twice.
+000000r 2                                                        ;   A loader that drops a .prg at $0800 and then hands
+000000r 2                                                        ;   off to BASIC should write the end address here so
+000000r 2                                                        ;   the attached machine code survives LOAD/SAVE.
 000000r 2               
 000000r 2               
 000000r 2               ; =============================================================================
@@ -158,6 +183,7 @@ Current file: KC Monitor.asm
 000000r 2               INPUT_BUFFER        := $0200             ; $0200-$02FF — 256-byte ring buffer (keyboard/serial input)
 000000r 2               PROGRAM_START       := $0800             ; User programs and BASIC programs load here
 000000r 2               ;                                        ; Program space extends to $7FFF (30 KB)
+000000r 2               MEMORY_TOP          := $8000             ; First address past usable RAM (IO space starts here)
 000000r 2               
 000000r 2               
 000000r 2               ; =============================================================================
@@ -199,9 +225,15 @@ Current file: KC Monitor.asm
 000000r 2               
 000000r 2               ; --- Video (TMS9918 / pico9918) ---
 000000r 2               InitVideo           := $A015             ; Initialize TMS9918 (text mode, 40×24)
-000000r 2                                                        ;   Modifies: A, X
+000000r 2                                                        ;   Writes the 8 mode registers, then reloads the
+000000r 2                                                        ;   character set into the pattern table (VRAM $0800)
+000000r 2                                                        ;   A program that switched the VDP to a graphics mode
+000000r 2                                                        ;   can fully restore text mode with this one call
+000000r 2                                                        ;   STR_PTR is used internally but saved and restored
+000000r 2                                                        ;   Modifies: A, X, Y
 000000r 2               
 000000r 2               VideoClear          := $A018             ; Clear screen (fill with spaces), reset cursor to (0,0)
+000000r 2                                                        ;   Skips silently if no video card is fitted
 000000r 2                                                        ;   Modifies: A, X, Y
 000000r 2               
 000000r 2               VideoPutChar        := $A01B             ; Write character at cursor position (no cursor advance)
@@ -209,6 +241,7 @@ Current file: KC Monitor.asm
 000000r 2               
 000000r 2               VideoSetCursor      := $A01E             ; Set cursor position
 000000r 2                                                        ;   In: X = column (0-39), Y = row (0-23)
+000000r 2                                                        ;   Skips silently if no video card is fitted
 000000r 2                                                        ;   Modifies: A
 000000r 2               
 000000r 2               VideoGetCursor      := $A021             ; Get cursor position
@@ -220,6 +253,8 @@ Current file: KC Monitor.asm
 000000r 2               VideoSetColor       := $A027             ; Set TMS9918 text color
 000000r 2                                                        ;   In: A = color byte (high nibble = foreground, low nibble = background)
 000000r 2                                                        ;   See TMS9918 Color Constants below
+000000r 2                                                        ;   Skips silently if no video card is fitted
+000000r 2                                                        ;   Modifies: A
 000000r 2               
 000000r 2               VideoChroutRaw      := $A02A             ; Output char to video with no control-code handling
 000000r 2                                                        ;   In: A = character code (0-255)
@@ -236,21 +271,36 @@ Current file: KC Monitor.asm
 000000r 2               
 000000r 2               SidPlayNote         := $A033             ; Play note on a SID voice
 000000r 2                                                        ;   In: A = voice (0-2), X = freq low, Y = freq high
-000000r 2                                                        ;   Uses triangle waveform, ADSR: A=0 D=9 S=A R=2
+000000r 2                                                        ;   Uses triangle waveform, ADSR: A=0 D=9 S=F R=8
+000000r 2                                                        ;   Full sustain holds the note flat until gated off
+000000r 2                                                        ;   Skips silently if no SID is fitted
 000000r 2                                                        ;   Modifies: A
 000000r 2               
-000000r 2               SidSilence          := $A036             ; Silence all 3 SID voices (gate off, zero freq)
+000000r 2               SidSilence          := $A036             ; Silence all 3 SID voices (gate off only)
+000000r 2                                                        ;   Frequencies are left intact — the envelope release
+000000r 2                                                        ;   rings the tone out.  Zeroing freq would freeze the
+000000r 2                                                        ;   waveform and decay a DC offset (audible thump)
+000000r 2                                                        ;   Skips silently if no SID is fitted
 000000r 2                                                        ;   Modifies: A
 000000r 2               
 000000r 2               SidSetVolume        := $A039             ; Set SID master volume
-000000r 2                                                        ;   In: A = volume (0-15)
+000000r 2                                                        ;   In: A = volume (0-15); only the low nibble is used
+000000r 2                                                        ;   Skips silently if no SID is fitted
 000000r 2                                                        ;   Modifies: A
 000000r 2               
-000000r 2               ; --- Filesystem (simple 16-file directory on CF) ---
-000000r 2               ;   Directory lives at LBA 0 (512 bytes, 16 × 32-byte entries).
-000000r 2               ;   Data sectors start at LBA 1.
-000000r 2               ;   Filenames are 8.3 format, space-padded, case-insensitive.
+000000r 2               ; --- Filesystem (disk-banked, 16-file directory per disk) ---
+000000r 2               ;   The CF card is divided into 256 disk banks of 1 MB each (FS_DISK_SECTORS
+000000r 2               ;   sectors × 512 bytes).  CF_DISK ($030F) selects the active bank (reset to
+000000r 2               ;   0 on boot).  Use FsSetDisk / FsGetDisk to change it at runtime.  Each
+000000r 2               ;   bank has its own directory at the first sector, holding up to 16 entries
+000000r 2               ;   (8.3 filenames, space-padded, case-insensitive).  All FS routines and
+000000r 2               ;   StReadSector / StWriteSector operate on the selected bank automatically.
 000000r 2               ;   Pass null-terminated "NAME.EXT" string via STR_PTR ($02-$03).
+000000r 2               ;   Use FsLoadFileAddr / FsSaveFileAddr for load-to-address transfers.
+000000r 2               ;   The extension is inert — nothing in the BIOS branches on it, so .PRG, .BAS
+000000r 2               ;   and .FOO behave identically.  What a file means is decided by the routine
+000000r 2               ;   that loads it, never by its name.
+000000r 2               ;   All FS routines use $0600-$07FF as a 512-byte sector buffer.
 000000r 2               
 000000r 2               FsLoadFile          := $A03C             ; Load file from CF
 000000r 2                                                        ;   In: STR_PTR = pointer to null-terminated filename
@@ -273,13 +323,31 @@ Current file: KC Monitor.asm
 000000r 2                                                        ;   Modifies: A
 000000r 2               
 000000r 2               ; --- Joysticks ---
+000000r 2               ;   Both ports are ACTIVE LOW — each line is pulled up through 1K and grounded
+000000r 2               ;   by its switch — and both routines return the port read raw.  So a held
+000000r 2               ;   button is a 0 bit and an untouched stick reads $FF:
+000000r 2               ;
+000000r 2               ;     Bit:  7   6   5   4   3   2   1   0
+000000r 2               ;           R   L   D   U   Y   X   B   A
+000000r 2               ;
+000000r 2               ;   Test a direction with:  lda ... / and #%00010000 / beq @UpHeld
+000000r 2               ;
+000000r 2               ;   Neither routine checks HW_PRESENT — with no GPIO card fitted they read a
+000000r 2               ;   floating bus and the value is meaningless.  Test HW_GPIO first if the card
+000000r 2               ;   may be absent.  (BASIC's JOY() does this and reports $FF.)
+000000r 2               ;
+000000r 2               ;   Both routines SEI on entry and CLI on exit unconditionally, so calling
+000000r 2               ;   either one from inside an interrupt-disabled section re-enables interrupts.
+000000r 2               
 000000r 2               ReadJoystick1       := $A048             ; Read joystick 1 (VIA Port B)
-000000r 2                                                        ;   Out: A = bitmask (active-low bits, active bits depend on wiring)
+000000r 2                                                        ;   Out: A = bitmask (active low, see above)
 000000r 2                                                        ;   Temporarily disables matrix keyboard encoder
+000000r 2                                                        ;   Modifies: A, X; enables interrupts
 000000r 2               
 000000r 2               ReadJoystick2       := $A04B             ; Read joystick 2 (VIA Port A)
-000000r 2                                                        ;   Out: A = bitmask (active-low bits, active bits depend on wiring)
+000000r 2                                                        ;   Out: A = bitmask (active low, see above)
 000000r 2                                                        ;   Temporarily disables PS/2 keyboard encoder
+000000r 2                                                        ;   Modifies: A, X; enables interrupts
 000000r 2               
 000000r 2               ; --- Serial (R65C51) ---
 000000r 2               InitSC              := $A04E             ; Initialize serial card (8-N-1, 19200 baud)
@@ -341,19 +409,24 @@ Current file: KC Monitor.asm
 000000r 2               
 000000r 2               StWaitReady         := $A072             ; Wait for CF to become ready (BSY=0, RDY=1)
 000000r 2                                                        ;   Out: C=0 ready, C=1 timeout/error
+000000r 2                                                        ;   Returns C=1 at once if the boot probe found no CF
+000000r 2                                                        ;   card, rather than spinning out the full timeout.
+000000r 2                                                        ;   Every FS and sector routine passes through here, so
+000000r 2                                                        ;   an empty slot fails fast throughout the stack
 000000r 2                                                        ;   Modifies: A, X, Y
 000000r 2               
 000000r 2               ; --- Timing ---
 000000r 2               SysDelay            := $A075             ; Delay for specified centiseconds (10 ms units)
 000000r 2                                                        ;   In: A = low byte, X = high byte (16-bit count)
 000000r 2                                                        ;   Uses VIA T1 if available, else software loop
-000000r 2                                                        ;   Modifies: A
+000000r 2                                                        ;   Modifies: A, X, Y (X/Y clobbered only in software-fallback path)
 000000r 2               
 000000r 2               ; --- System / Cartridge Support ---
 000000r 2               KernalInit          := $A078             ; Initialize all hardware (vectors, probe & init all I/O)
 000000r 2                                                        ;   Caller MUST reset the stack pointer before JSR:
 000000r 2                                                        ;     ldx #$ff / txs / jsr KernalInit
-000000r 2                                                        ;   Zeroes BOOT_VECTOR, sets HW_PRESENT, IO_MODE, IRQ/BRK/NMI ptrs
+000000r 2                                                        ;   Zeroes BOOT_VECTOR, PRG_IMAGE_END and CF_DISK;
+000000r 2                                                        ;   sets HW_PRESENT, IO_MODE, IRQ/BRK/NMI ptrs
 000000r 2                                                        ;   Does NOT reset the stack pointer
 000000r 2                                                        ;   Does NOT enable interrupts (caller must CLI)
 000000r 2                                                        ;   Does NOT play beep, display splash, or enter boot menu
@@ -362,6 +435,51 @@ Current file: KC Monitor.asm
 000000r 2               
 000000r 2               KernalVersion       := $A07B             ; Get BIOS version
 000000r 2                                                        ;   Out: A = major version, X = minor version
+000000r 2               
+000000r 2               ; --- Disk-banking & addressed storage (v1.1) ---
+000000r 2               ;   CF_DISK ($030F) selects the current disk bank (0–255).
+000000r 2               ;   All FS routines, StReadSector, and StWriteSector address the selected
+000000r 2               ;   bank automatically.  Bank changes survive until the next reset.
+000000r 2               
+000000r 2               FsLoadFileAddr      := $A07E             ; Load named file from current disk to FS_IO_ADDR
+000000r 2                                                        ;   In: STR_PTR = null-terminated filename
+000000r 2                                                        ;       FS_IO_ADDR ($037F) = destination address
+000000r 2                                                        ;   Out: C=0 success, FS_FILE_SIZE = bytes loaded; C=1 error
+000000r 2                                                        ;   Modifies: A, X, Y
+000000r 2               
+000000r 2               FsSaveFileAddr      := $A081             ; Save FS_FILE_SIZE bytes from FS_IO_ADDR to a named file
+000000r 2                                                        ;   In: STR_PTR = filename
+000000r 2                                                        ;       FS_IO_ADDR ($037F) = source address
+000000r 2                                                        ;       FS_FILE_SIZE ($034A) = byte count
+000000r 2                                                        ;   Out: C=0 success, C=1 error (disk full or write error)
+000000r 2                                                        ;   Modifies: A, X, Y
+000000r 2               
+000000r 2               FsFormatDisk        := $A084             ; Zero the current disk's directory (erases all 16 entries)
+000000r 2                                                        ;   Out: C=0 success, C=1 write error
+000000r 2                                                        ;   No confirmation prompt — caller is responsible
+000000r 2                                                        ;   Modifies: A, X, Y
+000000r 2               
+000000r 2               FsSetDisk           := $A087             ; Select the current CF disk bank
+000000r 2                                                        ;   In: A = disk number (0–255) → stored in CF_DISK ($030F)
+000000r 2                                                        ;   Modifies: Flags
+000000r 2               
+000000r 2               FsGetDisk           := $A08A             ; Get the current CF disk bank
+000000r 2                                                        ;   Out: A = CF_DISK value (0–255)
+000000r 2                                                        ;   Modifies: Flags, A
+000000r 2               
+000000r 2               FsPrintDisk         := $A08D             ; Print "DISK n" + CRLF via Chrout (decimal, no leading zeros)
+000000r 2                                                        ;   Uses current CF_DISK
+000000r 2                                                        ;   Modifies: Flags, A, X, Y
+000000r 2               
+000000r 2               ; --- General Output Utilities (console routed by IO_MODE via Chrout) ---
+000000r 2               PrintStr            := $A090             ; Print a NUL-terminated string
+000000r 2                                                        ;   In : A = string addr low, Y = string addr high
+000000r 2                                                        ;   Modifies: Flags, A, Y, STR_PTR (X preserved)
+000000r 2               PrintCRLF           := $A093             ; Print CR ($0D) then LF ($0A)
+000000r 2                                                        ;   Modifies: Flags, A
+000000r 2               PrintDecU16         := $A096             ; Print an unsigned 16-bit value as decimal
+000000r 2                                                        ;   In : A = value low, X = value high (no leading zeros)
+000000r 2                                                        ;   Modifies: Flags, A, X, Y, FS_FILE_SIZE, FS_DIR_IDX
 000000r 2               
 000000r 2               
 000000r 2               ; =============================================================================
@@ -398,6 +516,12 @@ Current file: KC Monitor.asm
 000000r 2               RTC_RAM_DATA        := $8813             ; NVRAM data register
 000000r 2               ; Control Register B bits:
 000000r 2               RTC_CTRL_B_TE       := %10000000         ; Transfer Enable — set to inhibit clock updates during write
+000000r 2               ; Month register ($8805) — the upper 3 bits are oscillator/SQW control, not month data.
+000000r 2               ; Always mask with RTC_MON_MASK when reading the month, and preserve these bits on write.
+000000r 2               RTC_MON_MASK        := %00011111         ; Month value occupies the low 5 bits
+000000r 2               RTC_MON_EOSC        := %10000000         ; Oscillator Start/Stop (0 = oscillator running)
+000000r 2               RTC_MON_E32K        := %01000000         ; 32 kHz square-wave enable (1 = SQW output disabled)
+000000r 2               RTC_MON_BB32        := %00100000         ; Battery-backup 32 kHz SQW enable (1 = enabled in backup)
 000000r 2               
 000000r 2               ; --- CompactFlash / Storage (IO 4: $8C00-$8C07) ---
 000000r 2               ;   8-bit IDE (True IDE) mode.  The BIOS issues Set Features $01 at boot
@@ -446,6 +570,7 @@ Current file: KC Monitor.asm
 000000r 2               FS_ENTRY_START      = 12                 ; Offset: start sector (2 bytes, little-endian)
 000000r 2               FS_ENTRY_FSIZE      = 14                 ; Offset: file size (2 bytes, little-endian)
 000000r 2               FS_FLAG_USED        = %00000001          ; Flags bit 0: entry in use
+000000r 2               FS_DISK_SECTORS     = 2048               ; Sectors per disk bank (2048 × 512 bytes = 1 MB); 256 banks = 256 MB total
 000000r 2               
 000000r 2               ; XModem protocol constants (used with XModemLoad / XModemSave):
 000000r 2               XMODEM_SOH          = $01                ; Start of Header
@@ -704,7 +829,7 @@ Current file: KC Monitor.asm
 000000r 2               
 000000r 2               ; --- BIOS Version ---
 000000r 2               BIOS_VERSION_MAJOR  = 1
-000000r 2               BIOS_VERSION_MINOR  = 0
+000000r 2               BIOS_VERSION_MINOR  = 4
 000000r 2               
 000000r 2               ; --- ASCII Control Characters ---
 000000r 2               CHAR_BEL            = $07                ; Bell (Beep via SID)
@@ -741,10 +866,10 @@ Current file: KC Monitor.asm
 000000r 2               TMS_WHITE           = $F
 000000r 2               
 000000r 2               ; --- Monitor Entry Points ---
-000000r 2               ;   The machine code monitor lives at $C000 and is entered normally via BRK.
+000000r 2               ;   The machine code monitor lives at $EE00 and is entered normally via BRK.
 000000r 2               ;   These are useful if you want to jump there directly.
-000000r 2               MONITOR_ENTRY       := $C000             ; Cold entry (from boot menu or user code)
-000000r 2               MONITOR_BRK_ENTRY   := $C003             ; BRK entry (displays saved registers)
+000000r 2               MONITOR_ENTRY       := $EE00             ; Cold entry (from boot menu or user code)
+000000r 2               MONITOR_BRK_ENTRY   := $EE03             ; BRK entry (displays saved registers)
 000000r 2               
 000000r 1               
 000000r 1               ; =============================================================================
