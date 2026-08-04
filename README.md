@@ -7,6 +7,9 @@
 
 An **AC6502** retro-style 8-bit computer based on the **65C02** microprocessor.
 
+> 📖 **Guide:** [AC6502 Documentation](https://acwright.github.io/6502-DOCS/) — the user's and programmer's guide for the whole family.
+> See [The KIM keypad add-on chapter](https://acwright.github.io/6502-DOCS/addons/kim).
+
 ---
 
 ## Table of Contents
@@ -75,7 +78,7 @@ All AC6502 computers share:
 | [6502-BAS](https://github.com/acwright/6502-BAS) | BASIC program listings |
 | [6502-WOZMON](https://github.com/acwright/6502-WOZMON) | Wozmon as a standalone ROM |
 | [6502-NOP](https://github.com/acwright/6502-NOP) | An all-NOP ROM, for probing a board during bring-up |
-| [6502-ASSETS](https://github.com/acwright/6502-ASSETS) | Documentation, branding, schematic exports, and label artwork |
+| [6502-DOCS](https://github.com/acwright/6502-DOCS) | The documentation site — the guide, the printable reference cards, branding and label artwork |
 | [cffs](https://github.com/acwright/cffs) | Builds CompactFlash disk images for the BIOS filesystem |
 | [bastok](https://github.com/acwright/bastok) | Tokenizes BASIC listings into `.prg` images, and back |
 | [bin2woz](https://github.com/acwright/bin2woz) | Converts a binary into a Wozmon serial upload |
@@ -124,11 +127,12 @@ The card that makes the KIM a KIM. A cartridge card carrying its own ROM and I/O
 - **Decoding**: two 74HC138 decoders
 - **Ports**: PORT A and PORT B headers for the keypad accessories
 
-Unlike every other card in the family, the Keypad Card **overlays the top of the address space**. Its ROM replaces BASIC, the Monitor, Wozmon and the CPU vectors, while the BIOS Kernal at `$A000–$BFFF` stays reachable and is called into by the cartridge:
+Unlike every other card in the family, the Keypad Card **overlays the top of the address space**. Its ROM replaces BASIC, the Monitor, Wozmon and the CPU vectors, while `$A000–$BFFF` stays reachable and is called into by the cartridge:
 
 | Range | Contents |
 |-------|----------|
-| `$A000–$BFFF` | BIOS Kernal (unchanged, still callable) |
+| `$A000–$B7FF` | BIOS Kernal (unchanged, still callable) |
+| `$B800–$BFFF` | CP437 character set (unchanged, still readable) |
 | `$C000–$DFFF` | PIA registers (mirrored I/O window) |
 | `$E000–$FFF9` | Cartridge ROM (AT28C64, 8KB) |
 | `$FFFA–$FFFF` | CPU vectors (NMI, RESET, IRQ) — the cartridge's own |
