@@ -1,6 +1,6 @@
 .setcpu "65C02"
 
-.include "6502.inc"
+.include "kim.inc"
 
 ; =============================================================================
 ;   KC Monitor — KIM-1-style keypad/LCD memory monitor
@@ -10,8 +10,9 @@
 ;   (AT28C64, 8 KB) lives at $E000-$FFFF and the PIA registers are mirrored
 ;   across the I/O window $C000-$DFFF.
 ;
-;   This file implements:
-;     - Build scaffolding & KC-local PIA/LCD constants
+;   The machine itself — PIA, LCD wiring, keypad codes, the surviving Kernal —
+;   is described in kim.inc.  This file implements:
+;     - Monitor state & build scaffolding
 ;     - LCD driver
 ;     - PIA init & keypad input
 ;     - Monitor state machine
@@ -22,87 +23,28 @@
 
 
 ; =============================================================================
-;   KC PIA register map (65C21)
+;   Machine definitions
 ; =============================================================================
-;   The PIA is mirrored across the I/O window $C000-$DFFF.  A0=RS0, A1=RS1.
-;     $C000  PORTA / DDRA  (selected by CRA bit 2)
-;     $C001  CRA
-;     $C002  PORTB / DDRB  (selected by CRB bit 2)
-;     $C003  CRB
+;   kim.inc describes the KIM as it actually is with this cartridge fitted:
+;   the Keypad Card PIA ($C000-$C003) and its LCD/keypad wiring, the Serial
+;   Card ACIA ($9000-$9003), the part of the BIOS Kernal that survives the
+;   $C000-$FFFF overlay, and the RAM this monitor reserves.  Everything the
+;   overlay removes — BASIC, the BIOS Monitor, Wozmon, the BIOS vectors — is
+;   listed there as gone rather than silently omitted.
 ;
-;   Wiring:
-;     PA0-PA4 = keypad code        (input)
-;     PA5     = LCD RS             (output)
-;     PA6     = LCD R/W            (output)
-;     PA7     = LCD E              (output)
-;     PB0-PB7 = LCD data bus       (output)
-;     CA1     = keypad data-available
-;     CA2     = active-low OE of the 74C922 keypad encoder
-
-PORTA               := $C000             ; Port A data / DDRA (per CRA bit 2)
-CRA                 := $C001             ; Control register A
-PORTB               := $C002             ; Port B data / DDRB (per CRB bit 2)
-CRB                 := $C003             ; Control register B
-
-; Control-register bit 2 selects the data register (1) or the data
-; direction register (0) at the shared port address.
-CR_DDR              = %00000000          ; access DDRx
-CR_PORT             = %00000100          ; access PORTx data register
-
-; Data direction for Port A: PA5/PA6/PA7 outputs (LCD control),
-; PA0-PA4 inputs (keypad code).
-LCD_DDRA            = %11100000          ; $E0
-
-; LCD control-line masks on Port A
-LCD_RS              = %00100000          ; PA5 — register select (1=data, 0=cmd)
-LCD_RW              = %01000000          ; PA6 — read/write (1=read, 0=write)
-LCD_E               = %10000000          ; PA7 — enable strobe
-
-; LCD busy flag (Port B DB7, valid when reading with RS=0/R/W=1)
-LCD_BUSY            = %10000000
-
-; -----------------------------------------------------------------------------
-;   Keypad (74C922 encoder via PIA Port A + CA1/CA2)
-; -----------------------------------------------------------------------------
-;   The encoder presents a 5-bit keycode on PA0-PA4 and raises CA1 (positive
-;   edge) when a key becomes available.  CA2 is driven low to enable the
-;   encoder's active-low output enable (OE).  Key entry is interrupt driven:
-;   the CA1 rising edge raises the CPU IRQ, and the handler (KeyIrq) reads the
-;   keycode at that instant — when the 74C922 outputs are guaranteed valid —
-;   so a read can never straddle a key transition the way polling at an
-;   arbitrary later time could.
-;
-;   CRA layout for the keypad:
-;     bit 7   CA1 active-edge flag (IRQF1) — set on key-available, read-only
-;     bit 5-3 110 = CA2 manual output low (enables 74C922 OE)
-;     bit 2   1   = access PORTA data register (not DDRA)
-;     bit 1   1   = CA1 active on the positive (rising) edge
-;     bit 0   1   = CA1 interrupt enabled
-PIA_CA1_FLAG        = %10000000          ; CRA bit 7 — CA1 active-edge flag
-PIA_CRA_KEYPAD      = %00110111          ; $37 — CA2 out low, CA1 +edge, IRQ ON, PORT
-KEY_MASK            = %00011111          ; PA0-PA4 carry the keycode (0-23)
-KEY_COUNT           = 24                  ; valid keycodes are $00-$17
-
-; Named keycodes (used by the monitor dispatch)
-KEY_LEFT            = $00
-KEY_RIGHT           = $0B
-KEY_ESC             = $10
-KEY_INS             = $11
-KEY_PGUP            = $12
-KEY_A               = $13
-KEY_UP              = $14
-KEY_DEL             = $15
-KEY_PGDN            = $16
-KEY_B               = $17
+;   PORTA/CRA/PORTB/CRB, CR_DDR/CR_PORT, LCD_*, PIA_*, KEY_* and the ASCII
+;   constants below all come from it.
 
 
 ; =============================================================================
 ;   Monitor zero-page state
 ; =============================================================================
-;   Lives in the free user zero page ($36-$FF).  CUR_ADDR is the address the
-;   monitor is inspecting/editing; it doubles as the (zp),y pointer for byte
-;   access and as the execute trampoline target.  MODE holds the INS edit
-;   flag; MON_TMP is scratch for the nibble-shift edits.
+;   Lives in the free user zero page; kim.inc reserves $40-$51 (KC_ZP_START..
+;   KC_ZP_END) for the monitor so a program written for the KIM knows to keep
+;   off it.  CUR_ADDR is the address the monitor is inspecting/editing; it
+;   doubles as the (zp),y pointer for byte access and as the execute
+;   trampoline target.  MODE holds the INS edit flag; MON_TMP is scratch for
+;   the nibble-shift edits.
 CUR_ADDR            := $40               ; 2 bytes — current address pointer
 MODE                := $42               ; 1 byte  — INS edit-mode flag (0=off)
 MON_TMP             := $43               ; 1 byte  — scratch for nibble edits
@@ -137,9 +79,11 @@ SER_DIRTY           := $51               ; 1 byte  — nonzero when a serial dep
 
 ; The RX ring buffer (256 bytes, byte indices wrap naturally) and the Wozmon
 ; line buffer share the low-RAM input region; neither is used by the keypad
-; monitor.
-SER_RXBUF           := $0400             ; 256-byte serial RX ring buffer
-SER_LINEBUF         := INPUT_BUFFER      ; $0200 — Wozmon line accumulation buffer
+; monitor.  The line buffer is aliased onto the Kernal's input ring page,
+; which is inert here (nothing feeds it once the cart owns IRQ_PTR) — kim.inc
+; documents both pages as live so they are not mistaken for spare RAM.
+SER_RXBUF           := KC_RXBUF          ; $0400 — 256-byte serial RX ring buffer
+SER_LINEBUF         := KC_LINEBUF        ; $0200 — Wozmon line accumulation buffer
 
 
 ; =============================================================================
@@ -155,13 +99,21 @@ SER_LINEBUF         := INPUT_BUFFER      ; $0200 — Wozmon line accumulation bu
 ;   Kernal RAM vectors and probe the base system, overrides the BRK vector so
 ;   a BRK from executed user code returns cleanly instead of diving into the
 ;   now-overlaid BIOS monitor, brings up the LCD and keypad PIA, seeds the
-;   monitor state, shows the splash screen, then enters the monitor loop
-;   directly (no ESC gate).
+;   monitor state, shows the splash on both consoles, then holds on the splash
+;   gate until an ESC arrives.
 ;
 ;   Key entry is interrupt driven, so after init it repoints IRQ_PTR at the
 ;   local KeyIrq handler and enables interrupts (CLI) before showing the
 ;   splash.  BRK is unaffected by the I flag; the BRK_PTR override below keeps
 ;   a BRK in executed user code from entering the overlaid BIOS monitor.
+;
+;   THE SPLASH GATE.  Both consoles say "--ESC TO START--" and both mean the
+;   same thing: ESC, and only ESC, starts the monitor.  ESC from either source
+;   starts BOTH — it is caught in KeyIrq (the KEY_ESC keycode from the keypad,
+;   a $1B byte from the serial card) and jumps to WarmStart, which discards
+;   everything typed at the splash, paints the LCD, and only then emits the
+;   first serial prompt.  Nothing is echoed or acted on before that, so the
+;   terminal never shows a "> " with no parser behind it.
 ; =============================================================================
 
 CartReset:
@@ -205,29 +157,36 @@ CartReset:
   ; LCD splash first — it must never depend on the serial terminal being
   ; connected.  (SerialChrout/our serial TX blocks on TDRE, which the R65C51
   ; gates on /CTS; with no terminal connected the serial banner would stall.)
-  jsr ShowSplash                ; brief splash while the serial banner emits
+  jsr ShowSplash                ; "KIM MONITOR v1.0" / "--ESC TO START--"
 
-  ; Serial startup banner + first Wozmon prompt.  Emitted through the
-  ; non-blocking SerPutc path, so a missing/disconnected terminal just drops
-  ; these bytes instead of hanging the keypad monitor.
+  ; The same two lines over the wire, so the terminal is told exactly what the
+  ; panel says.  Emitted through the non-blocking SerPutc path, so a missing or
+  ; disconnected terminal just drops these bytes instead of hanging the keypad
+  ; monitor.  No prompt yet — see the gate below.
+  lda #CHAR_CR
+  jsr SerEcho                   ; CR -> CR/LF: start on a clean line
   lda #<SplashL1
   sta STR_PTR
   lda #>SplashL1
   sta STR_PTR + 1
   jsr SerPrintStr               ; "KIM MONITOR v1.0"
-  jsr SerPrompt                 ; CR/LF + "> "
+  lda #CHAR_CR
+  jsr SerEcho
+  lda #<SplashL2
+  sta STR_PTR
+  lda #>SplashL2
+  sta STR_PTR + 1
+  jsr SerPrintStr               ; "--ESC TO START--"
 
-  ; Splash gate: hold on the splash until the user starts the monitor.  The
-  ; prompt says "ESC TO START", but ANY keypad key (KeyPoll) begins — and an
-  ; ESC from the keypad OR the serial terminal jumps to WarmStart from inside
-  ; KeyIrq and enters the monitor the same way.  Accepting any key keeps the
-  ; marginal ESC key switch from trapping us here: a clean ESC is no longer
-  ; required to boot.
+  ; Splash gate.  ESC — and nothing else — starts the monitor, identically
+  ; from either console: KeyIrq catches KEY_ESC from the keypad and $1B from
+  ; the serial card and JMPs to WarmStart, which flushes both inputs, paints
+  ; the address/byte display on the LCD, and only then emits the first serial
+  ; prompt.  So there is nothing to poll for here; anything typed or pressed
+  ; at the splash is discarded by WarmStart rather than echoed, acted on, or
+  ; left in the ring to execute later.
 @WaitStart:
-  jsr KeyPoll                   ; C=1 -> a keypad key was pressed
-  bcc @WaitStart                ; (the press is consumed, just dismisses splash)
-  jsr RefreshDisplay            ; first paint of the monitor screen
-  jmp MonitorLoop
+  bra @WaitStart                ; ESC (either console) -> KeyIrq -> WarmStart
 
 
 ; =============================================================================
@@ -256,18 +215,26 @@ CartReset:
 ;   monitor" and does not restore the aborted caller.
 ;
 ;   Resets the stack pointer (the IRQ and whatever it interrupted are
-;   discarded), cancels any in-progress INS edit, flushes buffered serial
-;   input, re-enables interrupts (KeyIrq was entered with I set), repaints the
-;   keypad monitor (LCD) and re-arms the serial monitor with a fresh prompt,
-;   then re-enters the monitor loop.
+;   discarded), cancels any in-progress INS edit, discards pending input from
+;   BOTH sources, re-enables interrupts (KeyIrq was entered with I set),
+;   repaints the keypad monitor (LCD) and re-arms the serial monitor with a
+;   fresh prompt, then re-enters the monitor loop.
+;
+;   Discarding both inputs is what makes the two consoles agree.  This is also
+;   the boot path (CartReset's splash gate falls in here on the first ESC), so
+;   a key pressed or a line typed at the splash must not be dispatched or
+;   parsed afterwards — an aborted program's leftover keystrokes have no more
+;   business running than a splash-screen one does.
 ; -----------------------------------------------------------------------------
 WarmStart:
   ldx #$ff
   txs                           ; discard the interrupted stack frame
   stz MODE                      ; cancel any in-progress INS edit
-  lda SER_RXHEAD                ; flush any buffered serial input (still inside
-  sta SER_RXTAIL                ;   the IRQ-masked window so KeyIrq can't race)
-  stz SER_DIRTY
+  stz KEY_READY                 ; drop any keypad press latched but not yet
+                                ;   dispatched (still inside the IRQ-masked
+  lda SER_RXHEAD                ;   window, so KeyIrq cannot race either flush)
+  sta SER_RXTAIL                ; flush any buffered serial input
+  stz SER_DIRTY                 ; (SerPrompt below resets the line buffer)
   cli                           ; KeyIrq left I set — re-enable IRQs
   jsr RefreshDisplay            ; repaint the keypad monitor (LCD)
   jsr SerPrompt                 ; and re-arm the serial monitor (fresh prompt)

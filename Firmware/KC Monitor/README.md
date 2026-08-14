@@ -49,6 +49,25 @@ The PIA is mapped with A0=RS0, A1=RS1: `$C000` PORTA/DDRA, `$C001` CRA,
 LCD control lines (PA5=RS, PA6=R/W, PA7=E); Port B is the LCD data bus. Keypad
 input is interrupt driven via the 74C922 encoder's data-available signal on CA1.
 
+### Startup
+
+Both consoles show the same splash and both hold at the same gate:
+
+```
+KIM MONITOR v1.0
+--ESC TO START--
+```
+
+`ESC` — and only `ESC` — starts the monitor, and one `ESC` starts both. Press
+the keypad `ESC` key or send `$1B` from the terminal; either is caught in the
+interrupt handler, so the two behave identically. Nothing else is accepted, and
+nothing typed or pressed at the splash is echoed, acted on, or held over: the
+gate discards the keypad mailbox and the serial receive ring on the way through.
+
+Once the gate opens, the LCD paints the address/byte display and *then* the
+serial `> ` prompt appears. The prompt is the signal that the parser is running
+— it is never shown ahead of one.
+
 ### Keypad Layout
 
 The 24 keys map to monitor functions:
@@ -135,9 +154,37 @@ and minipro.
 | File | Purpose |
 |------|---------|
 | `KC Monitor.asm` | Firmware source — LCD driver, keypad input, monitor state machine, serial monitor, vectors |
-| `6502.inc` | System include — Kernal jump table, hardware registers, constants |
-| `6502.cfg` | Linker configuration — 8 KB ROM at `$E000` plus CPU vectors |
+| `kim.inc` | Machine include — the KIM as it is *with the cartridge fitted* |
+| `kim.cfg` | Linker configuration — 8 KB ROM at `$E000` plus CPU vectors |
 | `Makefile` | Build system |
+
+### `kim.inc` vs the family-wide `6502.inc`
+
+The BIOS repository ships a `6502.inc` describing the AC6502 family, and it is
+the wrong file to build a KIM against. It documents a fully populated ACE with
+the whole 32 KB BIOS ROM intact — banked RAM, RTC, CompactFlash, GPIO, SID,
+video, BASIC, the machine code monitor and Wozmon. On a KIM none of those cards
+are fitted and the top of the ROM is overlaid by this cartridge, so following
+that file leads you to call routines that quietly do nothing, to enter a monitor
+that is no longer there, and to reuse "spare" RAM that this firmware is
+actively using.
+
+`kim.inc` is the KIM's own machine description and is the file to include. It
+states what the overlay removes, tags every Kernal entry point with what it
+actually does on a KIM (`[WORKS]`, `[SERIAL]`, `[INERT]`, `[FAILS]`, `[BROKEN]`),
+defines only hardware the KIM really has — the Keypad Card PIA and the Serial
+Card ACIA — and marks the RAM this monitor owns:
+
+| Region | Reserved for |
+|--------|--------------|
+| `$40–$51` | Monitor and Wozmon parser state (zero page) |
+| `$0200–$027F` | Wozmon line buffer — **live**, despite `6502.inc` calling this page the Kernal's input ring |
+| `$0400–$04FF` | Serial RX ring, filled by the cartridge's IRQ handler |
+
+Two consequences catch programs written against the family include: `Chrin` and
+the ring routines around it always come back empty (the cartridge owns
+`IRQ_PTR`, so the Kernal ring is never fed), and `Chrout` reaches the blocking
+`SerialChrout`, which hangs forever if no terminal is asserting `/CTS`.
 
 ## License
 

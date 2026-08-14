@@ -1,5 +1,5 @@
 TARGET = KC\ Monitor
-CONFIG = 6502
+CONFIG = kim
 
 .PHONY: all clean
 
