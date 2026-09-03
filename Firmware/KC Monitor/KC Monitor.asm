@@ -897,16 +897,28 @@ KeyToHex:
 ;   SERIAL WOZMON MONITOR
 ; =============================================================================
 ;   A Wozmon-compatible serial monitor that shares memory with the keypad
-;   monitor and runs concurrently with it.  The command language is a faithful
-;   re-implementation of Apple-1 Wozmon, so bin2woz output (deposit lines of
-;   the form "ADDR: BB BB ...") is accepted byte-for-byte.  The only change
-;   from the original is the prompt: "> " instead of "\".  All commands are
-;   unchanged:
+;   monitor and runs concurrently with it.  The command language follows
+;   Apple-1 Wozmon, so bin2woz output (deposit lines of the form
+;   "ADDR: BB BB ...") is accepted byte-for-byte:
 ;
 ;     XXXX            examine the byte at XXXX
 ;     XXXX.YYYY       examine the block XXXX..YYYY
 ;     XXXX: BB BB ..  deposit bytes starting at XXXX (auto-incrementing)
-;     XXXX R          run from XXXX (JMP, original Wozmon semantics)
+;     XXXX R          call XXXX as a subroutine; RTS returns to the prompt
+;
+;   Two deliberate departures from the original, in syntax neither:
+;
+;     - the prompt is "> " rather than "\".
+;     - "R" is a JSR, not Wozmon's JMP (XAML).  On this machine the keypad's
+;       UP key already runs the program under the cursor as a subroutine
+;       (DoUp -> CallUser), and an RTS comes back to a live monitor.  Serial
+;       "R" behaving differently made the two consoles disagree about what
+;       running a program means: original-Wozmon "R" left the parser for good,
+;       so a program that ended in RTS came back to a monitor with no prompt
+;       and a line buffer still holding the "XXXX R" that launched it — the
+;       next line typed appended to it and re-ran the program.  One rule for
+;       both consoles instead: run it, RTS comes home.  A program that never
+;       returns is unaffected; ESC still breaks out of one.
 ;
 ;   The IRQ handler (KeyIrq) pushes received bytes into the SER_RXBUF ring;
 ;   the cooperative main loop drains the ring through SerService one byte at a
@@ -1020,9 +1032,10 @@ SerFeed:
 ; -----------------------------------------------------------------------------
 ;   SerProcess — parse and execute a completed Wozmon line
 ; -----------------------------------------------------------------------------
-;   Faithful port of the Apple-1 Wozmon line interpreter.  The line lives in
+;   Port of the Apple-1 Wozmon line interpreter.  The line lives in
 ;   SER_LINEBUF, terminated by the CR ($8D) at SER_IDX.  Examine / block
-;   examine / deposit / run all follow the original semantics exactly.
+;   examine / deposit follow the original semantics exactly; run is a
+;   subroutine call rather than Wozmon's jump (see the section header).
 ;   Modifies: A, X, Y
 ; -----------------------------------------------------------------------------
 SerProcess:
@@ -1088,7 +1101,8 @@ SerProcess:
   sta SER_DIRTY                 ; memory changed — flag an LCD refresh
   jmp @NextItem
 @Run:
-  jmp (XAML)                    ; run at the last examined address (original R)
+  jsr SerCallUser               ; run at the last examined address
+  jmp SerPrompt                 ; a user RTS lands here — fresh prompt
 @Escape:
   jmp SerPrompt                 ; nothing parsed — fresh prompt
 @NotStor:
@@ -1131,6 +1145,15 @@ SerProcess:
   bpl @NxtPrnt                  ; always taken (result is 0-7); Z drives the
 @ToNextItem:                    ;   address-label decision in @NxtPrnt
   jmp @NextItem
+
+; -----------------------------------------------------------------------------
+;   SerCallUser — call the user program at XAML
+;   The 6502 has no "jsr (addr)", so the call is a jsr to this jmp — the same
+;   trampoline the keypad's UP key uses (DoUp -> CallUser), one address apiece.
+;   Modifies: everything the user program modifies
+; -----------------------------------------------------------------------------
+SerCallUser:
+  jmp (XAML)
 
 ; -----------------------------------------------------------------------------
 ;   SerPrompt — emit a CR/LF and the "> " prompt, reset the line buffer

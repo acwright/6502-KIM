@@ -126,7 +126,9 @@
 ;   RUNNING UNDER KC MONITOR
 ;   ------------------------
 ;   A program launched from the monitor (keypad UP, or the serial "XXXX R"
-;   command) runs with the cartridge's IRQ handler still installed.  That
+;   command) is called as a subroutine by both consoles, so it returns to the
+;   monitor on RTS — note that this is NOT original Wozmon's "R", which jumps.
+;   It runs with the cartridge's IRQ handler still installed.  That
 ;   handler is what makes ESC a reliable break-to-monitor abort from anywhere,
 ;   so a program that wants to stay abortable should leave IRQ_PTR alone and
 ;   leave interrupts enabled.  A program that repoints IRQ_PTR or SEIs for a

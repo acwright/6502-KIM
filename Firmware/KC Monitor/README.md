@@ -6,10 +6,12 @@ A KIM-1-style keypad/LCD memory monitor for the **Keypad Card (KC)** of the
 
 KC Monitor is a 6502 cartridge ROM that turns the Keypad Card into a standalone
 hex monitor. You can inspect and edit memory, navigate the address space, and
-execute code directly from the 24-key keypad and 16×2 LCD. A concurrent, 
+execute code directly from the 24-key keypad and 16×2 LCD. A concurrent,
 Wozmon-compatible serial monitor runs at the same time
 over the Serial Card, so memory can also be examined, deposited, and executed
-from a terminal while the keypad UI stays live.
+from a terminal while the keypad UI stays live. Both consoles run a program the
+same way — as a subroutine — so an `RTS` comes back to the monitor whichever one
+you launched from.
 
 ## Features
 
@@ -17,12 +19,13 @@ from a terminal while the keypad UI stays live.
   a time, and run code from the keypad.
 - **16×2 HD44780 LCD display** — shows the current address and the byte stored
   there, plus mode/help on the second line.
-- **Execute & return** — launch a program with `UP`; it runs as a subroutine and
-  returns to the monitor on `RTS`.
+- **Execute & return** — launch a program with `UP` from the pad or `XXXX R`
+  from the terminal; either runs it as a subroutine, and an `RTS` returns to the
+  monitor (and, from the terminal, to a fresh prompt).
 - **ESC = break-to-monitor** — press `ESC` to abort a running program from
   anywhere (keypad- or serial-launched) and return to the live monitor.
-- **Concurrent Wozmon serial monitor** — a faithful Apple-1 Wozmon command set
-  over the Serial Card, running alongside the keypad UI on shared memory.
+- **Concurrent Wozmon serial monitor** — the Apple-1 Wozmon command set over the
+  Serial Card, running alongside the keypad UI on shared memory.
 - **bin2woz compatible** — stream the output of
   [bin2woz](https://github.com/acwright/bin2woz) into the serial port to "upload"
   a binary, then run it with `XXXX R`.
@@ -88,18 +91,30 @@ In navigation mode, hex keys shift the current address one nibble at a time
 ### Serial Monitor
 
 The serial monitor speaks the Apple-1 Wozmon command language at **19200 baud,
-8-N-1**. The only difference from original Wozmon is the prompt, which is `>`
-(not `\`).
+8-N-1**.
 
 | Input | Action |
 |-------|--------|
 | `XXXX` | Examine the byte at address `XXXX` |
 | `XXXX.YYYY` | Examine the range `XXXX` through `YYYY` |
 | `XXXX: BB BB …` | Deposit bytes starting at `XXXX` |
-| `XXXX R` | Run the program at `XXXX` |
+| `XXXX R` | Run the program at `XXXX` (returns on `RTS`) |
 
 Because the serial and keypad monitors share the same memory, a serial deposit is
 visible on the LCD at the next refresh, and vice versa.
+
+#### Two departures from original Wozmon
+
+The syntax is Wozmon's, byte for byte; two behaviours are not.
+
+- **The prompt is `> `**, not `\`.
+- **`R` is a `JSR`, not Wozmon's `JMP (XAML)`.** The pad's `UP` key has always
+  run the program under the cursor as a subroutine, so a program ending in `RTS`
+  lands back in a live monitor. Serial `R` now does the same, and prints a fresh
+  prompt on return. Under the original jump semantics an `RTS` left the terminal
+  with no prompt and a line buffer still holding the `XXXX R` that launched the
+  program, so the next line typed was appended to it and re-ran the program.
+  A program that never returns is unaffected, and `ESC` still breaks out of one.
 
 ## Building
 
