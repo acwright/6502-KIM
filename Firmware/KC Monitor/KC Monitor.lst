@@ -10,7 +10,7 @@ Current file: KC Monitor.asm
 000000r 2               ; =============================================================================
 000000r 2               ;
 000000r 2               ;   CPU:       WDC 65C02S
-000000r 2               ;   BIOS:      v1.5   (Kernal only — see THE CARTRIDGE OVERLAY below)
+000000r 2               ;   BIOS:      v1.6   (Kernal only — see THE CARTRIDGE OVERLAY below)
 000000r 2               ;   Cartridge: KC Monitor v1.0 (Keypad Card, AT28C64)
 000000r 2               ;   Assembler: ca65 (cc65 toolchain) — uses := for absolute symbols
 000000r 2               ;
