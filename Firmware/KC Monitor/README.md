@@ -116,6 +116,32 @@ The syntax is Wozmon's, byte for byte; two behaviours are not.
   program, so the next line typed was appended to it and re-ran the program.
   A program that never returns is unaffected, and `ESC` still breaks out of one.
 
+#### Pasting, and RTS/CTS flow control
+
+A pasted program arrives faster than the monitor can swallow it, so the monitor
+signals the far end with **RTS**, the same way the BIOS Kernal does: RTS goes up
+at `$C0` unread bytes in the 256-byte receive ring and comes down again below
+`$80`. **Set your terminal to RTS/CTS hardware flow control** and a paste of any
+length arrives whole at 19200 baud; without it the monitor still never loses more
+than the odd character, because a full ring now drops the incoming byte rather
+than lapping its own reader.
+
+Two consequences worth knowing, both of them the R6551's doing — TIC `00` raises
+RTS *and turns the transmitter off*:
+
+- **The monitor owns `$9002`.** Depositing a command-register value there holds
+  only until the next character goes out, which puts RTS back where the ring
+  says it belongs. There is no way to leave the board mute from the console.
+- **The monitor goes quiet while the ring is full.** Above the high-water mark it
+  drops what it was going to say rather than lowering RTS to say it, because
+  every one of those windows would let the far end push more in and the ring
+  would never recover. So a long paste is echoed only in part. The deposits all
+  land; read them back when the paste is done.
+
+The panel is repainted once at the end of a batch rather than once per line: a
+full `RefreshDisplay` is about 22 ms of LCD time, which is more than a line of
+paste takes to arrive at 19200 baud.
+
 ## Building
 
 ### Prerequisites

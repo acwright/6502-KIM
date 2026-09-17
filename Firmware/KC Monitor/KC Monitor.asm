@@ -85,6 +85,14 @@ SER_DIRTY           := $51               ; 1 byte  — nonzero when a serial dep
 SER_RXBUF           := KC_RXBUF          ; $0400 — 256-byte serial RX ring buffer
 SER_LINEBUF         := KC_LINEBUF        ; $0200 — Wozmon line accumulation buffer
 
+; RTS water marks.  The same pair the BIOS Kernal uses (BIOS.inc), and for the
+; same reason: see the RTS FLOW CONTROL section below.  RTS goes up at
+; SC_RTS_HIGH_WATER unread bytes with $40 still spare in the ring, and comes
+; down again below SC_RTS_LOW_WATER.  The $40 between them is hysteresis, so a
+; line being drained does not flap the pin.
+SC_RTS_HIGH_WATER   = $C0                ; Unread bytes at which RTS goes up
+SC_RTS_LOW_WATER    = $80                ; Unread bytes below which RTS comes down
+
 
 ; =============================================================================
 ;   ROM
@@ -235,6 +243,7 @@ WarmStart:
   lda SER_RXHEAD                ;   window, so KeyIrq cannot race either flush)
   sta SER_RXTAIL                ; flush any buffered serial input
   stz SER_DIRTY                 ; (SerPrompt below resets the line buffer)
+  jsr ScRts                     ; the ring is empty now — let the far end talk
   cli                           ; KeyIrq left I set — re-enable IRQs
   jsr RefreshDisplay            ; repaint the keypad monitor (LCD)
   jsr SerPrompt                 ; and re-arm the serial monitor (fresh prompt)
@@ -245,9 +254,23 @@ WarmStart:
 ; -----------------------------------------------------------------------------
 ;   The keypad and the Wozmon serial monitor run concurrently from this one
 ;   loop; neither input blocks.  A keypad press is dispatched and repaints the
-;   LCD.  Serial bytes are drained one at a time into the Wozmon line parser;
-;   when a serial line deposits into memory the SER_DIRTY flag triggers a
-;   refresh so the change shows on the LCD at the current address.
+;   LCD.  Serial bytes are drained into the Wozmon line parser; when a serial
+;   line deposits into memory the SER_DIRTY flag triggers a refresh so the
+;   change shows on the LCD at the current address.
+;
+;   THE RING IS DRAINED DRY, AND THE PANEL REPAINTED ONCE.  This loop used to
+;   take a single byte per pass and repaint after every line that deposited.  A
+;   RefreshDisplay is about 34 LCD writes at ~640 us apiece — some 22 ms — and
+;   at 19,200 baud 42 more bytes land during it.  Twenty deposit lines cost
+;   more panel time than the paste takes to arrive, the loop fell steadily
+;   further behind, and the ring lapped its own reader: nine of twenty lines
+;   went missing.  So SerDrain now runs the ring down to empty, lines and all,
+;   and the panel is repainted once at the end of the batch.  What a paste
+;   costs in LCD time is now one repaint, not one per line.
+;
+;   A keypad press during a long paste waits in the KeyIrq mailbox until the
+;   drain finishes; it is not lost.  ESC does not wait — it is caught in the
+;   ISR itself and goes straight to WarmStart.
 ; -----------------------------------------------------------------------------
 MonitorLoop:
   jsr KeyPoll                   ; C=1 -> A = keycode (0-23)
@@ -255,11 +278,11 @@ MonitorLoop:
   jsr Dispatch
   jsr RefreshDisplay
 @Serial:
-  jsr SerService                ; process up to one pending serial byte
+  jsr SerDrain                  ; every byte the ring holds, lines and all
   lda SER_DIRTY                 ; did a serial deposit change memory?
   beq MonitorLoop
   stz SER_DIRTY
-  jsr RefreshDisplay            ; reflect the serial deposit on the LCD
+  jsr RefreshDisplay            ; one repaint for the whole batch, ring now dry
   bra MonitorLoop
 
 ; -----------------------------------------------------------------------------
@@ -765,7 +788,9 @@ PiaInit:
 ;   and the keypad CA1 edge.  Serial is serviced first so a fast host stream
 ;   is never dropped while a key is also pending: if SC_STATUS shows RDRF, the
 ;   byte is read; an ESC byte triggers a break-to-monitor abort (WarmStart),
-;   any other byte is pushed into the SER_RXBUF ring.  The serial half is
+;   any other byte is handed to ScRxStore, which pushes it into the SER_RXBUF
+;   ring — dropping it rather than lapping the reader if the ring is full — and
+;   raises RTS once the ring passes its high-water mark.  The serial half is
 ;   skipped entirely when no Serial Card was probed (HW_SC clear), so a
 ;   keypad-only machine never reads a floating bus here.  Then, on a keypad CA1
 ;   edge it reads PORTA *once*, right at the data-available edge where the
@@ -817,9 +842,8 @@ KeyIrq:
   lda SC_DATA                   ; read it (clears RDRF / the overrun flag)
   cmp #CHAR_ESC                 ; serial ESC is a break-to-monitor abort, just
   beq @Esc                      ;   like the keypad ESC key -> WarmStart
-  ldx SER_RXHEAD
-  sta SER_RXBUF,x               ; otherwise push the byte into the RX ring
-  inc SER_RXHEAD                ; byte index wraps naturally at 256
+  jsr ScRxStore                 ; otherwise push it into the ring (never lapping
+                                ;   the reader) and set RTS for what is now in it
   bra @Scan                     ; got a byte — re-scan both sources (drains the
                                 ;   ACIA fully so a queued ESC is never missed)
 @Exit:
@@ -921,8 +945,10 @@ KeyToHex:
 ;       returns is unaffected; ESC still breaks out of one.
 ;
 ;   The IRQ handler (KeyIrq) pushes received bytes into the SER_RXBUF ring;
-;   the cooperative main loop drains the ring through SerService one byte at a
-;   time so the keypad stays responsive during a host stream.
+;   the cooperative main loop runs the ring dry through SerDrain each pass and
+;   repaints the LCD once afterwards, so a pasted program is not overtaken by
+;   the panel it is updating.  RTS holds the far end off while the ring is
+;   full; see the RTS FLOW CONTROL section.
 ;
 ;   Faithfulness note: incoming bytes have bit 7 set before parsing, exactly as
 ;   the Apple-1 keyboard delivered them, so Wozmon's original byte comparisons
@@ -953,16 +979,161 @@ SerInit:
   stz SER_DIRTY
   rts
 
+; =============================================================================
+;   RTS FLOW CONTROL
+; =============================================================================
+;   ScRts, ScRtsLow and ScRxStore are the only places that write the ACIA
+;   command register after InitSC, so the whole scheme lives here.  It is the
+;   BIOS Kernal's scheme (6502-BIOS v2.0.1 and the reissued v1.6, Kernal.asm),
+;   not the naive one, and for the reasons the bench found on a real R6551 on
+;   2026-09-17:
+;
+;   RTS is the machine saying "stop sending".  The catch is that TIC 00 raises
+;   RTS *and turns the transmitter off*, so while RTS is up the machine cannot
+;   send a character either.  The BIOS deadlocked on that, because its Chrout
+;   blocks on a TDRE that can never come.  This monitor's SerPutc does not
+;   block — it waits a bounded time and drops the byte — so with RTS standing
+;   it was not hung but mute, and everything it said went in the bin.  Neither
+;   is acceptable.
+;
+;   So: RTS goes up only between transmits, and SerPutc puts it down around
+;   every byte it sends.  Each of those releases lets a byte or two in at
+;   19,200 baud, which is why the marks sit well below the 256-byte ring — up
+;   at SC_RTS_HIGH_WATER ($C0) with $40 still spare, down again below
+;   SC_RTS_LOW_WATER ($80).
+;
+;   And, because every send reopens the gate, opening it for an *echo* is how a
+;   flooded ring never recovers: a paste arrives at least as fast as the parser
+;   swallows it, so each echo's window lets another byte in.  Above the high
+;   mark this console therefore goes quiet instead (ScFlooded) and leaves RTS
+;   up, so the far end really stops and the ring drains.  The cost is echo
+;   nobody reads; the alternative is input the machine never gets.
+;
+;   ScRxStore calls ScRts after it stores a byte, SerGetChar after it takes
+;   one, and SerPutc at the end of each character.  There is no XModem here, so
+;   unlike the Kernal's there is nothing that owns the register in passing.
+; =============================================================================
+
 ; -----------------------------------------------------------------------------
-;   SerService — drain at most one byte from the RX ring into the parser
-;   Non-blocking.  Tail-calls SerFeed (which may run a full line on CR).
+;   ScRts — put RTS where the amount of unread input says it belongs
+;   Raises it at SC_RTS_HIGH_WATER unread bytes, lowers it below
+;   SC_RTS_LOW_WATER, and between the two leaves the pin alone.
+;   Modifies: A, X
+; -----------------------------------------------------------------------------
+ScRts:
+  lda SER_RXHEAD                ; unread bytes
+  sec
+  sbc SER_RXTAIL
+  ldx #SC_CMD_RTS_HIGH
+  cmp #SC_RTS_HIGH_WATER
+  bcs ScRtsWrite                ; full enough — stop the far end
+  ldx #SC_CMD_RTS_LOW
+  cmp #SC_RTS_LOW_WATER
+  bcc ScRtsWrite                ; drained — let it talk again
+  rts                           ; between the marks — leave the pin as it is
+
+; -----------------------------------------------------------------------------
+;   ScRtsLow — lower RTS, which is also what turns the transmitter back on
+;   Preserves: A.  Modifies: X
+; -----------------------------------------------------------------------------
+ScRtsLow:
+  ldx #SC_CMD_RTS_LOW
+  ; Fall through
+
+; -----------------------------------------------------------------------------
+;   ScRtsWrite — write X to the command register, if there is a card to write to
+;   Preserves: A
+; -----------------------------------------------------------------------------
+ScRtsWrite:
+  pha
+  lda HW_PRESENT
+  and #HW_SC
+  beq @Done                     ; no Serial Card — nothing to signal
+  stx SC_CMD
+@Done:
+  pla
+  rts
+
+; -----------------------------------------------------------------------------
+;   ScFlooded — is the ring too full to open the gate for a byte going out?
+;   Out: C=1 -> drop the byte and leave RTS where it is
+;   Preserves: A
+; -----------------------------------------------------------------------------
+ScFlooded:
+  pha
+  lda HW_PRESENT
+  and #HW_SC
+  beq @Clear                    ; no Serial Card — nothing to hold back
+  lda SER_RXHEAD
+  sec
+  sbc SER_RXTAIL                ; unread bytes
+  cmp #SC_RTS_HIGH_WATER
+  bcs @Done                     ; at or above the mark — carry set, drop it
+@Clear:
+  clc
+@Done:
+  pla                           ; PLA touches N and Z only; the carry survives
+  rts
+
+; -----------------------------------------------------------------------------
+;   ScRxStore — push A into the RX ring, then set RTS for what is in it
+;   Drops the byte rather than lapping the reader: one character lost instead
+;   of the 256 a wrapped write pointer would silently wipe.
+;   Modifies: A, X
+; -----------------------------------------------------------------------------
+ScRxStore:
+  ldx SER_RXHEAD
+  inx
+  cpx SER_RXTAIL                ; would this byte make the ring look empty?
+  beq @Full                     ; full — drop it, never lap the reader
+  dex
+  sta SER_RXBUF,x
+  inc SER_RXHEAD                ; byte index wraps naturally at 256
+  jmp ScRts                     ; one more unread byte — RTS may go up
+@Full:
+  rts
+
+; -----------------------------------------------------------------------------
+;   ScRxPoll — read the status register, keeping any byte that came with it
+; -----------------------------------------------------------------------------
+;   Reading SC_STATUS clears a pending receive interrupt.  A byte that arrives
+;   while SerPutc is polling for TDRE would therefore lose its interrupt before
+;   KeyIrq could see it, and because the receive register stays full the ACIA
+;   would not hand over the next one either — the console would stop accepting
+;   input for good.  So the byte is collected here instead, exactly as the
+;   Kernal's ScRxPoll does.  Callers hold interrupts off, so the ring pointers
+;   are safe to touch.  A serial ESC still aborts to the monitor.
+;   Out: A = the status register
+;   Modifies: A, X
+; -----------------------------------------------------------------------------
+ScRxPoll:
+  lda SC_STATUS
+  bit #SC_STATUS_RDRF           ; did a byte arrive during the poll?
+  beq @Done
+  pha                           ; keep the status just read
+  lda SC_DATA                   ; frees the receive register
+  cmp #CHAR_ESC
+  beq @Esc                      ; break-to-monitor, from here as from KeyIrq
+  jsr ScRxStore
+  pla                           ; back to the status
+@Done:
+  rts
+@Esc:
+  jmp WarmStart                 ; abandons this frame, stack and all
+
+; -----------------------------------------------------------------------------
+;   SerDrain — run the RX ring dry through the Wozmon parser
+;   Feeds every buffered byte, whole lines included, and returns when the ring
+;   is empty.  MonitorLoop repaints the LCD once afterwards; see the note there
+;   for why that is the point of this routine.
 ;   Modifies: A, X, Y
 ; -----------------------------------------------------------------------------
-SerService:
+SerDrain:
   jsr SerGetChar
-  bcc @None
-  jmp SerFeed                   ; tail-call: SerFeed returns to our caller
-@None:
+  bcc @Done
+  jsr SerFeed                   ; may run a whole line on CR
+  bra SerDrain
+@Done:
   rts
 
 ; -----------------------------------------------------------------------------
@@ -978,6 +1149,9 @@ SerGetChar:
   lda SER_RXBUF,x               ; fetch the oldest byte
   inc SER_RXTAIL                ; advance (wraps at 256)
   ora #$80                      ; set bit 7 for the Wozmon parser
+  pha
+  jsr ScRts                     ; one fewer unread byte — RTS may come down
+  pla
   sec
   rts
 @Empty:
@@ -1224,38 +1398,61 @@ SerEcho:
 ;   the byte.  That keeps the keypad monitor fully alive whether or not a host
 ;   terminal is attached.  When a terminal IS connected it exits as soon as
 ;   TDRE sets, so back-to-back bytes are not dropped.
+;
+;   TIC 00 turns the transmitter off as well as raising RTS, so a byte written
+;   while this monitor is holding RTS up would never leave and the bounded wait
+;   would simply run out: with RTS standing the console is not hung, it is
+;   mute.  So RTS comes down for the byte and goes back where the ring says
+;   afterwards, with interrupts held off meanwhile so KeyIrq cannot raise it
+;   mid-character.  Above the high-water mark the byte is dropped INSTEAD of
+;   opening the gate, because a paste arrives faster than the parser drains it
+;   and every echo's window would keep the ring flooded for good.
+;
+;   It also means this is the routine that puts the command register right if
+;   something else has left it wrong — a user program, or a deposit to $9002.
+;   The next character out undoes it.
 ;   Modifies: A
 ; -----------------------------------------------------------------------------
 SerPutc:
-  pha                           ; save the byte on the stack
-  phx
+  phx                           ; X and Y are the line parser's, not ours
   phy
+  php                           ; the caller's I flag, put back on every exit
+  pha                           ; the byte — @Send wants it back
   lda HW_PRESENT
   and #HW_SC                    ; Serial Card fitted?
   beq @Drop                     ; no — drop the byte without touching $9000
                                 ;   (and without paying the TDRE timeout)
-  ldx #$08                      ; bounded TDRE wait (~16-bit countdown)
+  sei                           ; KeyIrq must not move RTS mid-character
+  jsr ScFlooded                 ; ring too full to open the gate for this byte?
+  bcs @Drop                     ; yes — stay quiet, and leave RTS up
+  jsr ScRtsLow                  ; the transmitter only runs with RTS down
+  ldx #$03                      ; bounded TDRE wait, ~27 ms @ 1 MHz — about the
+                                ;   wall time the old $08 x 256 loop took, now
+                                ;   that each pass carries an ScRxPoll
 @WaitHi:
   ldy #$00
 @WaitLo:
-  lda SC_STATUS
+  phx                           ; ScRxPoll uses X; the countdown lives in it
+  jsr ScRxPoll                  ; status — and any byte that arrived with it
+  plx
   and #SC_STATUS_TDRE           ; TX data register empty?
   bne @Send
   dey
   bne @WaitLo
   dex
   bne @WaitHi
-  ; timeout — no terminal; drop the byte
-@Drop:
-  ply
-  plx
-  pla
-  rts
+  bra @Rts                      ; timeout — no terminal; drop the byte
 @Send:
-  ply
-  plx
   pla                           ; recover the byte
   sta SC_DATA                   ; transmit it
+  pha
+@Rts:
+  jsr ScRts                     ; byte gone — RTS back where the ring says
+@Drop:
+  pla                           ; the byte, as the caller passed it
+  plp                           ; interrupts as the caller had them
+  ply
+  plx
   rts
 
 ; -----------------------------------------------------------------------------

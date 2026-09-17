@@ -430,6 +430,23 @@ SC_STATUS_OVR       := %00000100         ; Overrun error
 SC_STATUS_FRME      := %00000010         ; Framing error
 SC_STATUS_PARE      := %00000001         ; Parity error
 
+; Serial Command Register values, as the RTS scheme uses them.
+;
+;   The transmitter interrupt control bits (3-2, "TIC") drive the RTS pin AND
+;   the transmitter together.  Rockwell's Rev. 4 sheet and Synertek's spell the
+;   four values out, and the bench settled it on a real R6551 (2026-09-17):
+;
+;     00 = Transmit Interrupt Disabled, RTSB = High, Transmitter OFF
+;     01 = Transmit Interrupt Enabled,  RTSB = Low,  Transmitter on
+;     10 = Transmit Interrupt Disabled, RTSB = Low,  Transmitter on
+;     11 = Transmit Interrupt Disabled, RTSB = Low,  Transmit BRK
+;
+;   So raising RTS ("stop sending") also silences the board: a byte written
+;   with TIC 00 standing never leaves, and TDRE never sets.  Anything that
+;   wants to transmit has to put RTS down first.  InitSC leaves $09 here.
+SC_CMD_RTS_LOW      := %00001001         ; DTR on, RX IRQ on, TIC 10: RTS low, transmitter on
+SC_CMD_RTS_HIGH     := %00000001         ; DTR on, RX IRQ on, TIC 00: RTS high, transmitter off
+
 ; -----------------------------------------------------------------------------
 ;   Keypad Card PIA (65C21) — $C000-$C003, mirrored across $C000-$DFFF
 ; -----------------------------------------------------------------------------
