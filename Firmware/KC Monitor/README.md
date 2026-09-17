@@ -2,7 +2,7 @@ KC Monitor
 ==========
 
 A KIM-1-style keypad/LCD memory monitor for the **Keypad Card (KC)** of the
-[A.C. Wright 6502-KIM project](https://github.com/acwright/6502-KIM).
+[AC6502 KIM](https://github.com/acwright/6502-KIM).
 
 KC Monitor is a 6502 cartridge ROM that turns the Keypad Card into a standalone
 hex monitor. You can inspect and edit memory, navigate the address space, and
