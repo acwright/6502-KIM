@@ -275,20 +275,20 @@
   "erc": {
     "erc_exclusions": [
       [
-        "pin_to_pin|660400|469900|772d2d21-db7d-491e-8e68-a7abc951acb7|cabefaab-aed6-4da7-90fe-5e82bd7f6ba1|/bef5df70-f716-4749-8709-6abb2cc01d3d|/bef5df70-f716-4749-8709-6abb2cc01d3d|/bef5df70-f716-4749-8709-6abb2cc01d3d",
-        "SOB is tied to VCC, as the W65C02S datasheet asks of an unused input-only pin. Its symbol types SOB bidirectional, which meets VCC's PWR_FLAG. The ACE excludes the same."
+        "lib_symbol_mismatch|2273300|2641600|485952fc-47b4-4f38-a156-c4cc1e6090c5|00000000-0000-0000-0000-000000000000|||",
+        "The Backplane Pro Rev 1.1's LM555xM, as drawn there. KiCad 10's library copy puts the pins elsewhere; the Backplane Pro excludes the same warning."
       ],
       [
         "pin_to_pin|1257300|1498600|87243a97-7ef5-4843-ab53-e92fe27466cb|cabefaab-aed6-4da7-90fe-5e82bd7f6ba1|/bef5df70-f716-4749-8709-6abb2cc01d3d|/bef5df70-f716-4749-8709-6abb2cc01d3d|/bef5df70-f716-4749-8709-6abb2cc01d3d",
         "The ROM's ~WE is tied to VCC: it is never written in circuit (KIM-PLAN.md section 1). Its symbol types ~WE bidirectional, which meets VCC's PWR_FLAG."
       ],
       [
-        "lib_symbol_mismatch|2273300|2641600|485952fc-47b4-4f38-a156-c4cc1e6090c5|00000000-0000-0000-0000-000000000000|||",
-        "The Backplane Pro Rev 1.1's LM555xM, as drawn there. KiCad 10's library copy puts the pins elsewhere; the Backplane Pro excludes the same warning."
-      ],
-      [
         "pin_to_pin|2984500|546100|98e00de7-1bfd-4f24-8069-b86fad1d7c7d|cabefaab-aed6-4da7-90fe-5e82bd7f6ba1|/bef5df70-f716-4749-8709-6abb2cc01d3d|/bef5df70-f716-4749-8709-6abb2cc01d3d|/bef5df70-f716-4749-8709-6abb2cc01d3d",
         "The ROM's ~WE is tied to VCC: it is never written in circuit (KIM-PLAN.md section 1). Its symbol types ~WE bidirectional, which meets VCC's PWR_FLAG."
+      ],
+      [
+        "pin_to_pin|660400|469900|772d2d21-db7d-491e-8e68-a7abc951acb7|cabefaab-aed6-4da7-90fe-5e82bd7f6ba1|/bef5df70-f716-4749-8709-6abb2cc01d3d|/bef5df70-f716-4749-8709-6abb2cc01d3d|/bef5df70-f716-4749-8709-6abb2cc01d3d",
+        "SOB is tied to VCC, as the W65C02S datasheet asks of an unused input-only pin. Its symbol types SOB bidirectional, which meets VCC's PWR_FLAG. The ACE excludes the same."
       ]
     ],
     "meta": {
