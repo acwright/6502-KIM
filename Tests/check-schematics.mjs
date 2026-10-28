@@ -37,8 +37,8 @@ const PARTS = {
   acia: ['U15', 'R6551AP'],
   osc: ['X1', '1 MHz'],
   kim: ['J1', 'KIM ENABLE'],
-  slot: ['J4', 'CARD SLOT'],
-  bus: ['J5', '6502 BUS'],
+  slot: ['J4', 'CART'],
+  bus: ['J5', 'BUS'],
   headers: ['J6', 'BREADBOARD HEADERS'],
   resetQ: ['Q1', '2N3904'],
   ioEnable: ['SW25', 'IO ENABLE']

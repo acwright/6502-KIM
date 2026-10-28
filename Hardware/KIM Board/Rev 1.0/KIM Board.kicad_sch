@@ -33933,7 +33933,7 @@
 				)
 			)
 		)
-		(property "Value" "6502 BUS"
+		(property "Value" "BUS"
 			(at 506.73 287.782 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35669,7 +35669,7 @@
 				)
 			)
 		)
-		(property "Value" "CARD SLOT"
+		(property "Value" "CART"
 			(at 461.01 287.782 0)
 			(show_name no)
 			(do_not_autoplace no)
