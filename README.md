@@ -101,7 +101,7 @@ One through-hole board that joins every part of today's KIM. The computer itself
 - **CPU**: 65C02 (U1) at 1 MHz, clocked by a 1 MHz DIP-14 oscillator (X1)
 - **RAM**: 32KB SRAM (AS6C62256, U2)
 - **ROM**: 32KB EEPROM (AT28C256, U3) holding the BIOS, on a footprint that takes a ZIF socket or an ordinary one
-- **Keypad and display**: W65C21N PIA (U8), the KC Monitor's 8KB AT28C64 (U9) in a plain socket, the 24-key keypad with its MM74C922 encoder (U16), and the 16×2 LCD (U13) with its 10kΩ contrast trimmer (VR1). R19 beside VR1 is not fitted. It is there for a trimmer larger than 10kΩ: a resistor fitted in parallel brings the trimmer near 10kΩ.
+- **Keypad and display**: W65C21N PIA (U8), the KC Monitor's 8KB AT28C64 (U9) in a plain socket, the 24-key keypad with its MM74C922 encoder (U16), and the 16×2 LCD (U13) with its 10kΩ contrast trimmer (VR1). R19 beside VR1 is not fitted. It is there for a trimmer larger than 10kΩ: a resistor fitted in parallel brings the trimmer near 10kΩ. The PIA's `CB1` and `CB2` are unused; they are joined and held high by R23 (10kΩ), so neither floats. It is a resistor rather than a tie to VCC because software can make `CB2` an output.
 - **Serial**: R6551AP ACIA (U15) at `$9000` with a MAX232 (U14) and a 1.8432 MHz crystal (Y1). The female DB-9 (J2) is wired as **DCE**, as on the Serial Card, so a straight-through cable reaches a PC. The `CTS EN` jumper (J3) picks whether the ACIA's `CTS` comes from ground or from the cable. **Ground is the default**, which leaves the transmitter always free to send
 - **Reset**: 555 power-on reset (U12, Q1) and a reset button (SW26)
 - **Power**: 5V DC, center positive, through a barrel jack (J7), a 1N5819 reverse-polarity diode (D5) and the power switch (SW27)
@@ -291,7 +291,8 @@ It checks:
 - that the ACIA is selected only at `$9000–$93FF`, and only with IO ENABLE switch 5 on;
 - that each select on the breadboard headers is low only in its own 1KB window;
 - that the CPU, the PIA and the ACIA run from the 1 MHz oscillator;
-- one 10kΩ pull-up on each shared line, `SOB` tied to VCC, and `RESB` pulled low only by the reset transistor.
+- one 10kΩ pull-up on each shared line, `SOB` tied to VCC, and `RESB` pulled low only by the reset transistor;
+- that the PIA's `CB1` and `CB2` are joined and held high by one 10kΩ pull-up.
 
 Run it after any change to the KIM Board's schematic:
 

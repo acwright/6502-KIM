@@ -361,6 +361,10 @@ function checkClock(net) {
   return errs
 }
 
+// The resistors from net n to VCC, as [ref, value].
+const pullUps = (board, n, vcc) => [...board.comps].filter(([ref]) => /^R\d+$/.test(ref) &&
+  ((board.net(ref, 1) === n && board.net(ref, 2) === vcc) || (board.net(ref, 2) === n && board.net(ref, 1) === vcc)))
+
 // One 10 k pull-up on each shared line, on this board (PLAN.md P1.1); SOB tied to VCC, as the
 // W65C02S datasheet asks of an unused input-only pin; and RESB pulled low only by the reset
 // transistor, or by whatever is in the slot or wired on the breadboards.
@@ -371,9 +375,7 @@ function checkSharedLines(net) {
   const lines = { IRQB: 4, NMIB: 6, RESB: 40, RDY: 2, BE: 36 }
   if (board.pin('cpu', 38) !== vcc) errs.push(`SOB (${board.parts.cpu}.38) is not tied to VCC`)
   for (const [name, pin] of Object.entries(lines)) {
-    const n = board.pin('cpu', pin)
-    const rs = [...board.comps].filter(([ref]) => /^R\d+$/.test(ref) &&
-      ((board.net(ref, 1) === n && board.net(ref, 2) === vcc) || (board.net(ref, 2) === n && board.net(ref, 1) === vcc)))
+    const rs = pullUps(board, board.pin('cpu', pin), vcc)
     if (rs.length !== 1) errs.push(`${name} has ${rs.length} pull-ups to VCC: ${rs.map(([r, v]) => `${r} ${v}`).join(', ') || 'none'}`)
     else if (rs[0][1] !== '10k') errs.push(`${name}'s pull-up ${rs[0][0]} is ${rs[0][1]}, not 10k`)
   }
@@ -394,6 +396,24 @@ function checkSharedLines(net) {
   return errs
 }
 
+// The PIA's CB1 and CB2 are unused, and would float as CMOS inputs: they are joined and held
+// high by one 10 k to VCC. A resistor, not a tie to VCC, because software can make CB2 an output.
+function checkPiaCB(net) {
+  const board = new Board(net)
+  const errs = []
+  const vcc = board.netNamed('VCC'), gnd = board.netNamed('GND')
+  const pia = board.parts.pia
+  const cb = board.pin('pia', 18)
+  if (board.pin('pia', 19) !== cb) errs.push(`CB1 (${pia}.18) and CB2 (${pia}.19) are not joined`)
+  if (cb === undefined || cb === vcc || cb === gnd) errs.push(`CB1 (${pia}.18) is ${cb ?? 'not connected'}, not a pulled-up net`)
+  else {
+    const rs = pullUps(board, cb, vcc)
+    if (rs.length !== 1) errs.push(`CB1 and CB2 have ${rs.length} pull-ups to VCC: ${rs.map(([r, v]) => `${r} ${v}`).join(', ') || 'none'}`)
+    else if (rs[0][1] !== '10k') errs.push(`CB1 and CB2's pull-up ${rs[0][0]} is ${rs[0][1]}, not 10k`)
+  }
+  return errs
+}
+
 // ---- Main -----------------------------------------------------------------------------
 
 const cli = kicadCli()
@@ -405,7 +425,8 @@ try {
   const results = [
     [`address decoding (${states.toLocaleString('en-US')} bus states)`, decode],
     ['clock', checkClock(net)],
-    ['shared lines, SOB and RESB', checkSharedLines(net)]
+    ['shared lines, SOB and RESB', checkSharedLines(net)],
+    ['PIA CB1 and CB2', checkPiaCB(net)]
   ]
   console.log('KIM Board Rev 1.0')
   for (const [what, errs] of results) {
