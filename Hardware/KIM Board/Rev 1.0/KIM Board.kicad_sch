@@ -41486,7 +41486,7 @@
 				)
 			)
 		)
-		(property "Value" "↑"
+		(property "Value" "UP"
 			(at 615.95 125.73 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -50551,7 +50551,7 @@
 				)
 			)
 		)
-		(property "Value" "→"
+		(property "Value" "RIGHT"
 			(at 676.91 76.2 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51598,7 +51598,7 @@
 				)
 			)
 		)
-		(property "Value" "←"
+		(property "Value" "LEFT"
 			(at 615.95 43.18 0)
 			(show_name no)
 			(do_not_autoplace no)
