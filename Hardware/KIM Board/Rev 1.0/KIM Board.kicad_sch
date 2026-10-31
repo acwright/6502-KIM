@@ -38035,7 +38035,7 @@
 				)
 			)
 		)
-		(property "Value" "14"
+		(property "Value" "D"
 			(at 656.59 92.71 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -39440,7 +39440,7 @@
 				)
 			)
 		)
-		(property "Value" "16"
+		(property "Value" "ESC"
 			(at 615.95 109.22 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -40043,7 +40043,7 @@
 				)
 			)
 		)
-		(property "Value" "12"
+		(property "Value" "F"
 			(at 615.95 92.71 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -40697,7 +40697,7 @@
 				)
 			)
 		)
-		(property "Value" "23"
+		(property "Value" "B"
 			(at 676.91 125.73 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -40911,7 +40911,7 @@
 				)
 			)
 		)
-		(property "Value" "21"
+		(property "Value" "DEL"
 			(at 636.27 125.73 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -41486,7 +41486,7 @@
 				)
 			)
 		)
-		(property "Value" "20"
+		(property "Value" "UP"
 			(at 615.95 125.73 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -42561,7 +42561,7 @@
 				)
 			)
 		)
-		(property "Value" "17"
+		(property "Value" "INS"
 			(at 636.27 109.22 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -42752,7 +42752,7 @@
 				)
 			)
 		)
-		(property "Value" "10"
+		(property "Value" "0"
 			(at 656.59 76.2 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -45366,7 +45366,7 @@
 				)
 			)
 		)
-		(property "Value" "19"
+		(property "Value" "A"
 			(at 676.91 109.22 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -48244,7 +48244,7 @@
 				)
 			)
 		)
-		(property "Value" "18"
+		(property "Value" "PGUP"
 			(at 656.59 109.22 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -48932,7 +48932,7 @@
 				)
 			)
 		)
-		(property "Value" "22"
+		(property "Value" "PGDN"
 			(at 656.59 125.73 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -49045,7 +49045,7 @@
 				)
 			)
 		)
-		(property "Value" "15"
+		(property "Value" "C"
 			(at 676.91 92.71 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -50551,7 +50551,7 @@
 				)
 			)
 		)
-		(property "Value" "11"
+		(property "Value" "RIGHT"
 			(at 676.91 76.2 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -50980,7 +50980,7 @@
 				)
 			)
 		)
-		(property "Value" "13"
+		(property "Value" "E"
 			(at 636.27 92.71 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51598,7 +51598,7 @@
 				)
 			)
 		)
-		(property "Value" "0"
+		(property "Value" "LEFT"
 			(at 615.95 43.18 0)
 			(show_name no)
 			(do_not_autoplace no)

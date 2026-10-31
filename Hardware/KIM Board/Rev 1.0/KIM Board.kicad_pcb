@@ -5007,7 +5007,7 @@
 				)
 			)
 		)
-		(property "Value" "15"
+		(property "Value" "C"
 			(at -2.54 12.954 0)
 			(layer "F.SilkS")
 			(uuid "915ddb27-2bb2-45fd-84ae-b86d34989188")
@@ -9497,7 +9497,7 @@
 				)
 			)
 		)
-		(property "Value" "13"
+		(property "Value" "E"
 			(at -2.54 12.954 0)
 			(layer "F.SilkS")
 			(uuid "d6a556fe-91f9-4916-9d80-e0c0364702a3")
@@ -10041,7 +10041,7 @@
 				)
 			)
 		)
-		(property "Value" "10"
+		(property "Value" "0"
 			(at -2.54 12.954 0)
 			(layer "F.SilkS")
 			(uuid "ddcbfde9-eed9-4728-9e79-b4e45a9be03e")
@@ -12228,7 +12228,7 @@
 				)
 			)
 		)
-		(property "Value" "16"
+		(property "Value" "ESC"
 			(at -2.54 12.954 0)
 			(layer "F.SilkS")
 			(uuid "f681917e-0eb0-4d5b-8acb-cc9b3d5f15c4")
@@ -15126,7 +15126,7 @@
 				)
 			)
 		)
-		(property "Value" "14"
+		(property "Value" "D"
 			(at -2.54 12.954 0)
 			(layer "F.SilkS")
 			(uuid "d949b191-8374-40a6-af44-bd29e81a6e09")
@@ -16078,7 +16078,7 @@
 				)
 			)
 		)
-		(property "Value" "20"
+		(property "Value" "UP"
 			(at -2.54 12.954 0)
 			(layer "F.SilkS")
 			(uuid "18ba8a29-e30d-46f9-b930-d538a31ef67b")
@@ -16833,7 +16833,7 @@
 				)
 			)
 		)
-		(property "Value" "22"
+		(property "Value" "PGDN"
 			(at -2.54 12.954 0)
 			(layer "F.SilkS")
 			(uuid "1d9abb03-c98f-458e-816a-ebbf0d67f986")
@@ -17740,7 +17740,7 @@
 				)
 			)
 		)
-		(property "Value" "18"
+		(property "Value" "PGUP"
 			(at -2.54 12.954 0)
 			(layer "F.SilkS")
 			(uuid "b350601d-18b2-4b40-a20f-26d9c773ef90")
@@ -18484,7 +18484,7 @@
 				)
 			)
 		)
-		(property "Value" "21"
+		(property "Value" "DEL"
 			(at -2.54 12.954 0)
 			(layer "F.SilkS")
 			(uuid "5223802b-b94e-4ea6-bda2-c155b24c62f1")
@@ -19840,7 +19840,7 @@
 				)
 			)
 		)
-		(property "Value" "17"
+		(property "Value" "INS"
 			(at -2.54 12.954 0)
 			(layer "F.SilkS")
 			(uuid "153de12d-8959-428d-8884-44ae77657090")
@@ -22669,7 +22669,7 @@
 				)
 			)
 		)
-		(property "Value" "12"
+		(property "Value" "F"
 			(at -2.54 12.954 0)
 			(layer "F.SilkS")
 			(uuid "39dd80e7-5e5d-4b75-8820-8cd49b99f4a9")
@@ -26008,7 +26008,7 @@
 				)
 			)
 		)
-		(property "Value" "11"
+		(property "Value" "RIGHT"
 			(at -2.54 12.954 0)
 			(layer "F.SilkS")
 			(uuid "9f47ecdf-965f-442c-85fd-3dbbb735f5a7")
@@ -31047,7 +31047,7 @@
 				)
 			)
 		)
-		(property "Value" "19"
+		(property "Value" "A"
 			(at -2.54 12.954 0)
 			(layer "F.SilkS")
 			(uuid "992c4e3c-5fd5-42b2-a0d3-d27e01a332e5")
@@ -33324,7 +33324,7 @@
 				)
 			)
 		)
-		(property "Value" "0"
+		(property "Value" "LEFT"
 			(at -2.54 12.954 0)
 			(layer "F.SilkS")
 			(uuid "1a9ac056-e1cb-48bb-a597-99ea2e5511a5")
@@ -40658,7 +40658,7 @@
 				)
 			)
 		)
-		(property "Value" "23"
+		(property "Value" "B"
 			(at -2.54 12.954 0)
 			(layer "F.SilkS")
 			(uuid "f5423651-2e9c-4066-9613-0071df70681e")
