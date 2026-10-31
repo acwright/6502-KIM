@@ -16078,7 +16078,7 @@
 				)
 			)
 		)
-		(property "Value" "UP"
+		(property "Value" "↑"
 			(at -2.54 12.954 0)
 			(layer "F.SilkS")
 			(uuid "18ba8a29-e30d-46f9-b930-d538a31ef67b")
@@ -26008,7 +26008,7 @@
 				)
 			)
 		)
-		(property "Value" "RIGHT"
+		(property "Value" "→"
 			(at -2.54 12.954 0)
 			(layer "F.SilkS")
 			(uuid "9f47ecdf-965f-442c-85fd-3dbbb735f5a7")
@@ -33324,7 +33324,7 @@
 				)
 			)
 		)
-		(property "Value" "LEFT"
+		(property "Value" "←"
 			(at -2.54 12.954 0)
 			(layer "F.SilkS")
 			(uuid "1a9ac056-e1cb-48bb-a597-99ea2e5511a5")
