@@ -434,25 +434,29 @@
 <text x="396" y="371.4" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">M2.5 washer, for the LCD</text>
 <text x="488" y="371.4" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">4</text>
 <text x="516" y="371.4" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">4</text>
-<text x="396" y="376.45" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Optional Hanger: M3 × 16 countersunk</text>
-<text x="488" y="376.45" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">2</text>
-<text x="516" y="376.45" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">2</text>
-<text x="396" y="381.5" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Optional Hanger: M3 nut</text>
+<text x="396" y="376.45" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Rubber foot, Ø10</text>
+<text x="488" y="376.45" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">4</text>
+<text x="516" y="376.45" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">4</text>
+<text x="396" y="381.5" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Optional Hanger: M3 × 16 countersunk</text>
 <text x="488" y="381.5" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">2</text>
 <text x="516" y="381.5" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">2</text>
-<text x="396" y="392.55" font-size="4.2" text-anchor="start" fill="#16202c" font-weight="bold">How a hole goes together</text>
-<text x="396" y="399.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">A normal hole, from the bottom up: an M3 × 12 pan head through the back of the plate, a female-male</text>
-<text x="396" y="402.95" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">standoff, the board, a female-female standoff, the top, and an M3 × 6 pan head.</text>
-<text x="396" y="408.65" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Hole 19 on the KIM Board has no top above it: a female-female standoff instead, with an M3 × 6 pan head</text>
-<text x="396" y="412.55" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">on top of the board.</text>
-<text x="396" y="418.25" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">The KIM Board's counts are for its new top, over holes 3, 5, 7, 8, 13, 14, 16, 20, 21 and S2.</text>
-<text x="396" y="423.95" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">S2 on the KIM Board: a female-male standoff stands on the plate with no screw below it.</text>
-<text x="396" y="429.65" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">S1 and S2 on the four-board build: an M3 × 8 countersunk screw comes up through the Cable Bridge and the</text>
-<text x="396" y="433.55" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">board into a female-female standoff, then the top.</text>
-<text x="396" y="439.25" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Corners, the Cable Bridge and the Hanger: an M3 × 16 countersunk screw from the top, through the plate,</text>
-<text x="396" y="443.15" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">into a nut in the part below.</text>
-<text x="396" y="448.85" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">The LCD: a standard socket and pin header, on M2.5 × 10 standoffs with an M2.5 washer on each to make up</text>
-<text x="396" y="452.75" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">the height.</text>
+<text x="396" y="386.55" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Optional Hanger: M3 nut</text>
+<text x="488" y="386.55" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">2</text>
+<text x="516" y="386.55" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">2</text>
+<text x="396" y="397.6" font-size="4.2" text-anchor="start" fill="#16202c" font-weight="bold">How a hole goes together</text>
+<text x="396" y="404.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">A normal hole, from the bottom up: an M3 × 12 pan head through the back of the plate, a female-male</text>
+<text x="396" y="408" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">standoff, the board, a female-female standoff, the top, and an M3 × 6 pan head.</text>
+<text x="396" y="413.7" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Hole 19 on the KIM Board has no top above it: a female-female standoff instead, with an M3 × 6 pan head</text>
+<text x="396" y="417.6" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">on top of the board.</text>
+<text x="396" y="423.3" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">The KIM Board's counts are for its new top, over holes 3, 5, 7, 8, 13, 14, 16, 20, 21 and S2.</text>
+<text x="396" y="429" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">S2 on the KIM Board: a female-male standoff stands on the plate with no screw below it.</text>
+<text x="396" y="434.7" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">S1 and S2 on the four-board build: an M3 × 8 countersunk screw comes up through the Cable Bridge and the</text>
+<text x="396" y="438.6" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">board into a female-female standoff, then the top.</text>
+<text x="396" y="444.3" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Corners, the Cable Bridge and the Hanger: an M3 × 16 countersunk screw from the top, through the plate,</text>
+<text x="396" y="448.2" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">into a nut in the part below.</text>
+<text x="396" y="453.9" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">The LCD: a standard socket and pin header, on M2.5 × 10 standoffs with an M2.5 washer on each to make up</text>
+<text x="396" y="457.8" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">the height.</text>
+<text x="396" y="463.5" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Rubber feet: one in the Ø10 recess under each Corner.</text>
 <text x="42" y="15" font-size="7.2" text-anchor="start" fill="#16202c" font-weight="bold">KIM base plate: mounting drawing</text>
 <text x="42" y="23" font-size="3.6" text-anchor="start" fill="#7b8794" font-weight="normal">One plate takes either build. Looking down on the plate, as the computer is used. All dimensions in mm.</text>
 <line x1="34" y1="475.65" x2="704" y2="475.65" stroke="#16202c" stroke-width="0.25"/>
