@@ -35521,7 +35521,7 @@
 				)
 			)
 		)
-		(property "Digikey" "RNF18FTD1K00CT-ND"
+		(property "Digikey" "RNF18FTD10K0CT-ND"
 			(at 110.49 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -36671,7 +36671,7 @@
 				)
 			)
 		)
-		(property "Digikey" "RNF18FTD1K00CT-ND"
+		(property "Digikey" "RNF18FTD10K0CT-ND"
 			(at 102.87 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -38882,7 +38882,7 @@
 				)
 			)
 		)
-		(property "Digikey" "RNF18FTD1K00CT-ND"
+		(property "Digikey" "RNF18FTD10K0CT-ND"
 			(at 95.25 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -45911,7 +45911,7 @@
 				)
 			)
 		)
-		(property "Digikey" "RNF18FTD1K00CT-ND"
+		(property "Digikey" "RNF18FTD10K0CT-ND"
 			(at 118.11 26.67 0)
 			(hide yes)
 			(show_name no)

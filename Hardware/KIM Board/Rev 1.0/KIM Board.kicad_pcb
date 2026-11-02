@@ -10425,7 +10425,7 @@
 				)
 			)
 		)
-		(property "Digikey" "RNF18FTD1K00CT-ND"
+		(property "Digikey" "RNF18FTD10K0CT-ND"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -11247,7 +11247,7 @@
 				)
 			)
 		)
-		(property "Digikey" "RNF18FTD1K00CT-ND"
+		(property "Digikey" "RNF18FTD10K0CT-ND"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -12080,7 +12080,7 @@
 				)
 			)
 		)
-		(property "Digikey" "RNF18FTD1K00CT-ND"
+		(property "Digikey" "RNF18FTD10K0CT-ND"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
@@ -26392,7 +26392,7 @@
 				)
 			)
 		)
-		(property "Digikey" "RNF18FTD1K00CT-ND"
+		(property "Digikey" "RNF18FTD10K0CT-ND"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
