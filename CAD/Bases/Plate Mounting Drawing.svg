@@ -1,0 +1,460 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 738 486.65" width="738mm" height="486.65mm" font-family="Helvetica, Arial, sans-serif"><defs><marker id="a" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9z" fill="#1f5fbf"/></marker></defs><rect width="738" height="486.65" fill="#fff"/><text x="42" y="44" font-size="5" text-anchor="start" fill="#16202c" font-weight="bold">KIM Board</text>
+<g transform="translate(42 62)">
+<rect x="0" y="0" width="300" height="240" rx="5" fill="#f4f5f7" stroke="#16202c" stroke-width="0.5"/>
+<rect x="10" y="10" width="280" height="220" rx="5" fill="#e4f1e6" stroke="#2c6e49" stroke-width="0.45"/>
+<rect x="18" y="107.7" width="165.1" height="57.15" rx="0.8" fill="#fbf7ec" stroke="#9a7b2f" stroke-width="0.3"/>
+<text x="100.55" y="137.475" font-size="3.4" text-anchor="middle" fill="#7a6020" font-weight="normal">Breadboard</text>
+<rect x="18" y="164.85" width="165.1" height="57.15" rx="0.8" fill="#fbf7ec" stroke="#9a7b2f" stroke-width="0.3"/>
+<text x="100.55" y="194.625" font-size="3.4" text-anchor="middle" fill="#7a6020" font-weight="normal">Breadboard</text>
+<rect x="199.05" y="23.225" width="81.225" height="36.55" rx="0.6" fill="#cfe3d3" stroke="#6d9a7c" stroke-width="0.2"/>
+<text x="239.662" y="42.7" font-size="3.4" text-anchor="middle" fill="#2c6e49" font-weight="normal">LCD</text>
+<rect x="204.455" y="108.955" width="71.09" height="113.09" rx="0.6" fill="#cfe3d3" stroke="#6d9a7c" stroke-width="0.2"/>
+<text x="240" y="166.7" font-size="3.4" text-anchor="middle" fill="#2c6e49" font-weight="normal">Keypad</text>
+<text x="100" y="62" font-size="3.8" text-anchor="middle" fill="#1d5236" font-weight="bold">KIM Board</text>
+<text x="100" y="66.3" font-size="2.9" text-anchor="middle" fill="#2c6e49" font-weight="normal">280 × 220</text>
+<rect x="130" y="20" width="40" height="10" rx="0.6" fill="none" stroke="#7b3fbf" stroke-width="0.3" stroke-dasharray="1.6 1"/>
+<text x="150" y="34" font-size="2.9" text-anchor="middle" fill="#7b3fbf" font-weight="normal">Hanger (optional)</text>
+<circle cx="5" cy="5" r="1.6" fill="#fff" stroke="#7b3fbf" stroke-width="0.5"/>
+<text x="7.7" y="3.5" font-size="2.8" text-anchor="start" fill="#7b3fbf" font-weight="bold">1</text>
+<circle cx="295" cy="5" r="1.6" fill="#fff" stroke="#7b3fbf" stroke-width="0.5"/>
+<text x="292.3" y="3.5" font-size="2.8" text-anchor="end" fill="#7b3fbf" font-weight="bold">2</text>
+<circle cx="16" cy="16" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="16" cy="16" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="18.7" y="14.5" font-size="2.8" text-anchor="start" fill="#1f5fbf" font-weight="bold">3</text>
+<circle cx="54" cy="16" r="1.6" fill="#fff" stroke="#7b8794" stroke-width="0.3"/>
+<text x="56.7" y="14.5" font-size="2.8" text-anchor="start" fill="#7b8794" font-weight="normal">4</text>
+<circle cx="81" cy="16" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="81" cy="16" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="83.7" y="14.5" font-size="2.8" text-anchor="start" fill="#1f5fbf" font-weight="bold">5</text>
+<circle cx="169" cy="16" r="1.6" fill="#fff" stroke="#7b8794" stroke-width="0.3"/>
+<text x="171.7" y="14.5" font-size="2.8" text-anchor="start" fill="#7b8794" font-weight="normal">6</text>
+<circle cx="196" cy="16" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="196" cy="16" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="198.7" y="14.5" font-size="2.8" text-anchor="start" fill="#1f5fbf" font-weight="bold">7</text>
+<circle cx="284" cy="16" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="284" cy="16" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="281.3" y="14.5" font-size="2.8" text-anchor="end" fill="#1f5fbf" font-weight="bold">8</text>
+<circle cx="135" cy="25" r="1.6" fill="#fff" stroke="#7b3fbf" stroke-width="0.5"/>
+<text x="137.7" y="23.5" font-size="2.8" text-anchor="start" fill="#7b3fbf" font-weight="bold">9</text>
+<circle cx="165" cy="25" r="1.6" fill="#fff" stroke="#7b3fbf" stroke-width="0.5"/>
+<text x="167.7" y="23.5" font-size="2.8" text-anchor="start" fill="#7b3fbf" font-weight="bold">10</text>
+<circle cx="196" cy="33.5" r="1.7" fill="#fff" stroke="#7b8794" stroke-width="0.3"/>
+<text x="198.7" y="32" font-size="2.8" text-anchor="start" fill="#7b8794" font-weight="normal">11</text>
+<circle cx="284" cy="69" r="1.6" fill="#fff" stroke="#7b8794" stroke-width="0.3"/>
+<text x="281.3" y="67.5" font-size="2.8" text-anchor="end" fill="#7b8794" font-weight="normal">12</text>
+<circle cx="284" cy="86" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="284" cy="86" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="281.3" y="84.5" font-size="2.8" text-anchor="end" fill="#1f5fbf" font-weight="bold">13</text>
+<circle cx="16" cy="104" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="16" cy="104" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="18.7" y="102.5" font-size="2.8" text-anchor="start" fill="#1f5fbf" font-weight="bold">14</text>
+<circle cx="54" cy="104" r="1.6" fill="#fff" stroke="#7b8794" stroke-width="0.3"/>
+<text x="56.7" y="102.5" font-size="2.8" text-anchor="start" fill="#7b8794" font-weight="normal">15</text>
+<circle cx="81" cy="104" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="81" cy="104" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="83.7" y="102.5" font-size="2.8" text-anchor="start" fill="#1f5fbf" font-weight="bold">16</text>
+<circle cx="169" cy="104" r="1.6" fill="#fff" stroke="#7b8794" stroke-width="0.3"/>
+<text x="171.7" y="102.5" font-size="2.8" text-anchor="start" fill="#7b8794" font-weight="normal">17</text>
+<circle cx="196" cy="106.5" r="1.7" fill="#fff" stroke="#7b8794" stroke-width="0.3"/>
+<text x="198.7" y="105" font-size="2.8" text-anchor="start" fill="#7b8794" font-weight="normal">18</text>
+<circle cx="16" cy="224" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="16" cy="224" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<circle cx="16" cy="224" r="3.1" fill="none" stroke="#c0392b" stroke-width="0.4"/>
+<text x="18.7" y="222.5" font-size="2.8" text-anchor="start" fill="#c0392b" font-weight="bold">19</text>
+<circle cx="196" cy="224" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="196" cy="224" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="198.7" y="222.5" font-size="2.8" text-anchor="start" fill="#1f5fbf" font-weight="bold">20</text>
+<circle cx="284" cy="224" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="284" cy="224" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="281.3" y="222.5" font-size="2.8" text-anchor="end" fill="#1f5fbf" font-weight="bold">21</text>
+<circle cx="5" cy="235" r="1.6" fill="#fff" stroke="#7b3fbf" stroke-width="0.5"/>
+<text x="7.7" y="233.5" font-size="2.8" text-anchor="start" fill="#7b3fbf" font-weight="bold">22</text>
+<circle cx="295" cy="235" r="1.6" fill="#fff" stroke="#7b3fbf" stroke-width="0.5"/>
+<text x="292.3" y="233.5" font-size="2.8" text-anchor="end" fill="#7b3fbf" font-weight="bold">23</text>
+<circle cx="196" cy="86" r="1.85" fill="#fff" stroke="#17803d" stroke-width="0.55"/>
+<circle cx="196" cy="86" r="0.45" fill="#17803d" stroke="#17803d" stroke-width="0"/>
+<text x="198.7" y="84.5" font-size="2.8" text-anchor="start" fill="#17803d" font-weight="bold">S2</text>
+<line x1="0" y1="-0.5" x2="0" y2="-8.5" stroke="#1f5fbf" stroke-width="0.15"/>
+<line x1="300" y1="-0.5" x2="300" y2="-8.5" stroke="#1f5fbf" stroke-width="0.15"/>
+<line x1="0" y1="-7" x2="300" y2="-7" stroke="#1f5fbf" stroke-width="0.22" marker-start="url(#a)" marker-end="url(#a)"/>
+<text x="150" y="-8.3" font-size="3.2" text-anchor="middle" fill="#1f5fbf" font-weight="normal">300</text>
+<line x1="-0.5" y1="0" x2="-8.5" y2="0" stroke="#1f5fbf" stroke-width="0.15"/>
+<line x1="-0.5" y1="240" x2="-8.5" y2="240" stroke="#1f5fbf" stroke-width="0.15"/>
+<line x1="-7" y1="0" x2="-7" y2="240" stroke="#1f5fbf" stroke-width="0.22" marker-start="url(#a)" marker-end="url(#a)"/>
+<text x="-8.3" y="120" font-size="3.2" text-anchor="middle" fill="#1f5fbf" font-weight="normal" transform="rotate(-90 -8.3 120)">240</text>
+<line x1="10" y1="10" x2="10" y2="-4" stroke="#1f5fbf" stroke-width="0.15"/>
+<line x1="290" y1="10" x2="290" y2="-4" stroke="#1f5fbf" stroke-width="0.15"/>
+<line x1="10" y1="-2.5" x2="290" y2="-2.5" stroke="#1f5fbf" stroke-width="0.22" marker-start="url(#a)" marker-end="url(#a)"/>
+<text x="150" y="-3.8" font-size="3.2" text-anchor="middle" fill="#1f5fbf" font-weight="normal">280</text>
+<line x1="10" y1="10" x2="-4" y2="10" stroke="#1f5fbf" stroke-width="0.15"/>
+<line x1="10" y1="230" x2="-4" y2="230" stroke="#1f5fbf" stroke-width="0.15"/>
+<line x1="-2.5" y1="10" x2="-2.5" y2="230" stroke="#1f5fbf" stroke-width="0.22" marker-start="url(#a)" marker-end="url(#a)"/>
+<text x="-3.8" y="120" font-size="3.2" text-anchor="middle" fill="#1f5fbf" font-weight="normal" transform="rotate(-90 -3.8 120)">220</text>
+</g>
+<text x="404" y="44" font-size="5" text-anchor="start" fill="#16202c" font-weight="bold">Four-board build</text>
+<g transform="translate(404 62)">
+<rect x="0" y="0" width="300" height="240" rx="5" fill="#f4f5f7" stroke="#16202c" stroke-width="0.5"/>
+<rect x="10" y="10" width="50" height="100" rx="0" fill="#e4f1e6" stroke="#2c6e49" stroke-width="0.45"/>
+<rect x="75" y="10" width="100" height="100" rx="0" fill="#e4f1e6" stroke="#2c6e49" stroke-width="0.45"/>
+<rect x="189.75" y="10.32" width="100.26" height="64.69" rx="0" fill="#e4f1e6" stroke="#2c6e49" stroke-width="0.45"/>
+<rect x="190" y="80" width="100" height="150" rx="0" fill="#e4f1e6" stroke="#2c6e49" stroke-width="0.45"/>
+<text x="35" y="62" font-size="3.8" text-anchor="middle" fill="#1d5236" font-weight="bold">Backplane Helper</text>
+<text x="35" y="66.3" font-size="2.9" text-anchor="middle" fill="#2c6e49" font-weight="normal">50 × 100, turned 180°</text>
+<text x="125" y="62" font-size="3.8" text-anchor="middle" fill="#1d5236" font-weight="bold">Main Board</text>
+<text x="125" y="66.3" font-size="2.9" text-anchor="middle" fill="#2c6e49" font-weight="normal">100 × 100, turned 180°</text>
+<text x="240" y="44" font-size="3.8" text-anchor="middle" fill="#1d5236" font-weight="bold">Keypad LCD Helper</text>
+<text x="240" y="48.3" font-size="2.9" text-anchor="middle" fill="#2c6e49" font-weight="normal">100.26 × 64.69</text>
+<text x="240" y="156" font-size="3.8" text-anchor="middle" fill="#1d5236" font-weight="bold">Keypad Helper</text>
+<text x="240" y="160.3" font-size="2.9" text-anchor="middle" fill="#2c6e49" font-weight="normal">100 × 150</text>
+<rect x="130" y="20" width="40" height="10" rx="0.6" fill="none" stroke="#7b3fbf" stroke-width="0.3" stroke-dasharray="1.6 1"/>
+<text x="150" y="34" font-size="2.9" text-anchor="middle" fill="#7b3fbf" font-weight="normal">Hanger (optional)</text>
+<rect x="190" y="27.5" width="12" height="85" rx="0.6" fill="none" stroke="#7b3fbf" stroke-width="0.3" stroke-dasharray="1.6 1"/>
+<text x="188" y="112" font-size="2.9" text-anchor="end" fill="#7b3fbf" font-weight="normal">Cable Bridge</text>
+<circle cx="5" cy="5" r="1.6" fill="#fff" stroke="#7b3fbf" stroke-width="0.5"/>
+<text x="7.7" y="3.5" font-size="2.8" text-anchor="start" fill="#7b3fbf" font-weight="bold">1</text>
+<circle cx="295" cy="5" r="1.6" fill="#fff" stroke="#7b3fbf" stroke-width="0.5"/>
+<text x="292.3" y="3.5" font-size="2.8" text-anchor="end" fill="#7b3fbf" font-weight="bold">2</text>
+<circle cx="16" cy="16" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="16" cy="16" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="18.7" y="14.5" font-size="2.8" text-anchor="start" fill="#1f5fbf" font-weight="bold">3</text>
+<circle cx="54" cy="16" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="54" cy="16" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="56.7" y="14.5" font-size="2.8" text-anchor="start" fill="#1f5fbf" font-weight="bold">4</text>
+<circle cx="81" cy="16" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="81" cy="16" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="83.7" y="14.5" font-size="2.8" text-anchor="start" fill="#1f5fbf" font-weight="bold">5</text>
+<circle cx="169" cy="16" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="169" cy="16" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="171.7" y="14.5" font-size="2.8" text-anchor="start" fill="#1f5fbf" font-weight="bold">6</text>
+<circle cx="196" cy="16" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="196" cy="16" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="198.7" y="14.5" font-size="2.8" text-anchor="start" fill="#1f5fbf" font-weight="bold">7</text>
+<circle cx="284" cy="16" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="284" cy="16" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="281.3" y="14.5" font-size="2.8" text-anchor="end" fill="#1f5fbf" font-weight="bold">8</text>
+<circle cx="135" cy="25" r="1.6" fill="#fff" stroke="#7b3fbf" stroke-width="0.5"/>
+<text x="137.7" y="23.5" font-size="2.8" text-anchor="start" fill="#7b3fbf" font-weight="bold">9</text>
+<circle cx="165" cy="25" r="1.6" fill="#fff" stroke="#7b3fbf" stroke-width="0.5"/>
+<text x="167.7" y="23.5" font-size="2.8" text-anchor="start" fill="#7b3fbf" font-weight="bold">10</text>
+<circle cx="196" cy="33.5" r="1.7" fill="#fff" stroke="#7b3fbf" stroke-width="0.5"/>
+<text x="198.7" y="32" font-size="2.8" text-anchor="start" fill="#7b3fbf" font-weight="bold">11</text>
+<circle cx="284" cy="69" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="284" cy="69" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="281.3" y="67.5" font-size="2.8" text-anchor="end" fill="#1f5fbf" font-weight="bold">12</text>
+<circle cx="284" cy="86" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="284" cy="86" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="281.3" y="84.5" font-size="2.8" text-anchor="end" fill="#1f5fbf" font-weight="bold">13</text>
+<circle cx="16" cy="104" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="16" cy="104" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="18.7" y="102.5" font-size="2.8" text-anchor="start" fill="#1f5fbf" font-weight="bold">14</text>
+<circle cx="54" cy="104" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="54" cy="104" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="56.7" y="102.5" font-size="2.8" text-anchor="start" fill="#1f5fbf" font-weight="bold">15</text>
+<circle cx="81" cy="104" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="81" cy="104" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="83.7" y="102.5" font-size="2.8" text-anchor="start" fill="#1f5fbf" font-weight="bold">16</text>
+<circle cx="169" cy="104" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="169" cy="104" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="171.7" y="102.5" font-size="2.8" text-anchor="start" fill="#1f5fbf" font-weight="bold">17</text>
+<circle cx="196" cy="106.5" r="1.7" fill="#fff" stroke="#7b3fbf" stroke-width="0.5"/>
+<text x="198.7" y="105" font-size="2.8" text-anchor="start" fill="#7b3fbf" font-weight="bold">18</text>
+<circle cx="16" cy="224" r="1.6" fill="#fff" stroke="#7b8794" stroke-width="0.3"/>
+<circle cx="16" cy="224" r="3.1" fill="none" stroke="#c0392b" stroke-width="0.4"/>
+<text x="18.7" y="222.5" font-size="2.8" text-anchor="start" fill="#c0392b" font-weight="normal">19</text>
+<circle cx="196" cy="224" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="196" cy="224" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="198.7" y="222.5" font-size="2.8" text-anchor="start" fill="#1f5fbf" font-weight="bold">20</text>
+<circle cx="284" cy="224" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="284" cy="224" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="281.3" y="222.5" font-size="2.8" text-anchor="end" fill="#1f5fbf" font-weight="bold">21</text>
+<circle cx="5" cy="235" r="1.6" fill="#fff" stroke="#7b3fbf" stroke-width="0.5"/>
+<text x="7.7" y="233.5" font-size="2.8" text-anchor="start" fill="#7b3fbf" font-weight="bold">22</text>
+<circle cx="295" cy="235" r="1.6" fill="#fff" stroke="#7b3fbf" stroke-width="0.5"/>
+<text x="292.3" y="233.5" font-size="2.8" text-anchor="end" fill="#7b3fbf" font-weight="bold">23</text>
+<circle cx="196" cy="69" r="1.85" fill="#fff" stroke="#7b3fbf" stroke-width="0.55"/>
+<circle cx="196" cy="69" r="0.45" fill="#7b3fbf" stroke="#7b3fbf" stroke-width="0"/>
+<text x="198.7" y="67.5" font-size="2.8" text-anchor="start" fill="#7b3fbf" font-weight="bold">S1</text>
+<circle cx="196" cy="86" r="1.85" fill="#fff" stroke="#7b3fbf" stroke-width="0.55"/>
+<circle cx="196" cy="86" r="0.45" fill="#7b3fbf" stroke="#7b3fbf" stroke-width="0"/>
+<text x="198.7" y="84.5" font-size="2.8" text-anchor="start" fill="#7b3fbf" font-weight="bold">S2</text>
+<text x="100" y="178" font-size="3.4" text-anchor="middle" fill="#7b8794" font-weight="normal">Two breadboards and the Breadboard Helper go here. No holes.</text>
+<line x1="0" y1="-0.5" x2="0" y2="-8.5" stroke="#1f5fbf" stroke-width="0.15"/>
+<line x1="300" y1="-0.5" x2="300" y2="-8.5" stroke="#1f5fbf" stroke-width="0.15"/>
+<line x1="0" y1="-7" x2="300" y2="-7" stroke="#1f5fbf" stroke-width="0.22" marker-start="url(#a)" marker-end="url(#a)"/>
+<text x="150" y="-8.3" font-size="3.2" text-anchor="middle" fill="#1f5fbf" font-weight="normal">300</text>
+<line x1="-0.5" y1="0" x2="-8.5" y2="0" stroke="#1f5fbf" stroke-width="0.15"/>
+<line x1="-0.5" y1="240" x2="-8.5" y2="240" stroke="#1f5fbf" stroke-width="0.15"/>
+<line x1="-7" y1="0" x2="-7" y2="240" stroke="#1f5fbf" stroke-width="0.22" marker-start="url(#a)" marker-end="url(#a)"/>
+<text x="-8.3" y="120" font-size="3.2" text-anchor="middle" fill="#1f5fbf" font-weight="normal" transform="rotate(-90 -8.3 120)">240</text>
+</g>
+<text x="42" y="318" font-size="4.2" text-anchor="start" fill="#16202c" font-weight="bold">Plate holes</text>
+<text x="84" y="318" font-size="3" text-anchor="start" fill="#7b8794" font-weight="normal">x and y in mm from the plate's top-left corner, as the computer is used</text>
+<text x="42" y="325" font-size="3.1" text-anchor="start" fill="#16202c" font-weight="bold">Hole</text>
+<text x="55" y="325" font-size="3.1" text-anchor="start" fill="#16202c" font-weight="bold">x</text>
+<text x="69" y="325" font-size="3.1" text-anchor="start" fill="#16202c" font-weight="bold">y</text>
+<text x="83" y="325" font-size="3.1" text-anchor="start" fill="#16202c" font-weight="bold">Ø</text>
+<text x="94" y="325" font-size="3.1" text-anchor="start" fill="#16202c" font-weight="bold">KIM Board</text>
+<text x="156" y="325" font-size="3.1" text-anchor="start" fill="#16202c" font-weight="bold">Four-board build</text>
+<line x1="42" y1="326.4" x2="212" y2="326.4" stroke="#16202c" stroke-width="0.25"/>
+<text x="42" y="331" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">1</text>
+<text x="55" y="331" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">5</text>
+<text x="69" y="331" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">5</text>
+<text x="83" y="331" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="331" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Corner</text>
+<text x="156" y="331" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Corner</text>
+<text x="42" y="336.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">2</text>
+<text x="55" y="336.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">295</text>
+<text x="69" y="336.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">5</text>
+<text x="83" y="336.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="336.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Corner</text>
+<text x="156" y="336.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Corner</text>
+<text x="42" y="341.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">3</text>
+<text x="55" y="341.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">16</text>
+<text x="69" y="341.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">16</text>
+<text x="83" y="341.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="341.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">KIM Board H1</text>
+<text x="156" y="341.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Backplane Helper H3</text>
+<text x="42" y="346.15" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">4</text>
+<text x="55" y="346.15" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">54</text>
+<text x="69" y="346.15" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">16</text>
+<text x="83" y="346.15" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="346.15" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">—</text>
+<text x="156" y="346.15" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Backplane Helper H4</text>
+<text x="42" y="351.2" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">5</text>
+<text x="55" y="351.2" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">81</text>
+<text x="69" y="351.2" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">16</text>
+<text x="83" y="351.2" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="351.2" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">KIM Board H12</text>
+<text x="156" y="351.2" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Main Board H3</text>
+<text x="42" y="356.25" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">6</text>
+<text x="55" y="356.25" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">169</text>
+<text x="69" y="356.25" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">16</text>
+<text x="83" y="356.25" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="356.25" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">—</text>
+<text x="156" y="356.25" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Main Board H4</text>
+<text x="42" y="361.3" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">7</text>
+<text x="55" y="361.3" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">196</text>
+<text x="69" y="361.3" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">16</text>
+<text x="83" y="361.3" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="361.3" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">KIM Board H5</text>
+<text x="156" y="361.3" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Keypad LCD Helper H1</text>
+<text x="42" y="366.35" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">8</text>
+<text x="55" y="366.35" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">284</text>
+<text x="69" y="366.35" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">16</text>
+<text x="83" y="366.35" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="366.35" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">KIM Board H2</text>
+<text x="156" y="366.35" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Keypad LCD Helper H2</text>
+<text x="42" y="371.4" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">9</text>
+<text x="55" y="371.4" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">135</text>
+<text x="69" y="371.4" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">25</text>
+<text x="83" y="371.4" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="371.4" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Hanger (optional)</text>
+<text x="156" y="371.4" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Hanger (optional)</text>
+<text x="42" y="376.45" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">10</text>
+<text x="55" y="376.45" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">165</text>
+<text x="69" y="376.45" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">25</text>
+<text x="83" y="376.45" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="376.45" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Hanger (optional)</text>
+<text x="156" y="376.45" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Hanger (optional)</text>
+<text x="42" y="381.5" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">11</text>
+<text x="55" y="381.5" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">196</text>
+<text x="69" y="381.5" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">33.5</text>
+<text x="83" y="381.5" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.4</text>
+<text x="94" y="381.5" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">—</text>
+<text x="156" y="381.5" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Cable Bridge</text>
+<text x="42" y="386.55" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">12</text>
+<text x="55" y="386.55" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">284</text>
+<text x="69" y="386.55" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">69</text>
+<text x="83" y="386.55" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="386.55" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">—</text>
+<text x="156" y="386.55" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Keypad LCD Helper H4</text>
+<text x="42" y="391.6" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">13</text>
+<text x="55" y="391.6" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">284</text>
+<text x="69" y="391.6" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">86</text>
+<text x="83" y="391.6" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="391.6" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">KIM Board H7</text>
+<text x="156" y="391.6" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Keypad Helper H2</text>
+<text x="42" y="396.65" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">14</text>
+<text x="55" y="396.65" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">16</text>
+<text x="69" y="396.65" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">104</text>
+<text x="83" y="396.65" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="396.65" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">KIM Board H9</text>
+<text x="156" y="396.65" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Backplane Helper H2</text>
+<text x="42" y="401.7" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">15</text>
+<text x="55" y="401.7" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">54</text>
+<text x="69" y="401.7" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">104</text>
+<text x="83" y="401.7" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="401.7" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">—</text>
+<text x="156" y="401.7" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Backplane Helper H1</text>
+<text x="42" y="406.75" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">16</text>
+<text x="55" y="406.75" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">81</text>
+<text x="69" y="406.75" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">104</text>
+<text x="83" y="406.75" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="406.75" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">KIM Board H10</text>
+<text x="156" y="406.75" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Main Board H2</text>
+<text x="42" y="411.8" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">17</text>
+<text x="55" y="411.8" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">169</text>
+<text x="69" y="411.8" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">104</text>
+<text x="83" y="411.8" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="411.8" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">—</text>
+<text x="156" y="411.8" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Main Board H1</text>
+<text x="42" y="416.85" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">18</text>
+<text x="55" y="416.85" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">196</text>
+<text x="69" y="416.85" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">106.5</text>
+<text x="83" y="416.85" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.4</text>
+<text x="94" y="416.85" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">—</text>
+<text x="156" y="416.85" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Cable Bridge</text>
+<text x="42" y="421.9" font-size="3" text-anchor="start" fill="#c0392b" font-weight="bold">19</text>
+<text x="55" y="421.9" font-size="3" text-anchor="start" fill="#c0392b" font-weight="normal">16</text>
+<text x="69" y="421.9" font-size="3" text-anchor="start" fill="#c0392b" font-weight="normal">224</text>
+<text x="83" y="421.9" font-size="3" text-anchor="start" fill="#c0392b" font-weight="normal">3.2</text>
+<text x="94" y="421.9" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">KIM Board H4</text>
+<text x="156" y="421.9" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">—</text>
+<text x="42" y="426.95" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">20</text>
+<text x="55" y="426.95" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">196</text>
+<text x="69" y="426.95" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">224</text>
+<text x="83" y="426.95" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="426.95" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">KIM Board H8</text>
+<text x="156" y="426.95" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Keypad Helper H3</text>
+<text x="42" y="432" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">21</text>
+<text x="55" y="432" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">284</text>
+<text x="69" y="432" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">224</text>
+<text x="83" y="432" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="432" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">KIM Board H3</text>
+<text x="156" y="432" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Keypad Helper H4</text>
+<text x="42" y="437.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">22</text>
+<text x="55" y="437.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">5</text>
+<text x="69" y="437.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">235</text>
+<text x="83" y="437.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="437.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Corner</text>
+<text x="156" y="437.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Corner</text>
+<text x="42" y="442.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="bold">23</text>
+<text x="55" y="442.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">295</text>
+<text x="69" y="442.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">235</text>
+<text x="83" y="442.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">3.2</text>
+<text x="94" y="442.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Corner</text>
+<text x="156" y="442.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Corner</text>
+<text x="42" y="447.15" font-size="3" text-anchor="start" fill="#17803d" font-weight="bold">S1</text>
+<text x="55" y="447.15" font-size="3" text-anchor="start" fill="#17803d" font-weight="normal">196</text>
+<text x="69" y="447.15" font-size="3" text-anchor="start" fill="#17803d" font-weight="normal">69</text>
+<text x="83" y="447.15" font-size="3" text-anchor="start" fill="#17803d" font-weight="normal">none</text>
+<text x="94" y="447.15" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">—</text>
+<text x="156" y="447.15" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Keypad LCD Helper H3, to the Cable Bridge</text>
+<text x="42" y="452.2" font-size="3" text-anchor="start" fill="#17803d" font-weight="bold">S2</text>
+<text x="55" y="452.2" font-size="3" text-anchor="start" fill="#17803d" font-weight="normal">196</text>
+<text x="69" y="452.2" font-size="3" text-anchor="start" fill="#17803d" font-weight="normal">86</text>
+<text x="83" y="452.2" font-size="3" text-anchor="start" fill="#17803d" font-weight="normal">none</text>
+<text x="94" y="452.2" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">KIM Board H16 (resting)</text>
+<text x="156" y="452.2" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Keypad Helper H1, to the Cable Bridge</text>
+<text x="224" y="318" font-size="4.2" text-anchor="start" fill="#16202c" font-weight="bold">Boards</text>
+<text x="224" y="325" font-size="3.1" text-anchor="start" fill="#16202c" font-weight="bold">Board</text>
+<text x="286" y="325" font-size="3.1" text-anchor="start" fill="#16202c" font-weight="bold">Size</text>
+<text x="308" y="325" font-size="3.1" text-anchor="start" fill="#16202c" font-weight="bold">Top-left on plate</text>
+<text x="340" y="325" font-size="3.1" text-anchor="start" fill="#16202c" font-weight="bold">As mounted</text>
+<line x1="224" y1="326.4" x2="366" y2="326.4" stroke="#16202c" stroke-width="0.25"/>
+<text x="224" y="331" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">KIM Board Rev 1.0</text>
+<text x="286" y="331" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">280 × 220</text>
+<text x="308" y="331" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">(10, 10)</text>
+<text x="340" y="331" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">as drawn</text>
+<text x="224" y="336.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Backplane Helper Rev 1.0</text>
+<text x="286" y="336.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">50 × 100</text>
+<text x="308" y="336.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">(10, 10)</text>
+<text x="340" y="336.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">turned 180°</text>
+<text x="224" y="341.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Main Board Rev 1.1</text>
+<text x="286" y="341.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">100 × 100</text>
+<text x="308" y="341.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">(75, 10)</text>
+<text x="340" y="341.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">turned 180°</text>
+<text x="224" y="346.15" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Keypad LCD Helper Rev 1.0</text>
+<text x="286" y="346.15" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">100.26 × 64.69</text>
+<text x="308" y="346.15" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">(189.75, 10.32)</text>
+<text x="340" y="346.15" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">as drawn</text>
+<text x="224" y="351.2" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Keypad Helper Rev 1.0</text>
+<text x="286" y="351.2" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">100 × 150</text>
+<text x="308" y="351.2" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">(190, 80)</text>
+<text x="340" y="351.2" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">as drawn</text>
+<text x="224" y="362.25" font-size="4.2" text-anchor="start" fill="#16202c" font-weight="bold">Key</text>
+<circle cx="227" cy="367.75" r="1.85" fill="#fff" stroke="#1f5fbf" stroke-width="0.55"/>
+<circle cx="227" cy="367.75" r="0.45" fill="#1f5fbf" stroke="#1f5fbf" stroke-width="0"/>
+<text x="233" y="368.75" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Plate hole used by this build: a screw through the board into a standoff.</text>
+<circle cx="227" cy="373.85" r="1.6" fill="#fff" stroke="#7b3fbf" stroke-width="0.5"/>
+<text x="233" y="374.85" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Plate hole for a printed part.</text>
+<circle cx="227" cy="379.95" r="1.6" fill="#fff" stroke="#7b8794" stroke-width="0.3"/>
+<text x="233" y="380.95" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Plate hole this build doesn't use.</text>
+<circle cx="227" cy="386.05" r="1.85" fill="#fff" stroke="#7b3fbf" stroke-width="0.55"/>
+<circle cx="227" cy="386.05" r="0.45" fill="#7b3fbf" stroke="#7b3fbf" stroke-width="0"/>
+<text x="233" y="387.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">On the Cable Bridge: the board has a hole here and the plate doesn't. The board screws to the</text>
+<text x="233" y="390.95" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">bridge, not the plate.</text>
+<circle cx="227" cy="396.05" r="1.85" fill="#fff" stroke="#17803d" stroke-width="0.55"/>
+<circle cx="227" cy="396.05" r="0.45" fill="#17803d" stroke="#17803d" stroke-width="0"/>
+<text x="233" y="397.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Resting: the board has a hole here and the plate doesn't. The standoff stands on the plate.</text>
+<circle cx="227" cy="402.15" r="1.6" fill="#fff" stroke="#7b8794" stroke-width="0.3"/>
+<circle cx="227" cy="402.15" r="3" fill="none" stroke="#c0392b" stroke-width="0.4"/>
+<text x="233" y="403.15" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Added for the KIM Board. On an older plate, drill this hole by hand through all three layers: Ø3.2</text>
+<text x="233" y="407.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">at (16, 224).</text>
+<text x="224" y="416.15" font-size="4.2" text-anchor="start" fill="#16202c" font-weight="bold">Notes</text>
+<text x="224" y="422.65" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Corners fit both builds.</text>
+<text x="224" y="428.35" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">The Hanger is optional on both builds, for hanging the computer on a wall. The Hanger goes on the back of</text>
+<text x="224" y="432.25" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">the plate and the Hanger Retainer on top.</text>
+<text x="224" y="437.95" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">The Cable Bridge is only for the four-board build. Standoffs at S1 and S2 would block the 40-pin BUS ribbon</text>
+<text x="224" y="441.85" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">cable, which runs under the boards from the Backplane Helper to the Breadboard Helper, so those two board</text>
+<text x="224" y="445.75" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">holes screw to the bridge instead. The bridge goes on top of the plate and the Cable Bridge Retainer on the</text>
+<text x="224" y="449.65" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">back. The KIM Board needs neither the bridge nor the cable: S2 is a standoff to the plate.</text>
+<text x="224" y="455.35" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">The plate is a stack of three 3 mm acrylic layers, each cut from Plate.svg. Plate.svg is drawn turned 180°</text>
+<text x="224" y="459.25" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">from this view.</text>
+<text x="224" y="464.95" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">The SVG is drawn 1:1, so it can be printed at full size to check a plate.</text>
+<text x="396" y="318" font-size="4.2" text-anchor="start" fill="#16202c" font-weight="bold">Hardware</text>
+<text x="396" y="325" font-size="3.1" text-anchor="start" fill="#16202c" font-weight="bold">Part</text>
+<text x="488" y="325" font-size="3.1" text-anchor="start" fill="#16202c" font-weight="bold">KIM Board</text>
+<text x="516" y="325" font-size="3.1" text-anchor="start" fill="#16202c" font-weight="bold">Four-board</text>
+<line x1="396" y1="326.4" x2="704" y2="326.4" stroke="#16202c" stroke-width="0.25"/>
+<text x="396" y="331" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">M3 × 10 standoff, female-male</text>
+<text x="488" y="331" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">10</text>
+<text x="516" y="331" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">14</text>
+<text x="396" y="336.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">M3 × 10 standoff, female-female</text>
+<text x="488" y="336.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">11</text>
+<text x="516" y="336.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">16</text>
+<text x="396" y="341.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">M3 × 12 pan head</text>
+<text x="488" y="341.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">10</text>
+<text x="516" y="341.1" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">14</text>
+<text x="396" y="346.15" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">M3 × 6 pan head</text>
+<text x="488" y="346.15" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">11</text>
+<text x="516" y="346.15" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">16</text>
+<text x="396" y="351.2" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">M3 × 16 countersunk</text>
+<text x="488" y="351.2" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">4</text>
+<text x="516" y="351.2" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">6</text>
+<text x="396" y="356.25" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">M3 × 8 countersunk</text>
+<text x="488" y="356.25" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">0</text>
+<text x="516" y="356.25" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">2</text>
+<text x="396" y="361.3" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">M3 nut</text>
+<text x="488" y="361.3" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">4</text>
+<text x="516" y="361.3" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">6</text>
+<text x="396" y="366.35" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">M2.5 × 10 standoff, for the LCD</text>
+<text x="488" y="366.35" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">4</text>
+<text x="516" y="366.35" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">4</text>
+<text x="396" y="371.4" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">M2.5 washer, for the LCD</text>
+<text x="488" y="371.4" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">4</text>
+<text x="516" y="371.4" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">4</text>
+<text x="396" y="376.45" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Optional Hanger: M3 × 16 countersunk</text>
+<text x="488" y="376.45" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">2</text>
+<text x="516" y="376.45" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">2</text>
+<text x="396" y="381.5" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Optional Hanger: M3 nut</text>
+<text x="488" y="381.5" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">2</text>
+<text x="516" y="381.5" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">2</text>
+<text x="396" y="392.55" font-size="4.2" text-anchor="start" fill="#16202c" font-weight="bold">How a hole goes together</text>
+<text x="396" y="399.05" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">A normal hole, from the bottom up: an M3 × 12 pan head through the back of the plate, a female-male</text>
+<text x="396" y="402.95" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">standoff, the board, a female-female standoff, the top, and an M3 × 6 pan head.</text>
+<text x="396" y="408.65" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Hole 19 on the KIM Board has no top above it: a female-female standoff instead, with an M3 × 6 pan head</text>
+<text x="396" y="412.55" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">on top of the board.</text>
+<text x="396" y="418.25" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">The KIM Board's counts are for its new top, over holes 3, 5, 7, 8, 13, 14, 16, 20, 21 and S2.</text>
+<text x="396" y="423.95" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">S2 on the KIM Board: a female-male standoff stands on the plate with no screw below it.</text>
+<text x="396" y="429.65" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">S1 and S2 on the four-board build: an M3 × 8 countersunk screw comes up through the Cable Bridge and the</text>
+<text x="396" y="433.55" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">board into a female-female standoff, then the top.</text>
+<text x="396" y="439.25" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">Corners, the Cable Bridge and the Hanger: an M3 × 16 countersunk screw from the top, through the plate,</text>
+<text x="396" y="443.15" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">into a nut in the part below.</text>
+<text x="396" y="448.85" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">The LCD: a standard socket and pin header, on M2.5 × 10 standoffs with an M2.5 washer on each to make up</text>
+<text x="396" y="452.75" font-size="3" text-anchor="start" fill="#16202c" font-weight="normal">the height.</text>
+<text x="42" y="15" font-size="7.2" text-anchor="start" fill="#16202c" font-weight="bold">KIM base plate: mounting drawing</text>
+<text x="42" y="23" font-size="3.6" text-anchor="start" fill="#7b8794" font-weight="normal">One plate takes either build. Looking down on the plate, as the computer is used. All dimensions in mm.</text>
+<line x1="34" y1="475.65" x2="704" y2="475.65" stroke="#16202c" stroke-width="0.25"/>
+<text x="34" y="480.65" font-size="3" text-anchor="start" fill="#7b8794" font-weight="normal">6502-KIM · CAD/Bases/Plate.svg, Plate.lbrn2, Plate.stl · three 3 mm acrylic layers</text>
+<text x="704" y="480.65" font-size="3" text-anchor="end" fill="#7b8794" font-weight="normal">© 2026 A.C. Wright Design</text></svg>

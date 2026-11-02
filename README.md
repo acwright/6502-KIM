@@ -268,6 +268,8 @@ It is the only firmware in this repository — the Keypad Helper and Keypad LCD 
 
 3D-printable enclosure bases and laser-cut top panels for the KIM system.
 
+The **[plate mounting drawing](CAD/Bases/Plate%20Mounting%20Drawing.png)** ([SVG](CAD/Bases/Plate%20Mounting%20Drawing.svg)) shows where the boards mount on the base plate, for both the KIM Board and the four-board build, with every hole's position and the hardware each build needs. One plate takes either build. The plate is a stack of three 3 mm acrylic layers. A plate made before the KIM Board needs one more hole, Ø3.2 at (16, 224), which you can drill by hand through all three layers.
+
 ## Production
 `Production/`
 
