@@ -19,7 +19,7 @@ An **AC6502** retro-style 8-bit computer based on the **65C02** microprocessor.
 - [Systems](#systems)
 - [Software](#software)
 - [Hardware](#hardware)
-  - [KIM Board](#kim-board) *(in design)*
+  - [KIM Board](#kim-board) *(PCB finished, not yet built)*
   - [Backplane / Backplane Pro](#backplane--backplane-pro) *(preferred)*
   - [CPU Card](#cpu-card) *(preferred)*
   - [Memory Card](#memory-card) *(preferred)*
@@ -94,7 +94,7 @@ This repository contains KiCad 7.0+ PCB designs for the KIM-specific hardware. T
 ### KIM Board
 `Hardware/KIM Board/`
 
-*Rev 1.0 is in design. The schematic is drawn and passes its checks (see [Checking the schematics](#checking-the-schematics)), the PCB is being laid out, and no boards have been made yet.*
+*Rev 1.0's schematic passes its checks (see [Checking the schematics](#checking-the-schematics)), and its PCB is finished and exported for production (`Production/KIM Board/Rev 1.0/`). No boards have been made or tested yet.*
 
 One through-hole board that joins every part of today's KIM. The computer itself (CPU, RAM, ROM, glue logic and the I/O decode) is the ACE Board Rev 1.1's. The clock, the reset and the power input are the Backplane Pro Rev 1.1's. The serial port is the Serial Card's, and the keypad, the LCD and the KC Monitor are the Keypad Card's, Keypad Helper's and Keypad LCD Helper's. The card slot and the 6502 BUS header are the Backplane Helper's. The keypad, the LCD, the card slot and the 6502 BUS header sit exactly where they are on today's KIM, and the board fits today's base plate. Provides:
 
@@ -109,26 +109,26 @@ One through-hole board that joins every part of today's KIM. The computer itself
 
 #### The KIM enable jumper (J1)
 
-The jumper marked `KIM ENABLE` switches the KIM on or off:
+J1 is a 3-pin header marked `KIM ENABLE`, with `KIM` printed at pin 1 and `BASIC` at pin 3. One shunt switches the KIM on or off:
 
-- **Fitted**: the KIM. The machine starts in the KC Monitor, with the keypad and the LCD.
-- **Open**: BASIC over the serial port, as today's KIM runs with its Keypad Card pulled. The keypad and the LCD do nothing.
-- **Open before fitting a cartridge** in the card slot.
+- **KIM** (shunt on pins 1 and 2): the machine starts in the KC Monitor, with the keypad and the LCD.
+- **BASIC** (shunt on pins 2 and 3): BASIC over the serial port, as today's KIM runs with its Keypad Card pulled. The keypad and the LCD do nothing.
+- **Set the jumper to BASIC before fitting a cartridge** in the card slot.
 
-The jumper grounds `KIMB`, which enables the Keypad Card's first 74HC138 (U10, on its `~E1`). With the jumper open, R15 (10kΩ) holds `KIMB` high, so U10 is disabled and neither the PIA nor the KC Monitor's ROM is ever selected. A BAT85 (D1) joins `KIMB` to `HRDB`, anode on `HRDB`. When the jumper is fitted, it pulls `HRDB` low through D1, which takes `$C000–$FFFF` away from the BIOS ROM, as the Keypad Card does today. A cartridge pulling `HRDB` low can't pull `KIMB` low through D1, so only the jumper switches the KIM on.
+Pin 1 is `KIMB`, pin 2 is GND, and pin 3 isn't connected, so in the BASIC position the shunt only parks on the header. In the KIM position the shunt grounds `KIMB`, which enables the Keypad Card's first 74HC138 (U10, on its `~E1`). In the BASIC position, R15 (10kΩ) holds `KIMB` high, so U10 is disabled and neither the PIA nor the KC Monitor's ROM is ever selected. A BAT85 (D1) joins `KIMB` to `HRDB`, anode on `HRDB`. In the KIM position the shunt pulls `HRDB` low through D1, which takes `$C000–$FFFF` away from the BIOS ROM, as the Keypad Card does today. A cartridge pulling `HRDB` low can't pull `KIMB` low through D1, so only the jumper switches the KIM on.
 
 Reads with `PHI2` high:
 
 | KIM enable | Cartridge | `$0000–$7FFF` | `$8000–$9FFF` | `$A000–$BFFF` | `$C000–$DFFF` | `$E000–$FFFF` |
 |---|---|---|---|---|---|---|
-| fitted | out | RAM | IO1–IO8 | ROM | PIA | KC Monitor ROM |
-| open | out | RAM | IO1–IO8 | ROM | ROM | ROM |
-| open | in | RAM | IO1–IO8 | ROM | cartridge | cartridge |
-| fitted | in | RAM | IO1–IO8 | ROM | **PIA and cartridge** | **KC Monitor ROM and cartridge** |
+| KIM | out | RAM | IO1–IO8 | ROM | PIA | KC Monitor ROM |
+| BASIC | out | RAM | IO1–IO8 | ROM | ROM | ROM |
+| BASIC | in | RAM | IO1–IO8 | ROM | cartridge | cartridge |
+| KIM | in | RAM | IO1–IO8 | ROM | **PIA and cartridge** | **KC Monitor ROM and cartridge** |
 
-The last row is a mistake: the PIA and the KC Monitor's ROM fight the cartridge over the data bus. Open the jumper before fitting a cartridge.
+The last row is a mistake: the PIA and the KC Monitor's ROM fight the cartridge over the data bus. Set the jumper to BASIC before fitting a cartridge.
 
-With the jumper open, `RESB` still resets the PIA. That clears its control registers, so its interrupts stay off and it never pulls `IRQB`. The PIA's own pull-ups hold the LCD's `E` and `R/W` high and turn the keypad encoder's outputs off, so neither the LCD nor the encoder drives anything.
+With the jumper set to BASIC, `RESB` still resets the PIA. That clears its control registers, so its interrupts stay off and it never pulls `IRQB`. The PIA's own pull-ups hold the LCD's `E` and `R/W` high and turn the keypad encoder's outputs off, so neither the LCD nor the encoder drives anything.
 
 #### The IO ENABLE switch (SW25)
 
@@ -152,7 +152,7 @@ Leave switch 5 on: it is the serial port. The others matter only to a breadboard
 The card slot takes one COB card or one ACE or VCS cartridge. The 6502 BUS header is a 2×20 box header that takes a ribbon cable to a COB Backplane, which is how the KIM Board grows into a bigger machine. Both carry the same bus as the breadboard headers. `EXP0` and `EXP1` are both `HRDB`, as on the ACE. `EXP2` and `EXP3` are bus lines with nothing on the board attached.
 
 - **A COB card** in the card slot decodes its own address. It must not use IO5, the serial port, or a window a breadboard circuit uses.
-- **An ACE or VCS cartridge** in the card slot gets `$C000–$FFFF` while the KIM enable jumper is open (the third row of the table above).
+- **An ACE or VCS cartridge** in the card slot gets `$C000–$FFFF` while the KIM enable jumper is set to BASIC (the third row of the table above).
 - **A COB Backplane** on the 6502 BUS header adds no pull-ups of its own. The KIM Board carries the one 10kΩ pull-up on each shared line (`IRQB`, `NMIB`, `RESB`, `RDY`, `BE`).
 
 #### The breadboards
@@ -285,9 +285,9 @@ This script checks the KIM Board's logic by evaluating its netlist, not by readi
 
 It checks:
 
-- the memory map in the KIM enable jumper's table, with the jumper fitted and open;
-- that at most one chip drives the data bus on any read, except with the jumper fitted and a cartridge in;
-- that the PIA and the KC Monitor's ROM are never selected with the jumper open, and that a cartridge pulling `HRDB` low never pulls `KIMB` low;
+- the memory map in the KIM enable jumper's table, with the jumper in both positions;
+- that at most one chip drives the data bus on any read, except with the jumper set to KIM and a cartridge in;
+- that the PIA and the KC Monitor's ROM are never selected with the jumper set to BASIC, and that a cartridge pulling `HRDB` low never pulls `KIMB` low;
 - that the ACIA is selected only at `$9000–$93FF`, and only with IO ENABLE switch 5 on;
 - that each select on the breadboard headers is low only in its own 1KB window;
 - that the CPU, the PIA and the ACIA run from the 1 MHz oscillator;

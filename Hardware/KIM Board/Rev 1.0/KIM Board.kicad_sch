@@ -8138,164 +8138,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector_Generic:Conn_01x02"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 0 2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x02"
-				(at 0 -5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Conn_01x02_1_1"
-				(rectangle
-					(start -1.27 1.27)
-					(end 1.27 -3.81)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "Pin_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector_Generic:Conn_01x03"
 			(pin_names
 				(offset 1.016)
@@ -14030,7 +13872,7 @@
 		)
 		(uuid "f3c37a91-6db8-42f3-9dc7-fd43375ae2e5")
 	)
-	(text "KIM ENABLE: fitted = KIM monitor; open = BASIC over serial;\nopen before fitting a cartridge.\nA cartridge pulling HRDB low cannot pull KIMB low."
+	(text "KIM ENABLE: pins 1-2 = KIM monitor; pins 2-3 = BASIC over serial;\nset to BASIC before fitting a cartridge.\nA cartridge pulling HRDB low cannot pull KIMB low."
 		(exclude_from_sim no)
 		(at 327.66 189.23 0)
 		(effects
@@ -15102,6 +14944,10 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ffc4ae21-d301-401c-9c1a-028227424a31")
+	)
+	(no_connect
+		(at 355.6 162.56)
+		(uuid "801da16b-8a5d-475b-8a9a-5fa2d6aad2b7")
 	)
 	(no_connect
 		(at 93.98 86.36)
@@ -45712,8 +45558,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x02")
-		(at 360.68 157.48 0)
+		(lib_id "Connector_Generic:Conn_01x03")
+		(at 360.68 160.02 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -45723,17 +45569,6 @@
 		(dnp no)
 		(uuid "ace1444b-edb4-4955-8d64-f43ecb6ac16f")
 		(property "Reference" "J1"
-			(at 359.41 163.322 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "KIM ENABLE"
 			(at 359.41 165.862 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -45744,8 +45579,19 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 360.68 157.48 0)
+		(property "Value" "KIM ENABLE"
+			(at 359.41 168.402 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+			(at 360.68 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -45756,7 +45602,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 360.68 157.48 0)
+			(at 360.68 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -45766,8 +45612,8 @@
 				)
 			)
 		)
-		(property "Description" "Pin Header 1x2 2.54mm"
-			(at 360.68 157.48 0)
+		(property "Description" "Pin Header 1x3 2.54mm"
+			(at 360.68 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -45778,7 +45624,7 @@
 			)
 		)
 		(property "Other" "https://www.amazon.com/Straight-Breakaway-Connector-Breadboard-Electronic/dp/B0FRZW75VS"
-			(at 360.68 157.48 0)
+			(at 360.68 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -45787,6 +45633,9 @@
 					(size 1.27 1.27)
 				)
 			)
+		)
+		(pin "3"
+			(uuid "545d4792-1498-469b-bcc8-a7c9ec0af619")
 		)
 		(pin "2"
 			(uuid "ff6f8bc0-f7a9-410d-b54e-b31d1eacd485")
