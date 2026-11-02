@@ -5,9 +5,9 @@
 // wrong twice, and both times the logic looked right on paper. So this does not trust anyone's
 // reading of the gates. It asks KiCad for the KIM Board's netlist, builds the glue logic from
 // the parts it finds there, and drives every address, as a read and as a write, with PHI2 high
-// and low, the KIM enable jumper fitted and open, a cartridge in the card slot and out, and the
+// and low, the KIM enable jumper set to KIM and to BASIC, a cartridge in the card slot and out, and the
 // IO ENABLE switches all on and then each one off: 9,437,184 bus states. Every select, strobe
-// and enable is compared with the memory map below (KIM-PLAN.md section 2). Nets nobody drives
+// and enable is compared with the memory map below (the README's KIM enable jumper table). Nets nobody drives
 // come out as unknown, so a missing wire fails too.
 //
 // Usage:  node Tests/check-schematics.mjs [schematic]
@@ -46,7 +46,7 @@ const PARTS = {
 
 // ---- The memory map -------------------------------------------------------------------
 //
-// a = address, r = 1 for a read, p = PHI2, j = 1 with the KIM enable jumper fitted, c = 1 with a
+// a = address, r = 1 for a read, p = PHI2, j = 1 with the KIM enable jumper set to KIM, c = 1 with a
 // cartridge in the card slot, sw[k] = 1 while IO ENABLE switch k+1 is on. A cartridge grounds
 // EXP0 and EXP1 (HRDB) and answers $C000-$FFFF, as the VCS ROM Cart and Flash Cart do.
 
@@ -64,7 +64,7 @@ const PINS = [
   ['rom', 20, 'ROM /CE', s => low(s.a >= 0xA000 && (s.a < 0xC000 || romHigh(s)))],
   ['rom', 22, 'ROM /OE', RB],
   ['rom', 27, 'ROM /WE (tied high)', () => 1],
-  // the KIM: the PIA at $C000-$DFFF and the KC Monitor ROM at $E000-$FFFF, only with the jumper fitted
+  // the KIM: the PIA at $C000-$DFFF and the KC Monitor ROM at $E000-$FFFF, only with the jumper set to KIM
   ['pia', 23, 'PIA CS2B', s => low(s.j && s.a >= 0xC000 && s.a < 0xE000)],
   ['pia', 22, 'PIA CS0', () => 1],
   ['pia', 24, 'PIA CS1', () => 1],
@@ -98,8 +98,8 @@ const WRITERS = [
   ['ACIA', (v, s) => v('acia', 2) === 1 && v('acia', 3) === 0 && !s.r && s.p]
 ]
 
-// KIM-PLAN.md section 2's table, read with PHI2 high. A fitted jumper with a cartridge in is two
-// devices at once, a user error the plan documents; it is the only state with two.
+// The README's KIM enable jumper table, read with PHI2 high. The jumper set to KIM with a cartridge in is two
+// devices at once, a user error the README documents; it is the only state with two.
 function expectedReaders(s) {
   if (!s.r || !s.p) return []
   const { a, j, c } = s
@@ -156,7 +156,7 @@ function netlist(cli, sch, dir) {
   return { comps, nets }
 }
 
-// Joins nets: switches closed, jumpers fitted.
+// Joins nets: switches closed, shunts fitted.
 class Board {
   constructor({ comps, nets }) {
     this.parent = new Map(); this.pinNet = new Map(); this.comps = comps; this.names = new Map()
@@ -187,11 +187,13 @@ class Board {
   netNamed(name) { return this.names.has(name) ? this.find(name) : undefined }
 }
 
-// The board in one setting: the KIM jumper as given, and IO ENABLE switch k+1 on while sw[k].
+// The board in one setting: the KIM jumper's shunt on pins 1 and 2 (KIM) or 2 and 3 (BASIC), and
+// IO ENABLE switch k+1 on while sw[k].
 // Switch k joins pin k to pin 17-k.
 function assemble(net, j, sw) {
   const board = new Board(net)
   if (j) board.join(board.parts.kim, 1, board.parts.kim, 2)
+  else board.join(board.parts.kim, 2, board.parts.kim, 3)
   for (let k = 1; k <= 8; k++) if (sw[k - 1]) board.join(board.parts.ioEnable, k, board.parts.ioEnable, 17 - k)
   return board
 }
@@ -247,7 +249,7 @@ function compile(board, inputs) {
     if (!/^R\d+$/.test(ref)) continue
     const a = board.net(ref, 1), b = board.net(ref, 2)
     const n = a === vcc ? b : b === vcc ? a : undefined
-    // a pull-up on a net a jumper has tied to GND (KIMB with the KIM jumper fitted) does nothing
+    // a pull-up on a net a jumper has tied to GND (KIMB with the KIM jumper set to KIM) does nothing
     if (n !== undefined && n !== gnd && n !== vcc && !driven.has(n) && !inputs.has(n)) pulled.set(n, [])
   }
   for (const [ref, value] of board.comps) {
@@ -298,7 +300,7 @@ function checkDecode(net) {
     const f = failures.get(what) ?? { count: 0, examples: [] }
     f.count++
     if (f.examples.length < 6) {
-      f.examples.push(`${hex(s.a)} ${s.r ? 'read ' : 'write'} PHI2=${s.p} KIM ${s.j ? 'fitted' : 'open'}${s.c ? ' cart' : ''}` +
+      f.examples.push(`${hex(s.a)} ${s.r ? 'read ' : 'write'} PHI2=${s.p} KIM jumper ${s.j ? 'KIM' : 'BASIC'}${s.c ? ' cart' : ''}` +
         `${s.sw.includes(0) ? ` switch ${s.sw.indexOf(0) + 1} off` : ''}: got ${got}, want ${want}`)
     }
     failures.set(what, f)
