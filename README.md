@@ -352,7 +352,7 @@ Shared KiCad symbol and footprint libraries used across all AC6502 hardware proj
 | U13 | 1 | LCD-16X2 | 16×2 LCD Display |  |  | [AMAZON](https://www.amazon.com/MECCANIXITY-Display-Backlight-Interface-Adapter/dp/B0DSFXK7QK) |
 | U14 | 1 | MAX232 | RS-232 Driver/Receiver DIP-16 | [296-1402-5-ND](https://www.digikey.com/en/products/filter?keywords=296-1402-5-ND) | [595-MAX232N](https://www.mouser.com/ProductDetail/595-MAX232N) |  |
 | U15 | 1 | R6551AP | ACIA |  |  | [JAMECO](https://www.jameco.com/z/R6551AP-Rockwell-IC-6551-Asynchronous-Communication-Interface-Adapter-DIP-28-pin_43318.html) |
-| U16 | 1 | MM74C922 | 16-Key Encoder |  |  | [AMAZON](https://www.amazon.com/Todiys-74C922N-MM74C922N-Encoder-MM74C922/dp/B08MCJY9LP) |
+| U16 | 1 | MM74C922 | 16-Key Encoder |  |  | [JAMECO](https://www.jameco.com/z/74C922-Major-Brands-IC-74C922-16-20-Key-Encoder-DIP-18-pin_44564.html) |
 | VR1 | 1 | 10kΩ | Trimmer 3386F | [3386F-103LF-ND](https://www.digikey.com/en/products/filter?keywords=3386F-103LF-ND) |  |  |
 | X1 | 1 | 1 MHz | DIP-14 Oscillator, full-size can | [X937-ND](https://www.digikey.com/en/products/filter?keywords=X937-ND) |  |  |
 | Y1 | 1 | 1.8432 MHz | Crystal HC-49/U | [3155-1.8432M20P2/49U-ND](https://www.digikey.com/en/products/filter?keywords=3155-1.8432M20P2/49U-ND) | [815-AB-1.8432-B2](https://www.mouser.com/ProductDetail/815-AB-1.8432-B2) |  |
@@ -404,7 +404,7 @@ U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502
 | J1 | 1 | PORT | Box Header 2×6 2.54mm | [2057-BHR-12-VUA-ND](https://www.digikey.com/en/products/filter?keywords=2057-BHR-12-VUA-ND) | | [AMAZON](https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2) |
 | R1, R2 | 2 | 100kΩ | Resistor | | | [AMAZON](https://www.amazon.com/ALLECIN-8W-Metal-Film-Resistor/dp/B0C77TM3NR) |
 | SW1–SW24 | 24 | 0–23 | Cherry MX Switch 1.00u | [CH196-ND](https://www.digikey.com/en/products/filter?keywords=CH196-ND) | | [AMAZON](https://www.amazon.com/dp/B0FYR5TV3X) |
-| U1 | 1 | MM74C922 | 16-Key Encoder | | | [AMAZON](https://www.amazon.com/Todiys-74C922N-MM74C922N-Encoder-MM74C922/dp/B08MCJY9LP) |
+| U1 | 1 | MM74C922 | 16-Key Encoder | | | [JAMECO](https://www.jameco.com/z/74C922-Major-Brands-IC-74C922-16-20-Key-Encoder-DIP-18-pin_44564.html) |
 | U2 | 1 | 74HC00 | Quad 2-Input NAND Gate | [296-1563-5-ND](https://www.digikey.com/en/products/filter?keywords=296-1563-5-ND) | [595-SN74HC00N](https://www.mouser.com/ProductDetail/595-SN74HC00N) | |
 
 ### Keypad LCD Helper
