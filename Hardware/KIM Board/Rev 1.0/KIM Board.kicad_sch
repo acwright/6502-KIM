@@ -33425,7 +33425,7 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/Female-Headers-Connector-Header-Raspberry/dp/B07DNHS2SJ"
+		(property "Other" "Digi-Key: 2 x S7018-ND (1x20), 1 x S7008-ND (1x10)"
 			(at 491.49 356.87 0)
 			(hide yes)
 			(show_name no)
@@ -37689,7 +37689,7 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/Female-Headers-Connector-Header-Raspberry/dp/B07DNHS2SJ"
+		(property "Other" "Digi-Key: 2 x S7018-ND (1x20), 1 x S7008-ND (1x10)"
 			(at 551.18 356.87 0)
 			(hide yes)
 			(show_name no)
@@ -42753,7 +42753,7 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/Female-Headers-Connector-Header-Raspberry/dp/B07DNHS2SJ"
+		(property "Other" "Digi-Key: 2 x S7018-ND (1x20), 1 x S7008-ND (1x10)"
 			(at 431.8 356.87 0)
 			(hide yes)
 			(show_name no)

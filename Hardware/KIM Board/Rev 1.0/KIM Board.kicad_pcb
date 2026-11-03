@@ -38194,7 +38194,7 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/Female-Headers-Connector-Header-Raspberry/dp/B07DNHS2SJ"
+		(property "Other" "Digi-Key: 2 x S7018-ND (1x20), 1 x S7008-ND (1x10)"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)

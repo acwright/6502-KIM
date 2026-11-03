@@ -327,7 +327,8 @@ Shared KiCad symbol and footprint libraries used across all AC6502 hardware proj
 | J2 | 1 | DB9 FEMALE (DCE) | DB-9 Connector (Female) | [609-1487-ND](https://www.digikey.com/en/products/filter?keywords=609-1487-ND) |  |  |
 | J4 | 1 | CART | Card Edge 2×20 2.54mm | [A31723-ND](https://www.digikey.com/en/products/filter?keywords=A31723-ND) | [571-5-5530843-4](https://www.mouser.com/ProductDetail/571-5-5530843-4) |  |
 | J5 | 1 | BUS | Bus Connector 2×20 | [732-5401-ND](https://www.digikey.com/en/products/filter?keywords=732-5401-ND) |  |  |
-| J6 | 3 | BREADBOARD HEADERS | Female Header 2.54mm: two 1×20, one 1×10 |  |  | [AMAZON](https://www.amazon.com/Female-Headers-Connector-Header-Raspberry/dp/B07DNHS2SJ) |
+| J6 | 2 | BREADBOARD HEADERS | Female Header 1×20 2.54mm | [S7018-ND](https://www.digikey.com/en/products/filter?keywords=S7018-ND) |  |  |
+| J6 | 1 | BREADBOARD HEADERS | Female Header 1×10 2.54mm | [S7008-ND](https://www.digikey.com/en/products/filter?keywords=S7008-ND) |  |  |
 | J7 | 1 | 5V DC | DC Barrel Jack | [2073-DCJ200-10-A-K1-K-ND](https://www.digikey.com/en/products/filter?keywords=2073-DCJ200-10-A-K1-K-ND) | [640-DCJ200-10-A-K1-K](https://www.mouser.com/ProductDetail/640-DCJ200-10-A-K1-K) |  |
 | Q1 | 1 | 2N3904 | NPN Transistor TO-92 | [2N3904FS-ND](https://www.digikey.com/en/products/filter?keywords=2N3904FS-ND) |  |  |
 | R1–R5, R15, R18, R23 | 8 | 10kΩ | 1/8W Resistor | [RNF18FTD10K0CT-ND](https://www.digikey.com/en/products/filter?keywords=RNF18FTD10K0CT-ND) |  | [AMAZON](https://www.amazon.com/ALLECIN-8W-Metal-Film-Resistor/dp/B0C77TM3NR) |
@@ -370,7 +371,8 @@ Also needed, and not on the schematic:
 | IC socket, 16-pin, 0.3 in | 4 | U7, U10, U11, U14 | |
 | IC socket, 14-pin, 0.3 in | 4 | U4, U5, U6, U17 | |
 | IC socket, 8-pin, 0.3 in | 1 | U12 | |
-| Socket and pin header, 1×16 2.54mm | 1 each | U13 | |
+| Female Header 1×16 2.54mm | 1 | U13 | DigiKey [S7014-ND](https://www.digikey.com/en/products/filter?keywords=S7014-ND) |
+| Pin Header 1×16 2.54mm | 1 | U13 | [AMAZON](https://www.amazon.com/Straight-Breakaway-Connector-Breadboard-Electronic/dp/B0FRZW75VS) |
 | BusBoard BB830 breadboard | 2 | The breadboards | DigiKey [4526-BB830-ND](https://www.digikey.com/en/products/filter?keywords=4526-BB830-ND) |
 | Clear two-piece keycap for Cherry MX switches | 24 | SW1–SW24 | [AMAZON](https://www.amazon.com/dp/B0G2WJBLBC) |
 | 5V DC power supply, center positive | 1 | J7 | |
