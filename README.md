@@ -326,7 +326,7 @@ Shared KiCad symbol and footprint libraries used across all AC6502 hardware proj
 | J1, J3 | 2 | KIM ENABLE, CTS EN | Pin Header 1×3 2.54mm |  |  | [AMAZON](https://www.amazon.com/Straight-Breakaway-Connector-Breadboard-Electronic/dp/B0FRZW75VS) |
 | J2 | 1 | DB9 FEMALE (DCE) | DB-9 Connector (Female) | [609-1487-ND](https://www.digikey.com/en/products/filter?keywords=609-1487-ND) |  |  |
 | J4 | 1 | CART | Card Edge 2×20 2.54mm | [A31723-ND](https://www.digikey.com/en/products/filter?keywords=A31723-ND) | [571-5-5530843-4](https://www.mouser.com/ProductDetail/571-5-5530843-4) |  |
-| J5 | 1 | BUS | Bus Connector 2×20 | [732-5401-ND](https://www.digikey.com/en/products/filter?keywords=732-5401-ND) |  | [AMAZON](https://www.amazon.com/Female-Headers-Connector-Header-Raspberry/dp/B07DNHS2SJ) |
+| J5 | 1 | BUS | Bus Connector 2×20 | [732-5401-ND](https://www.digikey.com/en/products/filter?keywords=732-5401-ND) |  |  |
 | J6 | 3 | BREADBOARD HEADERS | Female Header 2.54mm: two 1×20, one 1×10 |  |  | [AMAZON](https://www.amazon.com/Female-Headers-Connector-Header-Raspberry/dp/B07DNHS2SJ) |
 | J7 | 1 | 5V DC | DC Barrel Jack | [2073-DCJ200-10-A-K1-K-ND](https://www.digikey.com/en/products/filter?keywords=2073-DCJ200-10-A-K1-K-ND) | [640-DCJ200-10-A-K1-K](https://www.mouser.com/ProductDetail/640-DCJ200-10-A-K1-K) |  |
 | Q1 | 1 | 2N3904 | NPN Transistor TO-92 | [2N3904FS-ND](https://www.digikey.com/en/products/filter?keywords=2N3904FS-ND) |  |  |
@@ -360,21 +360,23 @@ R19 is not fitted, so it isn't listed. J6 is one footprint, built from three str
 
 Also needed, and not on the schematic:
 
-| Part | Qty | For | DigiKey |
+| Part | Qty | For | Source |
 |------|-----|-----|---------|
-| Shunt 2.54mm | 2 | J1 and J3 | [S9337-ND](https://www.digikey.com/en/products/filter?keywords=S9337-ND) |
+| Shunt 2.54mm | 2 | J1 and J3 | DigiKey [S9337-ND](https://www.digikey.com/en/products/filter?keywords=S9337-ND) |
 | IC socket, 40-pin, 0.6 in | 2 | U1, U8 | |
 | IC socket, 28-pin, 0.6 in | 3 | U2, U9, U15 | |
-| 28-pin ZIF socket, or a fourth 28-pin socket | 1 | U3 | [3M2802-ND](https://www.digikey.com/en/products/filter?keywords=3M2802-ND) |
+| 28-pin ZIF socket, or a fourth 28-pin socket | 1 | U3 | DigiKey [3M2802-ND](https://www.digikey.com/en/products/filter?keywords=3M2802-ND) |
 | IC socket, 18-pin, 0.3 in | 1 | U16 | |
 | IC socket, 16-pin, 0.3 in | 4 | U7, U10, U11, U14 | |
 | IC socket, 14-pin, 0.3 in | 4 | U4, U5, U6, U17 | |
 | IC socket, 8-pin, 0.3 in | 1 | U12 | |
 | Socket and pin header, 1×16 2.54mm | 1 each | U13 | |
-| Snap-together breadboard, 6.5 × 2.25 in | 2 | The breadboards | |
-| Keycap for Cherry MX switches | 24 | SW1–SW24 | |
+| BusBoard BB830 breadboard | 2 | The breadboards | DigiKey [4526-BB830-ND](https://www.digikey.com/en/products/filter?keywords=4526-BB830-ND) |
+| Clear two-piece keycap for Cherry MX switches | 24 | SW1–SW24 | [AMAZON](https://www.amazon.com/dp/B0G2WJBLBC) |
 | 5V DC power supply, center positive | 1 | J7 | |
 | Straight-through DB-9 serial cable | 1 | J2 | |
+
+The keycaps are clear, with a separate cap, so a printed legend sits inside each one. [`CAD/Keycaps/KIM Keycaps.pdf`](./CAD/Keycaps/KIM%20Keycaps.pdf) is the sheet to print.
 
 The base plate, the screws, the standoffs and the feet are in the [plate mounting drawing](./CAD/Bases/Plate%20Mounting%20Drawing.png).
 
