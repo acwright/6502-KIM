@@ -6243,7 +6243,7 @@
 				)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "732-5401-ND"
 			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)
@@ -6267,7 +6267,7 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/Female-Headers-Connector-Header-Raspberry/dp/B07DNHS2SJ"
+		(property "Other" ""
 			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)

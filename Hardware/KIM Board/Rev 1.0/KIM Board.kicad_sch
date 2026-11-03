@@ -33886,7 +33886,7 @@
 				)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "732-5401-ND"
 			(at 505.46 259.08 0)
 			(hide yes)
 			(show_name no)
@@ -33908,7 +33908,7 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/Female-Headers-Connector-Header-Raspberry/dp/B07DNHS2SJ"
+		(property "Other" ""
 			(at 505.46 259.08 0)
 			(hide yes)
 			(show_name no)
