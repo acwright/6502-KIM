@@ -19,7 +19,7 @@ An **AC6502** retro-style 8-bit computer based on the **65C02** microprocessor.
 - [Systems](#systems)
 - [Software](#software)
 - [Hardware](#hardware)
-  - [KIM Board](#kim-board) *(PCB finished, not yet built)*
+  - [KIM Board](#kim-board) *(Rev 1.0 ordered, not yet built)*
   - [Backplane / Backplane Pro](#backplane--backplane-pro) *(preferred)*
   - [CPU Card](#cpu-card) *(preferred)*
   - [Memory Card](#memory-card) *(preferred)*
@@ -48,7 +48,7 @@ The AC6502 ecosystem is a family of open-source, 65C02-based computers sharing a
 
 The **KIM** (Keypad Input Monitor) is a complete, self-contained 65C02 computer. The preferred way to build it is using a **[Backplane or Backplane Pro](https://github.com/acwright/6502-COB)**, **[CPU Card](https://github.com/acwright/6502-COB)**, and **[Memory Card](https://github.com/acwright/6502-COB)** from the COB project, along with the **[Serial Card](https://github.com/acwright/6502-COB)** and **[Backplane Helper](https://github.com/acwright/6502-COB)** (also from COB) and the **Keypad Card** — a card that the **Keypad Helper** (keypad matrix) and **Keypad LCD Helper** (16x2 LCD display) attach to. As an alternative, the **[Main Board](https://github.com/acwright/6502-VCS)** from the VCS project can be substituted for the Backplane/CPU/Memory combination.
 
-The **[KIM Board](#kim-board)** puts the whole KIM on one through-hole board, with two breadboards for building circuits beside the keypad. Its memory map and I/O addresses are the same as today's KIM, so the KC Monitor, the BIOS and every program run on it unchanged. Rev 1.0 is in design: the schematic is drawn and checked, and the PCB is being laid out.
+The **[KIM Board](#kim-board)** puts the whole KIM on one through-hole board, with two breadboards for building circuits beside the keypad. Its memory map and I/O addresses are the same as today's KIM, so the KC Monitor, the BIOS and every program run on it unchanged. Rev 1.0 has been ordered. No board has been built or tested yet.
 
 ## Architecture
 
@@ -94,7 +94,7 @@ This repository contains KiCad 7.0+ PCB designs for the KIM-specific hardware. T
 ### KIM Board
 `Hardware/KIM Board/`
 
-*Rev 1.0's schematic passes its checks (see [Checking the schematics](#checking-the-schematics)), and its PCB is finished and exported for production (`Production/KIM Board/Rev 1.0/`). No boards have been made or tested yet.*
+*Rev 1.0's schematic passes its checks (see [Checking the schematics](#checking-the-schematics)), and its PCB is finished and exported for production (`Production/KIM Board/Rev 1.0/`). The first boards have been ordered. No board has been built or tested yet.*
 
 One through-hole board that joins every part of today's KIM. The computer itself (CPU, RAM, ROM, glue logic and the I/O decode) is the ACE Board Rev 1.1's. The clock, the reset and the power input are the Backplane Pro Rev 1.1's. The serial port is the Serial Card's, and the keypad, the LCD and the KC Monitor are the Keypad Card's, Keypad Helper's and Keypad LCD Helper's. The card slot and the 6502 BUS header are the Backplane Helper's. The keypad, the LCD, the card slot and the 6502 BUS header sit exactly where they are on today's KIM, and the board fits today's base plate. Provides:
 
