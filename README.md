@@ -416,6 +416,7 @@ U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502
 **Rev 1.1** (drawn, not yet made; Rev 1.0 is sold first)
 
 - The silkscreen labels J3 `KEYPAD HELPER`. Rev 1.0's says `KEYBOARD HELPER`.
+- The outline is a clean 100 × 65 mm, centred on the mounting holes, which are 6 mm from each edge. Rev 1.0's outline is hand drawn, slightly skewed and 100.26 × 64.69 mm. The holes don't move, so both revisions fit the same plate and top panel.
 
 **Rev 1.0**
 
