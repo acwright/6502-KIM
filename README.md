@@ -390,6 +390,12 @@ U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502
 
 ### Keypad Card
 
+#### Revision History
+
+**Rev 1.0**
+
+- Initial release, and the board on sale. Built and tested. `Hardware/Keypad Card/Rev 1.0/` and `Production/Keypad Card/Rev 1.0/` match the boards JLCPCB made (order Y90). The Gerbers and drill files in the production zip are byte-for-byte what JLCPCB received.
+
 | Reference | Qty | Value | Description | LCSC | DigiKey | Mouser | Other |
 |-----------|-----|-------|-------------|------|---------|--------|-------|
 | C1–C4 | 4 | 100nF | SMD Capacitor 0805 | [C49678](https://www.lcsc.com/search?q=C49678) | | | |
@@ -399,6 +405,14 @@ U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502
 | U4 | 1 | AT28C64 | 8K×8 EEPROM | | [AT28C64B-15PU-ND](https://www.digikey.com/en/products/filter?keywords=AT28C64B-15PU-ND) | [556-AT28C64B15PU](https://www.mouser.com/ProductDetail/556-AT28C64B15PU) | |
 
 ### Keypad Helper
+
+#### Revision History
+
+**Rev 1.0**
+
+- Initial release, and the board on sale. Built and tested. `Hardware/Keypad Helper/Rev 1.0/` and `Production/Keypad Helper/Rev 1.0/` match the boards JLCPCB made (order Y51). The Gerbers and drill files in the production zip are byte-for-byte what JLCPCB received.
+- The PCB file was restored to that layout on 2026-11-04. Later edits only changed pad shapes, when footprints were refreshed, so they don't make a Rev 1.1. The schematic and BOM are today's, and they match this copper.
+- U1 and U2 use the footprints the board was made with, without the socket outline.
 
 | Reference | Qty | Value | Description | DigiKey | Mouser | Other |
 |-----------|-----|-------|-------------|---------|--------|-------|

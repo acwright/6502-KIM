@@ -3,4 +3,4 @@
 C3,C_Disc_D5.0mm_W2.5mm_P5.00mm,1,1uF,
 "D1, D2",D_DO-35_SOD27_P7.62mm_Horizontal,2,1N914,
 "R1, R2",R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,2,100k,
-U2,DIP-14_W7.62mm_Socket_LongPads,1,74HC00,
+U2,DIP-14_W7.62mm_LongPads,1,74HC00,
