@@ -586,6 +586,45 @@
 				)
 			)
 		)
+		(property "Digikey" "296-1563-5-ND"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "377f172b-5bde-43ab-8183-bd756aaccdce")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" "595-SN74HC00N"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b454dad2-f1cf-4663-8236-2484625f9b9c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f233185c-3f4b-48ec-abd7-20be3ae606ae")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
 		(path "/c5b20a35-0e55-4cde-a58b-bb703da61e16")
 		(sheetname "/")
@@ -1002,6 +1041,45 @@
 			(effects
 				(font
 					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Digikey" "1N914FS-ND"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9410355d-cbd3-40f3-a799-70b0ba102a4b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "70a19667-f57d-4afc-9a24-3442395fb581")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "598a5ee4-ec3d-4272-873e-478439326a65")
+			(effects
+				(font
+					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -1613,7 +1691,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1639,6 +1717,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0322569d-f054-463c-91b4-40c22bbf0779")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "80ceba52-3eeb-4d89-b581-3d9237741dac")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3f1970a6-c1d4-4994-8977-2271d113dc97")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/924ee840-68f3-4f7c-86b4-485a89f17381")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -1648,7 +1765,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -1905,7 +2022,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1931,6 +2048,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9ace2a74-6436-49b3-922f-b71750f7426b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eee2ec7f-bf57-4c98-8bb3-ecd5537dab68")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a05ead79-5cb2-402d-b2e8-8e00c4955301")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/4387b0dc-8039-40c0-ac65-66344ae8b5a1")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -1940,7 +2096,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -2197,7 +2353,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2223,6 +2379,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4c716a43-7849-41b4-ae69-7391bc7cff73")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "22e4ed05-f779-42d5-9faa-62986c761c76")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6cbdaab5-7f50-4ddc-bf82-10a9a82dc006")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/4bd1660c-9c9d-4c65-953f-7f3eebfc4713")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -2232,7 +2427,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -2489,7 +2684,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2515,6 +2710,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "791b5878-1a26-41f8-a777-f929a1ea9938")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "85e735f2-2cb6-471f-aae5-93a94ac6aa3a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ed41cc30-404d-48c4-88ee-3131d7464d7b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/7a1f82d3-7757-4cd7-a7d0-71e58a4d92fb")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -2524,7 +2758,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -2781,7 +3015,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2807,6 +3041,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "65d62624-7423-419b-ad07-ed228a453c78")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c0033677-31fa-418d-bb26-372ca6754b11")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4274cbdd-311d-4b03-886b-49d82aa716b4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/902c1b8c-c787-4a43-ad69-c6d6ae7b6049")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -2816,7 +3089,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -3073,7 +3346,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3099,6 +3372,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fe0550b6-30dd-4c57-bb0e-e1fe35528b88")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c3d1edac-8b26-4e0f-90e4-e8133e6036ad")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "81c52d0a-a58f-4121-9f08-cce9c0ca55df")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/e03fffa1-f50e-43c4-afea-0c2fa6255b5b")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -3108,7 +3420,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -3365,7 +3677,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3391,6 +3703,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ac932035-3595-4d1d-be16-90f471f6aa6e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "08b1afb4-d3ef-47fb-a593-e5ba605c610f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1775ef82-25c4-4988-b66a-8a28f5816f65")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/74a83f8f-406e-456e-80c9-45479fc229a0")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -3400,7 +3751,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -3657,7 +4008,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3683,6 +4034,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f57bc480-7f7d-49f7-955f-0c80b6dc9cf6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e94916bd-9d9a-427a-b0ee-29f28dfcb02f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d8b97460-fea1-4b6a-9798-3c03d84e20ca")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/035eda16-c4d6-448b-84a0-e25098272ae2")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -3692,7 +4082,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -4053,7 +4443,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4072,6 +4462,45 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8174890d-7785-452d-bebb-dc6e33d47872")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Digikey" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "86af46f1-48c4-4e76-96e5-4c4f275e52de")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "010bd54c-22ea-4e44-b8af-880a8dfd5587")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/ALLECIN-8W-Metal-Film-Resistor/dp/B0C77TM3NR"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fb28266d-c92a-4f79-b9df-b8dd6c42e8d5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4283,7 +4712,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4309,6 +4738,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b67f5864-7667-48a8-b5fd-adcb39c4c1d6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6a16a361-5bf3-4cce-9414-1c46a2ffb932")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9c5777cd-4649-4ed3-b984-b70e4204b077")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/df7fd016-22fb-4d28-bf73-a015706b87bd")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -4318,7 +4786,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -5391,7 +5859,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5417,6 +5885,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "971e5283-c9c5-451f-a448-c91b41cee414")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c5878958-37b0-4982-8038-a514fa2161cf")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cd981b3b-403a-458b-a35a-9f3f1ee28fed")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/1bdc3c03-5e2f-49f1-a146-d1fff6210eb7")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -5426,7 +5933,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -5683,7 +6190,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5709,6 +6216,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7aa60460-efa1-4677-bc6f-a6713b768a0d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "759a4db0-e70d-4749-b84a-605707ca7a9d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "42ee8aae-c37c-4ba8-93db-e190ac9be4e3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/fdaea784-9dba-43cb-96eb-5fb7b99b4866")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -5718,7 +6264,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -5975,7 +6521,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6001,6 +6547,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "acea1951-2fd6-443a-b941-983b8d34a430")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "61251c4e-470b-4eb2-b01b-aa7c39954051")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b03dcfce-b139-4b29-8970-bfb8f6b98936")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/f2cb6e59-2a0f-4d02-8387-bd24dd1980f8")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -6010,7 +6595,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -6267,7 +6852,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6293,6 +6878,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6d2c3633-de1f-4374-85c3-ec83f5428956")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8063b2da-e535-4e40-b42a-0546f2bfd052")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7637c64f-256c-4c62-8093-0d490a87e2cd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/9702b556-6969-4f29-b1c5-d90f4a54be95")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -6302,7 +6926,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -6559,7 +7183,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6585,6 +7209,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "57f2d263-1715-427f-adc9-3590899cb69f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "698a64d4-44d9-417c-9df2-82172d7ad5d0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c770ee71-bba0-47a3-9977-40b8f1120c8e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a9d51c8f-fe78-4757-9575-7f508cb7b7cf")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -6594,7 +7257,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -6851,7 +7514,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6877,6 +7540,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "97b316d3-51db-4a2c-a1d8-4254652bf65b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "17a59b45-fdd0-49b0-b4fc-fbf8e0ffd1b3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9ada2948-68e8-41af-bc8f-135e120189f7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/e583426f-5bea-4a40-a580-4990c930aebf")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -6886,7 +7588,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -7143,7 +7845,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7169,6 +7871,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0efdab7c-81f3-4646-a4ae-aed4bc900bcd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "17f4c4f3-8c18-4801-b617-580d268b3e4c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1610613e-7dde-4749-8589-369a0a583491")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/fffb6ee4-aa35-4350-bde0-011ee500d235")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -7178,7 +7919,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -7435,7 +8176,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7461,6 +8202,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "918725f3-9974-4133-95f8-6d3b59b43fce")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ea728930-800a-4704-a848-bfa2ab970afd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5def0c49-da64-4256-9a78-c66d88bf8a93")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/636e32c6-fc15-46e7-ba40-64954dd21310")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -7470,7 +8250,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -7727,7 +8507,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7753,6 +8533,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8bbd53f4-f1ca-4e39-acd7-0d3a8fe0f3f9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a151d198-3452-4667-99c4-58a337003da6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ca46683c-8d1d-4873-8537-eedad38dd26e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/d62efcfa-3f69-4714-9f1c-edd954c49913")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -7762,7 +8581,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -8226,7 +9045,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8245,6 +9064,45 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e36bb073-c69a-44ee-adda-68804b03e68d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Digikey" "478-5732-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "55be0691-4873-4a83-8ea6-8529d0e1147f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5fe9bc4e-fc7c-4e74-a0dd-cfab9e16ec17")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/PANMILED-Multilayer-Monolithic-Capacitors-Assortment/dp/B0CYQ1Z4G5"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4b208b36-efaa-400f-9814-98a52eb2724c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8502,6 +9360,45 @@
 				)
 			)
 		)
+		(property "Digikey" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5e5773f3-8904-47c9-8170-de36ee3fa257")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f416d62d-b7c3-4542-9043-db74a4c4b918")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.jameco.com/z/74C922-Major-Brands-IC-74C922-16-20-Key-Encoder-DIP-18-pin_44564.html"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bfffba7f-4aea-4bdc-901c-2d46b02217ca")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP?20*")
 		(path "/db69ebbb-f2b1-407a-94e3-44ae6984f768")
 		(sheetname "/")
@@ -8514,7 +9411,7 @@
 				)
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start 6.06 -1.33)
@@ -8911,7 +9808,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8937,6 +9834,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6b6fc6be-8efb-4295-9b44-6779f8d46d2b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b313945a-ca13-46ac-8b98-fb6b8574d9e9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5089046e-2e71-4e10-88a6-5aae23421251")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a3300dbf-5a1a-4f3a-8986-9462b121da82")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -8946,7 +9882,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -9204,7 +10140,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -9223,6 +10159,45 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "42102d2b-89ec-49a8-bab2-d531c2ed3afb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Digikey" "478-5732-ND"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b7cf68df-3823-4e55-8dfa-32855a72fd8e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "287d0c0a-6aaf-46ab-9710-d8139d9b0b45")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/PANMILED-Multilayer-Monolithic-Capacitors-Assortment/dp/B0CYQ1Z4G5"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5084665f-8f17-40f0-b9dc-f5d19b16d6d8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9454,7 +10429,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -9480,6 +10455,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "aef43f7e-3729-4bbe-8f15-7fb768d2aca7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "af8a4dc6-2945-41c1-ae2c-0c2f368e867f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6b2a6c79-cfa6-4abd-a105-01f5657c5129")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/75c20a24-315e-4d12-bb06-0db5327e0cbd")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -9489,7 +10503,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -9746,7 +10760,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -9772,6 +10786,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4c85de9b-ad96-4d49-973f-5831bd3d122e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "115d5afd-8d32-4a7b-a757-538d5a7817cd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3a13da9a-f4f6-4f2a-8376-ea1d9f58a255")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/f0e1bef9-f581-4f2f-aea0-dc4aa36091d9")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -9781,7 +10834,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -10038,7 +11091,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10064,6 +11117,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9730d955-641a-43b9-b78b-390beb433b5f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d4b06daf-52ce-44cd-a249-e87c34787e43")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e7249b78-0a27-447c-9c04-04c9c8651231")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/7385489b-f7d0-45b3-88e7-d8622329c8b7")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -10073,7 +11165,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -10331,7 +11423,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10357,6 +11449,45 @@
 				)
 			)
 		)
+		(property "Digikey" "2057-BHR-12-VUA-ND"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "22e695ca-18e1-4384-9f65-69421bf60a34")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "97faa0c5-2e66-4817-a133-00bc0ef44a2e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8ac58aeb-2ce2-4afd-8c9e-601d7ea95e87")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_2x??_*")
 		(path "/5e7779aa-0f83-4bd0-bb86-bc8da7ea8f0f")
 		(sheetname "/")
@@ -10367,7 +11498,7 @@
 				(pins "1" "3" "5" "7" "9" "11" "2" "4" "6" "8" "10" "12")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start 5.75 3.81)
@@ -10778,7 +11909,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10797,6 +11928,45 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7c2819a1-9dd4-454f-a1f9-15a334db8b49")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Digikey" "478-5732-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f57258c8-33c4-44fc-8b0c-afc9aac898c4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "74a54e67-8f38-4346-9c92-0505db90d07a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/PANMILED-Multilayer-Monolithic-Capacitors-Assortment/dp/B0CYQ1Z4G5"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "96d58366-18f0-4580-8a37-6b083033e182")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11077,6 +12247,45 @@
 			(effects
 				(font
 					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Digikey" "1N914FS-ND"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "518c5979-5adc-4f43-a184-a979daa2c8f0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f82756db-7e99-4cdf-8031-92bfcfe1c9ad")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ece36fc1-dcba-4b73-aaa0-8d0501170643")
+			(effects
+				(font
+					(size 1.27 1.27)
 					(thickness 0.15)
 				)
 			)
@@ -11399,7 +12608,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11418,6 +12627,45 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a9693b2e-eac7-437a-840b-44b4f93d82b1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Digikey" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fd336bf0-612f-4af7-9d7f-79e34ea78dde")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "de713e46-ee35-42d3-9fba-2df6662d822a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/ALLECIN-8W-Metal-Film-Resistor/dp/B0C77TM3NR"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "14c68169-7ea6-4bac-9c29-b4acfa1217b4")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11630,7 +12878,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11649,6 +12897,45 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "570841fc-3151-48a9-b43c-44eeaf115c03")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Digikey" "478-7667-ND"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2e917b69-08bf-4f68-871e-f65cd239ffd6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "de5d0b6b-b733-4902-adc7-e154e0f20009")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/PANMILED-Multilayer-Monolithic-Capacitors-Assortment/dp/B0CYQ1Z4G5"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ce3999da-f2a2-42f7-a8e3-3ac8186b4af5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11880,7 +13167,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11906,6 +13193,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6fa4b97c-4378-4144-aa31-fe90f2ea8255")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dd99a3f4-a6e7-48bd-b6bf-78208d879e21")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cece5ee7-0d7b-40f7-9cfd-06822c33c58c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/54c14ec6-e5ab-4536-b04c-eb969e306428")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -11915,7 +13241,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
@@ -12172,7 +13498,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12198,6 +13524,45 @@
 				)
 			)
 		)
+		(property "Digikey" "CH196-ND"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fd1f8582-c571-4ed0-87b7-bcac25a2520f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2078d9d5-e599-4149-ab96-ffefbfd74fd5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "39fe557d-a349-4d07-94b1-d05d6fd51534")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/59c0f7a6-561c-428c-89a3-d3ef9bba7485")
 		(sheetname "/")
 		(sheetfile "Keypad Helper.kicad_sch")
@@ -12207,7 +13572,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -9.525 -1.905)
