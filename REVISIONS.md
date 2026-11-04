@@ -17,7 +17,7 @@ Every revision of every board in this repository, and what is known about each. 
 | KIM Board | 1.0 | Ordered | — |  |  |  | — | 280×220 | 6 mm | — | — | Order 1, placed 2026-11-02 |
 | Keypad Card | 1.0 | Made, matches order | Yes | Y90 | 2026-05-10 | `5652134` | 4 | 100×57.62 | — | — | — |  |
 | Keypad Helper | 1.0 | Made, matches order | Yes | Y51 | 2024-07-07 | `6502-COB b8f89eb` | 4 | 100×150 | 6 mm | yes | — |  |
-| Keypad LCD Helper | 1.0 | Made, matches order | Not recorded | Y54 | 2024-08-06 | `6502-COB 48c5bde` | 4 | 100.26×64.68 | 5.68–6.25 mm | yes | — |  |
+| Keypad LCD Helper | 1.0 | Made, matches order | Yes | Y54 | 2024-08-06 | `6502-COB 48c5bde` | 4 | 100.26×64.68 | 5.68–6.25 mm | yes | — |  |
 | Keypad LCD Helper | 1.1 | Drawn | — |  |  |  | — | 100×65 | 6 mm | yes | — |  |
 
 The audit last ran on 2026-11-04. Each production zip marked *Made, matches order* was compared byte for byte with JLCPCB's copy, and its PCB regenerated to the same copper, mask, outline and holes. Tindie stock is from the listings as saved on 2026-10-23.
