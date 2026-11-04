@@ -1,0 +1,7 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+J1,6502 GPIO Connector,1,PORT A,
+J2,6502 GPIO Connector,1,PORT B,
+J3,6502 GPIO Connector,1,KEYPAD HELPER,
+R1,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,1,R,
+U2,LCD-16X2,1,LCD-16X2,
+VR1,3386F-1-103LF,1,10k,

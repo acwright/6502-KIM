@@ -409,6 +409,16 @@ U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502
 
 ### Keypad LCD Helper
 
+#### Revision History
+
+**Rev 1.1** (drawn, not yet made; Rev 1.0 is sold first)
+
+- The silkscreen labels J3 `KEYPAD HELPER`. Rev 1.0's says `KEYBOARD HELPER`.
+
+**Rev 1.0**
+
+- Initial release, and the board on sale. `Hardware/Keypad LCD Helper/Rev 1.0/` and `Production/Keypad LCD Helper/Rev 1.0/` match the boards JLCPCB made (order Y54). The Gerbers and drill files in the production zip are byte-for-byte what JLCPCB received.
+
 | Reference | Qty | Value | Description | DigiKey | Mouser | Other |
 |-----------|-----|-------|-------------|---------|--------|-------|
 | J1, J2, J3 | 3 | PORT A/B/KEYPAD | Box Header 2×6 2.54mm | [2057-BHR-12-VUA-ND](https://www.digikey.com/en/products/filter?keywords=2057-BHR-12-VUA-ND) | | [AMAZON](https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2) |
