@@ -642,6 +642,32 @@
 				)
 			)
 		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "162e440c-9eb4-5c12-b8a4-562495fb5643")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "778b2074-579c-5bdc-9258-e4a7f2c41f10")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
 		(path "/c5b20a35-0e55-4cde-a58b-bb703da61e16")
 		(sheetname "Root")
@@ -1058,7 +1084,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "512-1N914"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1077,6 +1103,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "0c5e084b-1445-4441-9fa7-9aeebb158b91")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1fb625d8-6fa4-533c-9ff6-12d8a31e81d9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "07cf5f62-7ba6-5e3c-b3be-ef1c57baba7c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1709,7 +1761,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1722,7 +1774,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1735,12 +1787,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e23ff47d-8b34-4ef5-99de-a72cd9b7e7ca")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e1ae7473-b36a-5282-8cea-06d6ff71b13f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9d84a548-4c3b-518a-8b5a-cc38db70d4b2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2033,7 +2111,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2046,7 +2124,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2059,12 +2137,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7aea4151-352f-4cb5-98e0-37e86ee9c5b9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4cd39d01-d606-520b-b114-547b101975e8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "58714881-54ca-5438-b03a-9d6a3c024712")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2357,7 +2461,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2370,7 +2474,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2383,12 +2487,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c40d3050-fc42-4dd8-9845-ddd85008c32b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fc8db3aa-462a-5115-a30b-8f550a503af3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "32730a5e-b0af-57f9-9396-9192afc89373")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2681,7 +2811,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2694,7 +2824,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2707,12 +2837,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "40a94faa-2b5b-44c8-be5f-7343f4f43c93")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "579bbd5b-ccb3-5185-b872-467536964666")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7d8e8fb3-b7fe-5fc8-a43a-1a46bc6b4f4b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3005,7 +3161,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3018,7 +3174,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3031,12 +3187,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "18c1f4d4-ff5f-4543-9f23-842274798981")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7b5e1461-dfe6-59d5-8a45-f6c48efe5ed7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3c1159f1-0512-527d-ba81-553979454225")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3329,7 +3511,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3342,7 +3524,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3355,12 +3537,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c6bd870d-48b7-4272-ab73-fad595398b62")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e416c8e5-2004-529a-a7ca-8bb08d38ed71")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b31db99b-61a1-5c75-b436-1b93320844b1")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3653,7 +3861,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3666,7 +3874,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3679,12 +3887,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4be0c0c0-c121-44dd-b9d7-732f3d7a1e04")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "049bff54-7842-592e-866b-dc92b3d0bd78")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8f430c8f-99d5-5e7e-a16d-fb9626215b8b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3977,7 +4211,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3990,7 +4224,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4003,12 +4237,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5ef70eec-a9b9-442e-b90c-cfa208b65b64")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dbd39d53-7bb7-5c8b-899e-ff485a44786c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "47bede33-3c8d-5689-8565-4efb9fa62bb9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4402,7 +4662,7 @@
 				)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "13-MFR-12FTF52-100KCT-ND"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4415,7 +4675,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "603-MFR-12FTF52-100K"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4428,12 +4688,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/ALLECIN-8W-Metal-Film-Resistor/dp/B0C77TM3NR"
+		(property "Other" ""
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a0da0fe8-4453-41d4-b568-9e905b7b8998")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0b443772-6e1b-5e2a-96a7-1d7e665b7703")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ca367b9a-5f71-5f67-aa9f-b9ef47a02507")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4664,7 +4950,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4677,7 +4963,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4690,12 +4976,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "22c4e355-62d2-438b-8f99-3e8f43a6f2de")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5f7dcd51-867b-57a1-a1fb-000db76602e8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c1041e9a-99aa-5139-8d2f-ad4ada0f065a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5803,7 +6115,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5816,7 +6128,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5829,12 +6141,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "240ecf7c-a0d3-4c97-aeb3-16e99e9a188f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "05a321cb-9f72-57d1-9808-8c7749818973")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "64e257b3-febb-5d8f-a0ae-bee61a55e859")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6127,7 +6465,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6140,7 +6478,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6153,12 +6491,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "113024ad-ba2b-444c-8070-ada8368c1ebc")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a266cc52-6bcb-5943-8384-a8545d6a8d71")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7b68f6af-9b7c-5b26-bffd-c1a1fda9c3a7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6451,7 +6815,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6464,7 +6828,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6477,12 +6841,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3237d975-c9ab-479e-af34-83d76c3f5529")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "99fa80ff-69d1-5cd7-8bfa-ff58582fc07d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "974cc8cf-8ce7-519b-855f-f7fa52eb7efb")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6775,7 +7165,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6788,7 +7178,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6801,12 +7191,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d7e96b04-1023-47ef-8224-e696226a6eac")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e23693b8-12d7-525d-ad2c-0b4a2fbd9169")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "21e9abd0-9375-50cd-a49f-ddf80765edf4")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7099,7 +7515,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7112,7 +7528,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7125,12 +7541,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5702a046-7a25-4db8-a90e-e812aaee6158")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "35d014d6-649d-5949-9880-407dd07ff265")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "59e10e81-e2d6-595c-bf65-812f217b2ad8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7423,7 +7865,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7436,7 +7878,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7449,12 +7891,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6b0c8374-af77-4370-a5c0-08b5e7f9fa7e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dff9cb5c-37aa-5232-8803-a1aecec3f9b8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4199bbe7-932a-5a8f-af95-28ca9b986356")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7747,7 +8215,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7760,7 +8228,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -7773,12 +8241,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c1f9fc17-13ab-451b-950c-9b58f82cf288")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bd9cef34-e1d7-5103-bd8d-e40043caf6a0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "60ec5e19-4c7f-5770-b718-e128a1e6cdb2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8071,7 +8565,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8084,7 +8578,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8097,12 +8591,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "36b00147-b50c-47f1-adc9-fc0aada5e699")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "636c0482-d604-535f-afda-9e6dd01ed4fa")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "eb3d4fcd-cb79-5463-b9f6-474b94a4db0a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8395,7 +8915,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8408,7 +8928,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8421,12 +8941,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "62b2f34c-d707-4951-8556-996be61f12e7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8f177093-e470-5ca5-85eb-48d4aa367154")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bd56031e-3088-5785-aba4-bd057cc93eb8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8920,7 +9466,7 @@
 				)
 			)
 		)
-		(property "Digikey" "478-5732-ND"
+		(property "Digikey" "478-3188-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8933,7 +9479,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "581-SR215C104KAR"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8946,12 +9492,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/PANMILED-Multilayer-Monolithic-Capacitors-Assortment/dp/B0CYQ1Z4G5"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3d8d164f-8f75-41be-a6ae-95f817da47c6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "49596f48-272e-5467-9429-4bef002cdb62")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6e79511b-d74c-59ab-8645-c88f43b73210")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9228,12 +9800,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.jameco.com/z/74C922-Major-Brands-IC-74C922-16-20-Key-Encoder-DIP-18-pin_44564.html"
+		(property "Other" ""
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "59aea1d4-5afa-461f-9b67-7a604c7a6f07")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" "44564"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5250e3c3-32b4-5e38-955d-629ea4f433c8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e24f9a53-09ef-5cfc-972a-c0713a3c86a6")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9673,7 +10271,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -9686,7 +10284,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -9699,12 +10297,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6e5001fa-ca6f-4544-970d-3822f7ada999")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7248850c-9869-526d-b484-c8f8b9a2d4d5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "727697f6-d212-50e2-916a-4532e7d54aec")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9998,7 +10622,7 @@
 				)
 			)
 		)
-		(property "Digikey" "478-5732-ND"
+		(property "Digikey" "478-3188-ND"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10011,7 +10635,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "581-SR215C104KAR"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10024,12 +10648,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/PANMILED-Multilayer-Monolithic-Capacitors-Assortment/dp/B0CYQ1Z4G5"
+		(property "Other" ""
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "aeee3ee0-a6dc-44c3-b632-4a5f58dc2842")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3fdb9904-0e2d-506e-8ea3-ee8480384865")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3a5bdd75-f1ea-500d-a0e1-2407055ec4a5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10280,7 +10930,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10293,7 +10943,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10306,12 +10956,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "791cd941-3b92-4279-9ad8-dae5c1ae9330")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "59b08f46-73eb-51ff-bc0b-72f40eaf2a52")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "38fc5532-671b-59e8-8622-d3bcfd5137e6")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10604,7 +11280,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10617,7 +11293,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10630,12 +11306,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "718b5913-13fa-43d8-adcc-67c0d2f66d29")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "59c89d33-0ce5-59c0-a840-9cfa7c5f4028")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b814303c-aab0-5e73-9a4d-d546774fc175")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10928,7 +11630,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10941,7 +11643,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10954,12 +11656,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4fa3593a-f16c-42b4-b7ce-543e5640fd12")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4189608d-7b0d-502f-bb35-d694ceedd708")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ecdaa62f-5b57-5260-a72d-d95d17e3fd28")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11266,7 +11994,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "737-BHR-12-VUA"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11279,12 +12007,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2"
+		(property "Other" "2057-BHR-12-VUA-ND"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2f703001-d791-4dc9-aed0-6aae91a664d4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cfd22839-5a63-510c-a5f5-bea23f71c879")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9a4d79df-5984-5115-a788-341932958ac7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11729,7 +12483,7 @@
 				)
 			)
 		)
-		(property "Digikey" "478-5732-ND"
+		(property "Digikey" "478-3188-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11742,7 +12496,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "581-SR215C104KAR"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11755,12 +12509,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/PANMILED-Multilayer-Monolithic-Capacitors-Assortment/dp/B0CYQ1Z4G5"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "27451b86-1520-49b8-904c-6bcdda162d14")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5de73438-37bc-51d7-953c-85d955433dcc")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6ee19553-cb01-5087-bd18-4cff8021ef96")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12051,7 +12831,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "512-1N914"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12070,6 +12850,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ceef202b-56ce-42de-8f7d-24bf306bc175")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "aba7f2b9-d066-55f5-bb87-8529c28ba1be")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0c3e6948-48e3-5f4b-8800-c41f39474a95")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12414,7 +13220,7 @@
 				)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "13-MFR-12FTF52-100KCT-ND"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12427,7 +13233,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "603-MFR-12FTF52-100K"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12440,12 +13246,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/ALLECIN-8W-Metal-Film-Resistor/dp/B0C77TM3NR"
+		(property "Other" ""
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "355ea631-cd59-4d0b-9b76-3280cc97a359")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fc4c478b-d325-5f43-977b-912c8a64f6e7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a577923f-897c-5e9b-830a-3937d3aba4c6")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12677,7 +13509,7 @@
 				)
 			)
 		)
-		(property "Digikey" "478-7667-ND"
+		(property "Digikey" "478-SR215C105KAR-ND"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12690,7 +13522,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "581-SR215C105KAR"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12703,12 +13535,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/PANMILED-Multilayer-Monolithic-Capacitors-Assortment/dp/B0CYQ1Z4G5"
+		(property "Other" ""
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f7a19d12-0301-4d08-b95c-412ba7aa9fbc")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7bb6b47e-2160-5ae8-9c32-e51ee24fe476")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b6c822c6-2cb7-53f1-95f9-42b1143d5879")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12959,7 +13817,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12972,7 +13830,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12985,12 +13843,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f5a24c80-3698-49f6-97ad-609f6085abb7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0d33da9e-b5ec-523f-a42e-79c5dd6ae11f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "45366521-007f-51d6-9639-d12a4efa33b5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13283,7 +14167,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13296,7 +14180,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13309,12 +14193,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f107e549-8384-4d6b-ba56-1d9bab98f994")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d544673c-a7b6-5123-8728-3fad5c6d243e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ccf87510-c975-5298-8b2d-f0f34d6529a0")
 			(effects
 				(font
 					(size 1.27 1.27)

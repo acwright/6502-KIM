@@ -76,150 +76,6 @@
 					)
 				)
 			)
-			(property "MF" "Gravitech"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "MAXIMUM_PACKAGE_HEIGHT" "14 mm"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "Package" "None"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "Price" "None"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "Check_prices" "https://www.snapeda.com/parts/LCD-16X2/Gravitech/view-part/?ref=eda"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "STANDARD" "Manufacturer Recommendations"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "PARTREV" "N/A"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "SnapEDA_Link" "https://www.snapeda.com/parts/LCD-16X2/Gravitech/view-part/?ref=snap"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "MP" "LCD-16X2"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "Description_1" "\nDisplay Development Tools 16x2 Black on Green Char LCD w Backlight\n"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "Availability" "Not in stock"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "MANUFACTURER" "Gravitech"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
 			(symbol "LCD-16X2_0_0"
 				(rectangle
 					(start -7.62 -20.32)
@@ -3314,7 +3170,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "737-BHR-12-VUA"
 			(at 204.47 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -3325,7 +3181,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2"
+		(property "Other" "2057-BHR-12-VUA-ND"
+			(at 204.47 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 204.47 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 204.47 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -3390,7 +3268,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "16ed51fc-d44b-4810-898b-bd9d92d7bc72")
 		(property "Reference" "R1"
 			(at 64.77 125.73 0)
@@ -3403,7 +3281,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "DNP: parallel with VR1 to make ~10 k"
 			(at 71.12 126.9999 0)
 			(hide yes)
 			(show_name no)
@@ -3471,6 +3349,28 @@
 			)
 		)
 		(property "Other" ""
+			(at 68.58 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 68.58 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 68.58 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -3652,7 +3552,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "737-BHR-12-VUA"
 			(at 203.2 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -3663,7 +3563,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2"
+		(property "Other" "2057-BHR-12-VUA-ND"
+			(at 203.2 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 203.2 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 203.2 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -3873,7 +3795,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "737-BHR-12-VUA"
 			(at 82.55 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -3884,7 +3806,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2"
+		(property "Other" "2057-BHR-12-VUA-ND"
+			(at 82.55 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 82.55 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 82.55 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -4018,7 +3962,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "652-3386F-1-103LF"
 			(at 63.5 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -4030,6 +3974,28 @@
 			)
 		)
 		(property "Other" ""
+			(at 63.5 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 63.5 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 63.5 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -4227,7 +4193,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/MECCANIXITY-Display-Backlight-Interface-Adapter/dp/B0DSFXK7QK"
+		(property "Other" "https://www.amazon.com/dp/B0DSFXK7QK"
+			(at 95.25 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 95.25 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 95.25 135.89 0)
 			(hide yes)
 			(show_name no)

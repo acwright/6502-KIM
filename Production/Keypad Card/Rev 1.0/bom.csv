@@ -1,3 +1,7 @@
 ﻿Designator,Footprint,Quantity,Value,LCSC Part #
 "C1, C2, C3, C4",0805,4,100nF,C49678
+J2,6502 GPIO Connector,1,PORT A,
+J3,6502 GPIO Connector,1,PORT B,
 "U1, U2",SOIC-16_3.9x9.9mm_P1.27mm,2,74HC138,C5602
+U3,DIP-40_W15.24mm_Socket_LongPads,1,65C21,
+U4,DIP-28_W15.24mm_Socket_LongPads,1,AT28C64,

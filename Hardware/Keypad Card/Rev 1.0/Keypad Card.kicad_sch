@@ -8242,7 +8242,7 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
@@ -8312,7 +8312,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "737-BHR-12-VUA"
 			(at 213.36 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -8324,6 +8324,28 @@
 			)
 		)
 		(property "Other" "2057-BHR-12-VUA-ND"
+			(at 213.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 213.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 213.36 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -8534,7 +8556,7 @@
 				)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "311-1140-1-ND"
 			(at 214.63 83.82 90)
 			(hide yes)
 			(show_name no)
@@ -8545,7 +8567,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "603-CC805KRX7R9BB104"
 			(at 214.63 83.82 90)
 			(hide yes)
 			(show_name no)
@@ -8558,6 +8580,17 @@
 		)
 		(property "Other" ""
 			(at 214.63 83.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 214.63 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8588,7 +8621,7 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
@@ -8658,7 +8691,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "737-BHR-12-VUA"
 			(at 213.36 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -8670,6 +8703,28 @@
 			)
 		)
 		(property "Other" "2057-BHR-12-VUA-ND"
+			(at 213.36 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 213.36 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 213.36 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -8800,7 +8855,7 @@
 				)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "311-1140-1-ND"
 			(at 110.49 57.15 90)
 			(hide yes)
 			(show_name no)
@@ -8811,7 +8866,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "603-CC805KRX7R9BB104"
 			(at 110.49 57.15 90)
 			(hide yes)
 			(show_name no)
@@ -8824,6 +8879,17 @@
 		)
 		(property "Other" ""
 			(at 110.49 57.15 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 110.49 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9386,7 +9452,7 @@
 				)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "311-1140-1-ND"
 			(at 144.78 161.29 90)
 			(hide yes)
 			(show_name no)
@@ -9397,7 +9463,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "603-CC805KRX7R9BB104"
 			(at 144.78 161.29 90)
 			(hide yes)
 			(show_name no)
@@ -9410,6 +9476,17 @@
 		)
 		(property "Other" ""
 			(at 144.78 161.29 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 144.78 161.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9668,7 +9745,7 @@
 				)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "1727-2781-1-ND"
 			(at 119.38 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -9679,7 +9756,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "771-74HC138D-T"
 			(at 119.38 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -9691,6 +9768,17 @@
 			)
 		)
 		(property "Other" ""
+			(at 119.38 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
 			(at 119.38 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -9836,7 +9924,7 @@
 				)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "1727-2781-1-ND"
 			(at 57.15 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -9847,7 +9935,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "771-74HC138D-T"
 			(at 57.15 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -9859,6 +9947,17 @@
 			)
 		)
 		(property "Other" ""
+			(at 57.15 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
 			(at 57.15 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -10010,7 +10109,7 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
@@ -10092,6 +10191,28 @@
 			)
 		)
 		(property "Other" ""
+			(at 129.54 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 129.54 34.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 129.54 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -10237,7 +10358,7 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
@@ -10318,6 +10439,28 @@
 			)
 		)
 		(property "Other" ""
+			(at 200.66 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 200.66 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 200.66 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -10496,7 +10639,7 @@
 				)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "311-1140-1-ND"
 			(at 25.4 162.56 90)
 			(hide yes)
 			(show_name no)
@@ -10507,7 +10650,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "603-CC805KRX7R9BB104"
 			(at 25.4 162.56 90)
 			(hide yes)
 			(show_name no)
@@ -10520,6 +10663,17 @@
 		)
 		(property "Other" ""
 			(at 25.4 162.56 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 25.4 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

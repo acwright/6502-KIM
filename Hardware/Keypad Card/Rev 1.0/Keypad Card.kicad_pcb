@@ -181,6 +181,32 @@
 				)
 			)
 		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7b0bab4a-09a9-574c-8285-aa0643295992")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "610bf4ba-0778-55f4-9276-a3e4b892e2a9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/eb79e86c-e5a1-4674-b9eb-efcbf4f52199")
 		(sheetname "/")
 		(sheetfile "Keypad Card.kicad_sch")
@@ -192,7 +218,7 @@
 				)
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start 13.68 -1.33)
@@ -744,7 +770,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "737-BHR-12-VUA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -770,6 +796,32 @@
 				)
 			)
 		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "af345176-7ab4-58fc-b023-8d40785dc32a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "585087de-aca0-549a-8dd6-7abe7cc73d0e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_2x??_*")
 		(path "/545b2967-e2a1-4021-baa9-a3a8785f360d")
 		(sheetname "/")
@@ -780,7 +832,7 @@
 				(pins "1" "3" "5" "7" "9" "11" "2" "4" "6" "8" "10" "12")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start 4.572 3.81)
@@ -1142,6 +1194,32 @@
 				)
 			)
 		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1088a4ee-53de-5f8e-b274-d8128113ea47")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e1b417b9-0068-57ef-a847-17a42f51b8ab")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/e825f283-e920-4daa-9283-b3f1f8bbf523")
 		(sheetname "/")
 		(sheetfile "Keypad Card.kicad_sch")
@@ -1154,7 +1232,7 @@
 				)
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start 1.56 49.59)
@@ -1835,7 +1913,7 @@
 				)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "311-1140-1-ND"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -1846,7 +1924,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "603-CC805KRX7R9BB104"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -1865,6 +1943,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "998bcd71-89d5-5aeb-a50e-cf135fb24b71")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -2325,7 +2416,7 @@
 				)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "1727-2781-1-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2338,7 +2429,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "771-74HC138D-T"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2357,6 +2448,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e61d7445-18a1-458c-b772-bcf8ed3ca574")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ea5396f2-efbc-5329-80c9-14aa427c7c99")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2833,7 +2937,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "737-BHR-12-VUA"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2859,6 +2963,32 @@
 				)
 			)
 		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "76879134-52c5-526d-a99e-6b25ce996e57")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c055d778-d59e-5e64-9452-7c84f5bacf33")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_2x??_*")
 		(path "/05cee249-25a7-4ec6-9629-9fd8d98ef915")
 		(sheetname "/")
@@ -2869,7 +2999,7 @@
 				(pins "1" "3" "5" "7" "9" "11" "2" "4" "6" "8" "10" "12")
 			)
 		)
-		(attr through_hole exclude_from_bom)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start 4.572 3.81)
@@ -3216,7 +3346,7 @@
 				)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "311-1140-1-ND"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3229,7 +3359,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "603-CC805KRX7R9BB104"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3248,6 +3378,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b902f662-e5db-470b-a6b2-c7b5b5b20264")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7a2ecab2-c79c-5881-b08a-617e894cc2cc")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4367,7 +4510,7 @@
 				)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "1727-2781-1-ND"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -4378,7 +4521,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "771-74HC138D-T"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -4397,6 +4540,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "87cb4328-e4ea-5089-8fa3-1b83243b1966")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -5742,7 +5898,7 @@
 				)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "311-1140-1-ND"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -5753,7 +5909,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "603-CC805KRX7R9BB104"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -5772,6 +5928,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b7c66cd2-a391-5120-a427-5406ac3619bb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -5939,7 +6108,7 @@
 				)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "311-1140-1-ND"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5952,7 +6121,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "603-CC805KRX7R9BB104"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5971,6 +6140,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c0fe1c07-d3f3-4dff-9c13-a523908cab5b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "36746b7c-c64c-5c3a-aaf9-8653192cf6d8")
 			(effects
 				(font
 					(size 1.27 1.27)

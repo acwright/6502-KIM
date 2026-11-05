@@ -6010,7 +6010,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "512-1N914"
 			(at 185.42 92.71 90)
 			(hide yes)
 			(show_name no)
@@ -6023,6 +6023,28 @@
 		)
 		(property "Other" ""
 			(at 185.42 92.71 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 185.42 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 185.42 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6112,7 +6134,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 92.71 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -6123,7 +6145,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 92.71 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -6134,7 +6156,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 92.71 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 92.71 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 92.71 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -6395,7 +6439,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "512-1N914"
 			(at 180.34 92.71 90)
 			(hide yes)
 			(show_name no)
@@ -6408,6 +6452,28 @@
 		)
 		(property "Other" ""
 			(at 180.34 92.71 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 180.34 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 180.34 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6497,7 +6563,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 72.39 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -6508,7 +6574,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 72.39 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -6519,7 +6585,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 72.39 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 72.39 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 72.39 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -6633,6 +6721,28 @@
 			)
 		)
 		(property "Other" ""
+			(at 208.28 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 208.28 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 208.28 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -6761,7 +6871,7 @@
 				)
 			)
 		)
-		(property "Digikey" "478-5732-ND"
+		(property "Digikey" "478-3188-ND"
 			(at 234.95 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -6772,7 +6882,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "581-SR215C104KAR"
 			(at 234.95 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -6783,7 +6893,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/PANMILED-Multilayer-Monolithic-Capacitors-Assortment/dp/B0CYQ1Z4G5"
+		(property "Other" ""
+			(at 234.95 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 234.95 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 234.95 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -7032,7 +7164,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 92.71 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -7043,7 +7175,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 92.71 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -7054,7 +7186,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 92.71 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 92.71 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 92.71 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -7145,7 +7299,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 52.07 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -7156,7 +7310,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 52.07 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -7167,7 +7321,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 52.07 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 52.07 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 52.07 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -7260,7 +7436,7 @@
 				)
 			)
 		)
-		(property "Digikey" "478-5732-ND"
+		(property "Digikey" "478-3188-ND"
 			(at 236.22 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -7271,7 +7447,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "581-SR215C104KAR"
 			(at 236.22 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -7282,7 +7458,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/PANMILED-Multilayer-Monolithic-Capacitors-Assortment/dp/B0CYQ1Z4G5"
+		(property "Other" ""
+			(at 236.22 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 236.22 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 236.22 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -7373,7 +7571,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 92.71 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -7384,7 +7582,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 92.71 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -7395,7 +7593,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 92.71 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 92.71 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 92.71 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -7486,7 +7706,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 52.07 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -7497,7 +7717,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 52.07 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -7508,7 +7728,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 52.07 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 52.07 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 52.07 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -7610,7 +7852,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "737-BHR-12-VUA"
 			(at 43.18 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -7621,7 +7863,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2"
+		(property "Other" "2057-BHR-12-VUA-ND"
+			(at 43.18 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 43.18 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 43.18 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -7742,7 +8006,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 52.07 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -7753,7 +8017,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 52.07 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -7764,7 +8028,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 52.07 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 52.07 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 52.07 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -7857,7 +8143,7 @@
 				)
 			)
 		)
-		(property "Digikey" "478-7667-ND"
+		(property "Digikey" "478-SR215C105KAR-ND"
 			(at 223.52 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -7868,7 +8154,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "581-SR215C105KAR"
 			(at 223.52 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -7879,7 +8165,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/PANMILED-Multilayer-Monolithic-Capacitors-Assortment/dp/B0CYQ1Z4G5"
+		(property "Other" ""
+			(at 223.52 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 223.52 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 223.52 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -8048,7 +8356,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 113.03 127 0)
 			(hide yes)
 			(show_name no)
@@ -8059,7 +8367,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 113.03 127 0)
 			(hide yes)
 			(show_name no)
@@ -8070,7 +8378,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 113.03 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 113.03 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 113.03 127 0)
 			(hide yes)
 			(show_name no)
@@ -8161,7 +8491,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 72.39 127 0)
 			(hide yes)
 			(show_name no)
@@ -8172,7 +8502,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 72.39 127 0)
 			(hide yes)
 			(show_name no)
@@ -8183,7 +8513,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 72.39 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 72.39 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 72.39 127 0)
 			(hide yes)
 			(show_name no)
@@ -8274,7 +8626,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 113.03 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -8285,7 +8637,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 113.03 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -8296,7 +8648,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 113.03 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 113.03 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 113.03 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -8387,7 +8761,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 52.07 127 0)
 			(hide yes)
 			(show_name no)
@@ -8398,7 +8772,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 52.07 127 0)
 			(hide yes)
 			(show_name no)
@@ -8409,7 +8783,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 52.07 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 52.07 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 52.07 127 0)
 			(hide yes)
 			(show_name no)
@@ -8500,7 +8896,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 72.39 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -8511,7 +8907,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 72.39 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -8522,7 +8918,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 72.39 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 72.39 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 72.39 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -8613,7 +9031,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 92.71 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -8624,7 +9042,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 92.71 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -8635,7 +9053,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 92.71 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 92.71 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 92.71 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -8726,7 +9166,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 52.07 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -8737,7 +9177,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 52.07 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -8748,7 +9188,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 52.07 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 52.07 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 52.07 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -8917,7 +9379,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 72.39 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -8928,7 +9390,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 72.39 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -8939,7 +9401,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 72.39 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 72.39 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 72.39 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -9053,6 +9537,28 @@
 			)
 		)
 		(property "Other" ""
+			(at 92.71 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 92.71 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 92.71 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -9179,7 +9685,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 113.03 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -9190,7 +9696,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 113.03 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -9201,7 +9707,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 113.03 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 113.03 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 113.03 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -9317,6 +9845,28 @@
 			)
 		)
 		(property "Other" ""
+			(at 218.44 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 218.44 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 218.44 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -9554,6 +10104,28 @@
 				)
 			)
 		)
+		(property "Jameco" ""
+			(at 135.89 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 135.89 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "14"
 			(uuid "aeab2c45-98d8-4564-bae1-4d47e0a9a37b")
 		)
@@ -9703,6 +10275,28 @@
 				)
 			)
 		)
+		(property "Jameco" ""
+			(at 114.3 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 114.3 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "14"
 			(uuid "aeab2c45-98d8-4564-bae1-4d47e0a9a37c")
 		)
@@ -9819,7 +10413,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 92.71 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -9830,7 +10424,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 92.71 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -9841,7 +10435,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 92.71 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 92.71 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 92.71 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -9956,7 +10572,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.jameco.com/z/74C922-Major-Brands-IC-74C922-16-20-Key-Encoder-DIP-18-pin_44564.html"
+		(property "Other" ""
+			(at 208.28 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" "44564"
+			(at 208.28 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 208.28 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -10097,7 +10735,7 @@
 				)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "13-MFR-12FTF52-100KCT-ND"
 			(at 185.42 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -10108,7 +10746,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "603-MFR-12FTF52-100K"
 			(at 185.42 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -10119,7 +10757,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/ALLECIN-8W-Metal-Film-Resistor/dp/B0C77TM3NR"
+		(property "Other" ""
+			(at 185.42 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 185.42 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 185.42 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -10211,7 +10871,7 @@
 				)
 			)
 		)
-		(property "Digikey" ""
+		(property "Digikey" "13-MFR-12FTF52-100KCT-ND"
 			(at 180.34 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -10222,7 +10882,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "603-MFR-12FTF52-100K"
 			(at 180.34 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -10233,7 +10893,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/ALLECIN-8W-Metal-Film-Resistor/dp/B0C77TM3NR"
+		(property "Other" ""
+			(at 180.34 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 180.34 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 180.34 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -10324,7 +11006,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 92.71 127 0)
 			(hide yes)
 			(show_name no)
@@ -10335,7 +11017,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 92.71 127 0)
 			(hide yes)
 			(show_name no)
@@ -10346,7 +11028,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 92.71 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 92.71 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 92.71 127 0)
 			(hide yes)
 			(show_name no)
@@ -10437,7 +11141,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 113.03 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -10448,7 +11152,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 113.03 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -10459,7 +11163,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 113.03 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 113.03 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 113.03 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -10550,7 +11276,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 72.39 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -10561,7 +11287,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 72.39 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -10572,7 +11298,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 72.39 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 72.39 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 72.39 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -10665,7 +11413,7 @@
 				)
 			)
 		)
-		(property "Digikey" "478-5732-ND"
+		(property "Digikey" "478-3188-ND"
 			(at 250.19 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -10676,7 +11424,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "581-SR215C104KAR"
 			(at 250.19 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -10687,7 +11435,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/PANMILED-Multilayer-Monolithic-Capacitors-Assortment/dp/B0CYQ1Z4G5"
+		(property "Other" ""
+			(at 250.19 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 250.19 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 250.19 143.51 0)
 			(hide yes)
 			(show_name no)
@@ -10778,7 +11548,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 113.03 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -10789,7 +11559,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 113.03 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -10800,7 +11570,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 113.03 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 113.03 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 113.03 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -10891,7 +11683,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 72.39 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -10902,7 +11694,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 72.39 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -10913,7 +11705,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 72.39 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 72.39 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 72.39 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -11082,7 +11896,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 52.07 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -11093,7 +11907,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 52.07 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -11104,7 +11918,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 52.07 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 52.07 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 52.07 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -11195,7 +12031,7 @@
 				)
 			)
 		)
-		(property "Digikey" "CH196-ND"
+		(property "Digikey" "1644-MX2A-E1NA-ND"
 			(at 113.03 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -11206,7 +12042,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "540-MX2A-E1NA"
 			(at 113.03 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -11217,7 +12053,29 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/dp/B0FYR5TV3X"
+		(property "Other" ""
+			(at 113.03 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 113.03 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 113.03 60.96 0)
 			(hide yes)
 			(show_name no)

@@ -892,7 +892,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "737-BHR-12-VUA"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -905,12 +905,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2"
+		(property "Other" "2057-BHR-12-VUA-ND"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "41349e44-ac1d-428a-9f76-8a929712273a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "97aac3e3-18a6-5a05-8a4b-fca7b4093884")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e3619a3e-86e2-53ac-aeba-ab78a3a2b958")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1346,162 +1372,6 @@
 				)
 			)
 		)
-		(property "MF" "Gravitech"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "8b142efe-9f4d-4234-995a-819c36582ba8")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" "14 mm"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "30c6ed72-2422-4c61-8eba-6fe9117d7ebe")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Package" "None"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "af3c7e95-6261-42ec-88e0-a8a9381297b0")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Price" "None"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "02fb86d7-f6b1-4531-9938-7dbd4726b97c")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/LCD-16X2/Gravitech/view-part/?ref=eda"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "a070c925-c3a1-46ec-a791-89faacaf5dbc")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "81fa1157-3cd9-42c9-9add-414841060a89")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "PARTREV" "N/A"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "bb1077fa-b4a0-439f-aeb4-e27cb37d15e9")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/LCD-16X2/Gravitech/view-part/?ref=snap"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "9d3da3b8-6ac5-491f-bce6-a8b221ef23aa")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MP" "LCD-16X2"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "3493b39a-609a-47b0-8e88-514740c26c2a")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Description_1" "\nDisplay Development Tools 16x2 Black on Green Char LCD w Backlight\n"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "a2dd823b-1127-4a8a-ad30-1d3cc89f5dab")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Availability" "Not in stock"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "e3e51085-94b5-4891-8725-64aea8354eea")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "MANUFACTURER" "Gravitech"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "d091adec-90aa-44eb-9e29-43f483410dad")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property "Digikey" ""
 			(at 0 0 0)
 			(unlocked yes)
@@ -1528,12 +1398,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/MECCANIXITY-Display-Backlight-Interface-Adapter/dp/B0DSFXK7QK"
+		(property "Other" "https://www.amazon.com/dp/B0DSFXK7QK"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "13961341-569c-431b-a2c9-da4e4b3ab7ef")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "612b5330-fb13-5f33-aa65-237795fd33d9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b6e16169-0c12-56ed-9aa0-ef315d7d47af")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1949,7 +1845,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "DNP: parallel with VR1 to make ~10 k"
 			(at 2.54 1.92 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -2026,11 +1922,37 @@
 				)
 			)
 		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "93dfa80f-47f7-5f23-9281-914bc50fb49a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f5122a31-efff-51e2-b05c-ad191f3ff4ea")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/16ed51fc-d44b-4810-898b-bd9d92d7bc72")
 		(sheetname "/")
 		(sheetfile "Keypad LCD Helper.kicad_sch")
-		(attr through_hole)
+		(attr through_hole dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start 0.62 -0.92)
@@ -2263,7 +2185,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "737-BHR-12-VUA"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2276,12 +2198,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2"
+		(property "Other" "2057-BHR-12-VUA-ND"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ad23dd5c-3a17-4c4f-bc24-40caf50eacb1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "acb0fd26-381b-5ed9-a19a-995e5f5889d2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "12614cfe-2d05-557b-ab58-c80d454ea301")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3647,7 +3595,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "737-BHR-12-VUA"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -3660,12 +3608,38 @@
 				)
 			)
 		)
-		(property "Other" "https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2"
+		(property "Other" "2057-BHR-12-VUA-ND"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3cd2d8e2-d3e1-458c-8a2f-3915c12dcd41")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3d09a0bc-7104-5853-8c87-60a9b261705b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "86c5f7ed-973f-57fe-a1a2-e2f5e16c4ad3")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4114,7 +4088,7 @@
 				)
 			)
 		)
-		(property "Mouser" ""
+		(property "Mouser" "652-3386F-1-103LF"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4133,6 +4107,32 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "26e24aef-62ff-4991-95dc-80b3ab817fa2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Jameco" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "13f8262b-4980-589c-bfbe-951e85d063ff")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "489d27d4-9bc7-5b0a-a8ac-d8a6d3b7713a")
 			(effects
 				(font
 					(size 1.27 1.27)

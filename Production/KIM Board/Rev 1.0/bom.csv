@@ -7,7 +7,7 @@
 D5,D_DO-41_SOD81_P10.16mm_Horizontal,1,1N5819,
 D6,LED_D3.0mm,1,POWER LED,
 J1,PinHeader_1x03_P2.54mm_Vertical,1,KIM ENABLE,
-J2,DSUB-9_Socket_Horizontal_P2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm,1,DB9 FEMALE (DCE),D09S33E4GX00LF
+J2,DSUB-9_Socket_Horizontal_P2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm,1,DB9 FEMALE (DCE),
 J3,PinHeader_1x03_P2.54mm_Vertical,1,CTS EN,
 J4,RHDR40W82P485X254_2X20_5740X93,1,CART,
 J5,6502 Bus Connector,1,BUS,
