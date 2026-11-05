@@ -108,7 +108,7 @@ Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.0/digikey.csv), [mouser.csv](B
 | J6 | 1 | | Female header 1×10, 2.54 mm | [S7008-ND](https://www.digikey.com/en/products/filter?keywords=S7008-ND) |  |  |
 | J1, J3 | 2 | | Shunt, 2.54 mm | [S9337-ND](https://www.digikey.com/en/products/filter?keywords=S9337-ND) |  |  |
 | U13 | 1 | | Female header 1×16, 2.54 mm | [S7014-ND](https://www.digikey.com/en/products/filter?keywords=S7014-ND) |  |  |
-| The breadboards | 2 | | BusBoard BB830 breadboard | [4526-BB830-ND](https://www.digikey.com/en/products/filter?keywords=4526-BB830-ND) |  |  |
+| The breadboards | 2 | | BusBoard BB830 breadboard | [4526-BB830-ND](https://www.digikey.com/en/products/filter?keywords=4526-BB830-ND) | [854-BB830](https://www.mouser.com/ProductDetail/854-BB830) |  |
 | SW1–SW24 | 24 | | Clear two-piece keycap for Cherry MX switches |  |  | [Amazon](https://www.amazon.com/dp/B0G2WJBLBC) |
 | J7 | 1 | | 5 V DC power supply, centre positive |  |  |  |
 | J2 | 1 | | Straight-through DB-9 serial cable |  |  |  |

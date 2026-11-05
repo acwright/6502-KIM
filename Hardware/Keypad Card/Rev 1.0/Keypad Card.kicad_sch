@@ -809,7 +809,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "6502 Parts:65C21"
+		(symbol "6502 Parts:PIA 6521"
 			(pin_names
 				(offset 1.016)
 			)
@@ -873,7 +873,7 @@
 					)
 				)
 			)
-			(symbol "65C21_0_1"
+			(symbol "PIA 6521_0_1"
 				(rectangle
 					(start 5.08 3.81)
 					(end 25.4 -52.07)
@@ -886,7 +886,7 @@
 					)
 				)
 			)
-			(symbol "65C21_1_0"
+			(symbol "PIA 6521_1_0"
 				(pin power_in line
 					(at 0 0 0)
 					(length 5.08)
@@ -10104,7 +10104,7 @@
 		)
 	)
 	(symbol
-		(lib_id "6502 Parts:65C21")
+		(lib_id "6502 Parts:PIA 6521")
 		(at 129.54 34.29 0)
 		(unit 1)
 		(body_style 1)

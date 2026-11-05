@@ -7634,7 +7634,7 @@
 			(uuid "cd1de0cc-2a23-457e-9c77-28eb7c03ed98")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Models/61204021621.step"
+		(model "${KIPRJMOD}/../../../Models/6502 Bus Connector.step"
 			(offset
 				(xyz 1.25 -24 4.5)
 			)
@@ -11832,7 +11832,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "6502 Parts:SW_400MSP1R6BLKM6QE"
+	(footprint "6502 Parts:Power Switch"
 		(layer "F.Cu")
 		(uuid "47e97131-b497-4e94-801b-cc9062e94b89")
 		(at 113.63 95.02)
@@ -12261,7 +12261,7 @@
 			(uuid "02de1f9b-c536-4970-b1b2-162402f9aba0")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Models/400MSP1R6BLKM6QE.step"
+		(model "${KIPRJMOD}/../../../Models/Power Switch.step"
 			(offset
 				(xyz -1 0 3)
 			)
@@ -24632,7 +24632,7 @@
 			)
 		)
 	)
-	(footprint "6502 Parts:3386F-1-103LF"
+	(footprint "6502 Parts:Trimmer 3386F"
 		(layer "F.Cu")
 		(uuid "9bcf4240-f818-4d93-b1ac-a3029ea0b09b")
 		(at 361.46 132.574999)
@@ -25017,7 +25017,7 @@
 			(uuid "0a549165-fe59-4b34-aba7-dfbd4baa45f6")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Models/3386F-1-103LF.step"
+		(model "${KIPRJMOD}/../../../Models/Trimmer 3386F.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -32758,7 +32758,7 @@
 			(uuid "242e64e9-ae6f-4c90-a9a2-957aa5c95ddb")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Models/228-1277-00-0602J.step"
+		(model "${KIPRJMOD}/../../../Models/ZIF Socket 28.step"
 			(offset
 				(xyz 7.5 -14.5 0)
 			)
@@ -33172,7 +33172,7 @@
 			)
 		)
 	)
-	(footprint "6502 Parts:RHDR40W82P485X254_2X20_5740X93"
+	(footprint "6502 Parts:6502 Card Slot"
 		(layer "F.Cu")
 		(uuid "c7c6d3e2-30b0-4022-84d9-a0426f5ecc82")
 		(at 126.2 159 90)
@@ -33905,7 +33905,7 @@
 			(uuid "5153a07b-07a5-4a28-9f1b-df88accfd800")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Models/5-5530843-4.step"
+		(model "${KIPRJMOD}/../../../Models/6502 Card Slot.step"
 			(offset
 				(xyz 24.5 2.5 15.5)
 			)

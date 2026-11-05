@@ -812,7 +812,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "6502 Parts:65C51"
+		(symbol "6502 Parts:ACIA 6551"
 			(pin_names
 				(offset 1.016)
 			)
@@ -874,7 +874,7 @@
 					)
 				)
 			)
-			(symbol "65C51_0_1"
+			(symbol "ACIA 6551_0_1"
 				(rectangle
 					(start -11.43 29.21)
 					(end 11.43 -29.21)
@@ -887,7 +887,7 @@
 					)
 				)
 			)
-			(symbol "65C51_1_1"
+			(symbol "ACIA 6551_1_1"
 				(pin power_in line
 					(at 0 -31.75 90)
 					(length 2.54)
@@ -4966,7 +4966,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "6502 Parts:W65C21N"
+		(symbol "6502 Parts:PIA 6521"
 			(pin_names
 				(offset 1.016)
 			)
@@ -5030,7 +5030,7 @@
 					)
 				)
 			)
-			(symbol "W65C21N_0_1"
+			(symbol "PIA 6521_0_1"
 				(rectangle
 					(start 5.08 3.81)
 					(end 25.4 -52.07)
@@ -5043,7 +5043,7 @@
 					)
 				)
 			)
-			(symbol "W65C21N_1_0"
+			(symbol "PIA 6521_1_0"
 				(pin power_in line
 					(at 0 0 0)
 					(length 5.08)
@@ -35940,7 +35940,7 @@
 				)
 			)
 		)
-		(property "Footprint" "6502 Parts:RHDR40W82P485X254_2X20_5740X93"
+		(property "Footprint" "6502 Parts:6502 Card Slot"
 			(at 459.74 259.08 0)
 			(hide yes)
 			(show_name no)
@@ -36848,7 +36848,7 @@
 				)
 			)
 		)
-		(property "Footprint" "6502 Parts:SW_400MSP1R6BLKM6QE"
+		(property "Footprint" "6502 Parts:Power Switch"
 			(at 626.11 252.73 0)
 			(hide yes)
 			(show_name no)
@@ -47571,7 +47571,7 @@
 		)
 	)
 	(symbol
-		(lib_id "6502 Parts:65C51")
+		(lib_id "6502 Parts:ACIA 6551")
 		(at 471.17 162.56 0)
 		(unit 1)
 		(body_style 1)
@@ -48402,7 +48402,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "6502 Parts:3386F-1-103LF"
+		(property "Footprint" "6502 Parts:Trimmer 3386F"
 			(at 187.96 334.01 0)
 			(hide yes)
 			(show_name no)
@@ -53267,7 +53267,7 @@
 		)
 	)
 	(symbol
-		(lib_id "6502 Parts:W65C21N")
+		(lib_id "6502 Parts:PIA 6521")
 		(at 199.39 45.72 0)
 		(unit 1)
 		(body_style 1)

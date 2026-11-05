@@ -4159,7 +4159,7 @@
 			(uuid "257ab010-9e23-4823-9a80-27c412f3f933")
 		)
 	)
-	(footprint "6502 Parts:3386F-1-103TLF"
+	(footprint "6502 Parts:Trimmer 3386F"
 		(layer "F.Cu")
 		(uuid "a433cd57-0afc-44d1-915c-4272918e7e87")
 		(at 146.7611 140.3886)
@@ -4186,7 +4186,7 @@
 				)
 			)
 		)
-		(property "Footprint" "6502 Parts:3386F-1-103TLF"
+		(property "Footprint" "6502 Parts:Trimmer 3386F"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4553,7 +4553,7 @@
 			(solder_mask_margin 0.102)
 			(uuid "a592a3f7-29eb-485e-819e-7a55f78120df")
 		)
-		(model "${KIPRJMOD}/../../../Models/3386F-1-103LF.step"
+		(model "${KIPRJMOD}/../../../Models/Trimmer 3386F.step"
 			(offset
 				(xyz 0 0 0)
 			)
