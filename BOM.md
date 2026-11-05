@@ -30,9 +30,7 @@ Look on the board: the silk prints the revision next to the copyright line. [REV
 
 These change what you buy or fit. The boards themselves stay as they were made.
 
-| Board | Revision | Parts | Issue |
-|---|---|---|---|
-| KIM Board | 1.0 | J7 | `DCJ200-10-A-K1-K` is obsolete, so stock will run out. A replacement that fits this footprint is still being looked for. Pads 1 and 2 are 6.0 mm apart, and pad 3 is 3 mm along and 4.7 mm to the side. |
+None for parts.
 
 ## KIM Board
 
@@ -56,7 +54,7 @@ Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.0/digikey.csv), [mouser.csv](B
 | J3 | 1 | CTS EN | Pin header 1×3, 2.54 mm, cut from a strip | [S1011EC-40-ND](https://www.digikey.com/en/products/filter?keywords=S1011EC-40-ND) | [200-TSW14007TS](https://www.mouser.com/ProductDetail/200-TSW14007TS) |  |
 | J4 | 1 | CART | TE Connectivity 5-5530843-4 | [A31723-ND](https://www.digikey.com/en/products/filter?keywords=A31723-ND) | [571-5-5530843-4](https://www.mouser.com/ProductDetail/571-5-5530843-4) |  |
 | J5 | 1 | BUS | Würth Elektronik 61204021621 | [732-5401-ND](https://www.digikey.com/en/products/filter?keywords=732-5401-ND) | [710-61204021621](https://www.mouser.com/ProductDetail/710-61204021621) |  |
-| J7 | 1 | 5V DC | GCT DCJ200-10-A-K1-K | [2073-DCJ200-10-A-K1-K-ND](https://www.digikey.com/en/products/filter?keywords=2073-DCJ200-10-A-K1-K-ND) | [640-DCJ200-10-A-K1-K](https://www.mouser.com/ProductDetail/640-DCJ200-10-A-K1-K) |  |
+| J7 | 1 | 5V DC | Same Sky PJ-102AH | [CP-102AH-ND](https://www.digikey.com/en/products/filter?keywords=CP-102AH-ND) | [490-PJ-102AH](https://www.mouser.com/ProductDetail/490-PJ-102AH) |  |
 | Q1 | 1 | 2N3904 | onsemi 2N3904BU | [2N3904FS-ND](https://www.digikey.com/en/products/filter?keywords=2N3904FS-ND) | [512-2N3904BU](https://www.mouser.com/ProductDetail/512-2N3904BU) |  |
 | R1–R5, R15, R18, R23 | 8 | 10k | YAGEO MFR-12FTF52-10K | [13-MFR-12FTF52-10KCT-ND](https://www.digikey.com/en/products/filter?keywords=13-MFR-12FTF52-10KCT-ND) | [603-MFR-12FTF52-10K](https://www.mouser.com/ProductDetail/603-MFR-12FTF52-10K) |  |
 | R6–R14 | 9 | 1k | YAGEO MFR-12FTF52-1K | [13-MFR-12FTF52-1KCT-ND](https://www.digikey.com/en/products/filter?keywords=13-MFR-12FTF52-1KCT-ND) | [603-MFR-12FTF52-1K](https://www.mouser.com/ProductDetail/603-MFR-12FTF52-1K) |  |
@@ -107,7 +105,7 @@ J6 is one footprint, built from three strips of header. U13 also takes a 1×16 p
 
 - **D6:** Green shown. The colour is the builder's choice.
 - **J5:** Male box header with a keying notch, for a 40-way ribbon cable.
-- **J7:** Obsolete. Replacement open.
+- **J7:** Replaces GCT DCJ200-10-A-K1-K, now obsolete, which older builds used. Its pads and body match this footprint on the datasheet. No board has been built with it yet.
 - **SW1–SW24:** Cherry MX2A RGB Blue, clear housing, as on the owner's Amazon kit. MX1A-E1NN (black housing) is the deeper-stocked alternative; Digi-Key CH196-ND, Mouser 540-MX1A-E1NN.
 - **U13:** Common hobby 16×2 LCD; any HD44780-compatible module with the same pinout.
 - **U15:** Rockwell R6551AP, out of production. Do not substitute a W65C51.
