@@ -38,10 +38,6 @@ An **AC6502** retro-style 8-bit computer based on the **65C02** microprocessor.
 - [Checking the schematics](#checking-the-schematics)
 - [Libraries](#libraries)
 - [Bill of Materials](#bill-of-materials)
-  - [KIM Board](#kim-board-1)
-  - [Keypad Card](#keypad-card-1)
-  - [Keypad Helper](#keypad-helper-1)
-  - [Keypad LCD Helper](#keypad-lcd-helper-1)
 - [Purchase](#purchase)
 - [License](#license)
 
@@ -320,52 +316,7 @@ Shared KiCad symbol and footprint libraries used across all AC6502 hardware proj
 
 ## Bill of Materials
 
-Every part for every board, by revision, is in **[BOM.md](BOM.md)**, with supplier numbers, known issues and files to upload to Digi-Key and Mouser.
-
-### KIM Board
-
-Parts list: [BOM.md](BOM.md#kim-board).
-
-The keycaps are clear, with a separate cap, so a printed legend sits inside each one. [`CAD/Keycaps/KIM Keycaps.pdf`](./CAD/Keycaps/KIM%20Keycaps.pdf) is the sheet to print.
-
-The base plate, the screws, the standoffs and the feet are in the [plate mounting drawing](./CAD/Bases/Plate%20Mounting%20Drawing.png).
-
-U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502-BIOS](https://github.com/acwright/6502-BIOS)'s `v1.x` branch, because the KIM doesn't take BIOS 2.x, and U9 with `Firmware/KC Monitor/KC Monitor.bin`. That takes an EEPROM programmer.
-
-### Keypad Card
-
-#### Revision History
-
-**Rev 1.0**
-
-- Initial release, and the board on sale. Built and tested. `Hardware/Keypad Card/Rev 1.0/` and `Production/Keypad Card/Rev 1.0/` match the boards JLCPCB made (order Y90). The Gerbers and drill files in the production zip are byte-for-byte what JLCPCB received.
-
-Parts list: [BOM.md](BOM.md#keypad-card).
-
-### Keypad Helper
-
-#### Revision History
-
-**Rev 1.0**
-
-- Initial release, and the board on sale. Built and tested. `Hardware/Keypad Helper/Rev 1.0/` and `Production/Keypad Helper/Rev 1.0/` match the boards JLCPCB made (order Y51). The Gerbers and drill files in the production zip are byte-for-byte what JLCPCB received.
-- The PCB file was restored to that layout on 2026-11-04. Later edits only changed pad shapes, when footprints were refreshed, so they don't make a Rev 1.1. The schematic and BOM are today's, and they match this copper.
-- U1 and U2 use the footprints the board was made with, without the socket outline.
-
-### Keypad LCD Helper
-
-#### Revision History
-
-**Rev 1.1** (drawn, not yet made; Rev 1.0 is sold first)
-
-- The silkscreen labels J3 `KEYPAD HELPER`. Rev 1.0's says `KEYBOARD HELPER`.
-- The outline is a clean 100 × 65 mm, centred on the mounting holes, which are 6 mm from each edge. Rev 1.0's outline is hand drawn, slightly skewed and 100.26 × 64.69 mm. The holes don't move, so both revisions fit the same plate and top panel.
-
-**Rev 1.0**
-
-- Initial release, and the board on sale. `Hardware/Keypad LCD Helper/Rev 1.0/` and `Production/Keypad LCD Helper/Rev 1.0/` match the boards JLCPCB made (order Y54). The Gerbers and drill files in the production zip are byte-for-byte what JLCPCB received.
-
-Parts list: [BOM.md](BOM.md#keypad-lcd-helper).
+Every part for every board, by revision, is in **[BOM.md](BOM.md)**, with supplier numbers, known issues, build notes and files to upload to Digi-Key and Mouser. What changed in each revision, and what is known about each one, is in **[REVISIONS.md](REVISIONS.md)**.
 
 ## Purchase
 

@@ -16,7 +16,7 @@ Every part for every board in this repository, by revision, with supplier number
 
 ## Which revision do I have?
 
-Look on the board: the silk prints the revision next to the copyright line. [REVISIONS.md](REVISIONS.md) has the facts for each one, and the [README](README.md) lists what changed between them.
+Look on the board: the silk prints the revision next to the copyright line. [REVISIONS.md](REVISIONS.md) has the facts for each one, and its history lists what changed between them.
 
 | Board | Revision | What the silk says | Status |
 |---|---|---|---|
@@ -31,6 +31,22 @@ Look on the board: the silk prints the revision next to the copyright line. [REV
 These change what you buy or fit. The boards themselves stay as they were made.
 
 None for parts.
+
+### Build notes
+
+How to build each board, where it needs more than its parts list.
+
+<!-- Build notes: hand-written. tools/bom/gen_bom.py keeps everything between these two markers. -->
+
+**KIM Board**
+
+The keycaps are clear, with a separate cap, so a printed legend sits inside each one. [`CAD/Keycaps/KIM Keycaps.pdf`](./CAD/Keycaps/KIM%20Keycaps.pdf) is the sheet to print.
+
+The base plate, the screws, the standoffs and the feet are in the [plate mounting drawing](./CAD/Bases/Plate%20Mounting%20Drawing.png).
+
+U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502-BIOS](https://github.com/acwright/6502-BIOS)'s `v1.x` branch, because the KIM doesn't take BIOS 2.x, and U9 with `Firmware/KC Monitor/KC Monitor.bin`. That takes an EEPROM programmer.
+
+<!-- End of build notes. -->
 
 ## KIM Board
 

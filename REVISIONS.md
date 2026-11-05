@@ -21,3 +21,34 @@ Every revision of every board in this repository, and what is known about each. 
 | Keypad LCD Helper | 1.1 | Drawn | — |  |  |  | — | 100×65 | 6 mm | yes | — |  |
 
 The audit last ran on 2026-11-04. Each production zip marked *Made, matches order* was compared byte for byte with JLCPCB's copy, and its PCB regenerated to the same copper, mask, outline and holes. Tindie stock is from the listings as saved on 2026-10-23.
+
+<!-- History: hand-written. tools/revision-audit/register.py keeps everything from here to the end. -->
+
+## History
+
+What changed in each revision of each board, newest first. The table above has the facts about each one.
+
+### Keypad Card
+
+**Rev 1.0**
+
+- Initial release, and the board on sale. Built and tested. `Hardware/Keypad Card/Rev 1.0/` and `Production/Keypad Card/Rev 1.0/` match the boards JLCPCB made (order Y90). The Gerbers and drill files in the production zip are byte-for-byte what JLCPCB received.
+
+### Keypad Helper
+
+**Rev 1.0**
+
+- Initial release, and the board on sale. Built and tested. `Hardware/Keypad Helper/Rev 1.0/` and `Production/Keypad Helper/Rev 1.0/` match the boards JLCPCB made (order Y51). The Gerbers and drill files in the production zip are byte-for-byte what JLCPCB received.
+- The PCB file was restored to that layout on 2026-11-04. Later edits only changed pad shapes, when footprints were refreshed, so they don't make a Rev 1.1. The schematic and BOM are today's, and they match this copper.
+- U1 and U2 use the footprints the board was made with, without the socket outline.
+
+### Keypad LCD Helper
+
+**Rev 1.1** (drawn, not yet made; Rev 1.0 is sold first)
+
+- The silkscreen labels J3 `KEYPAD HELPER`. Rev 1.0's says `KEYBOARD HELPER`.
+- The outline is a clean 100 × 65 mm, centred on the mounting holes, which are 6 mm from each edge. Rev 1.0's outline is hand drawn, slightly skewed and 100.26 × 64.69 mm. The holes don't move, so both revisions fit the same plate and top panel.
+
+**Rev 1.0**
+
+- Initial release, and the board on sale. `Hardware/Keypad LCD Helper/Rev 1.0/` and `Production/Keypad LCD Helper/Rev 1.0/` match the boards JLCPCB made (order Y54). The Gerbers and drill files in the production zip are byte-for-byte what JLCPCB received.
