@@ -1406,7 +1406,7 @@
 			(uuid "30dedfd4-97a5-4f77-82d5-3b31f4a378b7")
 		)
 		(embedded_fonts no)
-		(model "${KICAD8_3DMODEL_DIR}/Diode_THT.3dshapes/D_DO-35_SOD27_P7.62mm_Horizontal.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/Diode_THT.3dshapes/D_DO-35_SOD27_P7.62mm_Horizontal.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -2045,7 +2045,7 @@
 			(uuid "241fbfb9-26a4-4ae6-93a9-46677dc0bb69")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -2395,7 +2395,7 @@
 			(uuid "f51b57fd-3bb3-4bc1-abe9-65e4894abf0a")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -2745,7 +2745,7 @@
 			(uuid "36965c4e-bcaa-46fd-85d3-0bed053ce89f")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -3095,7 +3095,7 @@
 			(uuid "30ffe21c-270e-4587-97a4-5ec8ce443b03")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -3445,7 +3445,7 @@
 			(uuid "9528db24-8d98-463b-a2e3-d7225c832f23")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -3795,7 +3795,7 @@
 			(uuid "2df0cd20-e053-4891-97ff-bd199a2e1f68")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -4145,7 +4145,7 @@
 			(uuid "32415c5d-b30c-44b7-b65e-81f8471050b6")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -4495,7 +4495,7 @@
 			(uuid "945caf3a-7952-4ad5-b7b3-b4a1bad3d379")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -4884,7 +4884,7 @@
 			(uuid "4c903d5e-1fe6-41ae-b5a1-fda1de969b45")
 		)
 		(embedded_fonts no)
-		(model "${KICAD8_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -5234,7 +5234,7 @@
 			(uuid "9fc735db-c4b1-4a52-9048-da71e92a2692")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -6399,7 +6399,7 @@
 			(uuid "75d743af-5c87-4284-8d28-20cae2db4f00")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -6749,7 +6749,7 @@
 			(uuid "54ead5ae-dfbe-4ccb-b403-9ba6332b41ea")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -7099,7 +7099,7 @@
 			(uuid "ab71ec6f-ee9d-4358-a034-f935818537c7")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -7449,7 +7449,7 @@
 			(uuid "361ae687-99ee-415b-b0dc-e0ac1a7f3458")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -7799,7 +7799,7 @@
 			(uuid "c5eaf9c7-c43b-44ee-9591-59020dbabe7d")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -8149,7 +8149,7 @@
 			(uuid "600cb817-513b-491b-b20e-00d87b75631b")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -8499,7 +8499,7 @@
 			(uuid "6eaddd43-450b-4f3e-aeca-82cca3e8f9c0")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -8849,7 +8849,7 @@
 			(uuid "00c00380-c6a1-4899-b757-f0c7c6fa8511")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -9199,7 +9199,7 @@
 			(uuid "3b5d707e-ca45-4efd-9e41-1603f6f1feaa")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -9708,7 +9708,7 @@
 			(uuid "a6d73b23-5cfe-4fed-b34f-b9487c30727f")
 		)
 		(embedded_fonts no)
-		(model "${KICAD8_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Disc_D5.0mm_W2.5mm_P5.00mm.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Disc_D5.0mm_W2.5mm_P5.00mm.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -10555,7 +10555,7 @@
 			(uuid "cdad7629-9cd6-4598-839f-02472c7c7631")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -10864,7 +10864,7 @@
 			(uuid "804cbf9f-96c3-4ad8-8afe-2d2f2f67bb4e")
 		)
 		(embedded_fonts no)
-		(model "${KICAD8_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Disc_D5.0mm_W2.5mm_P5.00mm.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Disc_D5.0mm_W2.5mm_P5.00mm.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -11214,7 +11214,7 @@
 			(uuid "f06a82b7-b837-4f79-b03b-a5bdf85b0747")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -11564,7 +11564,7 @@
 			(uuid "8e9bd5ba-0eeb-428d-893a-994b7d0ead3c")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -11914,7 +11914,7 @@
 			(uuid "b3ffd536-3ec9-449a-8a41-d911df5deb79")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -12725,7 +12725,7 @@
 			(uuid "c8ea41ad-0755-4f7e-b5ff-f6e51dd3cc2e")
 		)
 		(embedded_fonts no)
-		(model "${KICAD8_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Disc_D5.0mm_W2.5mm_P5.00mm.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Disc_D5.0mm_W2.5mm_P5.00mm.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -13153,7 +13153,7 @@
 			(uuid "58b0b23d-7c4b-4f5d-98b7-509b9f977f79")
 		)
 		(embedded_fonts no)
-		(model "${KICAD8_3DMODEL_DIR}/Diode_THT.3dshapes/D_DO-35_SOD27_P7.62mm_Horizontal.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/Diode_THT.3dshapes/D_DO-35_SOD27_P7.62mm_Horizontal.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -13442,7 +13442,7 @@
 			(uuid "452ebf83-2661-4943-9793-e54a2b189a71")
 		)
 		(embedded_fonts no)
-		(model "${KICAD8_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -13751,7 +13751,7 @@
 			(uuid "6e6feada-2793-4047-8123-fa2c6f004c1b")
 		)
 		(embedded_fonts no)
-		(model "${KICAD8_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Disc_D5.0mm_W2.5mm_P5.00mm.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Disc_D5.0mm_W2.5mm_P5.00mm.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -14101,7 +14101,7 @@
 			(uuid "b68abd07-aec1-450d-a851-488e4b4692e7")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
@@ -14451,7 +14451,7 @@
 			(uuid "ddf0f465-a9cb-42d1-adcd-0211b0bae22c")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/../../../Libraries/Models/CherryMX.step"
+		(model "${KIPRJMOD}/../../../Models/CherryMX.step"
 			(offset
 				(xyz -2.5 -6 5)
 			)
