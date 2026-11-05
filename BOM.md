@@ -86,7 +86,7 @@ Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.0/digikey.csv), [mouser.csv](B
 | U4–U6, U17 | 4 | Socket | IC socket, 14-pin, 0.3 in | [3M5474-ND](https://www.digikey.com/en/products/filter?keywords=3M5474-ND) | [517-4814-3004-CP](https://www.mouser.com/ProductDetail/517-4814-3004-CP) | |
 | U2, U9, U15 | 3 | Socket | IC socket, 28-pin, 0.6 in | [3M5481-ND](https://www.digikey.com/en/products/filter?keywords=3M5481-ND) | [517-4828-6004-CP](https://www.mouser.com/ProductDetail/517-4828-6004-CP) | |
 | U7, U10, U11, U14 | 4 | Socket | IC socket, 16-pin, 0.3 in | [3M5475-ND](https://www.digikey.com/en/products/filter?keywords=3M5475-ND) | [517-4816-3004-CP](https://www.mouser.com/ProductDetail/517-4816-3004-CP) | |
-| U1, U8 | 2 | Socket | IC socket, 40-pin, 0.6 in |  |  | |
+| U1, U8 | 2 | Socket | IC socket, 40-pin, 0.6 in | [3M5471-ND](https://www.digikey.com/en/products/filter?keywords=3M5471-ND) | [517-4840-6000-CP](https://www.mouser.com/ProductDetail/517-4840-6000-CP) | |
 | U16 | 1 | Socket | IC socket, 18-pin, 0.3 in | [3M5464-ND](https://www.digikey.com/en/products/filter?keywords=3M5464-ND) | [517-4818-3000-CP](https://www.mouser.com/ProductDetail/517-4818-3000-CP) | |
 | U3 | 1 | Socket | 28-pin ZIF socket, or an ordinary 28-pin socket | [3M2802-ND](https://www.digikey.com/en/products/filter?keywords=3M2802-ND) | [517-228-1277-00](https://www.mouser.com/ProductDetail/517-228-1277-00) | |
 | U12 | 1 | Socket | IC socket, 8-pin, 0.3 in | [3M5473-ND](https://www.digikey.com/en/products/filter?keywords=3M5473-ND) | [517-4808-3004-CP](https://www.mouser.com/ProductDetail/517-4808-3004-CP) | |
@@ -131,7 +131,7 @@ Cart files: [digikey.csv](BOM/Keypad%20Card/Rev%201.0/digikey.csv), [mouser.csv]
 | U3 | 1 | 65C21 | Western Design Center (WDC) W65C21N6TPG-14 |  | [955-W65C21N6TPG-14](https://www.mouser.com/ProductDetail/955-W65C21N6TPG-14) |  | |
 | U4 | 1 | AT28C64 | Microchip Technology AT28C64B-15PU | [AT28C64B-15PU-ND](https://www.digikey.com/en/products/filter?keywords=AT28C64B-15PU-ND) | [556-AT28C64B15PU](https://www.mouser.com/ProductDetail/556-AT28C64B15PU) |  | |
 | U4 | 1 | Socket | IC socket, 28-pin, 0.6 in | [3M5481-ND](https://www.digikey.com/en/products/filter?keywords=3M5481-ND) | [517-4828-6004-CP](https://www.mouser.com/ProductDetail/517-4828-6004-CP) | | |
-| U3 | 1 | Socket | IC socket, 40-pin, 0.6 in |  |  | | |
+| U3 | 1 | Socket | IC socket, 40-pin, 0.6 in | [3M5471-ND](https://www.digikey.com/en/products/filter?keywords=3M5471-ND) | [517-4840-6000-CP](https://www.mouser.com/ProductDetail/517-4840-6000-CP) | | |
 
 
 ## Keypad Helper
