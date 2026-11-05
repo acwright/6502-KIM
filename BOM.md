@@ -30,7 +30,9 @@ Look on the board: the silk prints the revision next to the copyright line. [REV
 
 These change what you buy or fit. The boards themselves stay as they were made.
 
-None for parts.
+| Board | Revision | Parts | Issue |
+|---|---|---|---|
+| Keypad Card | 1.0 | U3 | The silk says 65C21; fit the W65C21N listed here. |
 
 ### Build notes
 
