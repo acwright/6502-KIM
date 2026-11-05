@@ -12,6 +12,8 @@ An **AC6502** retro-style 8-bit computer based on the **65C02** microprocessor.
 
 ---
 
+**Building one? Every part you need, with supplier numbers and known issues, is in [BOM.md](BOM.md).**
+
 ## Table of Contents
 
 - [Overview](#overview)
@@ -318,71 +320,11 @@ Shared KiCad symbol and footprint libraries used across all AC6502 hardware proj
 
 ## Bill of Materials
 
+Every part for every board, by revision, is in **[BOM.md](BOM.md)**, with supplier numbers, known issues and files to upload to Digi-Key and Mouser.
+
 ### KIM Board
 
-| Reference | Qty | Value | Description | DigiKey | Mouser | Other |
-|-----------|-----|-------|-------------|---------|--------|-------|
-| C1–C5, C7, C12, C14–C25 | 19 | 100nF | Disc Capacitor | [478-5732-ND](https://www.digikey.com/en/products/filter?keywords=478-5732-ND) |  | [AMAZON](https://www.amazon.com/PANMILED-Multilayer-Monolithic-Capacitors-Assortment/dp/B0CYQ1Z4G5) |
-| C6, C26 | 2 | 10µF | Electrolytic Capacitor, 4 mm, 1.5 mm pitch | [P966-ND](https://www.digikey.com/en/products/filter?keywords=P966-ND) |  | [AMAZON](https://www.amazon.com/Tnisesm-Electrolytic-Capacitor-Assortment-Capacitors/dp/B0G5X62C69) |
-| C8–C11, C13 | 5 | 1µF | Disc Capacitor | [478-7667-ND](https://www.digikey.com/en/products/filter?keywords=478-7667-ND) |  | [AMAZON](https://www.amazon.com/PANMILED-Multilayer-Monolithic-Capacitors-Assortment/dp/B0CYQ1Z4G5) |
-| D1, D2 | 2 | BAT85 | Schottky Diode | [BAT85SCT-ND](https://www.digikey.com/en/products/filter?keywords=BAT85SCT-ND) | [78-BAT85S](https://www.mouser.com/ProductDetail/78-BAT85S) |  |
-| D3, D4 | 2 | 1N914 | Small Signal Diode | [1N914FS-ND](https://www.digikey.com/en/products/filter?keywords=1N914FS-ND) |  |  |
-| D5 | 1 | 1N5819 | Schottky Diode (DO-41) | [497-6610-1-ND](https://www.digikey.com/en/products/filter?keywords=497-6610-1-ND) |  |  |
-| D6 | 1 | POWER LED | 3.0mm Power LED | [732-5008-ND](https://www.digikey.com/en/products/filter?keywords=732-5008-ND) |  | [AMAZON](https://www.amazon.com/300-Pcs-LED-Diode-Assortment/dp/B0F38LJDJB) |
-| J1, J3 | 2 | KIM ENABLE, CTS EN | Pin Header 1×3 2.54mm |  |  | [AMAZON](https://www.amazon.com/Straight-Breakaway-Connector-Breadboard-Electronic/dp/B0FRZW75VS) |
-| J2 | 1 | DB9 FEMALE (DCE) | DB-9 Connector (Female) | [609-1487-ND](https://www.digikey.com/en/products/filter?keywords=609-1487-ND) |  |  |
-| J4 | 1 | CART | Card Edge 2×20 2.54mm | [A31723-ND](https://www.digikey.com/en/products/filter?keywords=A31723-ND) | [571-5-5530843-4](https://www.mouser.com/ProductDetail/571-5-5530843-4) |  |
-| J5 | 1 | BUS | Bus Connector 2×20 | [732-5401-ND](https://www.digikey.com/en/products/filter?keywords=732-5401-ND) |  |  |
-| J6 | 2 | BREADBOARD HEADERS | Female Header 1×20 2.54mm | [S7018-ND](https://www.digikey.com/en/products/filter?keywords=S7018-ND) |  |  |
-| J6 | 1 | BREADBOARD HEADERS | Female Header 1×10 2.54mm | [S7008-ND](https://www.digikey.com/en/products/filter?keywords=S7008-ND) |  |  |
-| J7 | 1 | 5V DC | DC Barrel Jack | [2073-DCJ200-10-A-K1-K-ND](https://www.digikey.com/en/products/filter?keywords=2073-DCJ200-10-A-K1-K-ND) | [640-DCJ200-10-A-K1-K](https://www.mouser.com/ProductDetail/640-DCJ200-10-A-K1-K) |  |
-| Q1 | 1 | 2N3904 | NPN Transistor TO-92 | [2N3904FS-ND](https://www.digikey.com/en/products/filter?keywords=2N3904FS-ND) |  |  |
-| R1–R5, R15, R18, R23 | 8 | 10kΩ | 1/8W Resistor | [RNF18FTD10K0CT-ND](https://www.digikey.com/en/products/filter?keywords=RNF18FTD10K0CT-ND) |  | [AMAZON](https://www.amazon.com/ALLECIN-8W-Metal-Film-Resistor/dp/B0C77TM3NR) |
-| R6–R14 | 9 | 1kΩ | 1/8W Resistor | [RNF18FTD1K00CT-ND](https://www.digikey.com/en/products/filter?keywords=RNF18FTD1K00CT-ND) |  | [AMAZON](https://www.amazon.com/ALLECIN-8W-Metal-Film-Resistor/dp/B0C77TM3NR) |
-| R16 | 1 | 1MΩ | 1/8W Resistor |  |  | [AMAZON](https://www.amazon.com/ALLECIN-8W-Metal-Film-Resistor/dp/B0C77TM3NR) |
-| R17 | 1 | 47kΩ | 1/8W Resistor |  |  | [AMAZON](https://www.amazon.com/ALLECIN-8W-Metal-Film-Resistor/dp/B0C77TM3NR) |
-| R20, R21 | 2 | 100kΩ | 1/8W Resistor |  |  | [AMAZON](https://www.amazon.com/ALLECIN-8W-Metal-Film-Resistor/dp/B0C77TM3NR) |
-| R22 | 1 | 330Ω | 1/8W Resistor |  |  | [AMAZON](https://www.amazon.com/ALLECIN-8W-Metal-Film-Resistor/dp/B0C77TM3NR) |
-| SW1–SW24 | 24 | Keypad | Cherry MX Switch 1.00u | [CH196-ND](https://www.digikey.com/en/products/filter?keywords=CH196-ND) |  | [AMAZON](https://www.amazon.com/dp/B0FYR5TV3X) |
-| SW25 | 1 | IO ENABLE | 8× DIP Switch SPST |  |  | [AMAZON](https://www.amazon.com/Yohii-2-54mm-Positions-Double-Assorted/dp/B07DSBX4BK/) |
-| SW26 | 1 | RESET | Tact Push Button 6mm |  |  | [AMAZON](https://www.amazon.com/QTEATAK-Momentary-Tactile-Button-Switch/dp/B07VSNN9S2) |
-| SW27 | 1 | POWER | SPDT Switch | [EG4326-ND](https://www.digikey.com/en/products/filter?keywords=EG4326-ND) | [612-400MSP1R6BLKM6QE](https://www.mouser.com/ProductDetail/612-400MSP1R6BLKM6QE) |  |
-| U1 | 1 | W65C02S | 65C02 CPU |  | [955-W65C02S6TPG-14](https://www.mouser.com/ProductDetail/955-W65C02S6TPG-14) |  |
-| U2 | 1 | AS6C62256 | 32KB SRAM | [1450-1033-ND](https://www.digikey.com/en/products/filter?keywords=1450-1033-ND) | [913-AS6C62256-55PCN](https://www.mouser.com/ProductDetail/913-AS6C62256-55PCN) |  |
-| U3 | 1 | AT28C256 | 32KB EEPROM, holding the BIOS | [AT28C256-15PU-ND](https://www.digikey.com/en/products/filter?keywords=AT28C256-15PU-ND) | [556-AT28C25615PU](https://www.mouser.com/ProductDetail/556-AT28C25615PU) |  |
-| U4–U6, U17 | 4 | 74HC00 | Quad NAND | [296-1563-5-ND](https://www.digikey.com/en/products/filter?keywords=296-1563-5-ND) | [595-SN74HC00N](https://www.mouser.com/ProductDetail/595-SN74HC00N) |  |
-| U7, U10, U11 | 3 | 74HC138 | 3-to-8 Line Decoder | [296-1575-5-ND](https://www.digikey.com/en/products/filter?keywords=296-1575-5-ND) | [595-SN74HC138N](https://www.mouser.com/ProductDetail/595-SN74HC138N) |  |
-| U8 | 1 | W65C21N | Peripheral Interface Adapter |  | [955-W65C21N6TPG-14](https://www.mouser.com/ProductDetail/955-W65C21N6TPG-14) |  |
-| U9 | 1 | AT28C64 | 8KB EEPROM, holding the KC Monitor | [AT28C64B-15PU-ND](https://www.digikey.com/en/products/filter?keywords=AT28C64B-15PU-ND) | [556-AT28C64B15PU](https://www.mouser.com/ProductDetail/556-AT28C64B15PU) |  |
-| U12 | 1 | LM555 | Timer DIP-8 | [LM555CNNS/NOPB-ND](https://www.digikey.com/en/products/filter?keywords=LM555CNNS/NOPB-ND) | [926-LM555CN/NOPB](https://www.mouser.com/ProductDetail/926-LM555CN/NOPB) |  |
-| U13 | 1 | LCD-16X2 | 16×2 LCD Display |  |  | [AMAZON](https://www.amazon.com/MECCANIXITY-Display-Backlight-Interface-Adapter/dp/B0DSFXK7QK) |
-| U14 | 1 | MAX232 | RS-232 Driver/Receiver DIP-16 | [296-1402-5-ND](https://www.digikey.com/en/products/filter?keywords=296-1402-5-ND) | [595-MAX232N](https://www.mouser.com/ProductDetail/595-MAX232N) |  |
-| U15 | 1 | R6551AP | ACIA |  |  | [JAMECO](https://www.jameco.com/z/R6551AP-Rockwell-IC-6551-Asynchronous-Communication-Interface-Adapter-DIP-28-pin_43318.html) |
-| U16 | 1 | MM74C922 | 16-Key Encoder |  |  | [JAMECO](https://www.jameco.com/z/74C922-Major-Brands-IC-74C922-16-20-Key-Encoder-DIP-18-pin_44564.html) |
-| VR1 | 1 | 10kΩ | Trimmer 3386F | [3386F-103LF-ND](https://www.digikey.com/en/products/filter?keywords=3386F-103LF-ND) |  |  |
-| X1 | 1 | 1 MHz | DIP-14 Oscillator, full-size can | [X937-ND](https://www.digikey.com/en/products/filter?keywords=X937-ND) |  |  |
-| Y1 | 1 | 1.8432 MHz | Crystal HC-49/U | [3155-1.8432M20P2/49U-ND](https://www.digikey.com/en/products/filter?keywords=3155-1.8432M20P2/49U-ND) | [815-AB-1.8432-B2](https://www.mouser.com/ProductDetail/815-AB-1.8432-B2) |  |
-
-R19 is not fitted, so it isn't listed. J6 is one footprint, built from three strips of header.
-
-Also needed, and not on the schematic:
-
-| Part | Qty | For | Source |
-|------|-----|-----|---------|
-| Shunt 2.54mm | 2 | J1 and J3 | DigiKey [S9337-ND](https://www.digikey.com/en/products/filter?keywords=S9337-ND) |
-| IC socket, 40-pin, 0.6 in | 2 | U1, U8 | |
-| IC socket, 28-pin, 0.6 in | 3 | U2, U9, U15 | |
-| 28-pin ZIF socket, or a fourth 28-pin socket | 1 | U3 | DigiKey [3M2802-ND](https://www.digikey.com/en/products/filter?keywords=3M2802-ND) |
-| IC socket, 18-pin, 0.3 in | 1 | U16 | |
-| IC socket, 16-pin, 0.3 in | 4 | U7, U10, U11, U14 | |
-| IC socket, 14-pin, 0.3 in | 4 | U4, U5, U6, U17 | |
-| IC socket, 8-pin, 0.3 in | 1 | U12 | |
-| Female Header 1×16 2.54mm | 1 | U13 | DigiKey [S7014-ND](https://www.digikey.com/en/products/filter?keywords=S7014-ND) |
-| Pin Header 1×16 2.54mm | 1 | U13 | [AMAZON](https://www.amazon.com/Straight-Breakaway-Connector-Breadboard-Electronic/dp/B0FRZW75VS) |
-| BusBoard BB830 breadboard | 2 | The breadboards | DigiKey [4526-BB830-ND](https://www.digikey.com/en/products/filter?keywords=4526-BB830-ND) |
-| Clear two-piece keycap for Cherry MX switches | 24 | SW1–SW24 | [AMAZON](https://www.amazon.com/dp/B0G2WJBLBC) |
-| 5V DC power supply, center positive | 1 | J7 | |
-| Straight-through DB-9 serial cable | 1 | J2 | |
+Parts list: [BOM.md](BOM.md#kim-board).
 
 The keycaps are clear, with a separate cap, so a printed legend sits inside each one. [`CAD/Keycaps/KIM Keycaps.pdf`](./CAD/Keycaps/KIM%20Keycaps.pdf) is the sheet to print.
 
@@ -398,13 +340,7 @@ U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502
 
 - Initial release, and the board on sale. Built and tested. `Hardware/Keypad Card/Rev 1.0/` and `Production/Keypad Card/Rev 1.0/` match the boards JLCPCB made (order Y90). The Gerbers and drill files in the production zip are byte-for-byte what JLCPCB received.
 
-| Reference | Qty | Value | Description | LCSC | DigiKey | Mouser | Other |
-|-----------|-----|-------|-------------|------|---------|--------|-------|
-| C1–C4 | 4 | 100nF | SMD Capacitor 0805 | [C49678](https://www.lcsc.com/search?q=C49678) | | | |
-| J2, J3 | 2 | PORT A/B | Box Header 2×6 2.54mm | | [2057-BHR-12-VUA-ND](https://www.digikey.com/en/products/filter?keywords=2057-BHR-12-VUA-ND) | | |
-| U1, U2 | 2 | 74HC138 | 3-to-8 Line Decoder | [C5602](https://www.lcsc.com/search?q=C5602) | | | |
-| U3 | 1 | 65C21 | Peripheral Interface Adapter | | | [955-W65C21N6TPG-14](https://www.mouser.com/ProductDetail/955-W65C21N6TPG-14) | |
-| U4 | 1 | AT28C64 | 8K×8 EEPROM | | [AT28C64B-15PU-ND](https://www.digikey.com/en/products/filter?keywords=AT28C64B-15PU-ND) | [556-AT28C64B15PU](https://www.mouser.com/ProductDetail/556-AT28C64B15PU) | |
+Parts list: [BOM.md](BOM.md#keypad-card).
 
 ### Keypad Helper
 
@@ -415,17 +351,6 @@ U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502
 - Initial release, and the board on sale. Built and tested. `Hardware/Keypad Helper/Rev 1.0/` and `Production/Keypad Helper/Rev 1.0/` match the boards JLCPCB made (order Y51). The Gerbers and drill files in the production zip are byte-for-byte what JLCPCB received.
 - The PCB file was restored to that layout on 2026-11-04. Later edits only changed pad shapes, when footprints were refreshed, so they don't make a Rev 1.1. The schematic and BOM are today's, and they match this copper.
 - U1 and U2 use the footprints the board was made with, without the socket outline.
-
-| Reference | Qty | Value | Description | DigiKey | Mouser | Other |
-|-----------|-----|-------|-------------|---------|--------|-------|
-| C1, C2, C4 | 3 | 100nF | Disc Capacitor | [478-5732-ND](https://www.digikey.com/en/products/filter?keywords=478-5732-ND) | | [AMAZON](https://www.amazon.com/PANMILED-Multilayer-Monolithic-Capacitors-Assortment/dp/B0CYQ1Z4G5) |
-| C3 | 1 | 1µF | Disc Capacitor | [478-7667-ND](https://www.digikey.com/en/products/filter?keywords=478-7667-ND) | | [AMAZON](https://www.amazon.com/PANMILED-Multilayer-Monolithic-Capacitors-Assortment/dp/B0CYQ1Z4G5) |
-| D1, D2 | 2 | 1N914 | Small Signal Diode | [1N914FS-ND](https://www.digikey.com/en/products/filter?keywords=1N914FS-ND) | | |
-| J1 | 1 | PORT | Box Header 2×6 2.54mm | [2057-BHR-12-VUA-ND](https://www.digikey.com/en/products/filter?keywords=2057-BHR-12-VUA-ND) | | [AMAZON](https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2) |
-| R1, R2 | 2 | 100kΩ | Resistor | | | [AMAZON](https://www.amazon.com/ALLECIN-8W-Metal-Film-Resistor/dp/B0C77TM3NR) |
-| SW1–SW24 | 24 | 0–23 | Cherry MX Switch 1.00u | [CH196-ND](https://www.digikey.com/en/products/filter?keywords=CH196-ND) | | [AMAZON](https://www.amazon.com/dp/B0FYR5TV3X) |
-| U1 | 1 | MM74C922 | 16-Key Encoder | | | [JAMECO](https://www.jameco.com/z/74C922-Major-Brands-IC-74C922-16-20-Key-Encoder-DIP-18-pin_44564.html) |
-| U2 | 1 | 74HC00 | Quad 2-Input NAND Gate | [296-1563-5-ND](https://www.digikey.com/en/products/filter?keywords=296-1563-5-ND) | [595-SN74HC00N](https://www.mouser.com/ProductDetail/595-SN74HC00N) | |
 
 ### Keypad LCD Helper
 
@@ -440,12 +365,7 @@ U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502
 
 - Initial release, and the board on sale. `Hardware/Keypad LCD Helper/Rev 1.0/` and `Production/Keypad LCD Helper/Rev 1.0/` match the boards JLCPCB made (order Y54). The Gerbers and drill files in the production zip are byte-for-byte what JLCPCB received.
 
-| Reference | Qty | Value | Description | DigiKey | Mouser | Other |
-|-----------|-----|-------|-------------|---------|--------|-------|
-| J1, J2, J3 | 3 | PORT A/B/KEYPAD | Box Header 2×6 2.54mm | [2057-BHR-12-VUA-ND](https://www.digikey.com/en/products/filter?keywords=2057-BHR-12-VUA-ND) | | [AMAZON](https://www.amazon.com/uxcell-2-54mm-2x6-Pin-Straight-Connector/dp/B07DJYVZV2) |
-| R1 | 1 | R | Resistor | | | |
-| U2 | 1 | LCD-16X2 | 16×2 LCD Display | | | [AMAZON](https://www.amazon.com/MECCANIXITY-Display-Backlight-Interface-Adapter/dp/B0DSFXK7QK) |
-| VR1 | 1 | 10kΩ | Potentiometer | [3386F-103LF-ND](https://www.digikey.com/en/products/filter?keywords=3386F-103LF-ND) | | |
+Parts list: [BOM.md](BOM.md#keypad-lcd-helper).
 
 ## Purchase
 
