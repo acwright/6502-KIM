@@ -163,7 +163,7 @@ CartReset:
   cli                           ; enable IRQs — keypad CA1 + serial RX drive input
 
   ; LCD splash first — it must never depend on the serial terminal being
-  ; connected.  (SerialChrout/our serial TX blocks on TDRE, which the R65C51
+  ; connected.  (SerialChrout/our serial TX blocks on TDRE, which the R6551AP
   ; gates on /CTS; with no terminal connected the serial banner would stall.)
   jsr ShowSplash                ; "KIM MONITOR v1.0" / "--ESC TO START--"
 
@@ -784,7 +784,7 @@ PiaInit:
 ;   handler also dispatches BRK (which shares the vector) to BRK_PTR so
 ;   executed user code keeps its clean-return behaviour.
 ;
-;   The IRQ has two sources sharing the line: the R65C51 serial RX
+;   The IRQ has two sources sharing the line: the R6551AP serial RX
 ;   and the keypad CA1 edge.  Serial is serviced first so a fast host stream
 ;   is never dropped while a key is also pending: if SC_STATUS shows RDRF, the
 ;   byte is read; an ESC byte triggers a break-to-monitor abort (WarmStart),
@@ -808,7 +808,7 @@ KeyIrq:
   bne @Brk
 
   ; Two sources share the CPU /IRQ line: the keypad PIA (CA1 edge) and the
-  ; R65C51 ACIA (serial RX).  Both are serviced every entry, and the loop
+  ; R6551AP ACIA (serial RX).  Both are serviced every entry, and the loop
   ; below keeps draining until neither has work pending — this is what keeps a
   ; break-to-monitor ESC reliable from *either* source while a launched program
   ; is running (the cooperative main loop, and thus the SerFeed parser, is
@@ -831,7 +831,7 @@ KeyIrq:
   lda #$01
   sta KEY_READY                 ; signal the monitor loop
 
-  ; --- Serial RX source (R65C51 ACIA) ---------------------------------------
+  ; --- Serial RX source (R6551AP ACIA) ---------------------------------------
 @Serial:
   lda HW_PRESENT
   and #HW_SC                    ; no Serial Card -> $9001 is open bus, and a
@@ -1393,7 +1393,7 @@ SerEcho:
 ; -----------------------------------------------------------------------------
 ;   In: A = byte (sent as-is).  Preserves X and Y.
 ;   Unlike the BIOS SerialChrout (which blocks until TDRE — and therefore
-;   hangs forever when the R65C51's /CTS is not asserted by a connected
+;   hangs forever when the R6551AP's /CTS is not asserted by a connected
 ;   terminal), this waits for TX-ready only for a bounded time and then drops
 ;   the byte.  That keeps the keypad monitor fully alive whether or not a host
 ;   terminal is attached.  When a terminal IS connected it exits as soon as

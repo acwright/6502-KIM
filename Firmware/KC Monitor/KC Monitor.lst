@@ -40,7 +40,7 @@ Current file: KC Monitor.asm
 000000r 2               ;   $0600-$07FF   free on a KIM (the Kernal's FS sector buffer; no CF fitted)
 000000r 2               ;   $0800-$7FFF   Program RAM (30 KB — load address for user code)
 000000r 2               ;   $8000-$8FFF   IO 1-4: unpopulated on a KIM (open bus)
-000000r 2               ;   $9000-$9003   IO 5: Serial (R65C51 ACIA) — optional, usually fitted
+000000r 2               ;   $9000-$9003   IO 5: Serial (R6551AP ACIA) — optional, usually fitted
 000000r 2               ;   $9400-$9FFF   IO 6-8: unpopulated on a KIM (open bus)
 000000r 2               ;   $A000-$A0FF   Kernal Jump Table (stable entry points — SURVIVES the overlay)
 000000r 2               ;   $A100-$B7FF   Kernal Implementation                    (SURVIVES the overlay)
@@ -88,7 +88,7 @@ Current file: KC Monitor.asm
 000000r 2               ;
 000000r 2               ;     * Chrout ($A000) dispatches on IO_MODE.  With a Serial Card fitted the
 000000r 2               ;       boot probe selects serial, and Chrout lands in SerialChrout, which
-000000r 2               ;       BLOCKS until TDRE — and the R65C51 gates TDRE on /CTS.  With no
+000000r 2               ;       BLOCKS until TDRE — and the R6551AP gates TDRE on /CTS.  With no
 000000r 2               ;       terminal connected, a single Chrout hangs the machine forever.  With
 000000r 2               ;       no Serial Card fitted, IO_MODE is left as the probe found it and
 000000r 2               ;       output goes nowhere at all.  Everything built on Chrout (PrintStr,
@@ -345,7 +345,7 @@ Current file: KC Monitor.asm
 000000r 2               
 000000r 2               SerialChrout        := $A051             ; [SERIAL] Direct serial output (bypasses IO_MODE)
 000000r 2                                                        ;   In: A = character
-000000r 2                                                        ;   BLOCKS until TX register is empty.  The R65C51 gates
+000000r 2                                                        ;   BLOCKS until TX register is empty.  The R6551AP gates
 000000r 2                                                        ;   TDRE on /CTS, so this hangs forever with no terminal
 000000r 2                                                        ;   attached — KC Monitor uses its own bounded-wait
 000000r 2                                                        ;   SerPutc instead, and so should anything that must
@@ -415,7 +415,7 @@ Current file: KC Monitor.asm
 000000r 2               ; register definitions from the BIOS's family-wide 6502.inc.
 000000r 2               
 000000r 2               ; -----------------------------------------------------------------------------
-000000r 2               ;   Serial Card (R65C51 ACIA) — IO 5: $9000-$9003
+000000r 2               ;   Serial Card (R6551AP ACIA) — IO 5: $9000-$9003
 000000r 2               ; -----------------------------------------------------------------------------
 000000r 2               ;   Optional hardware.  Test HW_SC in HW_PRESENT before touching these — with
 000000r 2               ;   no card fitted the window is open bus and a floating RDRF will hand you
@@ -733,7 +733,7 @@ Current file: KC Monitor.asm
 000030r 1  58             cli                           ; enable IRQs — keypad CA1 + serial RX drive input
 000031r 1               
 000031r 1                 ; LCD splash first — it must never depend on the serial terminal being
-000031r 1                 ; connected.  (SerialChrout/our serial TX blocks on TDRE, which the R65C51
+000031r 1                 ; connected.  (SerialChrout/our serial TX blocks on TDRE, which the R6551AP
 000031r 1                 ; gates on /CTS; with no terminal connected the serial banner would stall.)
 000031r 1  20 rr rr       jsr ShowSplash                ; "KIM MONITOR v1.0" / "--ESC TO START--"
 000034r 1               
@@ -1354,7 +1354,7 @@ Current file: KC Monitor.asm
 00029Ar 1               ;   handler also dispatches BRK (which shares the vector) to BRK_PTR so
 00029Ar 1               ;   executed user code keeps its clean-return behaviour.
 00029Ar 1               ;
-00029Ar 1               ;   The IRQ has two sources sharing the line: the R65C51 serial RX
+00029Ar 1               ;   The IRQ has two sources sharing the line: the R6551AP serial RX
 00029Ar 1               ;   and the keypad CA1 edge.  Serial is serviced first so a fast host stream
 00029Ar 1               ;   is never dropped while a key is also pending: if SC_STATUS shows RDRF, the
 00029Ar 1               ;   byte is read; an ESC byte triggers a break-to-monitor abort (WarmStart),
@@ -1378,7 +1378,7 @@ Current file: KC Monitor.asm
 0002A2r 1  D0 37          bne @Brk
 0002A4r 1               
 0002A4r 1                 ; Two sources share the CPU /IRQ line: the keypad PIA (CA1 edge) and the
-0002A4r 1                 ; R65C51 ACIA (serial RX).  Both are serviced every entry, and the loop
+0002A4r 1                 ; R6551AP ACIA (serial RX).  Both are serviced every entry, and the loop
 0002A4r 1                 ; below keeps draining until neither has work pending — this is what keeps a
 0002A4r 1                 ; break-to-monitor ESC reliable from *either* source while a launched program
 0002A4r 1                 ; is running (the cooperative main loop, and thus the SerFeed parser, is
@@ -1401,7 +1401,7 @@ Current file: KC Monitor.asm
 0002BAr 1  A9 01          lda #$01
 0002BCr 1  85 45          sta KEY_READY                 ; signal the monitor loop
 0002BEr 1               
-0002BEr 1                 ; --- Serial RX source (R65C51 ACIA) ---------------------------------------
+0002BEr 1                 ; --- Serial RX source (R6551AP ACIA) ---------------------------------------
 0002BEr 1               @Serial:
 0002BEr 1  AD 0D 03       lda HW_PRESENT
 0002C1r 1  29 10          and #HW_SC                    ; no Serial Card -> $9001 is open bus, and a
@@ -1963,7 +1963,7 @@ Current file: KC Monitor.asm
 0004CFr 1               ; -----------------------------------------------------------------------------
 0004CFr 1               ;   In: A = byte (sent as-is).  Preserves X and Y.
 0004CFr 1               ;   Unlike the BIOS SerialChrout (which blocks until TDRE — and therefore
-0004CFr 1               ;   hangs forever when the R65C51's /CTS is not asserted by a connected
+0004CFr 1               ;   hangs forever when the R6551AP's /CTS is not asserted by a connected
 0004CFr 1               ;   terminal), this waits for TX-ready only for a bounded time and then drops
 0004CFr 1               ;   the byte.  That keeps the keypad monitor fully alive whether or not a host
 0004CFr 1               ;   terminal is attached.  When a terminal IS connected it exits as soon as

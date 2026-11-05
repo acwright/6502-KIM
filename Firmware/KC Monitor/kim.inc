@@ -33,7 +33,7 @@
 ;   $0600-$07FF   free on a KIM (the Kernal's FS sector buffer; no CF fitted)
 ;   $0800-$7FFF   Program RAM (30 KB — load address for user code)
 ;   $8000-$8FFF   IO 1-4: unpopulated on a KIM (open bus)
-;   $9000-$9003   IO 5: Serial (R65C51 ACIA) — optional, usually fitted
+;   $9000-$9003   IO 5: Serial (R6551AP ACIA) — optional, usually fitted
 ;   $9400-$9FFF   IO 6-8: unpopulated on a KIM (open bus)
 ;   $A000-$A0FF   Kernal Jump Table (stable entry points — SURVIVES the overlay)
 ;   $A100-$B7FF   Kernal Implementation                    (SURVIVES the overlay)
@@ -81,7 +81,7 @@
 ;
 ;     * Chrout ($A000) dispatches on IO_MODE.  With a Serial Card fitted the
 ;       boot probe selects serial, and Chrout lands in SerialChrout, which
-;       BLOCKS until TDRE — and the R65C51 gates TDRE on /CTS.  With no
+;       BLOCKS until TDRE — and the R6551AP gates TDRE on /CTS.  With no
 ;       terminal connected, a single Chrout hangs the machine forever.  With
 ;       no Serial Card fitted, IO_MODE is left as the probe found it and
 ;       output goes nowhere at all.  Everything built on Chrout (PrintStr,
@@ -338,7 +338,7 @@ InitSC              := $A04E             ; [SERIAL] Initialize serial card (8-N-
 
 SerialChrout        := $A051             ; [SERIAL] Direct serial output (bypasses IO_MODE)
                                          ;   In: A = character
-                                         ;   BLOCKS until TX register is empty.  The R65C51 gates
+                                         ;   BLOCKS until TX register is empty.  The R6551AP gates
                                          ;   TDRE on /CTS, so this hangs forever with no terminal
                                          ;   attached — KC Monitor uses its own bounded-wait
                                          ;   SerPutc instead, and so should anything that must
@@ -408,7 +408,7 @@ PrintDecU16         := $A096             ; [SERIAL] Print an unsigned 16-bit val
 ; register definitions from the BIOS's family-wide 6502.inc.
 
 ; -----------------------------------------------------------------------------
-;   Serial Card (R65C51 ACIA) — IO 5: $9000-$9003
+;   Serial Card (R6551AP ACIA) — IO 5: $9000-$9003
 ; -----------------------------------------------------------------------------
 ;   Optional hardware.  Test HW_SC in HW_PRESENT before touching these — with
 ;   no card fitted the window is open bus and a floating RDRF will hand you
