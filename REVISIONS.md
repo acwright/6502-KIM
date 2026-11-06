@@ -1,6 +1,6 @@
 # Revisions
 
-Every revision of every board in this repository, and what is known about each. The audit date is at the end.
+Every revision of every board in this repository, and what is known about each. The dates of the checks are at the end.
 
 **Status** says what has happened to a revision:
 
@@ -20,7 +20,7 @@ Every revision of every board in this repository, and what is known about each. 
 | Keypad LCD Helper | 1.0 | Made, matches order | Yes | Y54 | 2024-08-06 | `6502-COB 48c5bde` | 4 | 100.26×64.68 | 5.68–6.25 mm | yes | — |  |
 | Keypad LCD Helper | 1.1 | Drawn | — |  |  |  | — | 100×65 | 6 mm | yes | — |  |
 
-The audit last ran on 2026-11-04. Each production zip marked *Made, matches order* was compared byte for byte with JLCPCB's copy, and its PCB regenerated to the same copper, mask, outline and holes. Tindie stock is from the listings as saved on 2026-10-23.
+JLCPCB's orders were checked on 2026-11-04: each production zip marked *Made, matches order* was compared byte for byte with JLCPCB's copy, and its PCB regenerated to the same copper, mask, outline and holes. Each time this table is written, every PCB is checked again against its production zip, for copper and drill holes. Tindie stock is from the listings as saved on 2026-10-23.
 
 <!-- History: hand-written. tools/revision-audit/register.py keeps everything from here to the end. -->
 
