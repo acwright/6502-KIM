@@ -15,6 +15,7 @@ Every revision of every board in this repository, and what is known about each. 
 | Board | Rev | Status | Tested | Order | Ordered | Made from | Tindie stock | Size (mm) | Holes | Top panel | Enclosure | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | KIM Board | 1.0 | Ordered | — |  |  |  | — | 280×220 | 6 mm | — | — | Order 1, placed 2026-11-02 |
+| KIM Board | 1.1 | Drawn | — |  |  |  | — | 280×220 | 6 mm | — | — |  |
 | Keypad Card | 1.0 | Made, matches order | Yes | Y90 | 2026-05-10 | `5652134` | 4 | 100×57.62 | — | — | — |  |
 | Keypad Card | 1.1 | Drawn | — |  |  |  | — | 100×57.62 | — | — | — |  |
 | Keypad Helper | 1.0 | Made, matches order | Yes | Y51 | 2024-07-07 | `6502-COB b8f89eb` | 4 | 100×150 | 6 mm | yes | — | copper drawn differently by today's KiCad, as recorded in audit.py |
@@ -28,6 +29,17 @@ JLCPCB's orders were checked on 2026-11-04: each production zip marked *Made, ma
 ## History
 
 What changed in each revision of each board, newest first. The table above has the facts about each one.
+
+### KIM Board
+
+**Rev 1.1** (drawn, not yet made; Rev 1.0 is built first)
+
+- The silkscreen says `SERIAL (DCE)` at J2. Rev 1.0's says `DB9 FEMALE (DCE)`. Nothing else changed: the copper, mask, holes and outline are Rev 1.0's.
+- Rev 1.1 stays open until Rev 1.0 has been brought up. Anything the bring-up finds that the board needs is drawn here.
+
+**Rev 1.0**
+
+- Initial release. Ordered on 2026-11-02, and not yet built or tested.
 
 ### Keypad Card
 

@@ -21,6 +21,7 @@ Look on the board: the silk prints the revision next to the copyright line. [REV
 | Board | Revision | What the silk says | Status |
 |---|---|---|---|
 | [KIM Board](#kim-board) | 1.0 | Rev 1.0 | Ordered, not tested yet |
+| [KIM Board](#kim-board) | 1.1 | Rev 1.1 | Drawn, not made yet |
 | [Keypad Card](#keypad-card) | 1.0 | Rev 1.0 | Made, tested |
 | [Keypad Card](#keypad-card) | 1.1 | Rev 1.1 | Drawn, not made yet |
 | [Keypad Helper](#keypad-helper) | 1.0 | Rev 1.0 | Made, tested |
@@ -52,6 +53,73 @@ U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502
 <!-- End of build notes. -->
 
 ## KIM Board
+
+### KIM Board Rev 1.1
+
+Drawn, not made yet.
+
+Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.1/digikey.csv), [mouser.csv](BOM/KIM%20Board/Rev%201.1/mouser.csv)
+
+| Reference | Qty | Value | Part | Digi-Key | Mouser | Other |
+|---|---|---|---|---|---|---|
+| C1–C5, C7, C12, C14–C25 | 19 | 100nF | KYOCERA AVX SR205C104KAR | [478-3187-ND](https://www.digikey.com/en/products/filter?keywords=478-3187-ND) | [581-SR205C104KAR](https://www.mouser.com/ProductDetail/581-SR205C104KAR) |  |
+| C6, C26 | 2 | 10uF | Panasonic EEA-GA1C100 | [P14482-ND](https://www.digikey.com/en/products/filter?keywords=P14482-ND) | [667-EEA-GA1C100](https://www.mouser.com/ProductDetail/667-EEA-GA1C100) |  |
+| C8–C11, C13 | 5 | 1uF | KYOCERA AVX SR205E105MAR | [478-7667-ND](https://www.digikey.com/en/products/filter?keywords=478-7667-ND) | [581-SR205E105MAR](https://www.mouser.com/ProductDetail/581-SR205E105MAR) |  |
+| D1, D2 | 2 | BAT85 | Vishay BAT85S-TR | [BAT85SCT-ND](https://www.digikey.com/en/products/filter?keywords=BAT85SCT-ND) | [78-BAT85S](https://www.mouser.com/ProductDetail/78-BAT85S) |  |
+| D3, D4 | 2 | 1N914 | onsemi 1N914 | [1N914FS-ND](https://www.digikey.com/en/products/filter?keywords=1N914FS-ND) | [512-1N914](https://www.mouser.com/ProductDetail/512-1N914) |  |
+| D5 | 1 | 1N5819 | Vishay 1N5819-E3/54 | [1N5819-E3/54GICT-ND](https://www.digikey.com/en/products/filter?keywords=1N5819-E3%2F54GICT-ND) | [625-1N5819-E3](https://www.mouser.com/ProductDetail/625-1N5819-E3) |  |
+| D6 | 1 | POWER LED | Würth Elektronik 151031VS06000 | [732-5008-ND](https://www.digikey.com/en/products/filter?keywords=732-5008-ND) | [710-151031VS06000](https://www.mouser.com/ProductDetail/710-151031VS06000) |  |
+| J1 | 1 | KIM ENABLE | Pin header 1×3, 2.54 mm, cut from a strip | [S1011EC-40-ND](https://www.digikey.com/en/products/filter?keywords=S1011EC-40-ND) | [200-TSW14007TS](https://www.mouser.com/ProductDetail/200-TSW14007TS) |  |
+| J2 | 1 | SERIAL (DCE) | Amphenol D09S33E4GX00LF | [609-1487-ND](https://www.digikey.com/en/products/filter?keywords=609-1487-ND) | [649-D09S33E4GX00LF](https://www.mouser.com/ProductDetail/649-D09S33E4GX00LF) |  |
+| J3 | 1 | CTS EN | Pin header 1×3, 2.54 mm, cut from a strip | [S1011EC-40-ND](https://www.digikey.com/en/products/filter?keywords=S1011EC-40-ND) | [200-TSW14007TS](https://www.mouser.com/ProductDetail/200-TSW14007TS) |  |
+| J4 | 1 | CART | TE Connectivity 5-5530843-4 | [A31723-ND](https://www.digikey.com/en/products/filter?keywords=A31723-ND) | [571-5-5530843-4](https://www.mouser.com/ProductDetail/571-5-5530843-4) |  |
+| J5 | 1 | BUS | Würth Elektronik 61204021621 | [732-5401-ND](https://www.digikey.com/en/products/filter?keywords=732-5401-ND) | [710-61204021621](https://www.mouser.com/ProductDetail/710-61204021621) |  |
+| J7 | 1 | 5V DC | Same Sky PJ-102AH | [CP-102AH-ND](https://www.digikey.com/en/products/filter?keywords=CP-102AH-ND) | [490-PJ-102AH](https://www.mouser.com/ProductDetail/490-PJ-102AH) |  |
+| Q1 | 1 | 2N3904 | onsemi 2N3904BU | [2N3904FS-ND](https://www.digikey.com/en/products/filter?keywords=2N3904FS-ND) | [512-2N3904BU](https://www.mouser.com/ProductDetail/512-2N3904BU) |  |
+| R1–R5, R15, R18, R23 | 8 | 10k | YAGEO MFR-12FTF52-10K | [13-MFR-12FTF52-10KCT-ND](https://www.digikey.com/en/products/filter?keywords=13-MFR-12FTF52-10KCT-ND) | [603-MFR-12FTF52-10K](https://www.mouser.com/ProductDetail/603-MFR-12FTF52-10K) |  |
+| R6–R14 | 9 | 1k | YAGEO MFR-12FTF52-1K | [13-MFR-12FTF52-1KCT-ND](https://www.digikey.com/en/products/filter?keywords=13-MFR-12FTF52-1KCT-ND) | [603-MFR-12FTF52-1K](https://www.mouser.com/ProductDetail/603-MFR-12FTF52-1K) |  |
+| R16 | 1 | 1M | YAGEO MFR-12FTF52-1M | [13-MFR-12FTF52-1MCT-ND](https://www.digikey.com/en/products/filter?keywords=13-MFR-12FTF52-1MCT-ND) | [603-MFR-12FTF52-1M](https://www.mouser.com/ProductDetail/603-MFR-12FTF52-1M) |  |
+| R17 | 1 | 47k | YAGEO MFR-12FTF52-47K | [13-MFR-12FTF52-47KCT-ND](https://www.digikey.com/en/products/filter?keywords=13-MFR-12FTF52-47KCT-ND) | [603-MFR-12FTF52-47K](https://www.mouser.com/ProductDetail/603-MFR-12FTF52-47K) |  |
+| R20, R21 | 2 | 100k | YAGEO MFR-12FTF52-100K | [13-MFR-12FTF52-100KCT-ND](https://www.digikey.com/en/products/filter?keywords=13-MFR-12FTF52-100KCT-ND) | [603-MFR-12FTF52-100K](https://www.mouser.com/ProductDetail/603-MFR-12FTF52-100K) |  |
+| R22 | 1 | 330 | YAGEO MFR-12FTF52-330R | [13-MFR-12FTF52-330RCT-ND](https://www.digikey.com/en/products/filter?keywords=13-MFR-12FTF52-330RCT-ND) | [603-MFR-12FTF52-330R](https://www.mouser.com/ProductDetail/603-MFR-12FTF52-330R) |  |
+| SW1–SW24 | 24 | Keyswitch | Cherry Americas LLC MX2A-E1NA | [1644-MX2A-E1NA-ND](https://www.digikey.com/en/products/filter?keywords=1644-MX2A-E1NA-ND) | [540-MX2A-E1NA](https://www.mouser.com/ProductDetail/540-MX2A-E1NA) |  |
+| SW25 | 1 | IO ENABLE | CTS Electronic Components 206-8 | [CT2068-ND](https://www.digikey.com/en/products/filter?keywords=CT2068-ND) | [774-2068](https://www.mouser.com/ProductDetail/774-2068) |  |
+| SW26 | 1 | RESET | Same Sky (Formerly CUI Devices) TS02-66-50-BK-160-LCR-D | [2223-TS02-66-50-BK-160-LCR-D-ND](https://www.digikey.com/en/products/filter?keywords=2223-TS02-66-50-BK-160-LCR-D-ND) | [179-TS026650BK160LCR](https://www.mouser.com/ProductDetail/179-TS026650BK160LCR) |  |
+| SW27 | 1 | POWER | E-Switch 400MSP1R6BLKM6QE | [EG4326-ND](https://www.digikey.com/en/products/filter?keywords=EG4326-ND) | [612-400MSP1R6BLKM6QE](https://www.mouser.com/ProductDetail/612-400MSP1R6BLKM6QE) |  |
+| U1 | 1 | 65C02 | Western Design Center (WDC) W65C02S6TPG-14 |  | [955-W65C02S6TPG-14](https://www.mouser.com/ProductDetail/955-W65C02S6TPG-14) |  |
+| U2 | 1 | AS6C62256 | Alliance Memory AS6C62256-55PCN | [1450-1033-ND](https://www.digikey.com/en/products/filter?keywords=1450-1033-ND) | [913-AS6C62256-55PCN](https://www.mouser.com/ProductDetail/913-AS6C62256-55PCN) |  |
+| U3 | 1 | AT28C256 | Microchip Technology AT28C256-15PU | [AT28C256-15PU-ND](https://www.digikey.com/en/products/filter?keywords=AT28C256-15PU-ND) | [556-AT28C25615PU](https://www.mouser.com/ProductDetail/556-AT28C25615PU) |  |
+| U4–U6, U17 | 4 | 74HC00 | Texas Instruments SN74HC00N | [296-1563-5-ND](https://www.digikey.com/en/products/filter?keywords=296-1563-5-ND) | [595-SN74HC00N](https://www.mouser.com/ProductDetail/595-SN74HC00N) |  |
+| U7, U10, U11 | 3 | 74HC138 | Texas Instruments SN74HC138N | [296-1575-5-ND](https://www.digikey.com/en/products/filter?keywords=296-1575-5-ND) | [595-SN74HC138N](https://www.mouser.com/ProductDetail/595-SN74HC138N) |  |
+| U8 | 1 | W65C21N | Western Design Center (WDC) W65C21N6TPG-14 |  | [955-W65C21N6TPG-14](https://www.mouser.com/ProductDetail/955-W65C21N6TPG-14) |  |
+| U9 | 1 | AT28C64 | Microchip Technology AT28C64B-15PU | [AT28C64B-15PU-ND](https://www.digikey.com/en/products/filter?keywords=AT28C64B-15PU-ND) | [556-AT28C64B15PU](https://www.mouser.com/ProductDetail/556-AT28C64B15PU) |  |
+| U12 | 1 | LM555 | Texas Instruments LM555CN/NOPB | [LM555CNNS/NOPB-ND](https://www.digikey.com/en/products/filter?keywords=LM555CNNS%2FNOPB-ND) | [926-LM555CN/NOPB](https://www.mouser.com/ProductDetail/926-LM555CN%2FNOPB) |  |
+| U13 | 1 | LCD-16X2 | LCD-16X2, LCD-16X2 |  |  | [Amazon](https://www.amazon.com/dp/B0DSFXK7QK) |
+| U14 | 1 | MAX232 | Texas Instruments MAX232N | [296-1402-5-ND](https://www.digikey.com/en/products/filter?keywords=296-1402-5-ND) | [595-MAX232N](https://www.mouser.com/ProductDetail/595-MAX232N) |  |
+| U15 | 1 | R6551AP | Rockwell R6551AP |  |  | [Jameco 43318](https://www.jameco.com/z/R6551AP-Rockwell-IC-6551-Asynchronous-Communication-Interface-Adapter-DIP-28-pin_43318.html) |
+| U16 | 1 | MM74C922 | onsemi MM74C922N |  |  | [Jameco 44564](https://www.jameco.com/z/74C922-Major-Brands-IC-74C922-16-20-Key-Encoder-DIP-18-pin_44564.html) |
+| VR1 | 1 | 10k | Bourns Inc. 3386F-1-103LF | [3386F-103LF-ND](https://www.digikey.com/en/products/filter?keywords=3386F-103LF-ND) | [652-3386F-1-103LF](https://www.mouser.com/ProductDetail/652-3386F-1-103LF) |  |
+| X1 | 1 | 1 MHz | ECS Inc. ECS-100AX-010 | [X937-ND](https://www.digikey.com/en/products/filter?keywords=X937-ND) | [520-TCF100-X](https://www.mouser.com/ProductDetail/520-TCF100-X) |  |
+| Y1 | 1 | 1.8432 MHz | Abracon LLC AB-1.8432MHZ-B2 | [535-9009-ND](https://www.digikey.com/en/products/filter?keywords=535-9009-ND) | [815-AB-1.8432-B2](https://www.mouser.com/ProductDetail/815-AB-1.8432-B2) |  |
+| U4–U6, U17 | 4 | Socket | IC socket, 14-pin, 0.3 in | [3M5474-ND](https://www.digikey.com/en/products/filter?keywords=3M5474-ND) | [517-4814-3004-CP](https://www.mouser.com/ProductDetail/517-4814-3004-CP) | |
+| U2, U9, U15 | 3 | Socket | IC socket, 28-pin, 0.6 in | [3M5481-ND](https://www.digikey.com/en/products/filter?keywords=3M5481-ND) | [517-4828-6004-CP](https://www.mouser.com/ProductDetail/517-4828-6004-CP) | |
+| U7, U10, U11, U14 | 4 | Socket | IC socket, 16-pin, 0.3 in | [3M5475-ND](https://www.digikey.com/en/products/filter?keywords=3M5475-ND) | [517-4816-3004-CP](https://www.mouser.com/ProductDetail/517-4816-3004-CP) | |
+| U1, U8 | 2 | Socket | IC socket, 40-pin, 0.6 in | [3M5471-ND](https://www.digikey.com/en/products/filter?keywords=3M5471-ND) | [517-4840-6000-CP](https://www.mouser.com/ProductDetail/517-4840-6000-CP) | |
+| U16 | 1 | Socket | IC socket, 18-pin, 0.3 in | [3M5464-ND](https://www.digikey.com/en/products/filter?keywords=3M5464-ND) | [517-4818-3000-CP](https://www.mouser.com/ProductDetail/517-4818-3000-CP) | |
+| U3 | 1 | Socket | 28-pin ZIF socket, or an ordinary 28-pin socket | [3M2802-ND](https://www.digikey.com/en/products/filter?keywords=3M2802-ND) | [517-228-1277-00](https://www.mouser.com/ProductDetail/517-228-1277-00) | |
+| U12 | 1 | Socket | IC socket, 8-pin, 0.3 in | [3M5473-ND](https://www.digikey.com/en/products/filter?keywords=3M5473-ND) | [517-4808-3004-CP](https://www.mouser.com/ProductDetail/517-4808-3004-CP) | |
+
+Pin headers are cut from strips, and the cart files count whole strips.
+
+**Do not fit** R19: parallel with VR1 to make ~10 k.
+
+- **D6:** Green shown. The colour is the builder's choice.
+- **J5:** Male box header with a keying notch, for a 40-way ribbon cable.
+- **J7:** Replaces GCT DCJ200-10-A-K1-K, now obsolete, which older builds used. Its pads and body match this footprint on the datasheet. No board has been built with it yet.
+- **SW1–SW24:** Cherry MX2A RGB Blue, clear housing, as on the owner's Amazon kit. MX1A-E1NN (black housing) is the deeper-stocked alternative; Digi-Key CH196-ND, Mouser 540-MX1A-E1NN.
+- **U13:** Common hobby 16×2 LCD; any HD44780-compatible module with the same pinout.
+- **U15:** Rockwell R6551AP, out of production. Do not substitute a W65C51.
+- **U16:** Buy from Jameco. Out of production at Digi-Key and Mouser.
 
 ### KIM Board Rev 1.0
 
