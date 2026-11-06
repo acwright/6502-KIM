@@ -22,6 +22,7 @@ Look on the board: the silk prints the revision next to the copyright line. [REV
 |---|---|---|---|
 | [KIM Board](#kim-board) | 1.0 | Rev 1.0 | Ordered, not tested yet |
 | [Keypad Card](#keypad-card) | 1.0 | Rev 1.0 | Made, tested |
+| [Keypad Card](#keypad-card) | 1.1 | Rev 1.1 | Drawn, not made yet |
 | [Keypad Helper](#keypad-helper) | 1.0 | Rev 1.0 | Made, tested |
 | [Keypad LCD Helper](#keypad-lcd-helper) | 1.0 | Rev 1.0 | Made, tested |
 | [Keypad LCD Helper](#keypad-lcd-helper) | 1.1 | Rev 1.1 | Drawn, not made yet |
@@ -131,6 +132,23 @@ J6 is one footprint, built from three strips of header. U13 also takes a 1×16 p
 
 
 ## Keypad Card
+
+### Keypad Card Rev 1.1
+
+Drawn, not made yet.
+
+Cart files: [digikey.csv](BOM/Keypad%20Card/Rev%201.1/digikey.csv), [mouser.csv](BOM/Keypad%20Card/Rev%201.1/mouser.csv), [digikey-through-hole.csv](BOM/Keypad%20Card/Rev%201.1/digikey-through-hole.csv), [mouser-through-hole.csv](BOM/Keypad%20Card/Rev%201.1/mouser-through-hole.csv)
+
+| Reference | Qty | Value | Part | Digi-Key | Mouser | Other | Pre-soldered |
+|---|---|---|---|---|---|---|---|
+| C1–C4 | 4 | 100nF | YAGEO CC0805KRX7R9BB104 | [311-1140-1-ND](https://www.digikey.com/en/products/filter?keywords=311-1140-1-ND) | [603-CC805KRX7R9BB104](https://www.mouser.com/ProductDetail/603-CC805KRX7R9BB104) | LCSC [C49678](https://www.lcsc.com/search?q=C49678) | Yes |
+| J2 | 1 | PORT A | Adam Tech BHR-12-VUA | [2057-BHR-12-VUA-ND](https://www.digikey.com/en/products/filter?keywords=2057-BHR-12-VUA-ND) | [737-BHR-12-VUA](https://www.mouser.com/ProductDetail/737-BHR-12-VUA) | 2057-BHR-12-VUA-ND | |
+| J3 | 1 | PORT B | Adam Tech BHR-12-VUA | [2057-BHR-12-VUA-ND](https://www.digikey.com/en/products/filter?keywords=2057-BHR-12-VUA-ND) | [737-BHR-12-VUA](https://www.mouser.com/ProductDetail/737-BHR-12-VUA) | 2057-BHR-12-VUA-ND | |
+| U1, U2 | 2 | 74HC138 | Nexperia USA Inc. 74HC138D,653 | [1727-2781-1-ND](https://www.digikey.com/en/products/filter?keywords=1727-2781-1-ND) | [771-74HC138D-T](https://www.mouser.com/ProductDetail/771-74HC138D-T) | LCSC [C5602](https://www.lcsc.com/search?q=C5602) | Yes |
+| U3 | 1 | W65C21N | Western Design Center (WDC) W65C21N6TPG-14 |  | [955-W65C21N6TPG-14](https://www.mouser.com/ProductDetail/955-W65C21N6TPG-14) |  | |
+| U4 | 1 | AT28C64 | Microchip Technology AT28C64B-15PU | [AT28C64B-15PU-ND](https://www.digikey.com/en/products/filter?keywords=AT28C64B-15PU-ND) | [556-AT28C64B15PU](https://www.mouser.com/ProductDetail/556-AT28C64B15PU) |  | |
+| U4 | 1 | Socket | IC socket, 28-pin, 0.6 in | [3M5481-ND](https://www.digikey.com/en/products/filter?keywords=3M5481-ND) | [517-4828-6004-CP](https://www.mouser.com/ProductDetail/517-4828-6004-CP) | | |
+| U3 | 1 | Socket | IC socket, 40-pin, 0.6 in | [3M5471-ND](https://www.digikey.com/en/products/filter?keywords=3M5471-ND) | [517-4840-6000-CP](https://www.mouser.com/ProductDetail/517-4840-6000-CP) | | |
 
 ### Keypad Card Rev 1.0
 

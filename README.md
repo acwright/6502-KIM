@@ -216,7 +216,7 @@ An all-in-one board containing the 65C02 CPU, 32KB SRAM, 32KB EEPROM, clock, and
 
 The card that makes the KIM a KIM. A cartridge card carrying its own ROM and I/O, which the Keypad Helper and Keypad LCD Helper attach to. Provides:
 
-- **PIA**: 65C21 — Port A carries the keypad code (PA0–PA4) and the LCD control lines (PA5 = RS, PA6 = R/W, PA7 = E); Port B is the LCD data bus. CA1 is the keypad data-available interrupt, CA2 the keypad encoder's output enable.
+- **PIA**: W65C21N — Port A carries the keypad code (PA0–PA4) and the LCD control lines (PA5 = RS, PA6 = R/W, PA7 = E); Port B is the LCD data bus. CA1 is the keypad data-available interrupt, CA2 the keypad encoder's output enable.
 - **ROM**: AT28C64 8KB EEPROM holding the cartridge firmware — see [Firmware](#firmware)
 - **Decoding**: two 74HC138 decoders
 - **Ports**: PORT A and PORT B headers for the Keypad Helper and the Keypad LCD Helper

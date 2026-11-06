@@ -16,6 +16,7 @@ Every revision of every board in this repository, and what is known about each. 
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | KIM Board | 1.0 | Ordered | — |  |  |  | — | 280×220 | 6 mm | — | — | Order 1, placed 2026-11-02 |
 | Keypad Card | 1.0 | Made, matches order | Yes | Y90 | 2026-05-10 | `5652134` | 4 | 100×57.62 | — | — | — |  |
+| Keypad Card | 1.1 | Drawn | — |  |  |  | — | 100×57.62 | — | — | — |  |
 | Keypad Helper | 1.0 | Made, matches order | Yes | Y51 | 2024-07-07 | `6502-COB b8f89eb` | 4 | 100×150 | 6 mm | yes | — | copper drawn differently by today's KiCad, as recorded in audit.py |
 | Keypad LCD Helper | 1.0 | Made, matches order | Yes | Y54 | 2024-08-06 | `6502-COB 48c5bde` | 4 | 100.26×64.68 | 5.68–6.25 mm | yes | — |  |
 | Keypad LCD Helper | 1.1 | Drawn | — |  |  |  | — | 100×65 | 6 mm | yes | — |  |
@@ -29,6 +30,11 @@ JLCPCB's orders were checked on 2026-11-04: each production zip marked *Made, ma
 What changed in each revision of each board, newest first. The table above has the facts about each one.
 
 ### Keypad Card
+
+**Rev 1.1** (drawn, not yet made; Rev 1.0 is sold first)
+
+- The silkscreen says `W65C21N` at U3, as on the KIM Board. Rev 1.0's says `65C21`. Nothing else changed on the board: the copper, mask, holes and outline are Rev 1.0's.
+- The schematic uses the library's current `PIA 6521` symbol. Rev 1.0's schematic holds an older copy with different pin types, which ERC reports as a mismatch. The pins and their connections are the same.
 
 **Rev 1.0**
 
