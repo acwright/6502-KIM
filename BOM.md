@@ -7,6 +7,7 @@ Every part for every board in this repository, by revision, with supplier number
 1. **Find your board and revision** in [Which revision do I have?](#which-revision-do-i-have)
 2. **Read the [known issues](#known-issues)** for that revision, because they change what you buy or fit.
 3. **Order from the table for your revision.** Each revision links to files you can upload to Digi-Key and Mouser. Those files are for one board, so multiply the quantities if you're building more. If a site asks which column is which, the first column is its part number and the third is the quantity. A cart only holds what that supplier sells, so check the table for anything else, such as chips from Jameco.
+4. **Set the jumpers** before the first power-up. The README's [Jumpers](README.md#jumpers) section says which ones each board needs, and the table for your revision lists the shunts.
 
 **Pre-soldered parts.** Some boards on Tindie come with their surface-mount parts already soldered. Parts marked **Yes** under Pre-soldered are the ones soldered on those boards. Check your listing, because others are sold as a bare PCB. Each revision that has such parts also has a `through-hole` cart that leaves them out. To solder a bare board yourself, use the full cart.
 
@@ -108,8 +109,18 @@ Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.1/digikey.csv), [mouser.csv](B
 | U16 | 1 | Socket | IC socket, 18-pin, 0.3 in | [3M5464-ND](https://www.digikey.com/en/products/filter?keywords=3M5464-ND) | [517-4818-3000-CP](https://www.mouser.com/ProductDetail/517-4818-3000-CP) | |
 | U3 | 1 | Socket | 28-pin ZIF socket, or an ordinary 28-pin socket | [3M2802-ND](https://www.digikey.com/en/products/filter?keywords=3M2802-ND) | [517-228-1277-00](https://www.mouser.com/ProductDetail/517-228-1277-00) | |
 | U12 | 1 | Socket | IC socket, 8-pin, 0.3 in | [3M5473-ND](https://www.digikey.com/en/products/filter?keywords=3M5473-ND) | [517-4808-3004-CP](https://www.mouser.com/ProductDetail/517-4808-3004-CP) | |
+| J6 | 2 | | Female header 1×20, 2.54 mm | [S7018-ND](https://www.digikey.com/en/products/filter?keywords=S7018-ND) |  |  |
+| J6 | 1 | | Female header 1×10, 2.54 mm | [S7008-ND](https://www.digikey.com/en/products/filter?keywords=S7008-ND) |  |  |
+| U13 | 1 | | Female header 1×16, 2.54 mm | [S7014-ND](https://www.digikey.com/en/products/filter?keywords=S7014-ND) |  |  |
+| The breadboards | 2 | | BusBoard BB830 breadboard | [4526-BB830-ND](https://www.digikey.com/en/products/filter?keywords=4526-BB830-ND) | [854-BB830](https://www.mouser.com/ProductDetail/854-BB830) |  |
+| SW1–SW24 | 24 | | Clear two-piece keycap for Cherry MX switches |  |  | [Amazon](https://www.amazon.com/dp/B0G2WJBLBC) |
+| J7 | 1 | | 5 V DC power supply, centre positive |  |  |  |
+| J2 | 1 | | Straight-through DB-9 serial cable |  |  |  |
+| J1, J3 | 2 | | Shunt, 2.54 mm | [S9337-ND](https://www.digikey.com/en/products/filter?keywords=S9337-ND) |  |  |
 
 Pin headers are cut from strips, and the cart files count whole strips.
+
+J6 is one footprint, built from three strips of header. U13 also takes a 1×16 pin header, cut from the strip above.
 
 **Do not fit** R19: parallel with VR1 to make ~10 k.
 
@@ -177,12 +188,12 @@ Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.0/digikey.csv), [mouser.csv](B
 | U12 | 1 | Socket | IC socket, 8-pin, 0.3 in | [3M5473-ND](https://www.digikey.com/en/products/filter?keywords=3M5473-ND) | [517-4808-3004-CP](https://www.mouser.com/ProductDetail/517-4808-3004-CP) | |
 | J6 | 2 | | Female header 1×20, 2.54 mm | [S7018-ND](https://www.digikey.com/en/products/filter?keywords=S7018-ND) |  |  |
 | J6 | 1 | | Female header 1×10, 2.54 mm | [S7008-ND](https://www.digikey.com/en/products/filter?keywords=S7008-ND) |  |  |
-| J1, J3 | 2 | | Shunt, 2.54 mm | [S9337-ND](https://www.digikey.com/en/products/filter?keywords=S9337-ND) |  |  |
 | U13 | 1 | | Female header 1×16, 2.54 mm | [S7014-ND](https://www.digikey.com/en/products/filter?keywords=S7014-ND) |  |  |
 | The breadboards | 2 | | BusBoard BB830 breadboard | [4526-BB830-ND](https://www.digikey.com/en/products/filter?keywords=4526-BB830-ND) | [854-BB830](https://www.mouser.com/ProductDetail/854-BB830) |  |
 | SW1–SW24 | 24 | | Clear two-piece keycap for Cherry MX switches |  |  | [Amazon](https://www.amazon.com/dp/B0G2WJBLBC) |
 | J7 | 1 | | 5 V DC power supply, centre positive |  |  |  |
 | J2 | 1 | | Straight-through DB-9 serial cable |  |  |  |
+| J1, J3 | 2 | | Shunt, 2.54 mm | [S9337-ND](https://www.digikey.com/en/products/filter?keywords=S9337-ND) |  |  |
 
 Pin headers are cut from strips, and the cart files count whole strips.
 
