@@ -15315,16 +15315,6 @@
 	)
 	(wire
 		(pts
-			(xy 516.89 284.48) (xy 513.08 284.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0da4af3e-a976-4384-8abf-1e1dc03e2e38")
-	)
-	(wire
-		(pts
 			(xy 734.06 250.19) (xy 722.63 250.19)
 		)
 		(stroke
@@ -16655,16 +16645,6 @@
 	)
 	(wire
 		(pts
-			(xy 439.42 238.76) (xy 439.42 236.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "343274fd-4ee4-4fd7-853c-3ee34002b953")
-	)
-	(wire
-		(pts
 			(xy 500.38 269.24) (xy 496.57 269.24)
 		)
 		(stroke
@@ -17012,16 +16992,6 @@
 			(type default)
 		)
 		(uuid "3d4259e6-376c-44c9-868f-d1b3245c5f85")
-	)
-	(wire
-		(pts
-			(xy 471.17 284.48) (xy 467.36 284.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3d5b304a-10f6-4fbf-aa82-76a08d1e2aae")
 	)
 	(wire
 		(pts
@@ -18062,16 +18032,6 @@
 			(type default)
 		)
 		(uuid "58cc3c57-7e12-4b76-8a93-87e5ab17ea8d")
-	)
-	(wire
-		(pts
-			(xy 485.14 236.22) (xy 500.38 236.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "58f8d905-991c-4347-8431-90484da79e0f")
 	)
 	(wire
 		(pts
@@ -19632,16 +19592,6 @@
 			(type default)
 		)
 		(uuid "88c90392-7fa0-42af-a0c1-533e8a7856b5")
-	)
-	(wire
-		(pts
-			(xy 471.17 287.02) (xy 471.17 284.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "88d498f9-ea3a-4554-9356-3a4e7580b239")
 	)
 	(wire
 		(pts
@@ -21715,16 +21665,6 @@
 	)
 	(wire
 		(pts
-			(xy 485.14 238.76) (xy 485.14 236.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c96ed7f3-0432-4066-a174-75904fed711a")
-	)
-	(wire
-		(pts
 			(xy 621.03 97.79) (xy 623.57 97.79)
 		)
 		(stroke
@@ -22315,16 +22255,6 @@
 	)
 	(wire
 		(pts
-			(xy 516.89 287.02) (xy 516.89 284.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d9f58d00-4642-4383-8086-1cdf418a5523")
-	)
-	(wire
-		(pts
 			(xy 467.36 238.76) (xy 471.17 238.76)
 		)
 		(stroke
@@ -22642,16 +22572,6 @@
 			(type default)
 		)
 		(uuid "e40a82b1-4976-4716-a06f-8029bb7be75d")
-	)
-	(wire
-		(pts
-			(xy 439.42 236.22) (xy 454.66 236.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e4c667c0-9ab7-41f4-bdda-f966a0193f99")
 	)
 	(wire
 		(pts
@@ -23798,7 +23718,7 @@
 		)
 	)
 	(global_label "A2"
-		(shape input)
+		(shape output)
 		(at 481.33 373.38 180)
 		(effects
 			(font
@@ -23820,7 +23740,7 @@
 		)
 	)
 	(global_label "RDY"
-		(shape output)
+		(shape input)
 		(at 118.11 33.02 270)
 		(effects
 			(font
@@ -23866,7 +23786,7 @@
 		)
 	)
 	(global_label "RWB"
-		(shape input)
+		(shape output)
 		(at 453.39 151.13 180)
 		(effects
 			(font
@@ -23888,7 +23808,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 541.02 368.3 180)
 		(effects
 			(font
@@ -23910,7 +23830,7 @@
 		)
 	)
 	(global_label "A6"
-		(shape input)
+		(shape output)
 		(at 267.97 59.69 180)
 		(effects
 			(font
@@ -23954,7 +23874,7 @@
 		)
 	)
 	(global_label "A1"
-		(shape input)
+		(shape output)
 		(at 481.33 375.92 180)
 		(effects
 			(font
@@ -23976,7 +23896,7 @@
 		)
 	)
 	(global_label "IRQB"
-		(shape output)
+		(shape input)
 		(at 110.49 33.02 270)
 		(effects
 			(font
@@ -24088,7 +24008,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 232.41 91.44 0)
 		(effects
 			(font
@@ -24110,7 +24030,7 @@
 		)
 	)
 	(global_label "A10"
-		(shape input)
+		(shape output)
 		(at 516.89 256.54 0)
 		(fields_autoplaced yes)
 		(effects
@@ -24134,7 +24054,7 @@
 		)
 	)
 	(global_label "A3"
-		(shape input)
+		(shape output)
 		(at 267.97 67.31 180)
 		(effects
 			(font
@@ -24200,7 +24120,7 @@
 		)
 	)
 	(global_label "RWB"
-		(shape input)
+		(shape output)
 		(at 496.57 251.46 180)
 		(fields_autoplaced yes)
 		(effects
@@ -24292,7 +24212,7 @@
 		)
 	)
 	(global_label "A9"
-		(shape input)
+		(shape output)
 		(at 481.33 355.6 180)
 		(effects
 			(font
@@ -24408,7 +24328,7 @@
 		)
 	)
 	(global_label "BE"
-		(shape output)
+		(shape input)
 		(at 496.57 248.92 180)
 		(fields_autoplaced yes)
 		(effects
@@ -24502,7 +24422,7 @@
 		)
 	)
 	(global_label "A11"
-		(shape input)
+		(shape output)
 		(at 27.94 336.55 180)
 		(effects
 			(font
@@ -24524,7 +24444,7 @@
 		)
 	)
 	(global_label "HRDB"
-		(shape output)
+		(shape bidirectional)
 		(at 516.89 241.3 0)
 		(fields_autoplaced yes)
 		(effects
@@ -24570,7 +24490,7 @@
 		)
 	)
 	(global_label "A10"
-		(shape input)
+		(shape output)
 		(at 306.07 69.85 0)
 		(effects
 			(font
@@ -24616,7 +24536,7 @@
 		)
 	)
 	(global_label "A3"
-		(shape input)
+		(shape output)
 		(at 471.17 274.32 0)
 		(fields_autoplaced yes)
 		(effects
@@ -24640,7 +24560,7 @@
 		)
 	)
 	(global_label "A1"
-		(shape input)
+		(shape output)
 		(at 453.39 161.29 180)
 		(effects
 			(font
@@ -24662,7 +24582,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 201.93 143.51 90)
 		(effects
 			(font
@@ -24818,7 +24738,7 @@
 		)
 	)
 	(global_label "A3"
-		(shape input)
+		(shape output)
 		(at 481.33 370.84 180)
 		(effects
 			(font
@@ -24840,7 +24760,7 @@
 		)
 	)
 	(global_label "NMIB"
-		(shape output)
+		(shape input)
 		(at 102.87 33.02 270)
 		(effects
 			(font
@@ -24862,7 +24782,7 @@
 		)
 	)
 	(global_label "RESB"
-		(shape output)
+		(shape input)
 		(at 421.64 335.28 180)
 		(effects
 			(font
@@ -24974,7 +24894,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 711.2 124.46 180)
 		(effects
 			(font
@@ -24996,7 +24916,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 77.47 147.32 0)
 		(effects
 			(font
@@ -25040,7 +24960,7 @@
 		)
 	)
 	(global_label "HRDB"
-		(shape output)
+		(shape bidirectional)
 		(at 516.89 238.76 0)
 		(fields_autoplaced yes)
 		(effects
@@ -25064,7 +24984,7 @@
 		)
 	)
 	(global_label "A0"
-		(shape input)
+		(shape output)
 		(at 516.89 281.94 0)
 		(fields_autoplaced yes)
 		(effects
@@ -25132,7 +25052,7 @@
 		)
 	)
 	(global_label "A4"
-		(shape input)
+		(shape output)
 		(at 471.17 271.78 0)
 		(fields_autoplaced yes)
 		(effects
@@ -25202,7 +25122,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 516.89 236.22 0)
 		(fields_autoplaced yes)
 		(effects
@@ -25270,7 +25190,7 @@
 		)
 	)
 	(global_label "RDY"
-		(shape output)
+		(shape input)
 		(at 450.85 246.38 180)
 		(fields_autoplaced yes)
 		(effects
@@ -25338,7 +25258,7 @@
 		)
 	)
 	(global_label "IRQB"
-		(shape output)
+		(shape input)
 		(at 496.57 241.3 180)
 		(fields_autoplaced yes)
 		(effects
@@ -25428,7 +25348,7 @@
 		)
 	)
 	(global_label "IRQB"
-		(shape output)
+		(shape input)
 		(at 450.85 241.3 180)
 		(fields_autoplaced yes)
 		(effects
@@ -25496,7 +25416,7 @@
 		)
 	)
 	(global_label "A13"
-		(shape input)
+		(shape output)
 		(at 481.33 345.44 180)
 		(effects
 			(font
@@ -25564,7 +25484,7 @@
 		)
 	)
 	(global_label "RWB"
-		(shape input)
+		(shape output)
 		(at 450.85 251.46 180)
 		(fields_autoplaced yes)
 		(effects
@@ -25588,7 +25508,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 132.08 20.32 0)
 		(effects
 			(font
@@ -25654,7 +25574,7 @@
 		)
 	)
 	(global_label "PHI2"
-		(shape input)
+		(shape output)
 		(at 68.58 49.53 0)
 		(effects
 			(font
@@ -25700,7 +25620,7 @@
 		)
 	)
 	(global_label "HRDB"
-		(shape output)
+		(shape bidirectional)
 		(at 481.33 335.28 180)
 		(effects
 			(font
@@ -25722,7 +25642,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 204.47 364.49 180)
 		(effects
 			(font
@@ -25790,7 +25710,7 @@
 		)
 	)
 	(global_label "A15"
-		(shape input)
+		(shape output)
 		(at 185.42 165.1 180)
 		(effects
 			(font
@@ -25834,7 +25754,7 @@
 		)
 	)
 	(global_label "IRQB"
-		(shape output)
+		(shape input)
 		(at 435.61 138.43 180)
 		(effects
 			(font
@@ -25880,7 +25800,7 @@
 		)
 	)
 	(global_label "IRQB"
-		(shape output)
+		(shape input)
 		(at 232.41 53.34 0)
 		(effects
 			(font
@@ -25902,7 +25822,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 471.17 123.19 90)
 		(effects
 			(font
@@ -25924,7 +25844,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 353.06 143.51 90)
 		(effects
 			(font
@@ -25968,7 +25888,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 195.58 243.84 180)
 		(fields_autoplaced yes)
 		(effects
@@ -26036,7 +25956,7 @@
 		)
 	)
 	(global_label "A10"
-		(shape input)
+		(shape output)
 		(at 27.94 334.01 180)
 		(effects
 			(font
@@ -26102,7 +26022,7 @@
 		)
 	)
 	(global_label "SYNC"
-		(shape input)
+		(shape output)
 		(at 450.85 254 180)
 		(fields_autoplaced yes)
 		(effects
@@ -26172,7 +26092,7 @@
 		)
 	)
 	(global_label "RESB"
-		(shape output)
+		(shape input)
 		(at 496.57 238.76 180)
 		(fields_autoplaced yes)
 		(effects
@@ -26196,7 +26116,7 @@
 		)
 	)
 	(global_label "RESB"
-		(shape output)
+		(shape input)
 		(at 125.73 33.02 270)
 		(effects
 			(font
@@ -26262,7 +26182,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 264.16 143.51 90)
 		(effects
 			(font
@@ -26328,7 +26248,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 716.28 165.1 90)
 		(effects
 			(font
@@ -26396,7 +26316,7 @@
 		)
 	)
 	(global_label "NMIB"
-		(shape output)
+		(shape input)
 		(at 450.85 243.84 180)
 		(fields_autoplaced yes)
 		(effects
@@ -26420,7 +26340,7 @@
 		)
 	)
 	(global_label "A10"
-		(shape input)
+		(shape output)
 		(at 471.17 256.54 0)
 		(fields_autoplaced yes)
 		(effects
@@ -26490,7 +26410,7 @@
 		)
 	)
 	(global_label "A13"
-		(shape input)
+		(shape output)
 		(at 185.42 160.02 180)
 		(effects
 			(font
@@ -26512,7 +26432,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 306.07 52.07 0)
 		(effects
 			(font
@@ -26578,7 +26498,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 175.26 93.98 180)
 		(effects
 			(font
@@ -26622,7 +26542,7 @@
 		)
 	)
 	(global_label "HRDB"
-		(shape input)
+		(shape bidirectional)
 		(at 39.37 250.19 180)
 		(effects
 			(font
@@ -26804,7 +26724,7 @@
 		)
 	)
 	(global_label "A6"
-		(shape input)
+		(shape output)
 		(at 516.89 266.7 0)
 		(fields_autoplaced yes)
 		(effects
@@ -26852,7 +26772,7 @@
 		)
 	)
 	(global_label "HRDB"
-		(shape output)
+		(shape bidirectional)
 		(at 481.33 337.82 180)
 		(effects
 			(font
@@ -26920,7 +26840,7 @@
 		)
 	)
 	(global_label "RESB"
-		(shape output)
+		(shape input)
 		(at 283.21 257.81 0)
 		(fields_autoplaced yes)
 		(effects
@@ -26944,7 +26864,7 @@
 		)
 	)
 	(global_label "A9"
-		(shape input)
+		(shape output)
 		(at 471.17 259.08 0)
 		(fields_autoplaced yes)
 		(effects
@@ -26968,7 +26888,7 @@
 		)
 	)
 	(global_label "RWB"
-		(shape input)
+		(shape output)
 		(at 232.41 93.98 0)
 		(effects
 			(font
@@ -27060,7 +26980,7 @@
 		)
 	)
 	(global_label "NMIB"
-		(shape output)
+		(shape input)
 		(at 421.64 340.36 180)
 		(effects
 			(font
@@ -27082,7 +27002,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 450.85 284.48 180)
 		(fields_autoplaced yes)
 		(effects
@@ -27106,7 +27026,7 @@
 		)
 	)
 	(global_label "A0"
-		(shape input)
+		(shape output)
 		(at 267.97 74.93 180)
 		(effects
 			(font
@@ -27152,7 +27072,7 @@
 		)
 	)
 	(global_label "A15"
-		(shape input)
+		(shape output)
 		(at 471.17 243.84 0)
 		(fields_autoplaced yes)
 		(effects
@@ -27198,7 +27118,7 @@
 		)
 	)
 	(global_label "PHI2"
-		(shape input)
+		(shape output)
 		(at 450.85 256.54 180)
 		(fields_autoplaced yes)
 		(effects
@@ -27290,7 +27210,7 @@
 		)
 	)
 	(global_label "A11"
-		(shape input)
+		(shape output)
 		(at 471.17 254 0)
 		(fields_autoplaced yes)
 		(effects
@@ -27382,7 +27302,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 481.33 332.74 180)
 		(effects
 			(font
@@ -27426,7 +27346,7 @@
 		)
 	)
 	(global_label "A9"
-		(shape input)
+		(shape output)
 		(at 516.89 259.08 0)
 		(fields_autoplaced yes)
 		(effects
@@ -27450,7 +27370,7 @@
 		)
 	)
 	(global_label "A14"
-		(shape input)
+		(shape output)
 		(at 27.94 349.25 180)
 		(effects
 			(font
@@ -27540,7 +27460,7 @@
 		)
 	)
 	(global_label "HRDB"
-		(shape output)
+		(shape bidirectional)
 		(at 471.17 241.3 0)
 		(fields_autoplaced yes)
 		(effects
@@ -27586,7 +27506,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 741.68 38.1 90)
 		(effects
 			(font
@@ -27632,7 +27552,7 @@
 		)
 	)
 	(global_label "A2"
-		(shape input)
+		(shape output)
 		(at 516.89 276.86 0)
 		(fields_autoplaced yes)
 		(effects
@@ -27656,7 +27576,7 @@
 		)
 	)
 	(global_label "A3"
-		(shape input)
+		(shape output)
 		(at 516.89 274.32 0)
 		(fields_autoplaced yes)
 		(effects
@@ -27704,7 +27624,7 @@
 		)
 	)
 	(global_label "A11"
-		(shape input)
+		(shape output)
 		(at 306.07 64.77 0)
 		(effects
 			(font
@@ -27726,7 +27646,7 @@
 		)
 	)
 	(global_label "A15"
-		(shape input)
+		(shape output)
 		(at 516.89 243.84 0)
 		(fields_autoplaced yes)
 		(effects
@@ -27952,7 +27872,7 @@
 		)
 	)
 	(global_label "PHI2"
-		(shape input)
+		(shape output)
 		(at 27.94 384.81 180)
 		(effects
 			(font
@@ -27996,7 +27916,7 @@
 		)
 	)
 	(global_label "A13"
-		(shape input)
+		(shape output)
 		(at 516.89 248.92 0)
 		(fields_autoplaced yes)
 		(effects
@@ -28042,7 +27962,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 106.68 76.2 90)
 		(fields_autoplaced yes)
 		(effects
@@ -28090,7 +28010,7 @@
 		)
 	)
 	(global_label "A0"
-		(shape input)
+		(shape output)
 		(at 232.41 55.88 0)
 		(effects
 			(font
@@ -28270,7 +28190,7 @@
 		)
 	)
 	(global_label "A14"
-		(shape input)
+		(shape output)
 		(at 481.33 342.9 180)
 		(effects
 			(font
@@ -28340,7 +28260,7 @@
 		)
 	)
 	(global_label "A12"
-		(shape input)
+		(shape output)
 		(at 481.33 347.98 180)
 		(effects
 			(font
@@ -28362,7 +28282,7 @@
 		)
 	)
 	(global_label "A15"
-		(shape input)
+		(shape output)
 		(at 27.94 351.79 180)
 		(effects
 			(font
@@ -28406,7 +28326,7 @@
 		)
 	)
 	(global_label "BE"
-		(shape output)
+		(shape input)
 		(at 450.85 248.92 180)
 		(fields_autoplaced yes)
 		(effects
@@ -28452,7 +28372,7 @@
 		)
 	)
 	(global_label "BE"
-		(shape output)
+		(shape input)
 		(at 95.25 33.02 270)
 		(effects
 			(font
@@ -28474,7 +28394,7 @@
 		)
 	)
 	(global_label "A10"
-		(shape input)
+		(shape output)
 		(at 481.33 353.06 180)
 		(effects
 			(font
@@ -28518,7 +28438,7 @@
 		)
 	)
 	(global_label "A8"
-		(shape input)
+		(shape output)
 		(at 516.89 261.62 0)
 		(fields_autoplaced yes)
 		(effects
@@ -28564,7 +28484,7 @@
 		)
 	)
 	(global_label "A12"
-		(shape input)
+		(shape output)
 		(at 516.89 251.46 0)
 		(fields_autoplaced yes)
 		(effects
@@ -28654,7 +28574,7 @@
 		)
 	)
 	(global_label "RWB"
-		(shape input)
+		(shape output)
 		(at 248.92 162.56 180)
 		(effects
 			(font
@@ -28676,7 +28596,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 232.41 86.36 0)
 		(effects
 			(font
@@ -28742,7 +28662,7 @@
 		)
 	)
 	(global_label "HRDB"
-		(shape output)
+		(shape bidirectional)
 		(at 359.41 177.8 0)
 		(effects
 			(font
@@ -28808,7 +28728,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 665.48 316.23 90)
 		(fields_autoplaced yes)
 		(effects
@@ -28920,7 +28840,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 33.02 59.69 180)
 		(effects
 			(font
@@ -28942,7 +28862,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 91.44 374.65 180)
 		(fields_autoplaced yes)
 		(effects
@@ -28966,7 +28886,7 @@
 		)
 	)
 	(global_label "A1"
-		(shape input)
+		(shape output)
 		(at 516.89 279.4 0)
 		(fields_autoplaced yes)
 		(effects
@@ -29036,7 +28956,7 @@
 		)
 	)
 	(global_label "A4"
-		(shape input)
+		(shape output)
 		(at 516.89 271.78 0)
 		(fields_autoplaced yes)
 		(effects
@@ -29258,7 +29178,7 @@
 		)
 	)
 	(global_label "RWB"
-		(shape input)
+		(shape output)
 		(at 421.64 347.98 180)
 		(effects
 			(font
@@ -29280,7 +29200,7 @@
 		)
 	)
 	(global_label "A13"
-		(shape input)
+		(shape output)
 		(at 27.94 346.71 180)
 		(effects
 			(font
@@ -29462,7 +29382,7 @@
 		)
 	)
 	(global_label "A5"
-		(shape input)
+		(shape output)
 		(at 471.17 269.24 0)
 		(fields_autoplaced yes)
 		(effects
@@ -29486,7 +29406,7 @@
 		)
 	)
 	(global_label "A4"
-		(shape input)
+		(shape output)
 		(at 481.33 368.3 180)
 		(effects
 			(font
@@ -29532,7 +29452,7 @@
 		)
 	)
 	(global_label "A0"
-		(shape input)
+		(shape output)
 		(at 453.39 163.83 180)
 		(effects
 			(font
@@ -29644,7 +29564,7 @@
 		)
 	)
 	(global_label "PHI2"
-		(shape input)
+		(shape output)
 		(at 232.41 83.82 0)
 		(effects
 			(font
@@ -29666,7 +29586,7 @@
 		)
 	)
 	(global_label "RWB"
-		(shape input)
+		(shape output)
 		(at 27.94 374.65 180)
 		(effects
 			(font
@@ -29710,7 +29630,7 @@
 		)
 	)
 	(global_label "IRQB"
-		(shape output)
+		(shape input)
 		(at 232.41 50.8 0)
 		(effects
 			(font
@@ -29732,7 +29652,7 @@
 		)
 	)
 	(global_label "A12"
-		(shape input)
+		(shape output)
 		(at 471.17 251.46 0)
 		(fields_autoplaced yes)
 		(effects
@@ -29756,7 +29676,7 @@
 		)
 	)
 	(global_label "RDY"
-		(shape output)
+		(shape input)
 		(at 496.57 246.38 180)
 		(fields_autoplaced yes)
 		(effects
@@ -29780,7 +29700,7 @@
 		)
 	)
 	(global_label "A6"
-		(shape input)
+		(shape output)
 		(at 471.17 266.7 0)
 		(fields_autoplaced yes)
 		(effects
@@ -29804,7 +29724,7 @@
 		)
 	)
 	(global_label "A12"
-		(shape input)
+		(shape output)
 		(at 267.97 54.61 180)
 		(effects
 			(font
@@ -29826,7 +29746,7 @@
 		)
 	)
 	(global_label "PHI2"
-		(shape input)
+		(shape output)
 		(at 248.92 177.8 180)
 		(effects
 			(font
@@ -29848,7 +29768,7 @@
 		)
 	)
 	(global_label "A8"
-		(shape input)
+		(shape output)
 		(at 481.33 358.14 180)
 		(effects
 			(font
@@ -29870,7 +29790,7 @@
 		)
 	)
 	(global_label "A14"
-		(shape input)
+		(shape output)
 		(at 516.89 246.38 0)
 		(fields_autoplaced yes)
 		(effects
@@ -29894,7 +29814,7 @@
 		)
 	)
 	(global_label "A14"
-		(shape input)
+		(shape output)
 		(at 22.86 264.16 180)
 		(effects
 			(font
@@ -29960,7 +29880,7 @@
 		)
 	)
 	(global_label "A13"
-		(shape input)
+		(shape output)
 		(at 471.17 248.92 0)
 		(fields_autoplaced yes)
 		(effects
@@ -30074,7 +29994,7 @@
 		)
 	)
 	(global_label "HRDB"
-		(shape output)
+		(shape bidirectional)
 		(at 471.17 238.76 0)
 		(fields_autoplaced yes)
 		(effects
@@ -30098,7 +30018,7 @@
 		)
 	)
 	(global_label "A1"
-		(shape input)
+		(shape output)
 		(at 267.97 72.39 180)
 		(effects
 			(font
@@ -30344,7 +30264,7 @@
 		)
 	)
 	(global_label "A2"
-		(shape input)
+		(shape output)
 		(at 471.17 276.86 0)
 		(fields_autoplaced yes)
 		(effects
@@ -30368,7 +30288,7 @@
 		)
 	)
 	(global_label "A13"
-		(shape input)
+		(shape output)
 		(at 39.37 280.67 180)
 		(effects
 			(font
@@ -30390,7 +30310,7 @@
 		)
 	)
 	(global_label "A5"
-		(shape input)
+		(shape output)
 		(at 516.89 269.24 0)
 		(fields_autoplaced yes)
 		(effects
@@ -30436,7 +30356,7 @@
 		)
 	)
 	(global_label "A7"
-		(shape input)
+		(shape output)
 		(at 516.89 264.16 0)
 		(fields_autoplaced yes)
 		(effects
@@ -30506,7 +30426,7 @@
 		)
 	)
 	(global_label "RESB"
-		(shape output)
+		(shape input)
 		(at 450.85 238.76 180)
 		(fields_autoplaced yes)
 		(effects
@@ -30574,7 +30494,7 @@
 		)
 	)
 	(global_label "A7"
-		(shape input)
+		(shape output)
 		(at 267.97 57.15 180)
 		(effects
 			(font
@@ -30620,7 +30540,7 @@
 		)
 	)
 	(global_label "A0"
-		(shape input)
+		(shape output)
 		(at 481.33 378.46 180)
 		(effects
 			(font
@@ -30642,7 +30562,7 @@
 		)
 	)
 	(global_label "NMIB"
-		(shape output)
+		(shape input)
 		(at 496.57 243.84 180)
 		(fields_autoplaced yes)
 		(effects
@@ -30710,7 +30630,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 471.17 236.22 0)
 		(fields_autoplaced yes)
 		(effects
@@ -30734,7 +30654,7 @@
 		)
 	)
 	(global_label "A5"
-		(shape input)
+		(shape output)
 		(at 481.33 365.76 180)
 		(effects
 			(font
@@ -30800,7 +30720,7 @@
 		)
 	)
 	(global_label "SYNC"
-		(shape input)
+		(shape output)
 		(at 496.57 254 180)
 		(fields_autoplaced yes)
 		(effects
@@ -30870,7 +30790,7 @@
 		)
 	)
 	(global_label "PHI2"
-		(shape input)
+		(shape output)
 		(at 453.39 156.21 180)
 		(effects
 			(font
@@ -30892,7 +30812,7 @@
 		)
 	)
 	(global_label "A6"
-		(shape input)
+		(shape output)
 		(at 481.33 363.22 180)
 		(effects
 			(font
@@ -30960,7 +30880,7 @@
 		)
 	)
 	(global_label "RESB"
-		(shape output)
+		(shape input)
 		(at 68.58 41.91 0)
 		(effects
 			(font
@@ -31050,7 +30970,7 @@
 		)
 	)
 	(global_label "A15"
-		(shape input)
+		(shape output)
 		(at 81.28 241.3 90)
 		(effects
 			(font
@@ -31118,7 +31038,7 @@
 		)
 	)
 	(global_label "PHI2"
-		(shape input)
+		(shape output)
 		(at 421.64 353.06 180)
 		(effects
 			(font
@@ -31140,7 +31060,7 @@
 		)
 	)
 	(global_label "A1"
-		(shape input)
+		(shape output)
 		(at 471.17 279.4 0)
 		(fields_autoplaced yes)
 		(effects
@@ -31254,7 +31174,7 @@
 		)
 	)
 	(global_label "A8"
-		(shape input)
+		(shape output)
 		(at 306.07 59.69 0)
 		(effects
 			(font
@@ -31342,7 +31262,7 @@
 		)
 	)
 	(global_label "A2"
-		(shape input)
+		(shape output)
 		(at 267.97 69.85 180)
 		(effects
 			(font
@@ -31386,7 +31306,7 @@
 		)
 	)
 	(global_label "A5"
-		(shape input)
+		(shape output)
 		(at 267.97 62.23 180)
 		(effects
 			(font
@@ -31408,7 +31328,7 @@
 		)
 	)
 	(global_label "RDY"
-		(shape output)
+		(shape input)
 		(at 421.64 342.9 180)
 		(effects
 			(font
@@ -31452,7 +31372,7 @@
 		)
 	)
 	(global_label "A0"
-		(shape input)
+		(shape output)
 		(at 471.17 281.94 0)
 		(fields_autoplaced yes)
 		(effects
@@ -31476,7 +31396,7 @@
 		)
 	)
 	(global_label "A11"
-		(shape input)
+		(shape output)
 		(at 481.33 350.52 180)
 		(effects
 			(font
@@ -31498,7 +31418,7 @@
 		)
 	)
 	(global_label "A11"
-		(shape input)
+		(shape output)
 		(at 516.89 254 0)
 		(fields_autoplaced yes)
 		(effects
@@ -31544,7 +31464,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 471.17 35.56 90)
 		(effects
 			(font
@@ -31634,7 +31554,7 @@
 		)
 	)
 	(global_label "A14"
-		(shape input)
+		(shape output)
 		(at 185.42 162.56 180)
 		(effects
 			(font
@@ -31656,7 +31576,7 @@
 		)
 	)
 	(global_label "A8"
-		(shape input)
+		(shape output)
 		(at 471.17 261.62 0)
 		(fields_autoplaced yes)
 		(effects
@@ -31812,7 +31732,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 421.64 381 180)
 		(effects
 			(font
@@ -31856,7 +31776,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 676.91 247.65 90)
 		(fields_autoplaced yes)
 		(effects
@@ -31924,7 +31844,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 43.18 325.12 90)
 		(effects
 			(font
@@ -31968,7 +31888,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 41.91 237.49 90)
 		(effects
 			(font
@@ -31990,7 +31910,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 68.58 46.99 0)
 		(effects
 			(font
@@ -32036,7 +31956,7 @@
 		)
 	)
 	(global_label "A9"
-		(shape input)
+		(shape output)
 		(at 306.07 62.23 0)
 		(effects
 			(font
@@ -32058,7 +31978,7 @@
 		)
 	)
 	(global_label "A7"
-		(shape input)
+		(shape output)
 		(at 471.17 264.16 0)
 		(fields_autoplaced yes)
 		(effects
@@ -32104,7 +32024,7 @@
 		)
 	)
 	(global_label "A15"
-		(shape input)
+		(shape output)
 		(at 481.33 340.36 180)
 		(effects
 			(font
@@ -32308,7 +32228,7 @@
 		)
 	)
 	(global_label "IRQB"
-		(shape output)
+		(shape input)
 		(at 421.64 337.82 180)
 		(effects
 			(font
@@ -32396,7 +32316,7 @@
 		)
 	)
 	(global_label "A1"
-		(shape input)
+		(shape output)
 		(at 232.41 58.42 0)
 		(effects
 			(font
@@ -32418,7 +32338,7 @@
 		)
 	)
 	(global_label "A14"
-		(shape input)
+		(shape output)
 		(at 471.17 246.38 0)
 		(fields_autoplaced yes)
 		(effects
@@ -32442,7 +32362,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 204.47 331.47 180)
 		(effects
 			(font
@@ -32464,7 +32384,7 @@
 		)
 	)
 	(global_label "BE"
-		(shape output)
+		(shape input)
 		(at 421.64 345.44 180)
 		(effects
 			(font
@@ -32486,7 +32406,7 @@
 		)
 	)
 	(global_label "PHI2"
-		(shape input)
+		(shape output)
 		(at 116.84 86.36 0)
 		(fields_autoplaced yes)
 		(effects
@@ -32674,7 +32594,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape output)
+		(shape passive)
 		(at 661.67 250.19 0)
 		(effects
 			(font
@@ -32784,7 +32704,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 137.16 147.32 0)
 		(effects
 			(font
@@ -32806,7 +32726,7 @@
 		)
 	)
 	(global_label "A12"
-		(shape input)
+		(shape output)
 		(at 27.94 339.09 180)
 		(effects
 			(font
@@ -32852,7 +32772,7 @@
 		)
 	)
 	(global_label "A7"
-		(shape input)
+		(shape output)
 		(at 481.33 360.68 180)
 		(effects
 			(font
@@ -32874,7 +32794,7 @@
 		)
 	)
 	(global_label "SYNC"
-		(shape input)
+		(shape output)
 		(at 421.64 350.52 180)
 		(effects
 			(font
@@ -32896,7 +32816,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 496.57 284.48 180)
 		(fields_autoplaced yes)
 		(effects
@@ -32920,7 +32840,7 @@
 		)
 	)
 	(global_label "A4"
-		(shape input)
+		(shape output)
 		(at 267.97 64.77 180)
 		(effects
 			(font
@@ -32964,7 +32884,7 @@
 		)
 	)
 	(global_label "PHI2"
-		(shape input)
+		(shape output)
 		(at 496.57 256.54 180)
 		(fields_autoplaced yes)
 		(effects
@@ -34544,84 +34464,6 @@
 			(project "KIM Board"
 				(path "/bef5df70-f716-4749-8709-6abb2cc01d3d"
 					(reference "R15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 485.14 238.76 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0eb400b9-2ff1-4a09-ae67-463b037929d4")
-		(property "Reference" "#PWR22"
-			(at 485.14 245.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 485.14 243.84 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 485.14 238.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 485.14 238.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 485.14 238.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c3c499a3-05ba-430f-b576-3130d5a59bda")
-		)
-		(instances
-			(project "KIM Board"
-				(path "/bef5df70-f716-4749-8709-6abb2cc01d3d"
-					(reference "#PWR22")
 					(unit 1)
 				)
 			)
@@ -40363,84 +40205,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 471.17 287.02 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "56eed758-277f-437a-a370-1aa84ccac756")
-		(property "Reference" "#PWR23"
-			(at 471.17 293.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 471.17 292.1 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 471.17 287.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 471.17 287.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 471.17 287.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f6f76aa2-325a-49d5-a267-1f5752905e62")
-		)
-		(instances
-			(project "KIM Board"
-				(path "/bef5df70-f716-4749-8709-6abb2cc01d3d"
-					(reference "#PWR23")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Switch:SW_Push")
 		(at 615.95 114.3 0)
 		(unit 1)
@@ -45810,84 +45574,6 @@
 			(project "KIM Board"
 				(path "/bef5df70-f716-4749-8709-6abb2cc01d3d"
 					(reference "U5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 516.89 287.02 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9a3c1b31-fb84-4005-8c50-0f21415a0de9")
-		(property "Reference" "#PWR24"
-			(at 516.89 293.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 516.89 292.1 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 516.89 287.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 516.89 287.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 516.89 287.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "fc8fc396-0952-4e35-9d1f-7df3777d8f47")
-		)
-		(instances
-			(project "KIM Board"
-				(path "/bef5df70-f716-4749-8709-6abb2cc01d3d"
-					(reference "#PWR24")
 					(unit 1)
 				)
 			)
@@ -54480,84 +54166,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 439.42 238.76 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f2581f5b-a44a-4839-a541-abd94b30ffe9")
-		(property "Reference" "#PWR21"
-			(at 439.42 245.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 439.42 243.84 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 439.42 238.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 439.42 238.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 439.42 238.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1de3b0c7-4ded-4099-b106-92bbf63f128e")
-		)
-		(instances
-			(project "KIM Board"
-				(path "/bef5df70-f716-4749-8709-6abb2cc01d3d"
-					(reference "#PWR21")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Switch:SW_Push")
 		(at 636.27 97.79 0)
 		(unit 1)
@@ -55828,6 +55436,134 @@
 				(path "/bef5df70-f716-4749-8709-6abb2cc01d3d"
 					(reference "SW8")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 500.38 236.22) (xy 496.57 236.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83fc45cf-150a-5b00-8cd3-5c575272dadb")
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 496.57 236.22 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ddb98f7a-2700-58ba-a986-8ee4135b7a03")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 496.57 236.22 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 513.08 284.48) (xy 516.89 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33d9633b-d9ae-5bff-98d5-98a270b46144")
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 516.89 284.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4beb24e6-7af2-51fd-b808-d1b2b762c044")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 516.89 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 454.66 236.22) (xy 450.85 236.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "44694b32-aa1f-57d8-a9fa-fa6e3cabb02e")
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 450.85 236.22 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a0904643-7025-5920-8610-45c550929c86")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 450.85 236.22 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 467.36 284.48) (xy 471.17 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d19aec77-34b0-5c8e-80ba-1c8d13d74b31")
+	)
+	(global_label "GND"
+		(shape passive)
+		(at 471.17 284.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4557f2cd-f4c3-5f5a-b571-0fd5a243dad6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 471.17 284.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
