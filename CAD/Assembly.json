@@ -1,24 +1,39 @@
 {
  "_about": "How the KIM is put together: which boards, at which revision, where each sits on the plate and which way round, which tops sit on them, and where the printed parts go. Tools/cad/ reads it, with the family's standards in Tools/cad/standards.json. Positions are mm, looking down on the plate as the computer is used: x to the right, y towards the front, from the plate's back-left corner. A board's position is its own back-left corner as it sits on the plate; rot turns it from its PCB file, clockwise looking down.",
  "machine": "KIM",
- "plate": {},
+ "drawing": {
+  "title": "KIM base plate: mounting drawing",
+  "subtitle": "One plate takes either build. Looking down on the plate, as the computer is used. All dimensions in mm."
+ },
+ "plate": {
+  "added": [{"at": [16, 224], "note": "Added for the KIM Board. On an older plate, drill this hole by hand through all three layers: Ø3.2 at (16, 224)."}]
+ },
  "builds": [
   {
    "name": "KIM Board",
+   "phrase": "the KIM Board",
    "boards": [
-    {"board": "KIM Board", "rev": "1.0", "at": [10, 10], "rot": 0, "top": {"generated": true}}
+    {"board": "KIM Board", "rev": "1.0", "at": [10, 10], "rot": 0, "top": {"generated": true},
+     "label": [100, 62],
+     "features": [
+      {"label": "LCD", "refs": ["U13"]},
+      {"label": "Keypad", "refs": ["SW1", "SW2", "SW3", "SW4", "SW5", "SW6", "SW7", "SW8", "SW9", "SW10", "SW11", "SW12", "SW13", "SW14", "SW15", "SW16", "SW17", "SW18", "SW19", "SW20", "SW21", "SW22", "SW23", "SW24"]},
+      {"label": "Breadboard", "zone": "BREADBOARDS", "rows": 2}
+     ]}
    ]
   },
   {
    "name": "Four-board build",
+   "short": "Four-board",
+   "phrase": "the four-board build",
    "_gap": "The old build, on a plate already made, keeps its own gaps (owner, 2026-11-07, CAD.md C2 D1): 15 mm between boards side by side, and 5 mm between the Keypad LCD Helper and the Keypad Helper, one behind the other.",
    "gap": 15,
    "gap_y": 5,
    "boards": [
-    {"board": "Backplane Helper", "repo": "COB", "rev": "1.0", "at": [10, 10], "rot": 180, "top": {}},
-    {"board": "Main Board", "repo": "VCS", "rev": "1.1", "at": [75, 10], "rot": 180, "top": {}},
-    {"board": "Keypad LCD Helper", "rev": "1.1", "at": [190, 10], "rot": 0, "top": {}},
-    {"board": "Keypad Helper", "rev": "1.0", "at": [190, 80], "rot": 0, "top": {}}
+    {"board": "Backplane Helper", "repo": "COB", "rev": "1.0", "at": [10, 10], "rot": 180, "top": {}, "label": [35, 62]},
+    {"board": "Main Board", "repo": "VCS", "rev": "1.1", "at": [75, 10], "rot": 180, "top": {}, "label": [125, 62]},
+    {"board": "Keypad LCD Helper", "rev": "1.1", "at": [190, 10], "rot": 0, "top": {}, "label": [240, 44]},
+    {"board": "Keypad Helper", "rev": "1.0", "at": [190, 80], "rot": 0, "top": {}, "label": [240, 156]}
    ],
    "space": [
     {"at": [10, 125], "size": [165, 95], "text": "Two breadboards and the Breadboard Helper go here. No holes."}
@@ -28,16 +43,13 @@
  "positions": {
   "S1": {
    "at": [196, 69],
-   "builds": ["Four-board build"],
-   "stack": {"Four-board build": "on the Cable Bridge: an M3 × 8 countersunk screw comes up through the bridge and the board into a female-female standoff, then the top"}
+   "builds": {"Four-board build": "on_part"},
+   "part": "Cable Bridge"
   },
   "S2": {
    "at": [196, 86],
-   "builds": ["KIM Board", "Four-board build"],
-   "stack": {
-    "KIM Board": "a female-male standoff stands on the plate with no screw below it",
-    "Four-board build": "on the Cable Bridge: an M3 × 8 countersunk screw comes up through the bridge and the board into a female-female standoff, then the top"
-   }
+   "builds": {"KIM Board": "resting", "Four-board build": "on_part"},
+   "part": "Cable Bridge"
   }
  },
  "printed_parts": [
