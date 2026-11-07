@@ -1,0 +1,59 @@
+{
+ "_about": "How the KIM is put together: which boards, at which revision, where each sits on the plate and which way round, which tops sit on them, and where the printed parts go. Tools/cad/ reads it, with the family's standards in Tools/cad/standards.json. Positions are mm, looking down on the plate as the computer is used: x to the right, y towards the front, from the plate's back-left corner. A board's position is its own back-left corner as it sits on the plate; rot turns it from its PCB file, clockwise looking down.",
+ "machine": "KIM",
+ "plate": {},
+ "builds": [
+  {
+   "name": "KIM Board",
+   "boards": [
+    {"board": "KIM Board", "rev": "1.0", "at": [10, 10], "rot": 0, "top": {"generated": true}}
+   ]
+  },
+  {
+   "name": "Four-board build",
+   "_gap": "The old build, on a plate already made, keeps its own gaps (owner, 2026-11-07, CAD.md C2 D1): 15 mm between boards side by side, and 5 mm between the Keypad LCD Helper and the Keypad Helper, one behind the other.",
+   "gap": 15,
+   "gap_y": 5,
+   "boards": [
+    {"board": "Backplane Helper", "repo": "COB", "rev": "1.0", "at": [10, 10], "rot": 180, "top": {}},
+    {"board": "Main Board", "repo": "VCS", "rev": "1.1", "at": [75, 10], "rot": 180, "top": {}},
+    {"board": "Keypad LCD Helper", "rev": "1.1", "at": [190, 10], "rot": 0, "top": {}},
+    {"board": "Keypad Helper", "rev": "1.0", "at": [190, 80], "rot": 0, "top": {}}
+   ],
+   "space": [
+    {"at": [10, 125], "size": [165, 95], "text": "Two breadboards and the Breadboard Helper go here. No holes."}
+   ]
+  }
+ ],
+ "positions": {
+  "S1": {
+   "at": [196, 69],
+   "builds": ["Four-board build"],
+   "stack": {"Four-board build": "on the Cable Bridge: an M3 × 8 countersunk screw comes up through the bridge and the board into a female-female standoff, then the top"}
+  },
+  "S2": {
+   "at": [196, 86],
+   "builds": ["KIM Board", "Four-board build"],
+   "stack": {
+    "KIM Board": "a female-male standoff stands on the plate with no screw below it",
+    "Four-board build": "on the Cable Bridge: an M3 × 8 countersunk screw comes up through the bridge and the board into a female-female standoff, then the top"
+   }
+  }
+ },
+ "printed_parts": [
+  {"name": "Corner", "holes": "corners", "builds": ["KIM Board", "Four-board build"], "note": "Corners fit both builds."},
+  {"name": "Hanger", "optional": true, "holes": [[135, 25], [165, 25]], "builds": ["KIM Board", "Four-board build"],
+   "outline": {"at": [130, 20], "size": [40, 10]},
+   "note": "Optional on both builds, for hanging the computer on a wall. The Hanger goes on the back of the plate and the Hanger Retainer on top."},
+  {"name": "Cable Bridge", "holes": [[196, 33.5], [196, 106.5]], "builds": ["Four-board build"],
+   "outline": {"at": [190, 27.5], "size": [12, 85]},
+   "note": "Only for the four-board build. Standoffs at S1 and S2 would block the 40-pin BUS ribbon cable, which runs under the boards from the Backplane Helper to the Breadboard Helper, so those two board holes screw to the bridge instead. The bridge goes on top of the plate and the Cable Bridge Retainer on the back."}
+ ],
+ "hardware": {
+  "KIM Board": [["M2.5 × 10 standoff, female-female, for the LCD", 4], ["M2.5 × 6 pan head, for the LCD", 8], ["M2.5 washer, for the LCD", 4]],
+  "Keypad LCD Helper": [["M2.5 × 10 standoff, female-female, for the LCD", 4], ["M2.5 × 6 pan head, for the LCD", 8], ["M2.5 washer, for the LCD", 4]]
+ },
+ "notes": [
+  "The LCD stands on a standard socket and pin header, on female-female M2.5 × 10 standoffs with an M2.5 washer on each to make up the height. An M2.5 × 6 pan head goes in each end of each standoff, above the LCD and under the board."
+ ]
+}
