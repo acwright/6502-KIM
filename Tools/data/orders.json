@@ -1,0 +1,55 @@
+{
+ "_about": "What is known about each revision beyond its files: made (JLCPCB's order, its date, and the commit it was made from, byte-matched to the export in git), drawn, never made, ordered, notes, tested, and the label each revision carries. Tools/revision-audit/register.py writes REVISIONS.md from it.",
+ "made": {
+  "KIM|Keypad LCD Helper|1.0": [
+   "Y54",
+   "2024-08-06",
+   "6502-COB 48c5bde"
+  ],
+  "KIM|Keypad Helper|1.0": [
+   "Y51",
+   "2024-07-07",
+   "6502-COB b8f89eb"
+  ],
+  "KIM|Keypad Card|1.0": [
+   "Y90",
+   "2026-05-10",
+   "5652134"
+  ]
+ },
+ "drawn": [
+  "KIM|KIM Board|1.1",
+  "KIM|Keypad Card|1.1",
+  "KIM|Keypad LCD Helper|1.1"
+ ],
+ "never": [],
+ "ordered": {
+  "KIM|KIM Board|1.0": "Order 1, placed 2026-11-02"
+ },
+ "made_unchecked": {},
+ "notes": {},
+ "tested": {
+  "KIM|Keypad Card|1.0": "Yes",
+  "KIM|Keypad Helper|1.0": "Yes",
+  "KIM|Keypad LCD Helper|1.0": "Yes"
+ },
+ "_labels": "Tested, Proven design or Untested, with a one-line reason. A revision whose 'tested' entry starts with Yes is Tested unless it is listed here; every other revision must be listed. Tools/revision-audit/labels.py reads this for REVISIONS.md, BOM.md and the README.",
+ "labels": {
+  "KIM|KIM Board|1.0": [
+   "Untested",
+   "A new board, ordered and not tested yet"
+  ],
+  "KIM|KIM Board|1.1": [
+   "Untested",
+   "Silkscreen text only, but Rev 1.0 hasn't been tested yet"
+  ],
+  "KIM|Keypad Card|1.1": [
+   "Proven design",
+   "Silkscreen text only"
+  ],
+  "KIM|Keypad LCD Helper|1.1": [
+   "Proven design",
+   "Silkscreen, outline clean-up"
+  ]
+ }
+}

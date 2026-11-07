@@ -1,0 +1,50 @@
+[
+ {
+  "repo": "KIM",
+  "board": "KIM Board",
+  "revs": [
+   "1.0",
+   "1.1"
+  ],
+  "refs": [
+   "J1"
+  ],
+  "what": "`KIM ENABLE`: the KIM (pins 1 and 2) or BASIC (pins 2 and 3). See *The KIM enable jumper* above.",
+  "shipped": "No shunt: BASIC, held by R15.",
+  "do": "Fit the shunt on pins 1 and 2 for the KC Monitor, the keypad and the LCD. Set it to BASIC before fitting a cartridge.",
+  "need": null,
+  "shunts": 1
+ },
+ {
+  "repo": "KIM",
+  "board": "KIM Board",
+  "revs": [
+   "1.0",
+   "1.1"
+  ],
+  "refs": [
+   "J3"
+  ],
+  "what": "`CTS`: where the ACIA's `CTS` comes from.",
+  "shipped": "No shunt.",
+  "do": "Fit the shunt on pins 2 and 3, ground, as the boards are built. On pins 1 and 2 it takes `CTS` from the cable, and a cable that doesn't assert it stops the transmitter. With no shunt the input floats, and serial may not work.",
+  "need": "For serial",
+  "shunts": 1
+ },
+ {
+  "repo": "KIM",
+  "board": "KIM Board",
+  "revs": [
+   "1.0",
+   "1.1"
+  ],
+  "refs": [
+   "JP1"
+  ],
+  "what": "Bridged across D2, the diode in the ACIA's interrupt line.",
+  "shipped": "Bridged.",
+  "do": "Leave it. The ACIA's interrupt output only pulls low, so D2 isn't needed. Cut JP1 only for a part that drives its interrupt high as well as low.",
+  "need": null,
+  "shunts": 0
+ }
+]
