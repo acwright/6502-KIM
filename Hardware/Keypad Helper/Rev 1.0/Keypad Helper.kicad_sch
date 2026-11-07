@@ -5150,7 +5150,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 177.8 120.65 180)
 		(effects
 			(font
@@ -5292,7 +5292,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 218.44 128.27 90)
 		(effects
 			(font
@@ -5458,7 +5458,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 208.28 34.29 90)
 		(effects
 			(font
@@ -5480,7 +5480,7 @@
 		)
 	)
 	(global_label "Y1"
-		(shape input)
+		(shape output)
 		(at 177.8 44.45 180)
 		(fields_autoplaced yes)
 		(effects
@@ -5768,7 +5768,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape output)
+		(shape passive)
 		(at 35.56 171.45 180)
 		(effects
 			(font
@@ -5886,7 +5886,7 @@
 		)
 	)
 	(global_label "Y2"
-		(shape input)
+		(shape output)
 		(at 177.8 46.99 180)
 		(fields_autoplaced yes)
 		(effects

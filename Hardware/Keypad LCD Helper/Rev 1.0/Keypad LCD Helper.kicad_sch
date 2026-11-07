@@ -1936,7 +1936,7 @@
 		)
 	)
 	(global_label "GND"
-		(shape input)
+		(shape passive)
 		(at 213.36 45.72 0)
 		(effects
 			(font
@@ -1978,7 +1978,7 @@
 		)
 	)
 	(global_label "DB1"
-		(shape bidirectional)
+		(shape output)
 		(at 213.36 50.8 0)
 		(fields_autoplaced yes)
 		(effects
@@ -2000,7 +2000,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 80.01 151.13 180)
 		(effects
 			(font
@@ -2042,7 +2042,7 @@
 		)
 	)
 	(global_label "GND"
-		(shape input)
+		(shape passive)
 		(at 214.63 128.27 0)
 		(effects
 			(font
@@ -2106,7 +2106,7 @@
 		)
 	)
 	(global_label "DB6"
-		(shape bidirectional)
+		(shape output)
 		(at 195.58 50.8 180)
 		(fields_autoplaced yes)
 		(effects
@@ -2282,7 +2282,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 74.93 45.72 180)
 		(effects
 			(font
@@ -2478,7 +2478,7 @@
 		)
 	)
 	(global_label "DB4"
-		(shape bidirectional)
+		(shape output)
 		(at 195.58 55.88 180)
 		(fields_autoplaced yes)
 		(effects
@@ -2522,7 +2522,7 @@
 		)
 	)
 	(global_label "DB0"
-		(shape bidirectional)
+		(shape output)
 		(at 213.36 48.26 0)
 		(fields_autoplaced yes)
 		(effects
@@ -2566,7 +2566,7 @@
 		)
 	)
 	(global_label "DB5"
-		(shape bidirectional)
+		(shape output)
 		(at 195.58 53.34 180)
 		(fields_autoplaced yes)
 		(effects
@@ -2588,7 +2588,7 @@
 		)
 	)
 	(global_label "DB7"
-		(shape bidirectional)
+		(shape output)
 		(at 195.58 48.26 180)
 		(fields_autoplaced yes)
 		(effects
@@ -2610,7 +2610,7 @@
 		)
 	)
 	(global_label "DB2"
-		(shape bidirectional)
+		(shape output)
 		(at 213.36 53.34 0)
 		(fields_autoplaced yes)
 		(effects
@@ -2632,7 +2632,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 195.58 45.72 180)
 		(effects
 			(font
@@ -2652,7 +2652,7 @@
 		)
 	)
 	(global_label "GND"
-		(shape input)
+		(shape passive)
 		(at 92.71 45.72 0)
 		(effects
 			(font
@@ -2738,7 +2738,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 196.85 128.27 180)
 		(effects
 			(font
@@ -2780,7 +2780,7 @@
 		)
 	)
 	(global_label "VCC"
-		(shape input)
+		(shape passive)
 		(at 80.01 118.11 180)
 		(effects
 			(font
@@ -2844,7 +2844,7 @@
 		)
 	)
 	(global_label "DB3"
-		(shape bidirectional)
+		(shape output)
 		(at 213.36 55.88 0)
 		(fields_autoplaced yes)
 		(effects
