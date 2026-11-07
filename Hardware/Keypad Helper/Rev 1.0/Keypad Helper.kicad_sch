@@ -5480,7 +5480,7 @@
 		)
 	)
 	(global_label "Y1"
-		(shape output)
+		(shape input)
 		(at 177.8 44.45 180)
 		(fields_autoplaced yes)
 		(effects
@@ -5886,7 +5886,7 @@
 		)
 	)
 	(global_label "Y2"
-		(shape output)
+		(shape input)
 		(at 177.8 46.99 180)
 		(fields_autoplaced yes)
 		(effects
