@@ -19,15 +19,17 @@ Every part for every board in this repository, by revision, with supplier number
 
 Look on the board: the silk prints the revision next to the copyright line. [REVISIONS.md](REVISIONS.md) has the facts for each one, and its history lists what changed between them.
 
-| Board | Revision | What the silk says | Status |
-|---|---|---|---|
-| [KIM Board](#kim-board) | 1.0 | Rev 1.0 | Ordered, not tested yet |
-| [KIM Board](#kim-board) | 1.1 | Rev 1.1 | Drawn, not made yet |
-| [Keypad Card](#keypad-card) | 1.0 | Rev 1.0 | Made, tested |
-| [Keypad Card](#keypad-card) | 1.1 | Rev 1.1 | Drawn, not made yet |
-| [Keypad Helper](#keypad-helper) | 1.0 | Rev 1.0 | Made, tested |
-| [Keypad LCD Helper](#keypad-lcd-helper) | 1.0 | Rev 1.0 | Made, tested |
-| [Keypad LCD Helper](#keypad-lcd-helper) | 1.1 | Rev 1.1 | Drawn, not made yet |
+**To make a new board, make the newest revision**, and check its label first. The README's [Which revision to make](README.md#which-revision-to-make) explains the three labels: **Tested**, **Proven design** and **Untested**.
+
+| Board | Revision | What the silk says | Status | Label |
+|---|---|---|---|---|
+| [KIM Board](#kim-board) | 1.0 | Rev 1.0 | Ordered, not tested yet | **Untested**: a new board, ordered and not tested yet |
+| [KIM Board](#kim-board) | 1.1 | Rev 1.1 | Drawn, not made yet | **Untested**: silkscreen text only, but Rev 1.0 hasn't been tested yet |
+| [Keypad Card](#keypad-card) | 1.0 | Rev 1.0 | Made, tested | **Tested** |
+| [Keypad Card](#keypad-card) | 1.1 | Rev 1.1 | Drawn, not made yet | **Proven design**: silkscreen text only |
+| [Keypad Helper](#keypad-helper) | 1.0 | Rev 1.0 | Made, tested | **Tested** |
+| [Keypad LCD Helper](#keypad-lcd-helper) | 1.0 | Rev 1.0 | Made, tested | **Tested** |
+| [Keypad LCD Helper](#keypad-lcd-helper) | 1.1 | Rev 1.1 | Drawn, not made yet | **Proven design**: silkscreen, outline clean-up |
 
 ## Known issues
 
@@ -57,7 +59,7 @@ U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502
 
 ### KIM Board Rev 1.1
 
-Drawn, not made yet.
+Drawn, not made yet. **Untested**: silkscreen text only, but Rev 1.0 hasn't been tested yet.
 
 Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.1/digikey.csv), [mouser.csv](BOM/KIM%20Board/Rev%201.1/mouser.csv)
 
@@ -134,7 +136,7 @@ J6 is one footprint, built from three strips of header. U13 also takes a 1×16 p
 
 ### KIM Board Rev 1.0
 
-Ordered, not tested yet.
+Ordered, not tested yet. **Untested**: a new board, ordered and not tested yet.
 
 Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.0/digikey.csv), [mouser.csv](BOM/KIM%20Board/Rev%201.0/mouser.csv)
 
@@ -214,7 +216,7 @@ J6 is one footprint, built from three strips of header. U13 also takes a 1×16 p
 
 ### Keypad Card Rev 1.1
 
-Drawn, not made yet.
+Drawn, not made yet. **Proven design**: silkscreen text only.
 
 Cart files: [digikey.csv](BOM/Keypad%20Card/Rev%201.1/digikey.csv), [mouser.csv](BOM/Keypad%20Card/Rev%201.1/mouser.csv), [digikey-through-hole.csv](BOM/Keypad%20Card/Rev%201.1/digikey-through-hole.csv), [mouser-through-hole.csv](BOM/Keypad%20Card/Rev%201.1/mouser-through-hole.csv)
 
@@ -231,7 +233,7 @@ Cart files: [digikey.csv](BOM/Keypad%20Card/Rev%201.1/digikey.csv), [mouser.csv]
 
 ### Keypad Card Rev 1.0
 
-Made, tested.
+Made, tested. **Tested**.
 
 Cart files: [digikey.csv](BOM/Keypad%20Card/Rev%201.0/digikey.csv), [mouser.csv](BOM/Keypad%20Card/Rev%201.0/mouser.csv), [digikey-through-hole.csv](BOM/Keypad%20Card/Rev%201.0/digikey-through-hole.csv), [mouser-through-hole.csv](BOM/Keypad%20Card/Rev%201.0/mouser-through-hole.csv)
 
@@ -251,7 +253,7 @@ Cart files: [digikey.csv](BOM/Keypad%20Card/Rev%201.0/digikey.csv), [mouser.csv]
 
 ### Keypad Helper Rev 1.0
 
-Made, tested.
+Made, tested. **Tested**.
 
 Cart files: [digikey.csv](BOM/Keypad%20Helper/Rev%201.0/digikey.csv), [mouser.csv](BOM/Keypad%20Helper/Rev%201.0/mouser.csv)
 
@@ -274,7 +276,7 @@ Cart files: [digikey.csv](BOM/Keypad%20Helper/Rev%201.0/digikey.csv), [mouser.cs
 
 ### Keypad LCD Helper Rev 1.1
 
-Drawn, not made yet.
+Drawn, not made yet. **Proven design**: silkscreen, outline clean-up.
 
 Cart files: [digikey.csv](BOM/Keypad%20LCD%20Helper/Rev%201.1/digikey.csv), [mouser.csv](BOM/Keypad%20LCD%20Helper/Rev%201.1/mouser.csv)
 
@@ -292,7 +294,7 @@ Cart files: [digikey.csv](BOM/Keypad%20LCD%20Helper/Rev%201.1/digikey.csv), [mou
 
 ### Keypad LCD Helper Rev 1.0
 
-Made, tested.
+Made, tested. **Tested**.
 
 Cart files: [digikey.csv](BOM/Keypad%20LCD%20Helper/Rev%201.0/digikey.csv), [mouser.csv](BOM/Keypad%20LCD%20Helper/Rev%201.0/mouser.csv)
 
