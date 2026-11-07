@@ -45543,8 +45543,8 @@
 		(uuid "6d605988-a8fd-4f52-8b79-735c2fbea58d")
 	)
 	(gr_rect
-		(start 108 172.7)
-		(end 273.1 229.85)
+		(start 108 175.85)
+		(end 273 229.85)
 		(stroke
 			(width 0.15)
 			(type default)
@@ -45555,7 +45555,7 @@
 	)
 	(gr_rect
 		(start 108 229.85)
-		(end 273.1 287)
+		(end 273 283.85)
 		(stroke
 			(width 0.15)
 			(type default)
@@ -46940,7 +46940,7 @@
 		)
 	)
 	(gr_text "BREADBOARD"
-		(at 190.55 201.275 0)
+		(at 190.5 202.85 0)
 		(layer "F.SilkS")
 		(uuid "10336bfe-be0d-43c6-a2a8-ae872af48319")
 		(effects
@@ -46951,7 +46951,7 @@
 		)
 	)
 	(gr_text "BREADBOARD"
-		(at 190.55 258.425 0)
+		(at 190.5 256.85 0)
 		(layer "F.SilkS")
 		(uuid "505e2e56-80f2-4d3c-8c23-ed04f922d95e")
 		(effects
@@ -85714,7 +85714,7 @@
 		)
 		(polygon
 			(pts
-				(xy 108 172.7) (xy 273.1 172.7) (xy 273.1 287) (xy 108 287)
+				(xy 108 175.85) (xy 273 175.85) (xy 273 283.85) (xy 108 283.85)
 			)
 		)
 	)

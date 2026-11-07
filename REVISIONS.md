@@ -20,8 +20,8 @@ Every revision of every board in this repository, and what is known about each. 
 
 | Board | Rev | Status | Label | Order | Ordered | Made from | Tindie stock | Size (mm) | Holes | Top panel | Enclosure | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| KIM Board | 1.0 | Ordered | **Untested**: a new board, ordered and not tested yet |  |  |  | — | 280×220 | 6 mm | — | — | Order 1, placed 2026-11-02 |
-| KIM Board | 1.1 | Drawn | **Untested**: silkscreen text only, but Rev 1.0 hasn't been tested yet |  |  |  | — | 280×220 | 6 mm | — | — |  |
+| KIM Board | 1.0 | Ordered | **Untested**: a new board, ordered and not tested yet |  |  |  | — | 280×220 | 6 mm | SVG only | — | Order 1, placed 2026-11-02 |
+| KIM Board | 1.1 | Drawn | **Untested**: silkscreen only, but Rev 1.0 hasn't been tested yet |  |  |  | — | 280×220 | 6 mm | SVG only | — |  |
 | Keypad Card | 1.0 | Made, matches order | **Tested** | Y90 | 2026-05-10 | `5652134` | 4 | 100×57.62 | — | — | — |  |
 | Keypad Card | 1.1 | Drawn | **Proven design**: silkscreen text only |  |  |  | — | 100×57.62 | — | — | — |  |
 | Keypad Helper | 1.0 | Made, matches order | **Tested** | Y51 | 2024-07-07 | `6502-COB b8f89eb` | 4 | 100×150 | 6 mm | yes | — | copper drawn differently by today's KiCad, as recorded in audit.py |
@@ -42,7 +42,9 @@ What changed in each revision of each board, newest first. The table above has t
 
 **Rev 1.1** (drawn, not yet made; Rev 1.0 is built first)
 
-- The silkscreen says `SERIAL (DCE)` at J2. Rev 1.0's says `DB9 FEMALE (DCE)`. Nothing else changed: the copper, mask, holes and outline are Rev 1.0's.
+- The silkscreen says `SERIAL (DCE)` at J2. Rev 1.0's says `DB9 FEMALE (DCE)`.
+- The two breadboard outlines on the silkscreen are the breadboards' measured size, 165 × 54 mm each (two BusBoard BB830s, measured by the owner), centred on the same line between them as Rev 1.0's 165.1 × 57.15 outlines. The `BREADBOARDS` keep-out area, where no part may sit, is the same 165 × 108 block, so the bottom-left mounting hole is now clear of it.
+- Nothing else changed: the copper, mask, holes and outline are Rev 1.0's.
 - Rev 1.1 stays open until Rev 1.0 has been brought up. Anything the bring-up finds that the board needs is drawn here.
 
 **Rev 1.0**
