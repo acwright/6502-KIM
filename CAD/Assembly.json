@@ -13,12 +13,21 @@
    "name": "KIM Board",
    "phrase": "the KIM Board",
    "boards": [
-    {"board": "KIM Board", "rev": "1.0", "at": [10, 10], "rot": 0, "top": {"generated": true},
+    {"board": "KIM Board", "rev": "1.0", "at": [10, 10], "rot": 0,
+     "top": {"generated": true, "draft": true,
+      "_draft": "The KIM Board's new top (CAD.md C6), waiting for the owner to approve it from a mockup.",
+      "openings": [
+       {"refs": ["U13"], "kind": "lcd", "why": "the LCD"},
+       {"refs": ["J6"], "kind": "access", "why": "the breadboard headers, for jumper wires"},
+       {"block": {"name": "breadboards", "at": [8, 104], "size": [165, 108]}, "kind": "window", "why": "the two breadboards"}
+      ],
+      "holes": [{"ref": "VR1", "d": 5.5, "why": "the LCD's contrast trimmer"}]},
+     "_breadboards": "Two BusBoard BB830s snapped together: 165 × 108 mm (each 54 mm deep), and 9.5 mm tall with the double-sided tape that holds them down, so they stay under the top; measured by the owner with a caliper (2026-11-07, CAD.md C6a). The top's window is for reaching them. They sit 8 mm from the board's left and front edges, their front in line with the keypad's switch housings, as the PCB's BREADBOARDS keep-out area (165.1 × 114.3, their nominal size) was placed.",
      "label": [100, 62],
      "features": [
       {"label": "LCD", "refs": ["U13"]},
       {"label": "Keypad", "refs": ["SW1", "SW2", "SW3", "SW4", "SW5", "SW6", "SW7", "SW8", "SW9", "SW10", "SW11", "SW12", "SW13", "SW14", "SW15", "SW16", "SW17", "SW18", "SW19", "SW20", "SW21", "SW22", "SW23", "SW24"]},
-      {"label": "Breadboard", "zone": "BREADBOARDS", "rows": 2}
+      {"label": "Breadboard", "block": {"at": [8, 104], "size": [165, 108]}, "rows": 2}
      ]}
    ]
   },
@@ -32,8 +41,10 @@
    "boards": [
     {"board": "Backplane Helper", "repo": "COB", "rev": "1.0", "at": [10, 10], "rot": 180, "top": {}, "label": [35, 62]},
     {"board": "Main Board", "repo": "VCS", "rev": "1.1", "at": [75, 10], "rot": 180, "top": {}, "label": [125, 62]},
-    {"board": "Keypad LCD Helper", "rev": "1.1", "at": [190, 10], "rot": 0, "top": {}, "label": [240, 44]},
-    {"board": "Keypad Helper", "rev": "1.0", "at": [190, 80], "rot": 0, "top": {}, "label": [240, 156]}
+    {"board": "Keypad LCD Helper", "rev": "1.1", "at": [190, 10], "rot": 0,
+     "top": {"generated": true, "openings": [{"refs": ["U2"], "kind": "lcd", "why": "the LCD"}],
+             "holes": [{"ref": "VR1", "d": 5.5, "why": "the LCD's contrast trimmer"}]}, "label": [240, 44]},
+    {"board": "Keypad Helper", "rev": "1.0", "at": [190, 80], "rot": 0, "top": {"generated": true}, "label": [240, 156]}
    ],
    "space": [
     {"at": [10, 125], "size": [165, 95], "text": "Two breadboards and the Breadboard Helper go here. No holes."}

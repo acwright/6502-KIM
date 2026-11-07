@@ -6,10 +6,10 @@
 <text x="239.673" y="42.7" font-size="3.4" text-anchor="middle" fill="#2c6e49" font-weight="normal">LCD</text>
 <rect x="204.455" y="108.955" width="71.09" height="113.09" rx="0.6" fill="#cfe3d3" stroke="#6d9a7c" stroke-width="0.2"/>
 <text x="240" y="166.7" font-size="3.4" text-anchor="middle" fill="#2c6e49" font-weight="normal">Keypad</text>
-<rect x="18" y="107.7" width="165.1" height="57.15" rx="0.8" fill="#fbf7ec" stroke="#9a7b2f" stroke-width="0.3"/>
-<text x="100.55" y="137.475" font-size="3.4" text-anchor="middle" fill="#7a6020" font-weight="normal">Breadboard</text>
-<rect x="18" y="164.85" width="165.1" height="57.15" rx="0.8" fill="#fbf7ec" stroke="#9a7b2f" stroke-width="0.3"/>
-<text x="100.55" y="194.625" font-size="3.4" text-anchor="middle" fill="#7a6020" font-weight="normal">Breadboard</text>
+<rect x="18" y="114" width="165" height="54" rx="0.8" fill="#fbf7ec" stroke="#9a7b2f" stroke-width="0.3"/>
+<text x="100.5" y="142.2" font-size="3.4" text-anchor="middle" fill="#7a6020" font-weight="normal">Breadboard</text>
+<rect x="18" y="168" width="165" height="54" rx="0.8" fill="#fbf7ec" stroke="#9a7b2f" stroke-width="0.3"/>
+<text x="100.5" y="196.2" font-size="3.4" text-anchor="middle" fill="#7a6020" font-weight="normal">Breadboard</text>
 <text x="100" y="62" font-size="3.8" text-anchor="middle" fill="#1d5236" font-weight="bold">KIM Board</text>
 <text x="100" y="66.3" font-size="2.9" text-anchor="middle" fill="#2c6e49" font-weight="normal">280 × 220</text>
 <rect x="130" y="20" width="40" height="10" rx="0.6" fill="none" stroke="#7b3fbf" stroke-width="0.3" stroke-dasharray="1.6 1"/>

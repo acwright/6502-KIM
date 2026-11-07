@@ -299,7 +299,7 @@ It is the only firmware in this repository — the Keypad Helper and Keypad LCD 
 
 The **[plate mounting drawing](CAD/Bases/Plate%20Mounting%20Drawing.png)** ([SVG](CAD/Bases/Plate%20Mounting%20Drawing.svg)) shows where the boards mount on the base plate, for both the KIM Board and the four-board build, with every hole's position and the hardware each build needs. One plate takes either build. The plate is a stack of three 3 mm acrylic layers. A plate made before the KIM Board needs one more hole, Ø3.2 at (16, 224), which you can drill by hand through all three layers.
 
-**`CAD/Assembly.json`** says how the KIM is put together: which boards each build uses, at which revision, where each sits on the plate and which way round, which tops sit on them, and where the printed parts go. `Tools/cad/make.py` generates the plate (`CAD/Bases/Plate.svg` and `Plate.stl`) and its mounting drawing from it, and checks it against the boards' PCBs; the tops are to follow. Edit the assembly file, not the generated files. `Plate.lbrn2`, the LightBurn file, is remade from `Plate.svg` by hand.
+**`CAD/Assembly.json`** says how the KIM is put together: which boards each build uses, at which revision, where each sits on the plate and which way round, which tops sit on them, and where the printed parts go. `Tools/cad/make.py` generates the plate (`CAD/Bases/Plate.svg` and `Plate.stl`), its mounting drawing and the boards' tops in `CAD/Tops/` from it, and checks it against the boards' PCBs and 3D models. Edit the assembly file, not the generated files. `Plate.lbrn2`, the LightBurn file, is remade from `Plate.svg` by hand.
 
 ## Production
 `Production/`
