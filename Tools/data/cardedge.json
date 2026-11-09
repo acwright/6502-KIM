@@ -1,0 +1,6 @@
+{
+ "_about": "Newest revisions with the 6502 Card Edge footprint that don't meet Tools/cardedge/standard.json yet, each with the KICAD.md item that fixes it. cardedge.py --check reports them without failing, and fails on an entry that is no longer needed.",
+ "pending": {
+  "KIM|Keypad Card|1.1": "K28b: fixed in place, drawn and never made"
+ }
+}
