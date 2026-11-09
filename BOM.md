@@ -26,7 +26,7 @@ Look on the board: the silk prints the revision next to the copyright line. [REV
 | [KIM Board](#kim-board) | 1.0 | Rev 1.0 | Ordered, not tested yet | **Untested**: a new board, ordered and not tested yet |
 | [KIM Board](#kim-board) | 1.1 | Rev 1.1 | Drawn, not made yet | **Untested**: silkscreen only, but Rev 1.0 hasn't been tested yet |
 | [Keypad Card](#keypad-card) | 1.0 | Rev 1.0 | Made, tested | **Tested** |
-| [Keypad Card](#keypad-card) | 1.1 | Rev 1.1 | Drawn, not made yet | **Proven design**: silkscreen text only |
+| [Keypad Card](#keypad-card) | 1.1 | Rev 1.1 | Drawn, not made yet | **Proven design**: silkscreen text and the bare card edge |
 | [Keypad Helper](#keypad-helper) | 1.0 | Rev 1.0 | Made, tested | **Tested** |
 | [Keypad LCD Helper](#keypad-lcd-helper) | 1.0 | Rev 1.0 | Made, tested | **Tested** |
 | [Keypad LCD Helper](#keypad-lcd-helper) | 1.1 | Rev 1.1 | Drawn, not made yet | **Proven design**: silkscreen, outline clean-up |
@@ -216,7 +216,7 @@ J6 is one footprint, built from three strips of header. U13 also takes a 1×16 p
 
 ### Keypad Card Rev 1.1
 
-Drawn, not made yet. **Proven design**: silkscreen text only.
+Drawn, not made yet. **Proven design**: silkscreen text and the bare card edge.
 
 Cart files: [digikey.csv](BOM/Keypad%20Card/Rev%201.1/digikey.csv), [mouser.csv](BOM/Keypad%20Card/Rev%201.1/mouser.csv), [digikey-through-hole.csv](BOM/Keypad%20Card/Rev%201.1/digikey-through-hole.csv), [mouser-through-hole.csv](BOM/Keypad%20Card/Rev%201.1/mouser-through-hole.csv)
 

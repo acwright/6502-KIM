@@ -23,7 +23,7 @@ Every revision of every board in this repository, and what is known about each. 
 | KIM Board | 1.0 | Ordered | **Untested**: a new board, ordered and not tested yet |  |  |  | — | 280×220 | 6 mm | yes | — | Order 1, placed 2026-11-02 |
 | KIM Board | 1.1 | Drawn | **Untested**: silkscreen only, but Rev 1.0 hasn't been tested yet |  |  |  | — | 280×220 | 6 mm | yes | — |  |
 | Keypad Card | 1.0 | Made, matches order | **Tested** | Y90 | 2026-05-10 | `5652134` | 4 | 100×57.62 | — | — | — |  |
-| Keypad Card | 1.1 | Drawn | **Proven design**: silkscreen text only |  |  |  | — | 100×57.62 | — | — | — |  |
+| Keypad Card | 1.1 | Drawn | **Proven design**: silkscreen text and the bare card edge |  |  |  | — | 100×57.62 | — | — | — |  |
 | Keypad Helper | 1.0 | Made, matches order | **Tested** | Y51 | 2024-07-07 | `6502-COB b8f89eb` | 4 | 100×150 | 6 mm | yes | — | copper drawn differently by today's KiCad, as recorded in audit.py |
 | Keypad LCD Helper | 1.0 | Made, matches order | **Tested** | Y54 | 2024-08-06 | `6502-COB 48c5bde` | 4 | 100.26×64.68 | 5.68–6.25 mm | yes | — |  |
 | Keypad LCD Helper | 1.1 | Drawn | **Proven design**: silkscreen, outline clean-up |  |  |  | — | 100×65 | 6 mm | yes | — |  |
@@ -55,8 +55,9 @@ What changed in each revision of each board, newest first. The table above has t
 
 **Rev 1.1** (drawn, not yet made; Rev 1.0 is sold first)
 
-- The silkscreen says `W65C21N` at U3, as on the KIM Board. Rev 1.0's says `65C21`. Nothing else changed on the board: the copper, mask, holes and outline are Rev 1.0's.
+- The silkscreen says `W65C21N` at U3, as on the KIM Board. Rev 1.0's says `65C21`. Nothing else changed on the board: the tracks, pads and holes are Rev 1.0's.
 - The schematic uses the library's current `PIA 6521` symbol. Rev 1.0's schematic holds an older copy with different pin types, which ERC reports as a mismatch. The pins and their connections are the same.
+- The card edge is bare: no solder mask on the tab, front or back, from where its fillets end, so the fingers seat better in the slot and make better contact. Rev 1.0 has mask between the fingers. The fingers carry no solder paste, so no stencil prints paste onto them. The outline is redrawn to the one card shape every card shares, placed by the fingers: it moved up to 0.05 mm from Rev 1.0's, and no track, pad or hole moved. The ground pours are refilled to suit.
 
 **Rev 1.0**
 
