@@ -315,7 +315,15 @@ PDF schematics for all KIM hardware.
 
 ## Shared lines
 
-Five lines of the 6502 bus are shared by every board on it: `RESB`, `IRQB`, `NMIB`, `RDY` and `BE`. A board may pull one of these lines low, and nothing drives one high. Each line is held high by one 10kΩ pull-up resistor to VCC, on the board with the CPU: the ACE Board, the KIM Board, the VCS Main Board, the COB CPU Card or CPU Card Pro, or the DEV Board. No other board has one. Two pull-ups on the same line would sit in parallel and lower its resistance, so a card that adds its own pull-up changes the machine for every other board. The VIAs and PIAs in the BOMs, the W65C22N and W65C21N, have open-drain interrupt outputs for this reason. A W65C22S drives `IRQB` high as well as low, so it can't share the line without a diode.
+Five lines of the 6502 bus are shared by every board on it: `RESB`, `IRQB`, `NMIB`, `RDY` and `BE`. A board may pull one of these lines low, and nothing drives one high. Each line is held high by one 10kΩ pull-up resistor to VCC, on the board with the CPU: the ACE Board, the KIM Board, the VCS Main Board, the COB CPU Card or CPU Card Pro, or the DEV Board. No other board has one. Two pull-ups on the same line would sit in parallel and lower its resistance, so a card that adds its own pull-up changes the machine for every other board. The VIAs and PIAs in the BOMs, the W65C22N and W65C21N, have open-drain interrupt outputs for this reason.
+
+**Interrupt outputs.** Whatever drives `IRQB` or `NMIB` may only pull it low. Every board is drawn for the parts in its BOM and works as shipped, with no jumper to cut or bridge:
+
+- **A part whose interrupt output is open-drain** (the W65C22N, W65C21N, R6551AP, DS1511Y and TMS9918A) drives the line directly, or through a diode with a solder jumper across it that ships bridged. The diode is fitted either way. To use a part that drives its interrupt high as well as low instead, such as a W65C22S or a replacement of your own, cut the jumper: the diode then lets the part only pull the line low. A board with no diode in the line can't take such a part.
+- **A part that drives its interrupt high as well as low** (the pico9918, the VERA module, and a microcontroller such as the ATmega1284 or a Raspberry Pi Pico) reaches the line through a diode, a BAT85 or a 1N914, with its cathode toward the part. Where a solder jumper sits across that diode, it ships open. Never bridge it, because the part would then hold the line high against every other interrupt source.
+- **A microcontroller wired to the line directly,** as on the ACE Board, the Mega Helper and the Flash Helper, drives it open-drain in its firmware: it sets the pin low or leaves it as an input, and never drives it high.
+
+The *Jumpers* section below gives each board's interrupt jumper.
 
 The same holds where a board has its own reset circuit. A reset switch, its timer and the transistor that pulls `RESB` low can be on any board, such as the COB Backplane Pro or the Clock Card, but the `RESB` pull-up is only ever on the board with the CPU. Each of those boards draws its pull-ups together, in one group on its schematic.
 
@@ -355,7 +363,7 @@ Where a header needs a shunt, the board's BOM lists it.
 |---|---|---|---|---|---|
 | 1.0, 1.1 | J1 | `KIM ENABLE`: the KIM (pins 1 and 2) or BASIC (pins 2 and 3). See *The KIM enable jumper* above. | No shunt: BASIC, held by R15. | Fit the shunt on pins 1 and 2 for the KC Monitor, the keypad and the LCD. Set it to BASIC before fitting a cartridge. |  |
 | 1.0, 1.1 | J3 | `CTS`: where the ACIA's `CTS` comes from. | No shunt. | Fit the shunt on pins 2 and 3, ground, as the boards are built. On pins 1 and 2 it takes `CTS` from the cable, and a cable that doesn't assert it stops the transmitter. With no shunt the input floats, and serial may not work. | For serial |
-| 1.0, 1.1 | JP1 | Bridged across D2, the diode in the ACIA's interrupt line. | Bridged. | Leave it. The ACIA's interrupt output only pulls low, so D2 isn't needed. Cut JP1 only for a part that drives its interrupt high as well as low. |  |
+| 1.0, 1.1 | JP1 | Across D2, the diode in the R6551AP's interrupt line. | Bridged. | Leave it. The R6551AP's interrupt output is open-drain: it only pulls the line low, so the board works as shipped and D2 isn't needed. To fit a part that drives its interrupt high as well as low, such as a replacement of your own, cut JP1 so the interrupt goes through D2. |  |
 
 <!-- End of jumpers -->
 
