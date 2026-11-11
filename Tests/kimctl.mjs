@@ -13,6 +13,10 @@
 //   --port PATH   the serial port (default: KIM_PORT, then the first /dev/cu.usbserial-*)
 //   --emu         talk to a headless KIMULATOR instead of a machine
 //   --json FILE   also write the result as JSON, to keep as a baseline
+//   --rom FILE    the BIOS image: the KIMULATOR boots it, and `info` checks a machine against it
+//                 (default: the KIMULATOR's bundled BIOS.bin)
+//   --card-rom FILE  the same for the Keypad Card's KC Monitor (default: this repo's build),
+//                 so a fresh firmware build can run on the KIMULATOR before an EEPROM is burned
 //
 // One session drives both machines. Headless, the KIMULATOR's stdin and stdout are its
 // serial port, so the same code runs against both and a difference between them is a
@@ -83,10 +87,13 @@ class SerialLink {
 
 /** A headless KIMULATOR, in real time, with the LED latch wired in. */
 class EmuLink {
-  constructor() {
+  constructor(options = {}) {
     this.name = 'KIMULATOR'
     this.pending = ''
-    this.child = spawn('6502-kim', ['run', '--headless', '--realtime', '--breadboard', 'led-latch', '--timeout', '30m'], {
+    const roms = []
+    if (options.rom) roms.push('--rom', options.rom)
+    if (options.cardRom) roms.push('--card-rom', options.cardRom)
+    this.child = spawn('6502-kim', ['run', '--headless', '--realtime', '--breadboard', 'led-latch', '--timeout', '30m', ...roms], {
       stdio: ['pipe', 'pipe', 'ignore'],
     })
     this.child.stdout.setEncoding('latin1')
@@ -198,7 +205,7 @@ function firstDifference(bytes, expected, base) {
   return index < 0 ? null : `${hex(base + index, 4)}: ${hex(bytes[index])}, file has ${hex(expected[index])}`
 }
 
-async function info(kim) {
+async function info(kim, options = {}) {
   const vectors = await kim.examine(0xfffa, 0xffff)
   const word = (at) => vectors[at] | (vectors[at + 1] << 8)
   const result = {
@@ -209,13 +216,13 @@ async function info(kim) {
   }
 
   const monitor = await kim.examine(0xe000, 0xffff)
-  const monitorFile = readFileSync(KC_MONITOR)
+  const monitorFile = readFileSync(options.cardRom ?? KC_MONITOR)
   result.kcMonitorMatchesFile = sameBytes(monitor, monitorFile)
   if (!result.kcMonitorMatchesFile) result.kcMonitorDifference = firstDifference(monitor, monitorFile, 0xe000)
 
   // $A000-$BFFF is the only part of the BIOS ROM showing with the Keypad Card's overlay in.
   const bios = await kim.examine(0xa000, 0xbfff)
-  const biosFile = readFileSync(BIOS).subarray(0x2000, 0x4000)
+  const biosFile = readFileSync(options.rom ?? BIOS).subarray(0x2000, 0x4000)
   result.biosMatchesFile = sameBytes(bios, biosFile)
   if (!result.biosMatchesFile) result.biosDifference = firstDifference(bios, biosFile, 0xa000)
   return result
@@ -298,6 +305,8 @@ function parse(argv) {
     else if (arg === '--emu') options.emu = true
     else if (arg === '--json') options.json = argv[++i]
     else if (arg === '--ms') options.ms = Number(argv[++i])
+    else if (arg === '--rom') options.rom = resolve(argv[++i])
+    else if (arg === '--card-rom') options.cardRom = resolve(argv[++i])
     else options.args.push(arg)
   }
   return options
@@ -312,7 +321,7 @@ function findPort(given) {
 }
 
 function openLink(options) {
-  return options.emu ? new EmuLink() : new SerialLink(findPort(options.port))
+  return options.emu ? new EmuLink(options) : new SerialLink(findPort(options.port))
 }
 
 async function withKim(link, work) {
@@ -328,10 +337,10 @@ async function withKim(link, work) {
 async function compare(options) {
   const ms = options.ms ?? 2000
   const sides = {}
-  for (const [side, link] of [['machine', new SerialLink(findPort(options.port))], ['kimulator', new EmuLink()]]) {
+  for (const [side, link] of [['machine', new SerialLink(findPort(options.port))], ['kimulator', new EmuLink(options)]]) {
     console.log(`\n${side}: ${link.name}`)
     sides[side] = await withKim(link, async (kim) => {
-      const summary = await info(kim)
+      const summary = await info(kim, options)
       console.log(summary)
       return { info: summary, programs: await programs(kim, null, ms) }
     })
@@ -361,7 +370,7 @@ async function main() {
   let result
   switch (command) {
     case 'info':
-      result = await withKim(openLink(options), info)
+      result = await withKim(openLink(options), (kim) => info(kim, options))
       console.log(result)
       break
     case 'read': {
@@ -386,7 +395,7 @@ async function main() {
       result = await compare(options)
       break
     default:
-      console.error(`usage: kimctl info | read AAAA[.BBBB] | write AAAA HH ... | run AAAA | programs [NAME] | compare\n       [--port PATH] [--emu] [--ms N] [--json FILE]  (see ${basename(fileURLToPath(import.meta.url))})`)
+      console.error(`usage: kimctl info | read AAAA[.BBBB] | write AAAA HH ... | run AAAA | programs [NAME] | compare\n       [--port PATH] [--emu] [--ms N] [--json FILE] [--rom FILE] [--card-rom FILE]  (see ${basename(fileURLToPath(import.meta.url))})`)
       process.exit(2)
   }
   if (options.json && result) writeFileSync(options.json, `${JSON.stringify(result, null, 2)}\n`)
