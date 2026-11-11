@@ -21,7 +21,7 @@ Every revision of every board in this repository, and what is known about each. 
 | Board | Rev | Status | Label | Order | Ordered | Made from | Tindie stock | Size (mm) | Holes | Top panel | Enclosure | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | KIM Board | 1.0 | Ordered | **Untested**: a new board, ordered and not tested yet |  |  |  | — | 280×220 | 6 mm | yes | — | Order 1, placed 2026-11-02 |
-| KIM Board | 1.1 | Drawn | **Untested**: silkscreen and a 74HCT00 at U5, but Rev 1.0 hasn't been tested yet |  |  |  | — | 280×220 | 6 mm | yes | — |  |
+| KIM Board | 1.1 | Drawn | **Untested**: silkscreen, a 74HCT00 at U5 and the ACIA's crystal jumpers, but Rev 1.0 hasn't been tested yet |  |  |  | — | 280×220 | 6 mm | yes | — |  |
 | Keypad Card | 1.0 | Made, matches order | **Tested** | Y90 | 2026-05-10 | `5652134` | 4 | 100×57.62 | — | — | — |  |
 | Keypad Card | 1.1 | Drawn | **Proven design**: silkscreen text and the bare card edge |  |  |  | — | 100×57.62 | — | — | — |  |
 | Keypad Helper | 1.0 | Made, matches order | **Tested** | Y51 | 2024-07-07 | `6502-COB b8f89eb` | 4 | 100×150 | 6 mm | yes | — | copper drawn differently by today's KiCad, as recorded in audit.py |
@@ -46,6 +46,7 @@ What changed in each revision of each board, newest first. The table above has t
 - The two breadboard outlines on the silkscreen are the breadboards' measured size, 165 × 54 mm each (two BusBoard BB830s, measured by the owner), centred on the same line between them as Rev 1.0's 165.1 × 57.15 outlines. The `BREADBOARDS` keep-out area, where no part may sit, is the same 165 × 108 block, so the bottom-left mounting hole is now clear of it.
 - Nothing else changed: the copper, mask, holes and outline are Rev 1.0's.
 - U5, the 74HC00 that makes the RAM's and ROM's `RB` and `WB` from `PHI2` and `RWB`, is a 74HCT00 (2026-11-11). Its TTL input threshold ends `RB` and `WB` a few nanoseconds later after `PHI2` falls. An Alliance AS6C62256 with a fast-releasing 74HC00 lot in this gate misread at 2 MHz; a 74HCT00 there cured it in the ACE, writes included. Rev 1.0 keeps its 74HC00; a 74HCT00 fits the same socket. The silkscreen's value at U5 reads `74HCT00`.
+- Adds the ACIA's optional crystal parts, as on the COB Serial Card: `R24` (1M) across XTLI and XTLO through solder jumper `JP2`, and `C27` (22 pF) from XTLI to ground through `JP3`. Both jumpers ship open, for the R6551AP. Close both for a Rockwell R65C51P1 or R65C51P2, whose oscillator won't start on a bare crystal (an R65C51P2 ran clean this way on a Serial Card on 2026-11-11), or for a WDC W65C51.
 - Rev 1.1 stays open until Rev 1.0 has been brought up. Anything the bring-up finds that the board needs is drawn here.
 
 **Rev 1.0**

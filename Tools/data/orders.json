@@ -41,7 +41,7 @@
   ],
   "KIM|KIM Board|1.1": [
    "Untested",
-   "Silkscreen and a 74HCT00 at U5, but Rev 1.0 hasn't been tested yet"
+   "Silkscreen, a 74HCT00 at U5 and the ACIA's crystal jumpers, but Rev 1.0 hasn't been tested yet"
   ],
   "KIM|Keypad Card|1.1": [
    "Proven design",

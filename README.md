@@ -274,7 +274,7 @@ Each revision carries one of three labels:
 
 | Board | Newest revision | Label | Why |
 |---|---|---|---|
-| KIM Board | 1.1 | **Untested** | Silkscreen and a 74HCT00 at U5, but Rev 1.0 hasn't been tested yet. |
+| KIM Board | 1.1 | **Untested** | Silkscreen, a 74HCT00 at U5 and the ACIA's crystal jumpers, but Rev 1.0 hasn't been tested yet. |
 | Keypad Card | 1.1 | **Proven design** | Silkscreen text and the bare card edge. |
 | Keypad Helper | 1.0 | **Tested** | Built and tested. |
 | Keypad LCD Helper | 1.1 | **Proven design** | Silkscreen, outline clean-up. |
@@ -364,6 +364,7 @@ Where a header needs a shunt, the board's BOM lists it.
 | 1.0, 1.1 | J1 | `KIM ENABLE`: the KIM (pins 1 and 2) or BASIC (pins 2 and 3). See *The KIM enable jumper* above. | No shunt: BASIC, held by R15. | Fit the shunt on pins 1 and 2 for the KC Monitor, the keypad and the LCD. Set it to BASIC before fitting a cartridge. |  |
 | 1.0, 1.1 | J3 | `CTS`: where the ACIA's `CTS` comes from. | No shunt. | Fit the shunt on pins 2 and 3, ground, as the boards are built. On pins 1 and 2 it takes `CTS` from the cable, and a cable that doesn't assert it stops the transmitter. With no shunt the input floats, and serial may not work. | For serial |
 | 1.0, 1.1 | JP1 | Across D2, the diode in the R6551AP's interrupt line. | Bridged. | Leave it. The R6551AP's interrupt output is open-drain: it only pulls the line low, so the board works as shipped and D2 isn't needed. To fit a part that drives its interrupt high as well as low, such as a replacement of your own, cut JP1 so the interrupt goes through D2. |  |
+| 1.1 | JP2, JP3 | Options for the ACIA's crystal: JP2 puts R24 (1M) across it, and JP3 adds C27 (22pF) to ground. | Both open. | Leave them open for the R6551AP, the part the board is built with. Close both for a Rockwell R65C51P1 or R65C51P2, whose oscillator won't start on the bare crystal (an R65C51P2 ran clean this way on a Serial Card on 2026-11-11), or for a WDC W65C51. |  |
 
 <!-- End of jumpers -->
 

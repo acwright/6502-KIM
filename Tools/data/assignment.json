@@ -286,5 +286,7 @@
  "KIM|KIM Board|1.1|R10": "1k|axial",
  "KIM|KIM Board|1.1|SW1": "keyswitch-mx",
  "KIM|KIM Board|1.1|C20": "100nF|disc-p2.5",
- "KIM|KIM Board|1.1|SW8": "keyswitch-mx"
+ "KIM|KIM Board|1.1|SW8": "keyswitch-mx",
+ "KIM|KIM Board|1.1|R24": "1M|axial",
+ "KIM|KIM Board|1.1|C27": "22pF|disc-p2.5"
 }

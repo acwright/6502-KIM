@@ -46,5 +46,21 @@
   "do": "Leave it. The R6551AP's interrupt output is open-drain: it only pulls the line low, so the board works as shipped and D2 isn't needed. To fit a part that drives its interrupt high as well as low, such as a replacement of your own, cut JP1 so the interrupt goes through D2.",
   "need": null,
   "shunts": 0
+ },
+ {
+  "repo": "KIM",
+  "board": "KIM Board",
+  "revs": [
+   "1.1"
+  ],
+  "refs": [
+   "JP2",
+   "JP3"
+  ],
+  "what": "Options for the ACIA's crystal: JP2 puts R24 (1M) across it, and JP3 adds C27 (22pF) to ground.",
+  "shipped": "Both open.",
+  "do": "Leave them open for the R6551AP, the part the board is built with. Close both for a Rockwell R65C51P1 or R65C51P2, whose oscillator won't start on the bare crystal (an R65C51P2 ran clean this way on a Serial Card on 2026-11-11), or for a WDC W65C51.",
+  "need": null,
+  "shunts": 0
  }
 ]

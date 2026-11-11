@@ -24,7 +24,7 @@ Look on the board: the silk prints the revision next to the copyright line. [REV
 | Board | Revision | What the silk says | Status | Label |
 |---|---|---|---|---|
 | [KIM Board](#kim-board) | 1.0 | Rev 1.0 | Ordered, not tested yet | **Untested**: a new board, ordered and not tested yet |
-| [KIM Board](#kim-board) | 1.1 | Rev 1.1 | Drawn, not made yet | **Untested**: silkscreen and a 74HCT00 at U5, but Rev 1.0 hasn't been tested yet |
+| [KIM Board](#kim-board) | 1.1 | Rev 1.1 | Drawn, not made yet | **Untested**: silkscreen, a 74HCT00 at U5 and the ACIA's crystal jumpers, but Rev 1.0 hasn't been tested yet |
 | [Keypad Card](#keypad-card) | 1.0 | Rev 1.0 | Made, tested | **Tested** |
 | [Keypad Card](#keypad-card) | 1.1 | Rev 1.1 | Drawn, not made yet | **Proven design**: silkscreen text and the bare card edge |
 | [Keypad Helper](#keypad-helper) | 1.0 | Rev 1.0 | Made, tested | **Tested** |
@@ -59,7 +59,7 @@ U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502
 
 ### KIM Board Rev 1.1
 
-Drawn, not made yet. **Untested**: silkscreen and a 74HCT00 at U5, but Rev 1.0 hasn't been tested yet.
+Drawn, not made yet. **Untested**: silkscreen, a 74HCT00 at U5 and the ACIA's crystal jumpers, but Rev 1.0 hasn't been tested yet.
 
 Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.1/digikey.csv), [mouser.csv](BOM/KIM%20Board/Rev%201.1/mouser.csv)
 
@@ -68,6 +68,7 @@ Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.1/digikey.csv), [mouser.csv](B
 | C1–C5, C7, C12, C14–C25 | 19 | 100nF | KYOCERA AVX SR205C104KAR | [478-3187-ND](https://www.digikey.com/en/products/filter?keywords=478-3187-ND) | [581-SR205C104KAR](https://www.mouser.com/ProductDetail/581-SR205C104KAR) |  |
 | C6, C26 | 2 | 10uF | Panasonic EEA-GA1C100 | [P14482-ND](https://www.digikey.com/en/products/filter?keywords=P14482-ND) | [667-EEA-GA1C100](https://www.mouser.com/ProductDetail/667-EEA-GA1C100) |  |
 | C8–C11, C13 | 5 | 1uF | KYOCERA AVX SR205E105MAR | [478-7667-ND](https://www.digikey.com/en/products/filter?keywords=478-7667-ND) | [581-SR205E105MAR](https://www.mouser.com/ProductDetail/581-SR205E105MAR) |  |
+| C27 | 1 | 22pF | KYOCERA AVX SR151A220JAR | [478-4846-ND](https://www.digikey.com/en/products/filter?keywords=478-4846-ND) | [581-SR151A220JAR](https://www.mouser.com/ProductDetail/581-SR151A220JAR) |  |
 | D1, D2 | 2 | BAT85 | Vishay BAT85S-TR | [BAT85SCT-ND](https://www.digikey.com/en/products/filter?keywords=BAT85SCT-ND) | [78-BAT85S](https://www.mouser.com/ProductDetail/78-BAT85S) |  |
 | D3, D4 | 2 | 1N914 | onsemi 1N914 | [1N914FS-ND](https://www.digikey.com/en/products/filter?keywords=1N914FS-ND) | [512-1N914](https://www.mouser.com/ProductDetail/512-1N914) |  |
 | D5 | 1 | 1N5819 | Vishay 1N5819-E3/54 | [1N5819-E3/54GICT-ND](https://www.digikey.com/en/products/filter?keywords=1N5819-E3%2F54GICT-ND) | [625-1N5819-E3](https://www.mouser.com/ProductDetail/625-1N5819-E3) |  |
@@ -81,7 +82,7 @@ Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.1/digikey.csv), [mouser.csv](B
 | Q1 | 1 | 2N3904 | onsemi 2N3904BU | [2N3904FS-ND](https://www.digikey.com/en/products/filter?keywords=2N3904FS-ND) | [512-2N3904BU](https://www.mouser.com/ProductDetail/512-2N3904BU) |  |
 | R1–R5, R15, R18, R23 | 8 | 10k | YAGEO MFR-12FTF52-10K | [13-MFR-12FTF52-10KCT-ND](https://www.digikey.com/en/products/filter?keywords=13-MFR-12FTF52-10KCT-ND) | [603-MFR-12FTF52-10K](https://www.mouser.com/ProductDetail/603-MFR-12FTF52-10K) |  |
 | R6–R14 | 9 | 1k | YAGEO MFR-12FTF52-1K | [13-MFR-12FTF52-1KCT-ND](https://www.digikey.com/en/products/filter?keywords=13-MFR-12FTF52-1KCT-ND) | [603-MFR-12FTF52-1K](https://www.mouser.com/ProductDetail/603-MFR-12FTF52-1K) |  |
-| R16 | 1 | 1M | YAGEO MFR-12FTF52-1M | [13-MFR-12FTF52-1MCT-ND](https://www.digikey.com/en/products/filter?keywords=13-MFR-12FTF52-1MCT-ND) | [603-MFR-12FTF52-1M](https://www.mouser.com/ProductDetail/603-MFR-12FTF52-1M) |  |
+| R16, R24 | 2 | 1M | YAGEO MFR-12FTF52-1M | [13-MFR-12FTF52-1MCT-ND](https://www.digikey.com/en/products/filter?keywords=13-MFR-12FTF52-1MCT-ND) | [603-MFR-12FTF52-1M](https://www.mouser.com/ProductDetail/603-MFR-12FTF52-1M) |  |
 | R17 | 1 | 47k | YAGEO MFR-12FTF52-47K | [13-MFR-12FTF52-47KCT-ND](https://www.digikey.com/en/products/filter?keywords=13-MFR-12FTF52-47KCT-ND) | [603-MFR-12FTF52-47K](https://www.mouser.com/ProductDetail/603-MFR-12FTF52-47K) |  |
 | R20, R21 | 2 | 100k | YAGEO MFR-12FTF52-100K | [13-MFR-12FTF52-100KCT-ND](https://www.digikey.com/en/products/filter?keywords=13-MFR-12FTF52-100KCT-ND) | [603-MFR-12FTF52-100K](https://www.mouser.com/ProductDetail/603-MFR-12FTF52-100K) |  |
 | R22 | 1 | 330 | YAGEO MFR-12FTF52-330R | [13-MFR-12FTF52-330RCT-ND](https://www.digikey.com/en/products/filter?keywords=13-MFR-12FTF52-330RCT-ND) | [603-MFR-12FTF52-330R](https://www.mouser.com/ProductDetail/603-MFR-12FTF52-330R) |  |
