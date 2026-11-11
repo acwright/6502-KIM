@@ -11,7 +11,7 @@ Current file: KC Monitor.asm
 000000r 2               ;
 000000r 2               ;   CPU:       WDC 65C02S
 000000r 2               ;   BIOS:      v1.6   (Kernal only — see THE CARTRIDGE OVERLAY below)
-000000r 2               ;   Cartridge: KC Monitor v1.0 (Keypad Card, AT28C64)
+000000r 2               ;   Cartridge: KC Monitor v1.1 (Keypad Card, AT28C64)
 000000r 2               ;   Assembler: ca65 (cc65 toolchain) — uses := for absolute symbols
 000000r 2               ;
 000000r 2               ;   This file describes the KIM *as it actually is with the Keypad Card
@@ -735,7 +735,7 @@ Current file: KC Monitor.asm
 000031r 1                 ; LCD splash first — it must never depend on the serial terminal being
 000031r 1                 ; connected.  (SerialChrout/our serial TX blocks on TDRE, which the R6551AP
 000031r 1                 ; gates on /CTS; with no terminal connected the serial banner would stall.)
-000031r 1  20 rr rr       jsr ShowSplash                ; "KIM MONITOR v1.0" / "--ESC TO START--"
+000031r 1  20 rr rr       jsr ShowSplash                ; "KIM MONITOR v1.1" / "--ESC TO START--"
 000034r 1               
 000034r 1                 ; The same two lines over the wire, so the terminal is told exactly what the
 000034r 1                 ; panel says.  Emitted through the non-blocking SerPutc path, so a missing or
@@ -747,7 +747,7 @@ Current file: KC Monitor.asm
 00003Br 1  85 02          sta STR_PTR
 00003Dr 1  A9 rr          lda #>SplashL1
 00003Fr 1  85 03          sta STR_PTR + 1
-000041r 1  20 rr rr       jsr SerPrintStr               ; "KIM MONITOR v1.0"
+000041r 1  20 rr rr       jsr SerPrintStr               ; "KIM MONITOR v1.1"
 000044r 1  A9 0D          lda #CHAR_CR
 000046r 1  20 rr rr       jsr SerEcho
 000049r 1  A9 rr          lda #<SplashL2
@@ -1832,9 +1832,9 @@ Current file: KC Monitor.asm
 000421r 1  D0 E0          bne @NextHex                  ; always taken (Y < 256)
 000423r 1               @NotHex:
 000423r 1  C4 4E          cpy YSAV                      ; were any hex digits given?
-000425r 1  F0 1B          beq @Escape                   ; none -> treat as ESC
+000425r 1  F0 1E          beq @Escape                   ; none -> treat as ESC
 000427r 1  24 4F          bit WMODE                     ; B6=1 STOR, B6=0 XAM/BLOCK
-000429r 1  50 1A          bvc @NotStor
+000429r 1  50 1D          bvc @NotStor
 00042Br 1  A5 4C          lda L                         ; deposit: store the low byte
 00042Dr 1  81 4A          sta (STL,x)                   ; X=0 -> via STH:STL
 00042Fr 1  E6 4A          inc STL                       ; auto-increment the deposit address
@@ -1845,327 +1845,360 @@ Current file: KC Monitor.asm
 000437r 1  85 51          sta SER_DIRTY                 ; memory changed — flag an LCD refresh
 000439r 1  4C rr rr       jmp @NextItem
 00043Cr 1               @Run:
-00043Cr 1  20 rr rr       jsr SerCallUser               ; run at the last examined address
-00043Fr 1  4C rr rr       jmp SerPrompt                 ; a user RTS lands here — fresh prompt
-000442r 1               @Escape:
-000442r 1  4C rr rr       jmp SerPrompt                 ; nothing parsed — fresh prompt
-000445r 1               @NotStor:
-000445r 1  30 2B          bmi @XamNext                  ; B7=1 -> BLOCK XAM continuation
-000447r 1  A2 02          ldx #$02                      ; copy the hex value to the store + examine
-000449r 1               @SetAdr:
-000449r 1  B5 4B          lda L-1,x                     ;   indices (two bytes)
-00044Br 1  95 49          sta STL-1,x
-00044Dr 1  95 47          sta XAML-1,x
-00044Fr 1  CA             dex
-000450r 1  D0 F7          bne @SetAdr                   ; X reaches 0 with Z=1 (prints the address)
-000452r 1               @NxtPrnt:
-000452r 1  D0 14          bne @PrData                   ; NE -> mid-row, no new address label
-000454r 1  A9 8D          lda #$8D                      ; CR
-000456r 1  20 rr rr       jsr SerEcho
-000459r 1  A5 49          lda XAMH                      ; print the examine address
-00045Br 1  20 rr rr       jsr PrByte
-00045Er 1  A5 48          lda XAML
-000460r 1  20 rr rr       jsr PrByte
-000463r 1  A9 BA          lda #$BA                      ; ":"
-000465r 1  20 rr rr       jsr SerEcho
-000468r 1               @PrData:
-000468r 1  A9 A0          lda #$A0                      ; space
-00046Ar 1  20 rr rr       jsr SerEcho
-00046Dr 1  A1 48          lda (XAML,x)                  ; print the data byte (X=0)
-00046Fr 1  20 rr rr       jsr PrByte
-000472r 1               @XamNext:
-000472r 1  86 4F          stx WMODE                     ; X=0 -> back to XAM mode
-000474r 1  A5 48          lda XAML                      ; more bytes to print in the range?
-000476r 1  C5 4C          cmp L
-000478r 1  A5 49          lda XAMH
-00047Ar 1  E5 4D          sbc H
-00047Cr 1  B0 0C          bcs @ToNextItem               ; not less -> done with this range
-00047Er 1  E6 48          inc XAML                      ; advance the examine index
-000480r 1  D0 02          bne @Mod8
-000482r 1  E6 49          inc XAMH
-000484r 1               @Mod8:
-000484r 1  A5 48          lda XAML                      ; start a new row every 8 bytes
-000486r 1  29 07          and #$07
-000488r 1  10 C8          bpl @NxtPrnt                  ; always taken (result is 0-7); Z drives the
-00048Ar 1               @ToNextItem:                    ;   address-label decision in @NxtPrnt
-00048Ar 1  4C rr rr       jmp @NextItem
-00048Dr 1               
-00048Dr 1               ; -----------------------------------------------------------------------------
-00048Dr 1               ;   SerCallUser — call the user program at XAML
-00048Dr 1               ;   The 6502 has no "jsr (addr)", so the call is a jsr to this jmp — the same
-00048Dr 1               ;   trampoline the keypad's UP key uses (DoUp -> CallUser), one address apiece.
-00048Dr 1               ;   Modifies: everything the user program modifies
-00048Dr 1               ; -----------------------------------------------------------------------------
-00048Dr 1               SerCallUser:
-00048Dr 1  6C 48 00       jmp (XAML)
+00043Cr 1  20 rr rr       jsr SerTxDrain                ; the monitor's last byte leaves first
+00043Fr 1  20 rr rr       jsr SerCallUser               ; run at the last examined address
+000442r 1  4C rr rr       jmp SerPrompt                 ; a user RTS lands here — fresh prompt
+000445r 1               @Escape:
+000445r 1  4C rr rr       jmp SerPrompt                 ; nothing parsed — fresh prompt
+000448r 1               @NotStor:
+000448r 1  30 2B          bmi @XamNext                  ; B7=1 -> BLOCK XAM continuation
+00044Ar 1  A2 02          ldx #$02                      ; copy the hex value to the store + examine
+00044Cr 1               @SetAdr:
+00044Cr 1  B5 4B          lda L-1,x                     ;   indices (two bytes)
+00044Er 1  95 49          sta STL-1,x
+000450r 1  95 47          sta XAML-1,x
+000452r 1  CA             dex
+000453r 1  D0 F7          bne @SetAdr                   ; X reaches 0 with Z=1 (prints the address)
+000455r 1               @NxtPrnt:
+000455r 1  D0 14          bne @PrData                   ; NE -> mid-row, no new address label
+000457r 1  A9 8D          lda #$8D                      ; CR
+000459r 1  20 rr rr       jsr SerEcho
+00045Cr 1  A5 49          lda XAMH                      ; print the examine address
+00045Er 1  20 rr rr       jsr PrByte
+000461r 1  A5 48          lda XAML
+000463r 1  20 rr rr       jsr PrByte
+000466r 1  A9 BA          lda #$BA                      ; ":"
+000468r 1  20 rr rr       jsr SerEcho
+00046Br 1               @PrData:
+00046Br 1  A9 A0          lda #$A0                      ; space
+00046Dr 1  20 rr rr       jsr SerEcho
+000470r 1  A1 48          lda (XAML,x)                  ; print the data byte (X=0)
+000472r 1  20 rr rr       jsr PrByte
+000475r 1               @XamNext:
+000475r 1  86 4F          stx WMODE                     ; X=0 -> back to XAM mode
+000477r 1  A5 48          lda XAML                      ; more bytes to print in the range?
+000479r 1  C5 4C          cmp L
+00047Br 1  A5 49          lda XAMH
+00047Dr 1  E5 4D          sbc H
+00047Fr 1  B0 0C          bcs @ToNextItem               ; not less -> done with this range
+000481r 1  E6 48          inc XAML                      ; advance the examine index
+000483r 1  D0 02          bne @Mod8
+000485r 1  E6 49          inc XAMH
+000487r 1               @Mod8:
+000487r 1  A5 48          lda XAML                      ; start a new row every 8 bytes
+000489r 1  29 07          and #$07
+00048Br 1  10 C8          bpl @NxtPrnt                  ; always taken (result is 0-7); Z drives the
+00048Dr 1               @ToNextItem:                    ;   address-label decision in @NxtPrnt
+00048Dr 1  4C rr rr       jmp @NextItem
 000490r 1               
 000490r 1               ; -----------------------------------------------------------------------------
-000490r 1               ;   SerPrompt — emit a CR/LF and the "> " prompt, reset the line buffer
-000490r 1               ;   Modifies: A
+000490r 1               ;   SerCallUser — call the user program at XAML
+000490r 1               ;   The 6502 has no "jsr (addr)", so the call is a jsr to this jmp — the same
+000490r 1               ;   trampoline the keypad's UP key uses (DoUp -> CallUser), one address apiece.
+000490r 1               ;   Modifies: everything the user program modifies
 000490r 1               ; -----------------------------------------------------------------------------
-000490r 1               SerPrompt:
-000490r 1  A9 0D          lda #CHAR_CR
-000492r 1  20 rr rr       jsr SerEcho                   ; CR -> CR/LF
-000495r 1  A9 3E          lda #'>'
-000497r 1  20 rr rr       jsr SerPutc
-00049Ar 1  A9 20          lda #CHAR_SPACE
-00049Cr 1  20 rr rr       jsr SerPutc
-00049Fr 1  64 50          stz SER_IDX                   ; start a fresh line
-0004A1r 1  60             rts
-0004A2r 1               
-0004A2r 1               ; -----------------------------------------------------------------------------
-0004A2r 1               ;   PrByte / PrHex — print A as two hex digits over serial (Wozmon PRBYTE)
-0004A2r 1               ;   In: A = byte.  PrHex falls through into SerEcho.
-0004A2r 1               ;   Modifies: A
-0004A2r 1               ; -----------------------------------------------------------------------------
-0004A2r 1               PrByte:
-0004A2r 1  48             pha
-0004A3r 1  4A             lsr a
-0004A4r 1  4A             lsr a
-0004A5r 1  4A             lsr a                         ; high nibble to the low nibble position
+000490r 1               SerCallUser:
+000490r 1  6C 48 00       jmp (XAML)
+000493r 1               
+000493r 1               ; -----------------------------------------------------------------------------
+000493r 1               ;   SerPrompt — emit a CR/LF and the "> " prompt, reset the line buffer
+000493r 1               ;   Modifies: A
+000493r 1               ; -----------------------------------------------------------------------------
+000493r 1               SerPrompt:
+000493r 1  A9 0D          lda #CHAR_CR
+000495r 1  20 rr rr       jsr SerEcho                   ; CR -> CR/LF
+000498r 1  A9 3E          lda #'>'
+00049Ar 1  20 rr rr       jsr SerPutc
+00049Dr 1  A9 20          lda #CHAR_SPACE
+00049Fr 1  20 rr rr       jsr SerPutc
+0004A2r 1  64 50          stz SER_IDX                   ; start a fresh line
+0004A4r 1  60             rts
+0004A5r 1               
+0004A5r 1               ; -----------------------------------------------------------------------------
+0004A5r 1               ;   PrByte / PrHex — print A as two hex digits over serial (Wozmon PRBYTE)
+0004A5r 1               ;   In: A = byte.  PrHex falls through into SerEcho.
+0004A5r 1               ;   Modifies: A
+0004A5r 1               ; -----------------------------------------------------------------------------
+0004A5r 1               PrByte:
+0004A5r 1  48             pha
 0004A6r 1  4A             lsr a
-0004A7r 1  20 rr rr       jsr PrHex
-0004AAr 1  68             pla
-0004ABr 1               PrHex:
-0004ABr 1  29 0F          and #$0F                      ; mask the low nibble
-0004ADr 1  09 B0          ora #$B0                      ; "0".."9"
-0004AFr 1  C9 BA          cmp #$BA
-0004B1r 1  90 02          bcc SerEcho                   ; a digit — send it
-0004B3r 1  69 06          adc #$06                      ; letter offset: "A".."F"
-0004B5r 1                 ; fall through to SerEcho
-0004B5r 1               
-0004B5r 1               ; -----------------------------------------------------------------------------
-0004B5r 1               ;   SerEcho — send one character to the serial port
-0004B5r 1               ;   In: A = character (bit 7 may be set).  Clears bit 7 and maps CR -> CR/LF.
-0004B5r 1               ;   Preserves X and Y (the line parser holds state in them across echoes).
-0004B5r 1               ;   Modifies: A
-0004B5r 1               ; -----------------------------------------------------------------------------
-0004B5r 1               SerEcho:
-0004B5r 1  DA             phx
-0004B6r 1  5A             phy
-0004B7r 1  29 7F          and #$7F                      ; back to plain ASCII
-0004B9r 1  C9 0D          cmp #CHAR_CR                  ; CR?
-0004BBr 1  D0 0C          bne @One
-0004BDr 1  A9 0D          lda #CHAR_CR
-0004BFr 1  20 rr rr       jsr SerPutc
-0004C2r 1  A9 0A          lda #CHAR_LF                  ; CR -> CR + LF
-0004C4r 1  20 rr rr       jsr SerPutc
-0004C7r 1  80 03          bra @Done
-0004C9r 1               @One:
-0004C9r 1  20 rr rr       jsr SerPutc
-0004CCr 1               @Done:
-0004CCr 1  7A             ply
-0004CDr 1  FA             plx
-0004CEr 1  60             rts
-0004CFr 1               
-0004CFr 1               ; -----------------------------------------------------------------------------
-0004CFr 1               ;   SerPutc — send one byte to the serial port, NON-BLOCKING
-0004CFr 1               ; -----------------------------------------------------------------------------
-0004CFr 1               ;   In: A = byte (sent as-is).  Preserves X and Y.
-0004CFr 1               ;   Unlike the BIOS SerialChrout (which blocks until TDRE — and therefore
-0004CFr 1               ;   hangs forever when the R6551AP's /CTS is not asserted by a connected
-0004CFr 1               ;   terminal), this waits for TX-ready only for a bounded time and then drops
-0004CFr 1               ;   the byte.  That keeps the keypad monitor fully alive whether or not a host
-0004CFr 1               ;   terminal is attached.  When a terminal IS connected it exits as soon as
-0004CFr 1               ;   TDRE sets, so back-to-back bytes are not dropped.
-0004CFr 1               ;
-0004CFr 1               ;   TIC 00 turns the transmitter off as well as raising RTS, so a byte written
-0004CFr 1               ;   while this monitor is holding RTS up would never leave and the bounded wait
-0004CFr 1               ;   would simply run out: with RTS standing the console is not hung, it is
-0004CFr 1               ;   mute.  So RTS comes down for the byte and goes back where the ring says
-0004CFr 1               ;   afterwards, with interrupts held off meanwhile so KeyIrq cannot raise it
-0004CFr 1               ;   mid-character.  Above the high-water mark the byte is dropped INSTEAD of
-0004CFr 1               ;   opening the gate, because a paste arrives faster than the parser drains it
-0004CFr 1               ;   and every echo's window would keep the ring flooded for good.
-0004CFr 1               ;
-0004CFr 1               ;   It also means this is the routine that puts the command register right if
-0004CFr 1               ;   something else has left it wrong — a user program, or a deposit to $9002.
-0004CFr 1               ;   The next character out undoes it.
-0004CFr 1               ;   Modifies: A
-0004CFr 1               ; -----------------------------------------------------------------------------
-0004CFr 1               SerPutc:
-0004CFr 1  DA             phx                           ; X and Y are the line parser's, not ours
-0004D0r 1  5A             phy
-0004D1r 1  08             php                           ; the caller's I flag, put back on every exit
-0004D2r 1  48             pha                           ; the byte — @Send wants it back
-0004D3r 1  AD 0D 03       lda HW_PRESENT
-0004D6r 1  29 10          and #HW_SC                    ; Serial Card fitted?
-0004D8r 1  F0 26          beq @Drop                     ; no — drop the byte without touching $9000
-0004DAr 1                                               ;   (and without paying the TDRE timeout)
-0004DAr 1  78             sei                           ; KeyIrq must not move RTS mid-character
-0004DBr 1  20 rr rr       jsr ScFlooded                 ; ring too full to open the gate for this byte?
-0004DEr 1  B0 20          bcs @Drop                     ; yes — stay quiet, and leave RTS up
-0004E0r 1  20 rr rr       jsr ScRtsLow                  ; the transmitter only runs with RTS down
-0004E3r 1  A2 03          ldx #$03                      ; bounded TDRE wait, ~27 ms @ 1 MHz — about the
-0004E5r 1                                               ;   wall time the old $08 x 256 loop took, now
-0004E5r 1                                               ;   that each pass carries an ScRxPoll
-0004E5r 1               @WaitHi:
-0004E5r 1  A0 00          ldy #$00
-0004E7r 1               @WaitLo:
-0004E7r 1  DA             phx                           ; ScRxPoll uses X; the countdown lives in it
-0004E8r 1  20 rr rr       jsr ScRxPoll                  ; status — and any byte that arrived with it
-0004EBr 1  FA             plx
-0004ECr 1  29 10          and #SC_STATUS_TDRE           ; TX data register empty?
-0004EEr 1  D0 08          bne @Send
-0004F0r 1  88             dey
-0004F1r 1  D0 F4          bne @WaitLo
-0004F3r 1  CA             dex
-0004F4r 1  D0 EF          bne @WaitHi
-0004F6r 1  80 05          bra @Rts                      ; timeout — no terminal; drop the byte
-0004F8r 1               @Send:
-0004F8r 1  68             pla                           ; recover the byte
-0004F9r 1  8D 00 90       sta SC_DATA                   ; transmit it
-0004FCr 1  48             pha
-0004FDr 1               @Rts:
-0004FDr 1  20 rr rr       jsr ScRts                     ; byte gone — RTS back where the ring says
-000500r 1               @Drop:
-000500r 1  68             pla                           ; the byte, as the caller passed it
-000501r 1  28             plp                           ; interrupts as the caller had them
-000502r 1  7A             ply
-000503r 1  FA             plx
-000504r 1  60             rts
-000505r 1               
-000505r 1               ; -----------------------------------------------------------------------------
-000505r 1               ;   SerPrintStr — send a null-terminated string over serial
-000505r 1               ;   In: STR_PTR ($02-$03) = pointer to the string
-000505r 1               ;   Modifies: A, Y
-000505r 1               ; -----------------------------------------------------------------------------
-000505r 1               SerPrintStr:
-000505r 1  A0 00          ldy #$00
-000507r 1               @Loop:
-000507r 1  B1 02          lda (STR_PTR),y
-000509r 1  F0 06          beq @Done                     ; null terminator
-00050Br 1  20 rr rr       jsr SerEcho                   ; SerEcho preserves Y
-00050Er 1  C8             iny
-00050Fr 1  D0 F6          bne @Loop
-000511r 1               @Done:
-000511r 1  60             rts
-000512r 1               
-000512r 1               
-000512r 1               ; =============================================================================
-000512r 1               ;   INTERRUPT HANDLERS & VECTOR TRAMPOLINES
-000512r 1               ; =============================================================================
-000512r 1               ;   The cartridge owns the hardware vectors at $FFFA-$FFFF.  Following the
-000512r 1               ;   BIOS convention, the NMI and IRQ vectors trampoline through the writable
-000512r 1               ;   RAM vectors (NMI_PTR / IRQ_PTR) that KernalInit installs.  CartReset then
-000512r 1               ;   repoints IRQ_PTR at the local KeyIrq handler so the keypad CA1 edge drives
-000512r 1               ;   key input (see the keypad driver section); NMI_PTR keeps the Kernal
-000512r 1               ;   default (RTI).
-000512r 1               ;
-000512r 1               ;   BRK shares the IRQ vector.  KeyIrq detects the B flag and dispatches via
-000512r 1               ;   BRK_PTR (-> BrkHandler) with P/PCL/PCH still on the stack, so BrkHandler
-000512r 1               ;   only needs to RTI to resume the interrupted code.
-000512r 1               ; -----------------------------------------------------------------------------
-000512r 1               
-000512r 1               ; -----------------------------------------------------------------------------
-000512r 1               ;   NmiVector / IrqVector — hardware-vector trampolines through the RAM vectors
-000512r 1               ; -----------------------------------------------------------------------------
-000512r 1               NmiVector:
-000512r 1  6C 04 03       jmp (NMI_PTR)                  ; default: Kernal Nmi (RTI)
-000515r 1               
-000515r 1               IrqVector:
-000515r 1  6C 00 03       jmp (IRQ_PTR)                  ; CartReset points IRQ_PTR at KeyIrq
-000518r 1               
-000518r 1               ; -----------------------------------------------------------------------------
-000518r 1               ;   BrkHandler — local BRK handler
-000518r 1               ; -----------------------------------------------------------------------------
-000518r 1               ;   Reached via JMP (BRK_PTR) from KeyIrq after a BRK.  A/X are already
-000518r 1               ;   restored and the P/PCL/PCH frame is intact, so resuming is a plain RTI.
-000518r 1               ;   This keeps a stray BRK in executed user code from entering the overlaid
-000518r 1               ;   BIOS monitor.
-000518r 1               ; -----------------------------------------------------------------------------
-000518r 1               BrkHandler:
-000518r 1  40             rti
-000519r 1               
-000519r 1               
-000519r 1               ; =============================================================================
-000519r 1               ;   Data
-000519r 1               ; =============================================================================
-000519r 1               
-000519r 1               SplashL1:
-000519r 1  4B 49 4D 20    .byte "KIM MONITOR v1.0", $00
-00051Dr 1  4D 4F 4E 49  
-000521r 1  54 4F 52 20  
-00052Ar 1               SplashL2:
-00052Ar 1  2D 2D 45 53    .byte "--ESC TO START--", $00
-00052Er 1  43 20 54 4F  
-000532r 1  20 53 54 41  
-00053Br 1               
-00053Br 1               ; -----------------------------------------------------------------------------
-00053Br 1               ;   KeySymTable — keycode (0-23) -> printable LCD symbol
-00053Br 1               ; -----------------------------------------------------------------------------
-00053Br 1               ;   Hex digit keys map to their hex character; navigation/command keys map to
-00053Br 1               ;   a distinct printable glyph for the keypad echo test.
-00053Br 1               ;     $00 LEFT  $0B RIGHT  $10 ESC  $11 INS  $12 PGUP  $14 UP  $15 DEL  $16 PGDN
-00053Br 1               ; -----------------------------------------------------------------------------
-00053Br 1               KeySymTable:
-00053Br 1  3C             .byte '<'                     ; $00 LEFT
-00053Cr 1  31             .byte '1'                     ; $01
-00053Dr 1  32             .byte '2'                     ; $02
-00053Er 1  33             .byte '3'                     ; $03
-00053Fr 1  34             .byte '4'                     ; $04
-000540r 1  35             .byte '5'                     ; $05
-000541r 1  36             .byte '6'                     ; $06
-000542r 1  37             .byte '7'                     ; $07
-000543r 1  38             .byte '8'                     ; $08
-000544r 1  39             .byte '9'                     ; $09
-000545r 1  30             .byte '0'                     ; $0A
-000546r 1  3E             .byte '>'                     ; $0B RIGHT
-000547r 1  46             .byte 'F'                     ; $0C
-000548r 1  45             .byte 'E'                     ; $0D
-000549r 1  44             .byte 'D'                     ; $0E
-00054Ar 1  43             .byte 'C'                     ; $0F
-00054Br 1  2A             .byte '*'                     ; $10 ESC
-00054Cr 1  49             .byte 'I'                     ; $11 INS
-00054Dr 1  55             .byte 'U'                     ; $12 PGUP
-00054Er 1  41             .byte 'A'                     ; $13
-00054Fr 1  5E             .byte '^'                     ; $14 UP
-000550r 1  58             .byte 'X'                     ; $15 DEL
-000551r 1  4E             .byte 'N'                     ; $16 PGDN
-000552r 1  42             .byte 'B'                     ; $17
-000553r 1               
-000553r 1               
-000553r 1               ; -----------------------------------------------------------------------------
-000553r 1               ;   HexValTable — keycode (0-23) -> hex nibble value, $FF = not a hex digit
-000553r 1               ; -----------------------------------------------------------------------------
-000553r 1               ;   Used by KeyToHex.  Maps the ten digit keys (0-9) and the six letter keys
-000553r 1               ;   (A-F) to their 0-15 nibble value; every navigation/command key maps to the
-000553r 1               ;   $FF sentinel so the dispatch loop ignores it during address/data entry.
-000553r 1               ; -----------------------------------------------------------------------------
-000553r 1               HexValTable:
-000553r 1  FF             .byte $FF                     ; $00 LEFT
-000554r 1  01             .byte $01                     ; $01 1
-000555r 1  02             .byte $02                     ; $02 2
-000556r 1  03             .byte $03                     ; $03 3
-000557r 1  04             .byte $04                     ; $04 4
-000558r 1  05             .byte $05                     ; $05 5
-000559r 1  06             .byte $06                     ; $06 6
-00055Ar 1  07             .byte $07                     ; $07 7
-00055Br 1  08             .byte $08                     ; $08 8
-00055Cr 1  09             .byte $09                     ; $09 9
-00055Dr 1  00             .byte $00                     ; $0A 0
-00055Er 1  FF             .byte $FF                     ; $0B RIGHT
-00055Fr 1  0F             .byte $0F                     ; $0C F
-000560r 1  0E             .byte $0E                     ; $0D E
-000561r 1  0D             .byte $0D                     ; $0E D
-000562r 1  0C             .byte $0C                     ; $0F C
-000563r 1  FF             .byte $FF                     ; $10 ESC
-000564r 1  FF             .byte $FF                     ; $11 INS
-000565r 1  FF             .byte $FF                     ; $12 PGUP
-000566r 1  0A             .byte $0A                     ; $13 A
-000567r 1  FF             .byte $FF                     ; $14 UP
-000568r 1  FF             .byte $FF                     ; $15 DEL
-000569r 1  FF             .byte $FF                     ; $16 PGDN
-00056Ar 1  0B             .byte $0B                     ; $17 B
-00056Br 1               
-00056Br 1               
-00056Br 1               ; =============================================================================
-00056Br 1               ;   CPU Vectors — cart owns $FFFA-$FFFF
-00056Br 1               ; =============================================================================
-00056Br 1               ;   NMI and IRQ trampoline through the Kernal RAM vectors (see above);
-00056Br 1               ;   RESET enters the cartridge.
-00056Br 1               
-00056Br 1               .segment "VECTORS"
+0004A7r 1  4A             lsr a
+0004A8r 1  4A             lsr a                         ; high nibble to the low nibble position
+0004A9r 1  4A             lsr a
+0004AAr 1  20 rr rr       jsr PrHex
+0004ADr 1  68             pla
+0004AEr 1               PrHex:
+0004AEr 1  29 0F          and #$0F                      ; mask the low nibble
+0004B0r 1  09 B0          ora #$B0                      ; "0".."9"
+0004B2r 1  C9 BA          cmp #$BA
+0004B4r 1  90 02          bcc SerEcho                   ; a digit — send it
+0004B6r 1  69 06          adc #$06                      ; letter offset: "A".."F"
+0004B8r 1                 ; fall through to SerEcho
+0004B8r 1               
+0004B8r 1               ; -----------------------------------------------------------------------------
+0004B8r 1               ;   SerEcho — send one character to the serial port
+0004B8r 1               ;   In: A = character (bit 7 may be set).  Clears bit 7 and maps CR -> CR/LF.
+0004B8r 1               ;   Preserves X and Y (the line parser holds state in them across echoes).
+0004B8r 1               ;   Modifies: A
+0004B8r 1               ; -----------------------------------------------------------------------------
+0004B8r 1               SerEcho:
+0004B8r 1  DA             phx
+0004B9r 1  5A             phy
+0004BAr 1  29 7F          and #$7F                      ; back to plain ASCII
+0004BCr 1  C9 0D          cmp #CHAR_CR                  ; CR?
+0004BEr 1  D0 0C          bne @One
+0004C0r 1  A9 0D          lda #CHAR_CR
+0004C2r 1  20 rr rr       jsr SerPutc
+0004C5r 1  A9 0A          lda #CHAR_LF                  ; CR -> CR + LF
+0004C7r 1  20 rr rr       jsr SerPutc
+0004CAr 1  80 03          bra @Done
+0004CCr 1               @One:
+0004CCr 1  20 rr rr       jsr SerPutc
+0004CFr 1               @Done:
+0004CFr 1  7A             ply
+0004D0r 1  FA             plx
+0004D1r 1  60             rts
+0004D2r 1               
+0004D2r 1               ; -----------------------------------------------------------------------------
+0004D2r 1               ;   SerPutc — send one byte to the serial port, NON-BLOCKING
+0004D2r 1               ; -----------------------------------------------------------------------------
+0004D2r 1               ;   In: A = byte (sent as-is).  Preserves X and Y.
+0004D2r 1               ;   Unlike the BIOS SerialChrout (which blocks until TDRE — and therefore
+0004D2r 1               ;   hangs forever when the R6551AP's /CTS is not asserted by a connected
+0004D2r 1               ;   terminal), this waits for TX-ready only for a bounded time and then drops
+0004D2r 1               ;   the byte.  That keeps the keypad monitor fully alive whether or not a host
+0004D2r 1               ;   terminal is attached.  When a terminal IS connected it exits as soon as
+0004D2r 1               ;   TDRE sets, so back-to-back bytes are not dropped.
+0004D2r 1               ;
+0004D2r 1               ;   TIC 00 turns the transmitter off as well as raising RTS, so a byte written
+0004D2r 1               ;   while this monitor is holding RTS up would never leave and the bounded wait
+0004D2r 1               ;   would simply run out: with RTS standing the console is not hung, it is
+0004D2r 1               ;   mute.  So RTS comes down for the byte and goes back where the ring says
+0004D2r 1               ;   afterwards, with interrupts held off meanwhile so KeyIrq cannot raise it
+0004D2r 1               ;   mid-character.  Above the high-water mark the byte is dropped INSTEAD of
+0004D2r 1               ;   opening the gate, because a paste arrives faster than the parser drains it
+0004D2r 1               ;   and every echo's window would keep the ring flooded for good.
+0004D2r 1               ;
+0004D2r 1               ;   It also means this is the routine that puts the command register right if
+0004D2r 1               ;   something else has left it wrong — a user program, or a deposit to $9002.
+0004D2r 1               ;   The next character out undoes it.
+0004D2r 1               ;   Modifies: A
+0004D2r 1               ; -----------------------------------------------------------------------------
+0004D2r 1               SerPutc:
+0004D2r 1  DA             phx                           ; X and Y are the line parser's, not ours
+0004D3r 1  5A             phy
+0004D4r 1  08             php                           ; the caller's I flag, put back on every exit
+0004D5r 1  48             pha                           ; the byte — @Send wants it back
+0004D6r 1  AD 0D 03       lda HW_PRESENT
+0004D9r 1  29 10          and #HW_SC                    ; Serial Card fitted?
+0004DBr 1  F0 16          beq @Drop                     ; no — drop the byte without touching $9000
+0004DDr 1                                               ;   (and without paying the TDRE timeout)
+0004DDr 1  78             sei                           ; KeyIrq must not move RTS mid-character
+0004DEr 1  20 rr rr       jsr ScFlooded                 ; ring too full to open the gate for this byte?
+0004E1r 1  B0 10          bcs @Drop                     ; yes — stay quiet, and leave RTS up
+0004E3r 1  20 rr rr       jsr ScRtsLow                  ; the transmitter only runs with RTS down
+0004E6r 1  20 rr rr       jsr ScWaitTdre                ; bounded wait for the transmit register
+0004E9r 1  F0 05          beq @Rts                      ; timeout — no terminal; drop the byte
+0004EBr 1               @Send:
+0004EBr 1  68             pla                           ; recover the byte
+0004ECr 1  8D 00 90       sta SC_DATA                   ; transmit it
+0004EFr 1  48             pha
+0004F0r 1               @Rts:
+0004F0r 1  20 rr rr       jsr ScRts                     ; byte gone — RTS back where the ring says
+0004F3r 1               @Drop:
+0004F3r 1  68             pla                           ; the byte, as the caller passed it
+0004F4r 1  28             plp                           ; interrupts as the caller had them
+0004F5r 1  7A             ply
+0004F6r 1  FA             plx
+0004F7r 1  60             rts
+0004F8r 1               
+0004F8r 1               ; -----------------------------------------------------------------------------
+0004F8r 1               ;   ScWaitTdre — wait, for a bounded time, for the transmit register to empty
+0004F8r 1               ;   ~27 ms @ 1 MHz: about the wall time the old $08 x 256 loop took, now that
+0004F8r 1               ;   each pass carries an ScRxPoll.  Callers hold interrupts off (ScRxPoll).
+0004F8r 1               ;   Out: Z clear if TDRE set, Z set on timeout
+0004F8r 1               ;   Modifies: A, X, Y
+0004F8r 1               ; -----------------------------------------------------------------------------
+0004F8r 1               ScWaitTdre:
+0004F8r 1  A2 03          ldx #$03
+0004FAr 1               @WaitHi:
+0004FAr 1  A0 00          ldy #$00
+0004FCr 1               @WaitLo:
+0004FCr 1  DA             phx                           ; ScRxPoll uses X; the countdown lives in it
+0004FDr 1  20 rr rr       jsr ScRxPoll                  ; status — and any byte that arrived with it
+000500r 1  FA             plx
+000501r 1  29 10          and #SC_STATUS_TDRE           ; TX data register empty?
+000503r 1  D0 06          bne @Done                     ; yes — Z clear
+000505r 1  88             dey
+000506r 1  D0 F4          bne @WaitLo
+000508r 1  CA             dex
+000509r 1  D0 EF          bne @WaitHi                   ; falls out with Z set: timed out
+00050Br 1               @Done:
+00050Br 1  60             rts
+00050Cr 1               
+00050Cr 1               ; -----------------------------------------------------------------------------
+00050Cr 1               ;   SerTxDrain — let the last byte out before a program runs
+00050Cr 1               ;   SerPutc waits for TDRE *before* it writes, so the monitor's last byte can
+00050Cr 1               ;   still be in the ACIA's transmit register when serial R launches a program.
+00050Cr 1               ;   The BIOS's Chrout writes SC_DATA first and waits afterwards, so a program
+00050Cr 1               ;   that prints at once overwrote that byte: Hello, KIM printed "0800: AHELLO"
+00050Cr 1               ;   where the KIMULATOR shows "0800: ADHELLO".  Waiting for TDRE here hands the
+00050Cr 1               ;   byte to the shift register, and the program's first write is then safe.
+00050Cr 1               ;   The wait is SerPutc's, bounded, so a KIM with no terminal still runs.
+00050Cr 1               ;   Modifies: A, X, Y
+00050Cr 1               ; -----------------------------------------------------------------------------
+00050Cr 1               SerTxDrain:
+00050Cr 1  AD 0D 03       lda HW_PRESENT
+00050Fr 1  29 10          and #HW_SC                    ; Serial Card fitted?
+000511r 1  F0 06          beq @Done                     ; no — nothing to wait for
+000513r 1  08             php                           ; the caller's I flag
+000514r 1  78             sei                           ; ScRxPoll touches the ring
+000515r 1  20 rr rr       jsr ScWaitTdre
+000518r 1  28             plp
+000519r 1               @Done:
+000519r 1  60             rts
+00051Ar 1               
+00051Ar 1               ; -----------------------------------------------------------------------------
+00051Ar 1               ;   SerPrintStr — send a null-terminated string over serial
+00051Ar 1               ;   In: STR_PTR ($02-$03) = pointer to the string
+00051Ar 1               ;   Modifies: A, Y
+00051Ar 1               ; -----------------------------------------------------------------------------
+00051Ar 1               SerPrintStr:
+00051Ar 1  A0 00          ldy #$00
+00051Cr 1               @Loop:
+00051Cr 1  B1 02          lda (STR_PTR),y
+00051Er 1  F0 06          beq @Done                     ; null terminator
+000520r 1  20 rr rr       jsr SerEcho                   ; SerEcho preserves Y
+000523r 1  C8             iny
+000524r 1  D0 F6          bne @Loop
+000526r 1               @Done:
+000526r 1  60             rts
+000527r 1               
+000527r 1               
+000527r 1               ; =============================================================================
+000527r 1               ;   INTERRUPT HANDLERS & VECTOR TRAMPOLINES
+000527r 1               ; =============================================================================
+000527r 1               ;   The cartridge owns the hardware vectors at $FFFA-$FFFF.  Following the
+000527r 1               ;   BIOS convention, the NMI and IRQ vectors trampoline through the writable
+000527r 1               ;   RAM vectors (NMI_PTR / IRQ_PTR) that KernalInit installs.  CartReset then
+000527r 1               ;   repoints IRQ_PTR at the local KeyIrq handler so the keypad CA1 edge drives
+000527r 1               ;   key input (see the keypad driver section); NMI_PTR keeps the Kernal
+000527r 1               ;   default (RTI).
+000527r 1               ;
+000527r 1               ;   BRK shares the IRQ vector.  KeyIrq detects the B flag and dispatches via
+000527r 1               ;   BRK_PTR (-> BrkHandler) with P/PCL/PCH still on the stack, so BrkHandler
+000527r 1               ;   only needs to RTI to resume the interrupted code.
+000527r 1               ; -----------------------------------------------------------------------------
+000527r 1               
+000527r 1               ; -----------------------------------------------------------------------------
+000527r 1               ;   NmiVector / IrqVector — hardware-vector trampolines through the RAM vectors
+000527r 1               ; -----------------------------------------------------------------------------
+000527r 1               NmiVector:
+000527r 1  6C 04 03       jmp (NMI_PTR)                  ; default: Kernal Nmi (RTI)
+00052Ar 1               
+00052Ar 1               IrqVector:
+00052Ar 1  6C 00 03       jmp (IRQ_PTR)                  ; CartReset points IRQ_PTR at KeyIrq
+00052Dr 1               
+00052Dr 1               ; -----------------------------------------------------------------------------
+00052Dr 1               ;   BrkHandler — local BRK handler
+00052Dr 1               ; -----------------------------------------------------------------------------
+00052Dr 1               ;   Reached via JMP (BRK_PTR) from KeyIrq after a BRK.  A/X are already
+00052Dr 1               ;   restored and the P/PCL/PCH frame is intact, so resuming is a plain RTI.
+00052Dr 1               ;   This keeps a stray BRK in executed user code from entering the overlaid
+00052Dr 1               ;   BIOS monitor.
+00052Dr 1               ; -----------------------------------------------------------------------------
+00052Dr 1               BrkHandler:
+00052Dr 1  40             rti
+00052Er 1               
+00052Er 1               
+00052Er 1               ; =============================================================================
+00052Er 1               ;   Data
+00052Er 1               ; =============================================================================
+00052Er 1               
+00052Er 1               SplashL1:
+00052Er 1  4B 49 4D 20    .byte "KIM MONITOR v1.1", $00
+000532r 1  4D 4F 4E 49  
+000536r 1  54 4F 52 20  
+00053Fr 1               SplashL2:
+00053Fr 1  2D 2D 45 53    .byte "--ESC TO START--", $00
+000543r 1  43 20 54 4F  
+000547r 1  20 53 54 41  
+000550r 1               
+000550r 1               ; -----------------------------------------------------------------------------
+000550r 1               ;   KeySymTable — keycode (0-23) -> printable LCD symbol
+000550r 1               ; -----------------------------------------------------------------------------
+000550r 1               ;   Hex digit keys map to their hex character; navigation/command keys map to
+000550r 1               ;   a distinct printable glyph for the keypad echo test.
+000550r 1               ;     $00 LEFT  $0B RIGHT  $10 ESC  $11 INS  $12 PGUP  $14 UP  $15 DEL  $16 PGDN
+000550r 1               ; -----------------------------------------------------------------------------
+000550r 1               KeySymTable:
+000550r 1  3C             .byte '<'                     ; $00 LEFT
+000551r 1  31             .byte '1'                     ; $01
+000552r 1  32             .byte '2'                     ; $02
+000553r 1  33             .byte '3'                     ; $03
+000554r 1  34             .byte '4'                     ; $04
+000555r 1  35             .byte '5'                     ; $05
+000556r 1  36             .byte '6'                     ; $06
+000557r 1  37             .byte '7'                     ; $07
+000558r 1  38             .byte '8'                     ; $08
+000559r 1  39             .byte '9'                     ; $09
+00055Ar 1  30             .byte '0'                     ; $0A
+00055Br 1  3E             .byte '>'                     ; $0B RIGHT
+00055Cr 1  46             .byte 'F'                     ; $0C
+00055Dr 1  45             .byte 'E'                     ; $0D
+00055Er 1  44             .byte 'D'                     ; $0E
+00055Fr 1  43             .byte 'C'                     ; $0F
+000560r 1  2A             .byte '*'                     ; $10 ESC
+000561r 1  49             .byte 'I'                     ; $11 INS
+000562r 1  55             .byte 'U'                     ; $12 PGUP
+000563r 1  41             .byte 'A'                     ; $13
+000564r 1  5E             .byte '^'                     ; $14 UP
+000565r 1  58             .byte 'X'                     ; $15 DEL
+000566r 1  4E             .byte 'N'                     ; $16 PGDN
+000567r 1  42             .byte 'B'                     ; $17
+000568r 1               
+000568r 1               
+000568r 1               ; -----------------------------------------------------------------------------
+000568r 1               ;   HexValTable — keycode (0-23) -> hex nibble value, $FF = not a hex digit
+000568r 1               ; -----------------------------------------------------------------------------
+000568r 1               ;   Used by KeyToHex.  Maps the ten digit keys (0-9) and the six letter keys
+000568r 1               ;   (A-F) to their 0-15 nibble value; every navigation/command key maps to the
+000568r 1               ;   $FF sentinel so the dispatch loop ignores it during address/data entry.
+000568r 1               ; -----------------------------------------------------------------------------
+000568r 1               HexValTable:
+000568r 1  FF             .byte $FF                     ; $00 LEFT
+000569r 1  01             .byte $01                     ; $01 1
+00056Ar 1  02             .byte $02                     ; $02 2
+00056Br 1  03             .byte $03                     ; $03 3
+00056Cr 1  04             .byte $04                     ; $04 4
+00056Dr 1  05             .byte $05                     ; $05 5
+00056Er 1  06             .byte $06                     ; $06 6
+00056Fr 1  07             .byte $07                     ; $07 7
+000570r 1  08             .byte $08                     ; $08 8
+000571r 1  09             .byte $09                     ; $09 9
+000572r 1  00             .byte $00                     ; $0A 0
+000573r 1  FF             .byte $FF                     ; $0B RIGHT
+000574r 1  0F             .byte $0F                     ; $0C F
+000575r 1  0E             .byte $0E                     ; $0D E
+000576r 1  0D             .byte $0D                     ; $0E D
+000577r 1  0C             .byte $0C                     ; $0F C
+000578r 1  FF             .byte $FF                     ; $10 ESC
+000579r 1  FF             .byte $FF                     ; $11 INS
+00057Ar 1  FF             .byte $FF                     ; $12 PGUP
+00057Br 1  0A             .byte $0A                     ; $13 A
+00057Cr 1  FF             .byte $FF                     ; $14 UP
+00057Dr 1  FF             .byte $FF                     ; $15 DEL
+00057Er 1  FF             .byte $FF                     ; $16 PGDN
+00057Fr 1  0B             .byte $0B                     ; $17 B
+000580r 1               
+000580r 1               
+000580r 1               ; =============================================================================
+000580r 1               ;   CPU Vectors — cart owns $FFFA-$FFFF
+000580r 1               ; =============================================================================
+000580r 1               ;   NMI and IRQ trampoline through the Kernal RAM vectors (see above);
+000580r 1               ;   RESET enters the cartridge.
+000580r 1               
+000580r 1               .segment "VECTORS"
 000000r 1               
 000000r 1  rr rr        .word   NmiVector                ; NMI vector   -> jmp (NMI_PTR)
 000002r 1  rr rr        .word   CartReset                ; RESET vector — cartridge entry point

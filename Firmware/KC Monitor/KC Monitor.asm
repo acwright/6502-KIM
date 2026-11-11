@@ -165,7 +165,7 @@ CartReset:
   ; LCD splash first — it must never depend on the serial terminal being
   ; connected.  (SerialChrout/our serial TX blocks on TDRE, which the R6551AP
   ; gates on /CTS; with no terminal connected the serial banner would stall.)
-  jsr ShowSplash                ; "KIM MONITOR v1.0" / "--ESC TO START--"
+  jsr ShowSplash                ; "KIM MONITOR v1.1" / "--ESC TO START--"
 
   ; The same two lines over the wire, so the terminal is told exactly what the
   ; panel says.  Emitted through the non-blocking SerPutc path, so a missing or
@@ -177,7 +177,7 @@ CartReset:
   sta STR_PTR
   lda #>SplashL1
   sta STR_PTR + 1
-  jsr SerPrintStr               ; "KIM MONITOR v1.0"
+  jsr SerPrintStr               ; "KIM MONITOR v1.1"
   lda #CHAR_CR
   jsr SerEcho
   lda #<SplashL2
@@ -1275,6 +1275,7 @@ SerProcess:
   sta SER_DIRTY                 ; memory changed — flag an LCD refresh
   jmp @NextItem
 @Run:
+  jsr SerTxDrain                ; the monitor's last byte leaves first
   jsr SerCallUser               ; run at the last examined address
   jmp SerPrompt                 ; a user RTS lands here — fresh prompt
 @Escape:
@@ -1426,22 +1427,8 @@ SerPutc:
   jsr ScFlooded                 ; ring too full to open the gate for this byte?
   bcs @Drop                     ; yes — stay quiet, and leave RTS up
   jsr ScRtsLow                  ; the transmitter only runs with RTS down
-  ldx #$03                      ; bounded TDRE wait, ~27 ms @ 1 MHz — about the
-                                ;   wall time the old $08 x 256 loop took, now
-                                ;   that each pass carries an ScRxPoll
-@WaitHi:
-  ldy #$00
-@WaitLo:
-  phx                           ; ScRxPoll uses X; the countdown lives in it
-  jsr ScRxPoll                  ; status — and any byte that arrived with it
-  plx
-  and #SC_STATUS_TDRE           ; TX data register empty?
-  bne @Send
-  dey
-  bne @WaitLo
-  dex
-  bne @WaitHi
-  bra @Rts                      ; timeout — no terminal; drop the byte
+  jsr ScWaitTdre                ; bounded wait for the transmit register
+  beq @Rts                      ; timeout — no terminal; drop the byte
 @Send:
   pla                           ; recover the byte
   sta SC_DATA                   ; transmit it
@@ -1453,6 +1440,52 @@ SerPutc:
   plp                           ; interrupts as the caller had them
   ply
   plx
+  rts
+
+; -----------------------------------------------------------------------------
+;   ScWaitTdre — wait, for a bounded time, for the transmit register to empty
+;   ~27 ms @ 1 MHz: about the wall time the old $08 x 256 loop took, now that
+;   each pass carries an ScRxPoll.  Callers hold interrupts off (ScRxPoll).
+;   Out: Z clear if TDRE set, Z set on timeout
+;   Modifies: A, X, Y
+; -----------------------------------------------------------------------------
+ScWaitTdre:
+  ldx #$03
+@WaitHi:
+  ldy #$00
+@WaitLo:
+  phx                           ; ScRxPoll uses X; the countdown lives in it
+  jsr ScRxPoll                  ; status — and any byte that arrived with it
+  plx
+  and #SC_STATUS_TDRE           ; TX data register empty?
+  bne @Done                     ; yes — Z clear
+  dey
+  bne @WaitLo
+  dex
+  bne @WaitHi                   ; falls out with Z set: timed out
+@Done:
+  rts
+
+; -----------------------------------------------------------------------------
+;   SerTxDrain — let the last byte out before a program runs
+;   SerPutc waits for TDRE *before* it writes, so the monitor's last byte can
+;   still be in the ACIA's transmit register when serial R launches a program.
+;   The BIOS's Chrout writes SC_DATA first and waits afterwards, so a program
+;   that prints at once overwrote that byte: Hello, KIM printed "0800: AHELLO"
+;   where the KIMULATOR shows "0800: ADHELLO".  Waiting for TDRE here hands the
+;   byte to the shift register, and the program's first write is then safe.
+;   The wait is SerPutc's, bounded, so a KIM with no terminal still runs.
+;   Modifies: A, X, Y
+; -----------------------------------------------------------------------------
+SerTxDrain:
+  lda HW_PRESENT
+  and #HW_SC                    ; Serial Card fitted?
+  beq @Done                     ; no — nothing to wait for
+  php                           ; the caller's I flag
+  sei                           ; ScRxPoll touches the ring
+  jsr ScWaitTdre
+  plp
+@Done:
   rts
 
 ; -----------------------------------------------------------------------------
@@ -1513,7 +1546,7 @@ BrkHandler:
 ; =============================================================================
 
 SplashL1:
-  .byte "KIM MONITOR v1.0", $00
+  .byte "KIM MONITOR v1.1", $00
 SplashL2:
   .byte "--ESC TO START--", $00
 

@@ -57,7 +57,7 @@ input is interrupt driven via the 74C922 encoder's data-available signal on CA1.
 Both consoles show the same splash and both hold at the same gate:
 
 ```
-KIM MONITOR v1.0
+KIM MONITOR v1.1
 --ESC TO START--
 ```
 
