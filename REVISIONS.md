@@ -45,7 +45,7 @@ What changed in each revision of each board, newest first. The table above has t
 - The silkscreen says `SERIAL (DCE)` at J2. Rev 1.0's says `DB9 FEMALE (DCE)`.
 - The two breadboard outlines on the silkscreen are the breadboards' measured size, 165 × 54 mm each (two BusBoard BB830s, measured by the owner), centred on the same line between them as Rev 1.0's 165.1 × 57.15 outlines. The `BREADBOARDS` keep-out area, where no part may sit, is the same 165 × 108 block, so the bottom-left mounting hole is now clear of it.
 - Nothing else changed: the copper, mask, holes and outline are Rev 1.0's.
-- U5, the 74HC00 that makes the RAM's and ROM's `RB` and `WB` from `PHI2` and `RWB`, is a 74HCT00 (P11, 2026-11-11). Its TTL input threshold ends `RB` and `WB` a few nanoseconds later after `PHI2` falls. An Alliance AS6C62256 with a fast-releasing 74HC00 lot in this gate misread at 2 MHz; a 74HCT00 there cured it in the ACE, writes included. Rev 1.0 keeps its 74HC00; a 74HCT00 fits the same socket. The silkscreen's value at U5 reads `74HCT00`.
+- U5, the 74HC00 that makes the RAM's and ROM's `RB` and `WB` from `PHI2` and `RWB`, is a 74HCT00 (2026-11-11). Its TTL input threshold ends `RB` and `WB` a few nanoseconds later after `PHI2` falls. An Alliance AS6C62256 with a fast-releasing 74HC00 lot in this gate misread at 2 MHz; a 74HCT00 there cured it in the ACE, writes included. Rev 1.0 keeps its 74HC00; a 74HCT00 fits the same socket. The silkscreen's value at U5 reads `74HCT00`.
 - Rev 1.1 stays open until Rev 1.0 has been brought up. Anything the bring-up finds that the board needs is drawn here.
 
 **Rev 1.0**

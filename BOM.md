@@ -131,7 +131,7 @@ J6 is one footprint, built from three strips of header. U13 also takes a 1×16 p
 - **J5:** Male box header with a keying notch, for a 40-way ribbon cable.
 - **J7:** Replaces GCT DCJ200-10-A-K1-K, now obsolete, which older builds used. Its pads and body match this footprint on the datasheet. No board has been built with it yet.
 - **SW1–SW24:** Cherry MX2A RGB Blue, clear housing, as on the owner's Amazon kit. MX1A-E1NN (black housing) is the deeper-stocked alternative; Digi-Key CH196-ND, Mouser 540-MX1A-E1NN.
-- **U5:** The RAM's RB/WB gate (P11, 2026-11-11): its TTL thresholds end RB and WB a few ns later after PHI2 falls. The part tested in the ACE's U14.
+- **U5:** The RAM's RB/WB gate (2026-11-11): its TTL thresholds end RB and WB a few ns later after PHI2 falls. The part tested in the ACE's U14.
 - **U13:** Common hobby 16×2 LCD; any HD44780-compatible module with the same pinout.
 - **U15:** Rockwell R6551AP, out of production. Do not substitute a W65C51.
 - **U16:** Buy from Jameco. Out of production at Digi-Key and Mouser.
