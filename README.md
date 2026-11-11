@@ -274,7 +274,7 @@ Each revision carries one of three labels:
 
 | Board | Newest revision | Label | Why |
 |---|---|---|---|
-| KIM Board | 1.1 | **Untested** | Silkscreen only, but Rev 1.0 hasn't been tested yet. |
+| KIM Board | 1.1 | **Untested** | Silkscreen and a 74HCT00 at U5, but Rev 1.0 hasn't been tested yet. |
 | Keypad Card | 1.1 | **Proven design** | Silkscreen text and the bare card edge. |
 | Keypad Helper | 1.0 | **Tested** | Built and tested. |
 | Keypad LCD Helper | 1.1 | **Proven design** | Silkscreen, outline clean-up. |

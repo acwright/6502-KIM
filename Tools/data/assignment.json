@@ -241,7 +241,7 @@
  "KIM|KIM Board|1.1|C18": "100nF|disc-p2.5",
  "KIM|KIM Board|1.1|SW5": "keyswitch-mx",
  "KIM|KIM Board|1.1|R18": "10k|axial",
- "KIM|KIM Board|1.1|U5": "74HC00|DIP-14_W7.62mm",
+ "KIM|KIM Board|1.1|U5": "74HCT00|DIP-14_W7.62mm",
  "KIM|KIM Board|1.1|C24": "100nF|disc-p2.5",
  "KIM|KIM Board|1.1|R13": "1k|axial",
  "KIM|KIM Board|1.1|SW10": "keyswitch-mx",
