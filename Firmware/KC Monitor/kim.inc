@@ -3,7 +3,7 @@
 ; =============================================================================
 ;
 ;   CPU:       WDC 65C02S
-;   BIOS:      v1.6   (Kernal only — see THE CARTRIDGE OVERLAY below)
+;   BIOS:      v1.7   (Kernal only — see THE CARTRIDGE OVERLAY below)
 ;   Cartridge: KC Monitor v1.1 (Keypad Card, AT28C64)
 ;   Assembler: ca65 (cc65 toolchain) — uses := for absolute symbols
 ;
