@@ -28,6 +28,7 @@ Look on the board: the silk prints the revision next to the copyright line. [REV
 | [Keypad Card](#keypad-card) | 1.0 | Rev 1.0 | Made, tested | **Tested** |
 | [Keypad Card](#keypad-card) | 1.1 | Rev 1.1 | Drawn, not made yet | **Proven design**: silkscreen text and the bare card edge |
 | [Keypad Helper](#keypad-helper) | 1.0 | Rev 1.0 | Made, tested | **Tested** |
+| [Keypad Helper](#keypad-helper) | 1.1 | Rev 1.1 | Drawn, not made yet | **Proven design**: key names on the silkscreen, socket outlines, capacitor pitch, the keys on a true 19 mm grid |
 | [Keypad LCD Helper](#keypad-lcd-helper) | 1.0 | Rev 1.0 | Made, tested | **Tested** |
 | [Keypad LCD Helper](#keypad-lcd-helper) | 1.1 | Rev 1.1 | Drawn, not made yet | **Proven design**: silkscreen, outline clean-up |
 
@@ -52,6 +53,10 @@ The keycaps are clear, with a separate cap, so a printed legend sits inside each
 The base plate, the screws, the standoffs and the feet are in the [plate mounting drawing](./CAD/Bases/Plate%20Mounting%20Drawing.png).
 
 U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502-BIOS](https://github.com/acwright/6502-BIOS)'s `v1.x` branch, because the KIM doesn't take BIOS 2.x, and U9 with `Firmware/KC Monitor/KC Monitor.bin`. That takes an EEPROM programmer.
+
+**Keypad Helper**
+
+**Building a Rev 1.0:** fit U1 and U2 in sockets, as Rev 1.1 does: an 18-pin and a 14-pin, both 0.3 in, the ones in Rev 1.1's parts list. They fit Rev 1.0's holes; Rev 1.1 only adds their outline to the silkscreen. Rev 1.1's other changes need nothing on a built board: fit the 5 mm pitch capacitors in Rev 1.0's parts list, and use Rev 1.0's own top, whose key windows are cut for its keys. Rev 1.0's silkscreen numbers the keys 0–23, where Rev 1.1's names them as the KIM Board's keypad does. The keys and the codes they send are the same, so the KIM's keycap sheet, [`CAD/Keycaps/KIM Keycaps.pdf`](./CAD/Keycaps/KIM%20Keycaps.pdf), labels a Rev 1.0 too.
 
 <!-- End of build notes. -->
 
@@ -253,6 +258,28 @@ Cart files: [digikey.csv](BOM/Keypad%20Card/Rev%201.0/digikey.csv), [mouser.csv]
 
 
 ## Keypad Helper
+
+### Keypad Helper Rev 1.1
+
+Drawn, not made yet. **Proven design**: key names on the silkscreen, socket outlines, capacitor pitch, the keys on a true 19 mm grid.
+
+Cart files: [digikey.csv](BOM/Keypad%20Helper/Rev%201.1/digikey.csv), [mouser.csv](BOM/Keypad%20Helper/Rev%201.1/mouser.csv)
+
+| Reference | Qty | Value | Part | Digi-Key | Mouser | Other |
+|---|---|---|---|---|---|---|
+| C1, C2, C4 | 3 | 100nF | KYOCERA AVX SR205C104KAR | [478-3187-ND](https://www.digikey.com/en/products/filter?keywords=478-3187-ND) | [581-SR205C104KAR](https://www.mouser.com/ProductDetail/581-SR205C104KAR) |  |
+| C3 | 1 | 1uF | KYOCERA AVX SR205E105MAR | [478-7667-ND](https://www.digikey.com/en/products/filter?keywords=478-7667-ND) | [581-SR205E105MAR](https://www.mouser.com/ProductDetail/581-SR205E105MAR) |  |
+| D1, D2 | 2 | 1N914 | onsemi 1N914 | [1N914FS-ND](https://www.digikey.com/en/products/filter?keywords=1N914FS-ND) | [512-1N914](https://www.mouser.com/ProductDetail/512-1N914) |  |
+| J1 | 1 | PORT | Adam Tech BHR-12-VUA | [2057-BHR-12-VUA-ND](https://www.digikey.com/en/products/filter?keywords=2057-BHR-12-VUA-ND) | [737-BHR-12-VUA](https://www.mouser.com/ProductDetail/737-BHR-12-VUA) | 2057-BHR-12-VUA-ND |
+| R1, R2 | 2 | 100k | YAGEO MFR-12FTF52-100K | [13-MFR-12FTF52-100KCT-ND](https://www.digikey.com/en/products/filter?keywords=13-MFR-12FTF52-100KCT-ND) | [603-MFR-12FTF52-100K](https://www.mouser.com/ProductDetail/603-MFR-12FTF52-100K) |  |
+| SW1–SW24 | 24 | Keyswitch | Cherry Americas LLC MX2A-E1NA | [1644-MX2A-E1NA-ND](https://www.digikey.com/en/products/filter?keywords=1644-MX2A-E1NA-ND) | [540-MX2A-E1NA](https://www.mouser.com/ProductDetail/540-MX2A-E1NA) |  |
+| U1 | 1 | MM74C922 | onsemi MM74C922N |  |  | [Jameco 44564](https://www.jameco.com/z/74C922-Major-Brands-IC-74C922-16-20-Key-Encoder-DIP-18-pin_44564.html) |
+| U2 | 1 | 74HC00 | Texas Instruments SN74HC00N | [296-1563-5-ND](https://www.digikey.com/en/products/filter?keywords=296-1563-5-ND) | [595-SN74HC00N](https://www.mouser.com/ProductDetail/595-SN74HC00N) |  |
+| U2 | 1 | Socket | IC socket, 14-pin, 0.3 in | [3M5474-ND](https://www.digikey.com/en/products/filter?keywords=3M5474-ND) | [517-4814-3004-CP](https://www.mouser.com/ProductDetail/517-4814-3004-CP) | |
+| U1 | 1 | Socket | IC socket, 18-pin, 0.3 in | [3M5464-ND](https://www.digikey.com/en/products/filter?keywords=3M5464-ND) | [517-4818-3000-CP](https://www.mouser.com/ProductDetail/517-4818-3000-CP) | |
+
+- **SW1–SW24:** Cherry MX2A RGB Blue, clear housing, as on the owner's Amazon kit. MX1A-E1NN (black housing) is the deeper-stocked alternative; Digi-Key CH196-ND, Mouser 540-MX1A-E1NN.
+- **U1:** Buy from Jameco. Out of production at Digi-Key and Mouser.
 
 ### Keypad Helper Rev 1.0
 

@@ -20,6 +20,7 @@
  "drawn": [
   "KIM|KIM Board|1.1",
   "KIM|Keypad Card|1.1",
+  "KIM|Keypad Helper|1.1",
   "KIM|Keypad LCD Helper|1.1"
  ],
  "never": [],
@@ -46,6 +47,10 @@
   "KIM|Keypad Card|1.1": [
    "Proven design",
    "Silkscreen text and the bare card edge"
+  ],
+  "KIM|Keypad Helper|1.1": [
+   "Proven design",
+   "Key names on the silkscreen, socket outlines, capacitor pitch, the keys on a true 19 mm grid"
   ],
   "KIM|Keypad LCD Helper|1.1": [
    "Proven design",

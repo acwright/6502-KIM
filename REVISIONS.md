@@ -13,7 +13,7 @@ Every revision of every board in this repository, and what is known about each. 
 **Label** says whether a builder can rely on a revision. Make the newest revision of a board, and check its label first:
 
 - **Tested:** This revision was built and tested.
-- **Proven design:** Not built at this revision, but its circuit is a tested revision's. The only changes are silkscreen text, part values, mounting holes, outline clean-up, capacitor pitch, socket outlines, a footprint swap with the same holes, a solder jumper's default, the solder mask or paste at a card edge, or tracks rerouted or pours refilled with DRC and the netlist check passing. A builder can treat it as tested.
+- **Proven design:** Not built at this revision, but its circuit is a tested revision's. The only changes are silkscreen text, part values, mounting holes, outline clean-up, parts moved a fraction of a millimetre onto their grid, capacitor pitch, socket outlines, a footprint swap with the same holes, a solder jumper's default, the solder mask or paste at a card edge, or tracks rerouted or pours refilled with DRC and the netlist check passing. A builder can treat it as tested.
 - **Untested:** The circuit, the power path or the layout changed in a way that only a built board proves, or the board has never been built at all.
 
 **Holes** is how far the corner mounting holes sit from the board's edges. The standard is 6 mm, and 5 mm on the ACE Board, the CF Adapter and the Keyboard Helper. A dash means a card or cart, which has no corner holes.
@@ -25,6 +25,7 @@ Every revision of every board in this repository, and what is known about each. 
 | Keypad Card | 1.0 | Made, matches order | **Tested** | Y90 | 2026-05-10 | `5652134` | 4 | 100×57.62 | — | — | — |  |
 | Keypad Card | 1.1 | Drawn | **Proven design**: silkscreen text and the bare card edge |  |  |  | — | 100×57.62 | — | — | — |  |
 | Keypad Helper | 1.0 | Made, matches order | **Tested** | Y51 | 2024-07-07 | `6502-COB b8f89eb` | 4 | 100×150 | 6 mm | yes | — | copper drawn differently by today's KiCad, as recorded in audit.py |
+| Keypad Helper | 1.1 | Drawn | **Proven design**: key names on the silkscreen, socket outlines, capacitor pitch, the keys on a true 19 mm grid |  |  |  | — | 100×150 | 6 mm | yes | — |  |
 | Keypad LCD Helper | 1.0 | Made, matches order | **Tested** | Y54 | 2024-08-06 | `6502-COB 48c5bde` | 4 | 100.26×64.68 | 5.68–6.25 mm | yes | — |  |
 | Keypad LCD Helper | 1.1 | Drawn | **Proven design**: silkscreen, outline clean-up |  |  |  | — | 100×65 | 6 mm | yes | — |  |
 
@@ -66,6 +67,13 @@ What changed in each revision of each board, newest first. The table above has t
 - Initial release, and the board on sale. Built and tested. `Hardware/Keypad Card/Rev 1.0/` and `Production/Keypad Card/Rev 1.0/` match the boards JLCPCB made (order Y90). The Gerbers and drill files in the production zip are byte-for-byte what JLCPCB received.
 
 ### Keypad Helper
+
+**Rev 1.1** (drawn, not yet made; Rev 1.0 is sold first)
+
+- U1 (MM74C922) and U2 (74HC00) have socket outlines, as every logic chip in the family does, so a chip can be changed without desoldering it. Their pads and holes are Rev 1.0's: the outline is only silkscreen, and the same sockets fit a Rev 1.0. The parts list adds an 18-pin and a 14-pin socket.
+- C1–C4 are 2.5 mm pitch disc capacitors, the family's standard part, where Rev 1.0 has 5 mm. Each keeps its pin 1 where Rev 1.0 has it.
+- The 24 keys sit on one true 19 mm grid, as the KIM Board's keypad does. On Rev 1.0, SW6 sits 0.08 mm and SW18–SW20 and SW22–SW24 0.19 mm to the right of their columns. The top's key windows move with them. The tracks to those keys' columns, `X2`–`X4`, move 0.19 mm with them, and the track carrying the `C2` signal, with its via, 0.55 mm to the right, clear of C3's new pad.
+- The silkscreen and schematic name each key as the KIM Board's keypad does: `ESC`, `INS`, `PGUP`, `A`, `UP`, `DEL`, `PGDN`, `B`, the digits, `C`–`F`, `LEFT` and `RIGHT`. Rev 1.0 numbers them 0–23. Each key is in the same place and on the same encoder row and column as its namesake on the KIM Board, so it sends the same code.
 
 **Rev 1.0**
 

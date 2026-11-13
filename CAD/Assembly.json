@@ -45,7 +45,7 @@
     {"board": "Keypad LCD Helper", "rev": "1.1", "at": [190, 10], "rot": 0,
      "top": {"generated": true, "openings": [{"refs": ["U2"], "kind": "lcd", "why": "the LCD"}],
              "holes": [{"ref": "VR1", "d": 5.5, "why": "the LCD's contrast trimmer"}]}, "label": [240, 44]},
-    {"board": "Keypad Helper", "rev": "1.0", "at": [190, 80], "rot": 0, "top": {"generated": true}, "label": [240, 156]}
+    {"board": "Keypad Helper", "rev": "1.1", "at": [190, 80], "rot": 0, "top": {"generated": true}, "label": [240, 156]}
    ],
    "space": [
     {"at": [10, 125], "size": [165, 95], "text": "Two breadboards and the Breadboard Helper go here. No holes."}

@@ -267,7 +267,7 @@ Like the Keypad Helper, this board carries no microcontroller and runs no firmwa
 Each revision carries one of three labels:
 
 - **Tested:** This revision was built and tested.
-- **Proven design:** Not built at this revision, but its circuit is a tested revision's. The only changes are silkscreen text, part values, mounting holes, outline clean-up, capacitor pitch, socket outlines, a footprint swap with the same holes, a solder jumper's default, the solder mask or paste at a card edge, or tracks rerouted or pours refilled with DRC and the netlist check passing. A builder can treat it as tested.
+- **Proven design:** Not built at this revision, but its circuit is a tested revision's. The only changes are silkscreen text, part values, mounting holes, outline clean-up, parts moved a fraction of a millimetre onto their grid, capacitor pitch, socket outlines, a footprint swap with the same holes, a solder jumper's default, the solder mask or paste at a card edge, or tracks rerouted or pours refilled with DRC and the netlist check passing. A builder can treat it as tested.
 - **Untested:** The circuit, the power path or the layout changed in a way that only a built board proves, or the board has never been built at all.
 
 [BOM.md](BOM.md) has the parts for every revision, and its known issues.
@@ -276,7 +276,7 @@ Each revision carries one of three labels:
 |---|---|---|---|
 | KIM Board | 1.1 | **Untested** | Silkscreen, a 74HCT00 at U5 and the ACIA's crystal jumpers, but Rev 1.0 hasn't been tested yet. |
 | Keypad Card | 1.1 | **Proven design** | Silkscreen text and the bare card edge. |
-| Keypad Helper | 1.0 | **Tested** | Built and tested. |
+| Keypad Helper | 1.1 | **Proven design** | Key names on the silkscreen, socket outlines, capacitor pitch, the keys on a true 19 mm grid. |
 | Keypad LCD Helper | 1.1 | **Proven design** | Silkscreen, outline clean-up. |
 <!-- End of which revision to make -->
 
