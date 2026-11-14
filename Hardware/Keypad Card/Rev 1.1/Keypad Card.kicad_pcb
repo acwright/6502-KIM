@@ -2364,7 +2364,7 @@
 		(descr "SOIC, 16 Pin (JEDEC MS-012, variation AC, https://www.jedec.org/document_search?search_api_views_fulltext=MS-012, https://www.analog.com/media/en/package-pcb-resources/package/pkg_pdf/soic_narrow-r/r_16.pdf)")
 		(tags "SOIC SO 16-pin-NSOP R-16 R-16-S D0016A M2B SO16 SOT109-1 751B SOIC_N narrow")
 		(property "Reference" "U1"
-			(at 0.105 6.155 0)
+			(at 0 5.99825 0)
 			(layer "F.SilkS")
 			(uuid "a77a82bb-c19f-4205-8807-f88d33138b19")
 			(effects
