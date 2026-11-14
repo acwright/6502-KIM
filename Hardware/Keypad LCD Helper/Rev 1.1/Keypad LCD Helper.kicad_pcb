@@ -2523,7 +2523,7 @@
 	(footprint "6502 Logos:6502 Keypad LCD Helper Logo 3mm"
 		(layer "F.Cu")
 		(uuid "49f9bf8d-e857-48f8-a0fc-202557d35bae")
-		(at 159.301139 123.600309 90)
+		(at 159.301138 124.323292 90)
 		(property "Reference" "G***"
 			(at 0 0 90)
 			(layer "F.SilkS")

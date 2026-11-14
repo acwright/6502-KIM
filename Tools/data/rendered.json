@@ -1,11 +1,11 @@
 {
  "KIM|KIM Board|1.0": "e71e761c7781d2bc92093b89b30afdcde2085b5e",
- "KIM|KIM Board|1.1": "d50aa0e695a7546611936acc8f98b107739d5eb5",
+ "KIM|KIM Board|1.1": "a560ccb6b5177bce3ea8891b9f87a04d779fe209",
  "KIM|Keypad Card|1.0": "bd20ae3041f6de4eff640fccb6080afed59c4737",
- "KIM|Keypad Card|1.1": "49b07637a285135dbf26515f11682a9461a2b76d",
+ "KIM|Keypad Card|1.1": "3a3c5ea329a026104540ceee7a24d581bf302f6f",
  "KIM|Keypad Helper|1.0": "576d9368f5c0934642b93f1be7f08942dbc53cc0",
- "KIM|Keypad Helper|1.1": "3cb67b4477f86a261e6a0e4556ef8d9ea9aaec89",
+ "KIM|Keypad Helper|1.1": "87bed2b6fbbcf44be429b3e13d4495851268cd8d",
  "KIM|Keypad LCD Helper|1.0": "94b07d0d8a09cd0001d72b44890d69d2dde88b83",
- "KIM|Keypad LCD Helper|1.1": "ad99d6dc8f68163df33dc1065c2b64c7eec9c60f",
+ "KIM|Keypad LCD Helper|1.1": "824b64ae967c6bf230b14e0b90aa82b72f7c1e15",
  "_about": "What each revision's PCB looked like when its images were rendered. Tools/board-images/render.py writes it, and derived-check.py compares."
 }

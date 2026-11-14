@@ -14633,7 +14633,7 @@
 	(footprint "6502 Logos:6502 KIM Board Logo 5mm"
 		(layer "F.Cu")
 		(uuid "67543670-7101-45ff-8eb7-b645eb91e759")
-		(at 373.95 261.24 90)
+		(at 373.999882 262.263239 90)
 		(property "Reference" "G***"
 			(at 0 0 90)
 			(layer "F.SilkS")
