@@ -1,11 +1,11 @@
 {
- "KIM|KIM Board|1.0": "e71e761c7781d2bc92093b89b30afdcde2085b5e",
- "KIM|KIM Board|1.1": "46b9461ad1020e81373bb81cbf1d5ee371718e2f",
- "KIM|Keypad Card|1.0": "bd20ae3041f6de4eff640fccb6080afed59c4737",
- "KIM|Keypad Card|1.1": "9bd87b2931170f34bc4691c1a9a4422bdb9b8b43",
- "KIM|Keypad Helper|1.0": "576d9368f5c0934642b93f1be7f08942dbc53cc0",
- "KIM|Keypad Helper|1.1": "87bed2b6fbbcf44be429b3e13d4495851268cd8d",
- "KIM|Keypad LCD Helper|1.0": "94b07d0d8a09cd0001d72b44890d69d2dde88b83",
- "KIM|Keypad LCD Helper|1.1": "824b64ae967c6bf230b14e0b90aa82b72f7c1e15",
+ "KIM|KIM Board|1.0": "b7bcf52107b94ccb820db3a9f2aa375a63c7c4a4",
+ "KIM|KIM Board|1.1": "a1d0e19acad311583faa0a3a1ae48668a3885fab",
+ "KIM|Keypad Card|1.0": "74f84eec2ab8a2b06dcef22d803a694246508576",
+ "KIM|Keypad Card|1.1": "aa8511b7e8ddf64a8d378a4ea9b1d214933e0ff0",
+ "KIM|Keypad Helper|1.0": "80bda7600d4a21da227dd08e4401342a1384077b",
+ "KIM|Keypad Helper|1.1": "3b05ed2da91a5c48d3f13f628cea9e108d2df2af",
+ "KIM|Keypad LCD Helper|1.0": "fd720a81246b78cfbd5acffec5c5760f34488241",
+ "KIM|Keypad LCD Helper|1.1": "9b3436ae2adf4d6840ce53b221400313f38c7ccc",
  "_about": "What each revision's PCB looked like when its images were rendered. Tools/board-images/render.py writes it, and derived-check.py compares."
 }

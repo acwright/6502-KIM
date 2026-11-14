@@ -8,7 +8,7 @@
 	)
 	(paper "A4")
 	(title_block
-		(title "6502 Keypad Card")
+		(title "AC6502 Keypad Card")
 		(date "2026-05-09")
 		(rev "1.0")
 		(company "A.C. Wright Design")

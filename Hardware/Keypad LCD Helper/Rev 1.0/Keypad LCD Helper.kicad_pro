@@ -723,7 +723,7 @@
       "svg": "",
       "vrml": ""
     },
-    "page_layout_descr_file": "${KIPRJMOD}/../../../Worksheets/6502.kicad_wks"
+    "page_layout_descr_file": ""
   },
   "schematic": {
     "annotate_start_num": 0,

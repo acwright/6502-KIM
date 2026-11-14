@@ -8,7 +8,7 @@
 	)
 	(paper "USLetter")
 	(title_block
-		(title "6502 Keypad LCD Helper")
+		(title "AC6502 Keypad LCD Helper")
 		(date "2024-08-06")
 		(rev "1.0")
 		(company "A.C. Wright Design")

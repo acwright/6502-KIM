@@ -5,7 +5,7 @@
 	(uuid "bef5df70-f716-4749-8709-6abb2cc01d3d")
 	(paper "User" 803.148 419.989)
 	(title_block
-		(title "6502 KIM Board")
+		(title "AC6502 KIM Board")
 		(date "2026-10-25")
 		(rev "1.0")
 		(company "A.C. Wright Design")
