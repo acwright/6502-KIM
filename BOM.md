@@ -52,7 +52,7 @@ The keycaps are clear, with a separate cap, so a printed legend sits inside each
 
 The base plate, the screws, the standoffs and the feet are in the [plate mounting drawing](./CAD/Bases/Plate%20Mounting%20Drawing.png).
 
-U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502-BIOS](https://github.com/acwright/6502-BIOS)'s `v1.x` branch, because the KIM doesn't take BIOS 2.x, and U9 with `Firmware/KC Monitor/KC Monitor.bin`. That takes an EEPROM programmer.
+U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502-BIOS](https://github.com/acwright/6502-BIOS): BIOS 1.x, from its `v1.x` branch, as the KIM is built today, or BIOS 2.x, which the KIM also runs (the KC Monitor calls only `InitSC` and `KernalInit`, at the same addresses in both), and U9 with `Firmware/KC Monitor/KC Monitor.bin`. That takes an EEPROM programmer.
 
 **Building a Rev 1.0:** fit the parts in Rev 1.0's parts list, and run it at 1 MHz, the KIM's clock; a faster can is at the builder's risk. Rev 1.0 is being brought up now; anything that finds goes into Rev 1.1 and into this note. Rev 1.1's changes so far:
 - **U5, the `RB`/`WB` gate, is a 74HCT00** in Rev 1.1, where Rev 1.0 has a 74HC00. It matters only above 1 MHz: on the ACE, a 74HC00 lot there let an Alliance AS6C62256 misread at 2 MHz. Fit the 74HC00 in Rev 1.0's parts list; a 74HCT00 fits the same socket, harmless at 1 MHz.
