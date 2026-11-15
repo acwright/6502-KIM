@@ -20,7 +20,7 @@ Every revision of every board in this repository, and what is known about each. 
 
 | Board | Rev | Status | Label | Order | Ordered | Made from | Tindie stock | Size (mm) | Holes | Top panel | Enclosure | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| KIM Board | 1.0 | Ordered | **Untested**: a new board, ordered and not tested yet |  |  |  | — | 280×220 | 6 mm | yes | — | Order 1, placed 2026-11-02 |
+| KIM Board | 1.0 | Made, matches order | **Untested**: made, not yet assembled or tested | Y100 | 2026-11-02 | `5c88728` | — | 280×220 | 6 mm | yes | — |  |
 | KIM Board | 1.1 | Drawn | **Untested**: silkscreen, a 74HCT00 at U5 and the ACIA's crystal jumpers, but Rev 1.0 hasn't been tested yet |  |  |  | — | 280×220 | 6 mm | yes | — |  |
 | Keypad Card | 1.0 | Made, matches order | **Tested** | Y90 | 2026-05-10 | `5652134` | 4 | 100×57.62 | — | — | — |  |
 | Keypad Card | 1.1 | Drawn | **Proven design**: silkscreen text and the bare card edge |  |  |  | — | 100×57.62 | — | — | — |  |
@@ -64,7 +64,7 @@ What changed in each revision of each board, newest first. The table above has t
 
 **Rev 1.0**
 
-- Initial release. Ordered on 2026-11-02, and not yet built or tested.
+- Initial release, ordered on 2026-11-02 and made by JLCPCB, and not yet built or tested. `Hardware/KIM Board/Rev 1.0/` and `Production/KIM Board/Rev 1.0/` match the boards JLCPCB made (order Y100). The Gerbers and drill files in the production zip are byte-for-byte what JLCPCB received.
 
 ### Keypad Card
 

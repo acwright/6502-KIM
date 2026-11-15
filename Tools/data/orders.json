@@ -15,6 +15,11 @@
    "Y90",
    "2026-05-10",
    "5652134"
+  ],
+  "KIM|KIM Board|1.0": [
+   "Y100",
+   "2026-11-02",
+   "5c88728"
   ]
  },
  "drawn": [
@@ -24,21 +29,20 @@
   "KIM|Keypad LCD Helper|1.1"
  ],
  "never": [],
- "ordered": {
-  "KIM|KIM Board|1.0": "Order 1, placed 2026-11-02"
- },
+ "ordered": {},
  "made_unchecked": {},
  "notes": {},
  "tested": {
   "KIM|Keypad Card|1.0": "Yes",
   "KIM|Keypad Helper|1.0": "Yes",
-  "KIM|Keypad LCD Helper|1.0": "Yes"
+  "KIM|Keypad LCD Helper|1.0": "Yes",
+  "KIM|KIM Board|1.0": "Not yet"
  },
  "_labels": "Tested, Proven design or Untested, with a one-line reason. A revision whose 'tested' entry starts with Yes is Tested unless it is listed here; every other revision must be listed. Tools/revision-audit/labels.py reads this for REVISIONS.md, BOM.md and the README.",
  "labels": {
   "KIM|KIM Board|1.0": [
    "Untested",
-   "A new board, ordered and not tested yet"
+   "Made, not yet assembled or tested"
   ],
   "KIM|KIM Board|1.1": [
    "Untested",

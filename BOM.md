@@ -23,7 +23,7 @@ Look on the board: the silk prints the revision next to the copyright line. [REV
 
 | Board | Revision | What the silk says | Status | Label |
 |---|---|---|---|---|
-| [KIM Board](#kim-board) | 1.0 | Rev 1.0 | Ordered, not tested yet | **Untested**: a new board, ordered and not tested yet |
+| [KIM Board](#kim-board) | 1.0 | Rev 1.0 | Made, not tested yet | **Untested**: made, not yet assembled or tested |
 | [KIM Board](#kim-board) | 1.1 | Rev 1.1 | Drawn, not made yet | **Untested**: silkscreen, a 74HCT00 at U5 and the ACIA's crystal jumpers, but Rev 1.0 hasn't been tested yet |
 | [Keypad Card](#keypad-card) | 1.0 | Rev 1.0 | Made, tested | **Tested** |
 | [Keypad Card](#keypad-card) | 1.1 | Rev 1.1 | Drawn, not made yet | **Proven design**: silkscreen text and the bare card edge |
@@ -157,7 +157,7 @@ J6 is one footprint, built from three strips of header. U13 also takes a 1×16 p
 
 ### KIM Board Rev 1.0
 
-Ordered, not tested yet. **Untested**: a new board, ordered and not tested yet.
+Made, not tested yet. **Untested**: made, not yet assembled or tested.
 
 Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.0/digikey.csv), [mouser.csv](BOM/KIM%20Board/Rev%201.0/mouser.csv)
 
