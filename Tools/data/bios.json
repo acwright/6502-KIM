@@ -1,0 +1,46 @@
+[
+ {
+  "repo": "KIM",
+  "board": "KIM Board",
+  "revs": [
+   "1.0",
+   "1.1"
+  ],
+  "category": "out of the box",
+  "reason": "Its ROM, U3, holds BIOS 1.x. With KIM ENABLE on `BASIC`, the BIOS finds the serial port in IO 5 (`$9000`) and starts BASIC; on `KIM`, the KC Monitor takes over, as on today's KIM. Rev 1.0 is being brought up.",
+  "source": "README [KIM Board](#kim-board); BIOS 1.x `Kernal.asm` `ProbeSerial`"
+ },
+ {
+  "repo": "KIM",
+  "board": "Keypad Card",
+  "revs": [
+   "1.0",
+   "1.1"
+  ],
+  "category": "not used",
+  "reason": "Its own ROM, the KC Monitor, takes `$C000`–`$FFFF` and drives the PIA; the BIOS's Kernal stays callable at `$A000`–`$B7FF`.",
+  "source": "README [Keypad Card](#keypad-card)"
+ },
+ {
+  "repo": "KIM",
+  "board": "Keypad Helper",
+  "revs": [
+   "1.0",
+   "1.1"
+  ],
+  "category": "nothing to support",
+  "reason": "The keypad, behind the Keypad Card: no registers.",
+  "source": "Schematic"
+ },
+ {
+  "repo": "KIM",
+  "board": "Keypad LCD Helper",
+  "revs": [
+   "1.0",
+   "1.1"
+  ],
+  "category": "nothing to support",
+  "reason": "The LCD, behind the Keypad Card: no registers.",
+  "source": "Schematic"
+ }
+]
