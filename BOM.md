@@ -54,9 +54,22 @@ The base plate, the screws, the standoffs and the feet are in the [plate mountin
 
 U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502-BIOS](https://github.com/acwright/6502-BIOS)'s `v1.x` branch, because the KIM doesn't take BIOS 2.x, and U9 with `Firmware/KC Monitor/KC Monitor.bin`. That takes an EEPROM programmer.
 
+**Building a Rev 1.0:** fit the parts in Rev 1.0's parts list, and run it at 1 MHz, the KIM's clock; a faster can is at the builder's risk. Rev 1.0 is being brought up now; anything that finds goes into Rev 1.1 and into this note. Rev 1.1's changes so far:
+- **U5, the `RB`/`WB` gate, is a 74HCT00** in Rev 1.1, where Rev 1.0 has a 74HC00. It matters only above 1 MHz: on the ACE, a 74HC00 lot there let an Alliance AS6C62256 misread at 2 MHz. Fit the 74HC00 in Rev 1.0's parts list; a 74HCT00 fits the same socket, harmless at 1 MHz.
+- **The ACIA's crystal jumpers can't be added.** Rev 1.1's R24, C27, JP2 and JP3 let an R65C51P or a W65C51 run; a Rev 1.0 has no pads for them, so fit the R6551AP, which needs none.
+- **The silkscreen** says `SERIAL (DCE)` at J2 where a Rev 1.0's says `DB9 FEMALE (DCE)`, and draws the two breadboards at their measured size, 165 × 54 mm each, where a Rev 1.0's outlines are 165.1 × 57.15 mm. The same breadboards fit both.
+
+**Keypad Card**
+
+**Building a Rev 1.0:** nothing to do. Fit the W65C21N at U3 that the parts list orders; the silkscreen says `65C21`, where Rev 1.1's says `W65C21N`. Rev 1.1's card edge has no solder mask on the tab, where a Rev 1.0's masked edge works in the slot, and its schematic uses the library's current PIA symbol, with the same connections.
+
 **Keypad Helper**
 
 **Building a Rev 1.0:** fit U1 and U2 in sockets, as Rev 1.1 does: an 18-pin and a 14-pin, both 0.3 in, the ones in Rev 1.1's parts list. They fit Rev 1.0's holes; Rev 1.1 only adds their outline to the silkscreen. Rev 1.1's other changes need nothing on a built board: fit the 5 mm pitch capacitors in Rev 1.0's parts list, and use Rev 1.0's own top, whose key windows are cut for its keys. Rev 1.0's silkscreen numbers the keys 0–23, where Rev 1.1's names them as the KIM Board's keypad does. The keys and the codes they send are the same, so the KIM's keycap sheet, [`CAD/Keycaps/KIM Keycaps.pdf`](./CAD/Keycaps/KIM%20Keycaps.pdf), labels a Rev 1.0 too.
+
+**Keypad LCD Helper**
+
+**Building a Rev 1.0:** nothing to do. Rev 1.1's silkscreen labels J3 `KEYPAD HELPER`, where a Rev 1.0's says `KEYBOARD HELPER`: either way, J3 takes the cable to the [Keypad Helper](#keypad-helper). Rev 1.1's outline is a clean 100 × 65 mm where a Rev 1.0's is hand drawn, but the holes don't move, so both revisions fit the same plate and top panel.
 
 <!-- End of build notes. -->
 
