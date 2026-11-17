@@ -268,14 +268,14 @@ Like the Keypad Helper, this board carries no microcontroller and runs no firmwa
 Each revision carries one of three labels:
 
 - **Tested:** This revision was built and tested.
-- **Proven design:** Not built at this revision, but its circuit is a tested revision's. The only changes are silkscreen text, part values, mounting holes, outline clean-up, parts moved a fraction of a millimetre onto their grid, capacitor pitch, socket outlines, a footprint swap with the same holes, a solder jumper's default, the solder mask or paste at a card edge, or tracks rerouted or pours refilled with DRC and the netlist check passing. A builder can treat it as tested.
+- **Proven design:** Not built at this revision, but its circuit is proven. Either it is a tested revision's circuit, or each change copies a circuit built and tested on another board or on the bench, or is a textbook circuit that leaves everything the tested revision does as it was. Any other change is silkscreen text, part values, mounting holes, outline clean-up, parts moved a fraction of a millimetre onto their grid, capacitor pitch, socket outlines, a footprint swap with the same holes, a solder jumper's default, the solder mask or paste at a card edge, or tracks rerouted or pours refilled with DRC and the netlist check passing. A builder can treat it as tested.
 - **Untested:** The circuit, the power path or the layout changed in a way that only a built board proves, or the board has never been built at all.
 
 [BOM.md](BOM.md) has the parts for every revision, and its known issues.
 
 | Board | Newest revision | Label | Why |
 |---|---|---|---|
-| KIM Board | 1.1 | **Untested** | Silkscreen, a 74HCT00 at U5 and the ACIA's crystal jumpers, but Rev 1.0 hasn't been tested yet. |
+| KIM Board | 1.1 | **Untested** | No diode in the power path, a 74HCT00 at U5, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but Rev 1.0 hasn't been built and tested yet. |
 | Keypad Card | 1.1 | **Proven design** | Silkscreen text and the bare card edge. |
 | Keypad Helper | 1.1 | **Proven design** | Key names on the silkscreen, socket outlines, capacitor pitch, the keys on a true 19 mm grid. |
 | Keypad LCD Helper | 1.1 | **Proven design** | Silkscreen, outline clean-up. |
@@ -286,14 +286,14 @@ Each revision carries one of three labels:
 
 Whether each board works with the stock BIOS, and what it takes if not. The stock BIOS for the KIM is **BIOS 1.x**, from the `v1.x` branch of [6502-BIOS](https://github.com/acwright/6502-BIOS). The ACE runs BIOS 2.x, for a 6502-PICOVDP. The KIM also runs BIOS 2.x: it has no video card, and the KC Monitor calls only Kernal routines (`InitSC`, `KernalInit`) that sit at the same addresses in both. The BIOS looks for each card in its own 1 KB window at boot, and uses only what it finds.
 
-- **Out of the box:** the BIOS finds the board and uses it, built from its parts list with the jumpers the [Jumpers](#jumpers) table gives. A card counts only on the window the BIOS expects; on another window it's the builder's experiment.
+- **Compatible:** the BIOS finds the board and uses it, built from its parts list with the jumpers the [Jumpers](#jumpers) table gives. A card counts only on the window the BIOS expects; on another window it's the builder's experiment.
 - **After a step:** it works once the builder does what the entry names, beyond the parts list and the jumpers.
 - **Not used by the BIOS:** safe beside it, but your own software drives it.
 - **Nothing to support:** the board has no registers for the BIOS to find, such as a backplane, a helper behind a card, or a cartridge's programmer.
 
 | Board | Rev | Stock BIOS | Why | Source |
 |---|---|---|---|---|
-| KIM Board | 1.0, 1.1 | **Out of the box** | Its ROM, U3, holds BIOS 1.x. With KIM ENABLE on `BASIC`, the BIOS finds the serial port in IO 5 (`$9000`) and starts BASIC; on `KIM`, the KC Monitor takes over, as on today's KIM. Rev 1.0 is being brought up. | README [KIM Board](#kim-board); BIOS 1.x `Kernal.asm` `ProbeSerial` |
+| KIM Board | 1.0, 1.1 | **Compatible** | Its ROM, U3, holds BIOS 1.x. With KIM ENABLE on `BASIC`, the BIOS finds the serial port in IO 5 (`$9000`) and starts BASIC; on `KIM`, the KC Monitor takes over, as on today's KIM. Rev 1.0 is being brought up. | README [KIM Board](#kim-board); BIOS 1.x `Kernal.asm` `ProbeSerial` |
 | Keypad Card | 1.0, 1.1 | **Not used by the BIOS** | Its own ROM, the KC Monitor, takes `$C000`–`$FFFF` and drives the PIA; the BIOS's Kernal stays callable at `$A000`–`$B7FF`. | README [Keypad Card](#keypad-card) |
 | Keypad Helper | 1.0, 1.1 | **Nothing to support** | The keypad, behind the Keypad Card: no registers. | Schematic |
 | Keypad LCD Helper | 1.0, 1.1 | **Nothing to support** | The LCD, behind the Keypad Card: no registers. | Schematic |

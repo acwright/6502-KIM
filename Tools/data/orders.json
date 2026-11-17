@@ -46,7 +46,7 @@
   ],
   "KIM|KIM Board|1.1": [
    "Untested",
-   "Silkscreen, a 74HCT00 at U5 and the ACIA's crystal jumpers, but Rev 1.0 hasn't been tested yet"
+   "No diode in the power path, a 74HCT00 at U5, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but Rev 1.0 hasn't been built and tested yet"
   ],
   "KIM|Keypad Card|1.1": [
    "Proven design",
