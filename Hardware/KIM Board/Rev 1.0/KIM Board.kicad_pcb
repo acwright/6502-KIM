@@ -4106,7 +4106,7 @@
 			)
 		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
-		(path "/bdec5e3b-dc4d-4a4f-a990-802f1b44cc7d")
+		(path "/a5807bd4-3f6f-4597-9194-b0b249d02167")
 		(sheetname "/")
 		(sheetfile "KIM Board.kicad_sch")
 		(units
@@ -8879,7 +8879,7 @@
 			)
 		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
-		(path "/d4bc3ceb-4234-45a9-ac69-8b3f4f65f363")
+		(path "/31f8339e-1499-401b-908b-b0961ce122f6")
 		(sheetname "/")
 		(sheetfile "KIM Board.kicad_sch")
 		(units
@@ -9349,7 +9349,7 @@
 			)
 		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
-		(path "/d10875fd-1daa-4100-9dae-f5c262355dea")
+		(path "/99dcf269-d406-4721-9e24-7575b07de3c5")
 		(sheetname "/")
 		(sheetfile "KIM Board.kicad_sch")
 		(units
@@ -26241,7 +26241,7 @@
 			)
 		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
-		(path "/aca4af0b-e466-4b3e-8d20-1ddd32ba9fa4")
+		(path "/c5b20a35-0e55-4cde-a58b-bb703da61e16")
 		(sheetname "/")
 		(sheetfile "KIM Board.kicad_sch")
 		(units
@@ -38169,7 +38169,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole)
+		(attr through_hole dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start 1.34 0)

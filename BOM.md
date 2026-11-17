@@ -55,6 +55,7 @@ The base plate, the screws, the standoffs and the feet are in the [plate mountin
 U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502-BIOS](https://github.com/acwright/6502-BIOS): BIOS 1.x, from its `v1.x` branch, as the KIM is built today, or BIOS 2.x, which the KIM also runs (the KC Monitor calls only `InitSC` and `KernalInit`, at the same addresses in both), and U9 with `Firmware/KC Monitor/KC Monitor.bin`. That takes an EEPROM programmer.
 
 **Building a Rev 1.0:** fit the parts in Rev 1.0's parts list, and run it at 1 MHz, the KIM's clock; a faster can is at the builder's risk. Rev 1.0 is being brought up now; anything that finds goes into Rev 1.1 and into this note. Rev 1.1's changes so far:
+- **D5: fit a wire link in its place,** from one pad to the other, not a 1N5819. The diode dropped `VCC` to about 4.6 V, close to the 4.5 V floor of several parts, and Rev 1.1 has none. On a board already built with the diode, remove it and fit the link. Use a centre-positive 5 V supply: nothing on the board protects it from a reversed one.
 - **U5, the `RB`/`WB` gate, is a 74HCT00** in Rev 1.1, where Rev 1.0 has a 74HC00. It matters only above 1 MHz: on the ACE, a 74HC00 lot there let an Alliance AS6C62256 misread at 2 MHz. Fit the 74HC00 in Rev 1.0's parts list; a 74HCT00 fits the same socket, harmless at 1 MHz.
 - **The ACIA's crystal jumpers can't be added.** Rev 1.1's R24, C27, JP2 and JP3 let an R65C51P or a W65C51 run; a Rev 1.0 has no pads for them, so fit the R6551AP, which needs none.
 - **The silkscreen** says `SERIAL (DCE)` at J2 where a Rev 1.0's says `DB9 FEMALE (DCE)`, and draws the two breadboards at their measured size, 165 × 54 mm each, where a Rev 1.0's outlines are 165.1 × 57.15 mm. The same breadboards fit both.
@@ -89,7 +90,6 @@ Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.1/digikey.csv), [mouser.csv](B
 | C27 | 1 | 22pF | KYOCERA AVX SR151A220JAR | [478-4846-ND](https://www.digikey.com/en/products/filter?keywords=478-4846-ND) | [581-SR151A220JAR](https://www.mouser.com/ProductDetail/581-SR151A220JAR) |  |
 | D1, D2 | 2 | BAT85 | Vishay BAT85S-TR | [BAT85SCT-ND](https://www.digikey.com/en/products/filter?keywords=BAT85SCT-ND) | [78-BAT85S](https://www.mouser.com/ProductDetail/78-BAT85S) |  |
 | D3, D4 | 2 | 1N914 | onsemi 1N914 | [1N914FS-ND](https://www.digikey.com/en/products/filter?keywords=1N914FS-ND) | [512-1N914](https://www.mouser.com/ProductDetail/512-1N914) |  |
-| D5 | 1 | 1N5819 | Vishay 1N5819-E3/54 | [1N5819-E3/54GICT-ND](https://www.digikey.com/en/products/filter?keywords=1N5819-E3%2F54GICT-ND) | [625-1N5819-E3](https://www.mouser.com/ProductDetail/625-1N5819-E3) |  |
 | D6 | 1 | POWER LED | Würth Elektronik 151031VS06000 | [732-5008-ND](https://www.digikey.com/en/products/filter?keywords=732-5008-ND) | [710-151031VS06000](https://www.mouser.com/ProductDetail/710-151031VS06000) |  |
 | J1 | 1 | KIM ENABLE | Pin header 1×3, 2.54 mm, cut from a strip | [S1011EC-40-ND](https://www.digikey.com/en/products/filter?keywords=S1011EC-40-ND) | [200-TSW14007TS](https://www.mouser.com/ProductDetail/200-TSW14007TS) |  |
 | J2 | 1 | SERIAL (DCE) | Amphenol D09S33E4GX00LF | [609-1487-ND](https://www.digikey.com/en/products/filter?keywords=609-1487-ND) | [649-D09S33E4GX00LF](https://www.mouser.com/ProductDetail/649-D09S33E4GX00LF) |  |
@@ -168,7 +168,6 @@ Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.0/digikey.csv), [mouser.csv](B
 | C8–C11, C13 | 5 | 1uF | KYOCERA AVX SR205E105MAR | [478-7667-ND](https://www.digikey.com/en/products/filter?keywords=478-7667-ND) | [581-SR205E105MAR](https://www.mouser.com/ProductDetail/581-SR205E105MAR) |  |
 | D1, D2 | 2 | BAT85 | Vishay BAT85S-TR | [BAT85SCT-ND](https://www.digikey.com/en/products/filter?keywords=BAT85SCT-ND) | [78-BAT85S](https://www.mouser.com/ProductDetail/78-BAT85S) |  |
 | D3, D4 | 2 | 1N914 | onsemi 1N914 | [1N914FS-ND](https://www.digikey.com/en/products/filter?keywords=1N914FS-ND) | [512-1N914](https://www.mouser.com/ProductDetail/512-1N914) |  |
-| D5 | 1 | 1N5819 | Vishay 1N5819-E3/54 | [1N5819-E3/54GICT-ND](https://www.digikey.com/en/products/filter?keywords=1N5819-E3%2F54GICT-ND) | [625-1N5819-E3](https://www.mouser.com/ProductDetail/625-1N5819-E3) |  |
 | D6 | 1 | POWER LED | Würth Elektronik 151031VS06000 | [732-5008-ND](https://www.digikey.com/en/products/filter?keywords=732-5008-ND) | [710-151031VS06000](https://www.mouser.com/ProductDetail/710-151031VS06000) |  |
 | J1 | 1 | KIM ENABLE | Pin header 1×3, 2.54 mm, cut from a strip | [S1011EC-40-ND](https://www.digikey.com/en/products/filter?keywords=S1011EC-40-ND) | [200-TSW14007TS](https://www.mouser.com/ProductDetail/200-TSW14007TS) |  |
 | J2 | 1 | DB9 FEMALE (DCE) | Amphenol D09S33E4GX00LF | [609-1487-ND](https://www.digikey.com/en/products/filter?keywords=609-1487-ND) | [649-D09S33E4GX00LF](https://www.mouser.com/ProductDetail/649-D09S33E4GX00LF) |  |
@@ -222,7 +221,7 @@ Pin headers are cut from strips, and the cart files count whole strips.
 
 J6 is one footprint, built from three strips of header. U13 also takes a 1×16 pin header, cut from the strip above.
 
-**Do not fit** R19: parallel with VR1 to make ~10 k.
+**Do not fit** D5, R19: parallel with VR1 to make ~10 k.
 
 - **D6:** Green shown. The colour is the builder's choice.
 - **J5:** Male box header with a keying notch, for a 40-way ribbon cable.

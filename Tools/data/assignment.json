@@ -255,7 +255,6 @@
  "KIM|KIM Board|1.1|R4": "10k|axial",
  "KIM|KIM Board|1.1|C3": "100nF|disc-p2.5",
  "KIM|KIM Board|1.1|X1": "1 MHz|Oscillator_DIP-14",
- "KIM|KIM Board|1.1|D5": "1N5819|D_DO-41_SOD81_P10.16mm_Horizontal",
  "KIM|KIM Board|1.1|U11": "74HC138|DIP-16_W7.62mm",
  "KIM|KIM Board|1.1|C7": "100nF|disc-p2.5",
  "KIM|KIM Board|1.1|U13": "LCD-16X2|LCD-16X2",

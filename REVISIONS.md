@@ -57,7 +57,8 @@ What changed in each revision of each board, newest first. The table above has t
 
 - The silkscreen says `SERIAL (DCE)` at J2, the family's name for a serial port with its role. Rev 1.0's says `DB9 FEMALE (DCE)`.
 - The two breadboard outlines on the silkscreen are the breadboards' measured size, 165 × 54 mm each (two BusBoard BB830s, measured by the owner), centred on the same line between them as Rev 1.0's 165.1 × 57.15 outlines. The `BREADBOARDS` keep-out area, where no part may sit, is the same 165 × 108 block, so the bottom-left mounting hole is now clear of it.
-- Nothing else changed: the copper, mask, holes and outline are Rev 1.0's.
+- D5, Rev 1.0's 1N5819 between the barrel jack (J7) and the power switch (SW27), is gone (owner, 2026-11-16): the jack goes straight to the switch, on the track that ran through D5, so `VCC` gets the supply's full 5 V. The diode guarded against a reversed supply but dropped `VCC` to about 4.6 V, close to the 4.5 V floor of several parts. Use a centre-positive 5 V supply.
+- Nothing else changed: the rest of the copper, mask, holes and outline are Rev 1.0's.
 - U5, the 74HC00 that makes the RAM's and ROM's `RB` and `WB` from `PHI2` and `RWB`, is a 74HCT00 (2026-11-11). Its TTL input threshold ends `RB` and `WB` a few nanoseconds later after `PHI2` falls. An Alliance AS6C62256 with a fast-releasing 74HC00 lot in this gate misread at 2 MHz; a 74HCT00 there cured it in the ACE, writes included. Rev 1.0 keeps its 74HC00; a 74HCT00 fits the same socket. The silkscreen's value at U5 reads `74HCT00`.
 - Adds the ACIA's optional crystal parts, as on the COB Serial Card: `R24` (1M) across XTLI and XTLO through solder jumper `JP2`, and `C27` (22 pF) from XTLI to ground through `JP3`. Both jumpers ship open, for the R6551AP. Close both for a Rockwell R65C51P1 or R65C51P2, whose oscillator won't start on a bare crystal (an R65C51P2 ran clean this way on a Serial Card on 2026-11-11), or for a WDC W65C51.
 - Rev 1.1 stays open until Rev 1.0 has been brought up. Anything the bring-up finds that the board needs is drawn here.
@@ -65,6 +66,7 @@ What changed in each revision of each board, newest first. The table above has t
 **Rev 1.0**
 
 - Initial release, ordered on 2026-11-02 and made by JLCPCB, and not yet built or tested. `Hardware/KIM Board/Rev 1.0/` and `Production/KIM Board/Rev 1.0/` match the boards JLCPCB made (order Y100). The Gerbers and drill files in the production zip are byte-for-byte what JLCPCB received.
+- D5 is marked do-not-fit in Rev 1.0's files, with a note on the schematic to fit a wire link in its place (owner, 2026-11-16). The board as made has its pads; the 1N5819 there dropped `VCC` to about 4.6 V.
 
 ### Keypad Card
 

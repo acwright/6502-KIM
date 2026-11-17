@@ -19175,16 +19175,6 @@
 	)
 	(wire
 		(pts
-			(xy 619.76 252.73) (xy 621.03 252.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "75e9c818-101e-424b-b1df-e26125df6a17")
-	)
-	(wire
-		(pts
 			(xy 207.01 367.03) (xy 187.96 367.03)
 		)
 		(stroke
@@ -22772,6 +22762,16 @@
 			(type default)
 		)
 		(uuid "e2595f2a-f8c6-4f1e-a9b1-cc8975a9eec0")
+	)
+	(wire
+		(pts
+			(xy 612.14 252.73) (xy 621.03 252.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e27027bf-f020-4b6e-b371-9538c98554c0")
 	)
 	(wire
 		(pts
@@ -49898,140 +49898,6 @@
 				(path "/bef5df70-f716-4749-8709-6abb2cc01d3d"
 					(reference "U17")
 					(unit 4)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Schottky")
-		(at 615.95 252.73 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "c24754fe-ce2f-4b82-b465-afbe151e2372")
-		(property "Reference" "D5"
-			(at 615.95 247.65 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1N5819"
-			(at 616.204 249.682 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
-			(at 615.95 252.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 615.95 252.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Schottky diode"
-			(at 615.95 252.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Digikey" "1N5819-E3/54GICT-ND"
-			(at 615.95 252.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mouser" "625-1N5819-E3"
-			(at 615.95 252.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Jameco" ""
-			(at 615.95 252.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 615.95 252.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Other" ""
-			(at 615.95 252.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "dd3f7039-e29d-4762-aa0a-59515e6d38fd")
-		)
-		(pin "1"
-			(uuid "5e90af13-1abd-4180-92db-c5cbf2b3e757")
-		)
-		(instances
-			(project "KIM Board"
-				(path "/bef5df70-f716-4749-8709-6abb2cc01d3d"
-					(reference "D5")
-					(unit 1)
 				)
 			)
 		)
