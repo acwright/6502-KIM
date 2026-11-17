@@ -699,11 +699,11 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "Prototype Card.net",
+      "netlist": "",
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "../../Assets/PCB Models/Keypad Helper/Rev 1.0/Keypad Helper.step",
+      "step": "../../../CAD/Models/Keypad Helper/Rev 1.0/Keypad Helper.step",
       "svg": "",
       "vrml": ""
     },
