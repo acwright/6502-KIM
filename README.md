@@ -275,7 +275,7 @@ Each revision carries one of three labels:
 
 | Board | Newest revision | Label | Why |
 |---|---|---|---|
-| KIM Board | 1.1 | **Untested** | No diode in the power path, a 74HCT00 at U5, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but Rev 1.0 hasn't been built and tested yet. |
+| KIM Board | 1.1 | **Untested** | No diode in the power path, a 74HCT00 at U5, the RAM's output enable from inverted `RWB`, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but Rev 1.0 hasn't been built and tested yet. |
 | Keypad Card | 1.1 | **Proven design** | Silkscreen text and the bare card edge. |
 | Keypad Helper | 1.1 | **Proven design** | Key names on the silkscreen, socket outlines, capacitor pitch, the keys on a true 19 mm grid. |
 | Keypad LCD Helper | 1.1 | **Proven design** | Silkscreen, outline clean-up. |

@@ -24,7 +24,7 @@ Look on the board: the silk prints the revision next to the copyright line. [REV
 | Board | Revision | What the silk says | Status | Label |
 |---|---|---|---|---|
 | [KIM Board](#kim-board) | 1.0 | Rev 1.0 | Made, not tested yet | **Untested**: made, not yet assembled or tested |
-| [KIM Board](#kim-board) | 1.1 | Rev 1.1 | Drawn, not made yet | **Untested**: no diode in the power path, a 74HCT00 at U5, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but Rev 1.0 hasn't been built and tested yet |
+| [KIM Board](#kim-board) | 1.1 | Rev 1.1 | Drawn, not made yet | **Untested**: no diode in the power path, a 74HCT00 at U5, the RAM's output enable from inverted `RWB`, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but Rev 1.0 hasn't been built and tested yet |
 | [Keypad Card](#keypad-card) | 1.0 | Rev 1.0 | Made, tested | **Tested** |
 | [Keypad Card](#keypad-card) | 1.1 | Rev 1.1 | Drawn, not made yet | **Proven design**: silkscreen text and the bare card edge |
 | [Keypad Helper](#keypad-helper) | 1.0 | Rev 1.0 | Made, tested | **Tested** |
@@ -39,7 +39,6 @@ These change what you buy or fit. The boards themselves stay as they were made.
 | Board | Revision | Parts | Issue |
 |---|---|---|---|
 | KIM Board | 1.0 | U2 | Under a heavy load, such as the 1 MB Flash Cart, or at 2 MHz, this AS6C62256 can return a wrong byte from RAM: it lets go of the data bus too early at the end of a read, and the CPU can read a 0 bit as 1. Programs then crash or misbehave. The supply voltage decides how often. In tests, a board with 5.0 V at the RAM read clean, and one with 5.1 V or more failed, so measure the voltage at the board if you see this. A Hitachi HM62256LP-70, no longer made, does not have the problem. |
-| KIM Board | 1.1 | U2 | Under a heavy load, such as the 1 MB Flash Cart, or at 2 MHz, this AS6C62256 can return a wrong byte from RAM: it lets go of the data bus too early at the end of a read, and the CPU can read a 0 bit as 1. Programs then crash or misbehave. The supply voltage decides how often. In tests, a board with 5.0 V at the RAM read clean, and one with 5.1 V or more failed, so measure the voltage at the board if you see this. A Hitachi HM62256LP-70, no longer made, does not have the problem. |
 | Keypad Card | 1.0 | U3 | The silk says 65C21; fit the W65C21N listed here. |
 
 ### Build notes
@@ -80,7 +79,7 @@ U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502
 
 ### KIM Board Rev 1.1
 
-Drawn, not made yet. **Untested**: no diode in the power path, a 74HCT00 at U5, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but Rev 1.0 hasn't been built and tested yet.
+Drawn, not made yet. **Untested**: no diode in the power path, a 74HCT00 at U5, the RAM's output enable from inverted `RWB`, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but Rev 1.0 hasn't been built and tested yet.
 
 Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.1/digikey.csv), [mouser.csv](BOM/KIM%20Board/Rev%201.1/mouser.csv)
 
