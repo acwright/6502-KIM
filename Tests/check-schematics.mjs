@@ -11,7 +11,8 @@
 // come out as unknown, so a missing wire fails too.
 //
 // Usage:  node Tests/check-schematics.mjs [schematic]
-// The schematic defaults to the KIM Board Rev 1.0's.
+// With no schematic, it checks the KIM Board Rev 1.1 and Rev 1.0. A schematic named on the command line is checked
+// with Rev 1.1's rules.
 // Needs kicad-cli: on the PATH, at the macOS default, or named by KICAD_CLI.
 
 import { execFileSync } from 'node:child_process'
@@ -21,7 +22,12 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
-const BOARD = process.argv[2] ?? join(ROOT, 'Hardware', 'KIM Board', 'Rev 1.0', 'KIM Board.kicad_sch')
+const sheet = rev => join(ROOT, 'Hardware', 'KIM Board', `Rev ${rev}`, 'KIM Board.kicad_sch')
+// Rev 1.1 takes the RAM's /OE from the inverted RWB, not RB (2026-11-23), so the RAM holds its byte to the end of
+// every read and drives the data bus through PHI2 low too. Rev 1.0 is as made.
+const CONFIGS = process.argv[2]
+  ? [{ name: process.argv[2], board: process.argv[2], ramOe: 'rwb' }]
+  : [{ name: 'KIM Board Rev 1.1', board: sheet('1.1'), ramOe: 'rwb' }, { name: 'KIM Board Rev 1.0', board: sheet('1.0') }]
 
 // ---- The board, as built --------------------------------------------------------------
 
@@ -53,6 +59,7 @@ const PARTS = {
 const io = (a, k) => a >= 0x8000 + k * 0x400 && a < 0x8400 + k * 0x400   // IO k+1
 const low = (cond) => cond ? 0 : 1
 const RB = (s) => low(s.r && s.p)
+const RWB_INV = (s) => low(s.r)                                              // inverted RWB
 const WB = (s) => low(!s.r && s.p)
 const romHigh = (s) => !s.j && !s.c                                         // HRDB high
 
@@ -99,8 +106,10 @@ const WRITERS = [
 ]
 
 // The README's KIM enable jumper table, read with PHI2 high. The jumper set to KIM with a cartridge in is two
-// devices at once, a user error the README documents; it is the only state with two.
-function expectedReaders(s) {
+// devices at once, a user error the README documents; it is the only state with two. With the RAM's /OE on the
+// inverted RWB, the RAM alone answers a read of $0000-$7FFF while PHI2 is low too.
+function expectedReaders(s, ramOe) {
+  if (s.r && !s.p && ramOe === 'rwb' && s.a < 0x8000) return ['RAM']
   if (!s.r || !s.p) return []
   const { a, j, c } = s
   if (a < 0x8000) return ['RAM']
@@ -205,6 +214,7 @@ const nand = ins => ins.includes(0) ? 1 : ins.every(v => v === 1) ? 0 : X
 const GATES = {
   '74HC00': { fn: nand, units: [[[1, 2], 3], [[4, 5], 6], [[9, 10], 8], [[12, 13], 11]] }
 }
+GATES['74HCT00'] = GATES['74HC00']   // Rev 1.1's U5 (2026-11-11): TTL input thresholds, the same logic
 const Y138 = [15, 14, 13, 12, 11, 10, 9, 7]
 
 // Every gate output, pull-up and diode becomes one node; the nodes are sorted so that one pass
@@ -294,7 +304,7 @@ function evaluate(logic, values, inputVals) {
 
 const hex = a => '$' + a.toString(16).toUpperCase().padStart(4, '0')
 
-function checkDecode(net) {
+function checkDecode(net, cfg) {
   const failures = new Map()
   const fail = (what, s, got, want) => {
     const f = failures.get(what) ?? { count: 0, examples: [] }
@@ -318,7 +328,8 @@ function checkDecode(net) {
       const inputs = new Set([...addr, rwb, phi2, ...(c ? [hrdb] : [])])
       const logic = compile(board, inputs)
       const values = new Uint8Array(logic.size() + 1)
-      const pins = PINS.map(([part, pin, what, want]) => {
+      const pins = PINS.map(([part, pin, what, want]) =>
+        [part, pin, what, part === 'ram' && pin === 22 && cfg.ramOe === 'rwb' ? RWB_INV : want]).map(([part, pin, what, want]) => {
         const n = board.pin(part, pin)
         if (n === undefined) throw new Error(`${board.parts[part]} pin ${pin} (${what}) is not in the netlist`)
         return [logic.id(n), what, want]
@@ -339,7 +350,7 @@ function checkDecode(net) {
             if (got !== w) fail(what, s, got === X ? 'unknown' : got, w)
           }
           const readers = READERS.filter(([, f]) => f(v, s)).map(([n]) => n)
-          const wantR = expectedReaders(s)
+          const wantR = expectedReaders(s, cfg.ramOe)
           if (readers.join('+') !== wantR.join('+')) fail('devices driving the data bus (section 2\'s table)', s, readers.join('+') || 'none', wantR.join('+') || 'none')
           if (readers.length > 1 && !(j && c && a >= 0xC000)) fail('two devices on the data bus', s, readers.join('+'), 'one')
           const writers = WRITERS.filter(([, f]) => f(v, s)).map(([n]) => n)
@@ -422,19 +433,21 @@ const cli = kicadCli()
 const dir = mkdtempSync(join(tmpdir(), 'kim-check-'))
 let failed = 0
 try {
-  const net = netlist(cli, BOARD, dir)
-  const [states, decode] = checkDecode(net)
-  const results = [
-    [`address decoding (${states.toLocaleString('en-US')} bus states)`, decode],
-    ['clock', checkClock(net)],
-    ['shared lines, SOB and RESB', checkSharedLines(net)],
-    ['PIA CB1 and CB2', checkPiaCB(net)]
-  ]
-  console.log('KIM Board Rev 1.0')
-  for (const [what, errs] of results) {
-    console.log(`  ${errs.length ? 'FAIL' : 'ok  '}  ${what}`)
-    for (const e of errs) console.log(`      ${e}`)
-    failed += errs.length
+  for (const cfg of CONFIGS) {
+    const net = netlist(cli, cfg.board, dir)
+    const [states, decode] = checkDecode(net, cfg)
+    const results = [
+      [`address decoding (${states.toLocaleString('en-US')} bus states)`, decode],
+      ['clock', checkClock(net)],
+      ['shared lines, SOB and RESB', checkSharedLines(net)],
+      ['PIA CB1 and CB2', checkPiaCB(net)]
+    ]
+    console.log(cfg.name)
+    for (const [what, errs] of results) {
+      console.log(`  ${errs.length ? 'FAIL' : 'ok  '}  ${what}`)
+      for (const e of errs) console.log(`      ${e}`)
+      failed += errs.length
+    }
   }
 } finally {
   rmSync(dir, { recursive: true, force: true })

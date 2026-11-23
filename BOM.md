@@ -23,8 +23,8 @@ Look on the board: the silk prints the revision next to the copyright line. [REV
 
 | Board | Revision | What the silk says | Status | Label |
 |---|---|---|---|---|
-| [KIM Board](#kim-board) | 1.0 | Rev 1.0 | Made, not tested yet | **Untested**: made, not yet assembled or tested |
-| [KIM Board](#kim-board) | 1.1 | Rev 1.1 | Drawn, not made yet | **Untested**: no diode in the power path, a 74HCT00 at U5, the RAM's output enable from inverted `RWB`, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but Rev 1.0 hasn't been built and tested yet |
+| [KIM Board](#kim-board) | 1.0 | Rev 1.0 | Made, not tested yet | **Untested**: made, but won't be built: its RAM can misread under a heavy load, and Rev 1.1, which fixes that, is built in its place |
+| [KIM Board](#kim-board) | 1.1 | Rev 1.1 | Drawn, not made yet | **Untested**: no diode in the power path, a 74HCT00 at U5, the RAM's output enable from inverted `RWB`, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but no KIM Board has been built yet, and Rev 1.1 will be the first |
 | [Keypad Card](#keypad-card) | 1.0 | Rev 1.0 | Made, tested | **Tested** |
 | [Keypad Card](#keypad-card) | 1.1 | Rev 1.1 | Drawn, not made yet | **Proven design**: silkscreen text and the bare card edge |
 | [Keypad Helper](#keypad-helper) | 1.0 | Rev 1.0 | Made, tested | **Tested** |
@@ -55,7 +55,7 @@ The base plate, the screws, the standoffs and the feet are in the [plate mountin
 
 U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502-BIOS](https://github.com/acwright/6502-BIOS): BIOS 1.x, from its `v1.x` branch, as the KIM is built today, or BIOS 2.x, which the KIM also runs (the KC Monitor calls only `InitSC` and `KernalInit`, at the same addresses in both), and U9 with `Firmware/KC Monitor/KC Monitor.bin`. That takes an EEPROM programmer.
 
-**Building a Rev 1.0:** fit the parts in Rev 1.0's parts list, and run it at 1 MHz, the KIM's clock; a faster can is at the builder's risk. Rev 1.0 is being brought up now; anything that finds goes into Rev 1.1 and into this note. Rev 1.1's changes so far:
+**Building a Rev 1.0:** fit the parts in Rev 1.0's parts list, and run it at 1 MHz, the KIM's clock; a faster can is at the builder's risk. Rev 1.0's boards won't be built: Rev 1.1, which fixes its RAM's output enable, is built in their place (2026-11-23). If you build a Rev 1.0 anyway, these are Rev 1.1's changes:
 - **D5: fit a wire link in its place,** from one pad to the other, not a 1N5819. The diode dropped `VCC` to about 4.6 V, close to the 4.5 V floor of several parts, and Rev 1.1 has none. On a board already built with the diode, remove it and fit the link. Use a centre-positive 5 V supply: nothing on the board protects it from a reversed one.
 - **U5, the `RB`/`WB` gate, is a 74HCT00** in Rev 1.1, where Rev 1.0 has a 74HC00. It matters only above 1 MHz: on the ACE, a 74HC00 lot there let an Alliance AS6C62256 misread at 2 MHz. Fit the 74HC00 in Rev 1.0's parts list; a 74HCT00 fits the same socket, harmless at 1 MHz.
 - **RAM output enable (optional):** U2's output enable, pin 22, is `RB`, which rises as `PHI2` falls, so the AS6C62256 lets go of the data bus before the CPU has finished reading it. Under a heavy load (the 1 MB Flash Cart, or 2 MHz) with more than 5.0 V at the board, the CPU can read a 0 bit as 1 (see [Known issues](#known-issues)). Rev 1.1 takes pin 22 from the inverted `RWB`, which U5 already makes at pin 6. Two cuts and two wires do the same on a Rev 1.0, and do no harm on a board that doesn't need them:
@@ -84,7 +84,7 @@ U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502
 
 ### KIM Board Rev 1.1
 
-Drawn, not made yet. **Untested**: no diode in the power path, a 74HCT00 at U5, the RAM's output enable from inverted `RWB`, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but Rev 1.0 hasn't been built and tested yet.
+Drawn, not made yet. **Untested**: no diode in the power path, a 74HCT00 at U5, the RAM's output enable from inverted `RWB`, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but no KIM Board has been built yet, and Rev 1.1 will be the first.
 
 Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.1/digikey.csv), [mouser.csv](BOM/KIM%20Board/Rev%201.1/mouser.csv)
 
@@ -163,7 +163,7 @@ J6 is one footprint, built from three strips of header. U13 also takes a 1×16 p
 
 ### KIM Board Rev 1.0
 
-Made, not tested yet. **Untested**: made, not yet assembled or tested.
+Made, not tested yet. **Untested**: made, but won't be built: its RAM can misread under a heavy load, and Rev 1.1, which fixes that, is built in its place.
 
 Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.0/digikey.csv), [mouser.csv](BOM/KIM%20Board/Rev%201.0/mouser.csv)
 

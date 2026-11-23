@@ -42,11 +42,11 @@
  "labels": {
   "KIM|KIM Board|1.0": [
    "Untested",
-   "Made, not yet assembled or tested"
+   "Made, but won't be built: its RAM can misread under a heavy load, and Rev 1.1, which fixes that, is built in its place"
   ],
   "KIM|KIM Board|1.1": [
    "Untested",
-   "No diode in the power path, a 74HCT00 at U5, the RAM's output enable from inverted `RWB`, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but Rev 1.0 hasn't been built and tested yet"
+   "No diode in the power path, a 74HCT00 at U5, the RAM's output enable from inverted `RWB`, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but no KIM Board has been built yet, and Rev 1.1 will be the first"
   ],
   "KIM|Keypad Card|1.1": [
    "Proven design",

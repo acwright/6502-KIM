@@ -20,8 +20,8 @@ Every revision of every board in this repository, and what is known about each. 
 
 | Board | Rev | Status | Label | Order | Ordered | Made from | Tindie stock | Size (mm) | Holes | Top panel | Enclosure | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| KIM Board | 1.0 | Made, matches order | **Untested**: made, not yet assembled or tested | Y100 | 2026-11-02 | `5c88728` | — | 280×220 | 6 mm | yes | — |  |
-| KIM Board | 1.1 | Drawn | **Untested**: no diode in the power path, a 74HCT00 at U5, the RAM's output enable from inverted `RWB`, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but Rev 1.0 hasn't been built and tested yet |  |  |  | — | 280×220 | 6 mm | yes | — |  |
+| KIM Board | 1.0 | Made, matches order | **Untested**: made, but won't be built: its RAM can misread under a heavy load, and Rev 1.1, which fixes that, is built in its place | Y100 | 2026-11-02 | `5c88728` | — | 280×220 | 6 mm | yes | — |  |
+| KIM Board | 1.1 | Drawn | **Untested**: no diode in the power path, a 74HCT00 at U5, the RAM's output enable from inverted `RWB`, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but no KIM Board has been built yet, and Rev 1.1 will be the first |  |  |  | — | 280×220 | 6 mm | yes | — |  |
 | Keypad Card | 1.0 | Made, matches order | **Tested** | Y90 | 2026-05-10 | `5652134` | 4 | 100×57.62 | — | — | — |  |
 | Keypad Card | 1.1 | Drawn | **Proven design**: silkscreen text and the bare card edge |  |  |  | — | 100×57.62 | — | — | — |  |
 | Keypad Helper | 1.0 | Made, matches order | **Tested** | Y51 | 2024-07-07 | `6502-COB b8f89eb` | 4 | 100×150 | 6 mm | yes | — | copper drawn differently by today's KiCad, as recorded in audit.py |
@@ -53,7 +53,7 @@ What changed in each revision of each board, newest first. The table above has t
 
 ### KIM Board
 
-**Rev 1.1** (drawn, not yet made; Rev 1.0 is built first)
+**Rev 1.1** (drawn, not yet made; the first KIM Board to build, in place of Rev 1.0)
 
 - The silkscreen says `SERIAL (DCE)` at J2, the family's name for a serial port with its role. Rev 1.0's says `DB9 FEMALE (DCE)`.
 - The two breadboard outlines on the silkscreen are the breadboards' measured size, 165 × 54 mm each (two BusBoard BB830s, measured by the owner), centred on the same line between them as Rev 1.0's 165.1 × 57.15 outlines. The `BREADBOARDS` keep-out area, where no part may sit, is the same 165 × 108 block, so the bottom-left mounting hole is now clear of it.
@@ -62,11 +62,11 @@ What changed in each revision of each board, newest first. The table above has t
 - U2's `/OE` (pin 22), the RAM's output enable, comes from inverted `RWB` in place of `RB`, as on the ACE Board 1.1 (owner, 2026-11-23): U5 pin 6, the inverter that already fed `WB`'s gate, now also drives the net `RAEB`. On `RB`, the NAND of `RWB` and `PHI2`, the Alliance AS6C62256 lets go of the data bus as soon as `PHI2` falls, before the W65C02S's 10 ns hold time is up, so under load the CPU can read a 0 bit as 1. On inverted `RWB` the RAM holds its byte to the end of every read. `/WE` stays on `WB` and `/CE` on `A15`. The fix was tested on an ACE Board Rev 1.0, the same RAM and gate: there it read clean at every supply from 4.5 to 5.24 V at the board, at 1 MHz and 2 MHz, and lost no write in 20 million. The 74HCT00 at U5 stays, as a second safety measure. While the RAM drives the bus with `PHI2` low, nothing else can: the ROM's `/OE` is on `RB`, the keypad ROM's select (U11) is enabled by `PHI2`, and the VIA and the ACIA drive only while `PHI2` is high.
 - Apart from what this list names, the copper, mask, holes and outline are Rev 1.0's.
 - Adds the ACIA's optional crystal parts, as on the COB Serial Card: `R24` (1M) across XTLI and XTLO through solder jumper `JP2`, and `C27` (22 pF) from XTLI to ground through `JP3`. Both jumpers ship open, for the R6551AP. Close both for a Rockwell R65C51P1 or R65C51P2, whose oscillator won't start on a bare crystal (an R65C51P2 ran clean this way on a Serial Card on 2026-11-11), or for a WDC W65C51.
-- Rev 1.1 stays open until Rev 1.0 has been brought up. Anything the bring-up finds that the board needs is drawn here.
+- Rev 1.1 is built in place of Rev 1.0 (owner, 2026-11-23). Rev 1.0's RAM can misread under a heavy load, which the RAM output enable above fixes, so Rev 1.0's boards won't be built, and Rev 1.1 is the first KIM Board to be brought up. Anything that bring-up finds goes into a later revision.
 
 **Rev 1.0**
 
-- Initial release, ordered on 2026-11-02 and made by JLCPCB, and not yet built or tested. `Hardware/KIM Board/Rev 1.0/` and `Production/KIM Board/Rev 1.0/` match the boards JLCPCB made (order Y100). The Gerbers and drill files in the production zip are byte-for-byte what JLCPCB received.
+- Initial release, ordered on 2026-11-02 and made by JLCPCB. Not built, and it won't be (owner, 2026-11-23): its RAM can misread under a heavy load, and Rev 1.1, which fixes that, is built in its place. `Hardware/KIM Board/Rev 1.0/` and `Production/KIM Board/Rev 1.0/` match the boards JLCPCB made (order Y100). The Gerbers and drill files in the production zip are byte-for-byte what JLCPCB received.
 - D5 is marked do-not-fit in Rev 1.0's files, with a note on the schematic to fit a wire link in its place (owner, 2026-11-16). The board as made has its pads; the 1N5819 there dropped `VCC` to about 4.6 V.
 
 ### Keypad Card

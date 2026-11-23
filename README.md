@@ -53,7 +53,7 @@ The AC6502 ecosystem is a family of open-source, 65C02-based computers sharing a
 
 The **KIM** (Keypad Input Monitor) is a complete, self-contained 65C02 computer. The preferred way to build it is using a **[Backplane or Backplane Pro](https://github.com/acwright/6502-COB)**, **[CPU Card](https://github.com/acwright/6502-COB)**, and **[Memory Card](https://github.com/acwright/6502-COB)** from the COB project, along with the **[Serial Card](https://github.com/acwright/6502-COB)** and **[Backplane Helper](https://github.com/acwright/6502-COB)** (also from COB) and the **Keypad Card** — a card that the **Keypad Helper** (keypad matrix) and **Keypad LCD Helper** (16x2 LCD display) attach to. As an alternative, the **[Main Board](https://github.com/acwright/6502-VCS)** from the VCS project can be substituted for the Backplane/CPU/Memory combination.
 
-The **[KIM Board](#kim-board)** puts the whole KIM on one through-hole board, with two breadboards for building circuits beside the keypad. Its memory map and I/O addresses are the same as today's KIM, so the KC Monitor, the BIOS and every program run on it unchanged. Rev 1.0 has been made (JLCPCB order Y100). No board has been built or tested yet.
+The **[KIM Board](#kim-board)** puts the whole KIM on one through-hole board, with two breadboards for building circuits beside the keypad. Its memory map and I/O addresses are the same as today's KIM, so the KC Monitor, the BIOS and every program run on it unchanged. Rev 1.0 has been made (JLCPCB order Y100), but it won't be built: its RAM can misread under a heavy load, which Rev 1.1 fixes, so Rev 1.1 is the first KIM Board to build. No board has been built or tested yet.
 
 ## Architecture
 
@@ -99,7 +99,7 @@ This repository contains KiCad 7.0+ PCB designs for the KIM-specific hardware. T
 ### KIM Board
 `Hardware/KIM Board/`
 
-*Rev 1.0's schematic passes its checks (see [Checking the schematics](#checking-the-schematics)), and its PCB is finished and exported for production (`Production/KIM Board/Rev 1.0/`). The first boards have been made (JLCPCB order Y100). No board has been built or tested yet.*
+*Rev 1.1 is the one to make. Its schematic passes its checks (see [Checking the schematics](#checking-the-schematics)), and its PCB is finished and exported for production (`Production/KIM Board/Rev 1.1/`). Rev 1.0's boards have been made (JLCPCB order Y100), but they won't be built: Rev 1.0's RAM can misread under a heavy load, which Rev 1.1 fixes (see [BOM.md](BOM.md#known-issues)). No board has been built or tested yet.*
 
 One through-hole board that joins every part of today's KIM. The computer itself (CPU, RAM, ROM, glue logic and the I/O decode) is the ACE Board Rev 1.1's. The clock, the reset and the power input are the Backplane Pro Rev 1.1's. The serial port is the Serial Card's, and the keypad, the LCD and the KC Monitor are the Keypad Card's, Keypad Helper's and Keypad LCD Helper's. The card slot and the 6502 BUS header are the Backplane Helper's. The keypad, the LCD, the card slot and the 6502 BUS header sit exactly where they are on today's KIM, and the board fits today's base plate. Provides:
 
@@ -275,7 +275,7 @@ Each revision carries one of three labels:
 
 | Board | Newest revision | Label | Why |
 |---|---|---|---|
-| KIM Board | 1.1 | **Untested** | No diode in the power path, a 74HCT00 at U5, the RAM's output enable from inverted `RWB`, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but Rev 1.0 hasn't been built and tested yet. |
+| KIM Board | 1.1 | **Untested** | No diode in the power path, a 74HCT00 at U5, the RAM's output enable from inverted `RWB`, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but no KIM Board has been built yet, and Rev 1.1 will be the first. |
 | Keypad Card | 1.1 | **Proven design** | Silkscreen text and the bare card edge. |
 | Keypad Helper | 1.1 | **Proven design** | Key names on the silkscreen, socket outlines, capacitor pitch, the keys on a true 19 mm grid. |
 | Keypad LCD Helper | 1.1 | **Proven design** | Silkscreen, outline clean-up. |
@@ -293,7 +293,7 @@ Whether each board works with the stock BIOS, and what it takes if not. The stoc
 
 | Board | Rev | Stock BIOS | Why | Source |
 |---|---|---|---|---|
-| KIM Board | 1.0, 1.1 | **Compatible** | Its ROM, U3, holds BIOS 1.x. With KIM ENABLE on `BASIC`, the BIOS finds the serial port in IO 5 (`$9000`) and starts BASIC; on `KIM`, the KC Monitor takes over, as on today's KIM. Rev 1.0 is being brought up. | README [KIM Board](#kim-board); BIOS 1.x `Kernal.asm` `ProbeSerial` |
+| KIM Board | 1.0, 1.1 | **Compatible** | Its ROM, U3, holds BIOS 1.x. With KIM ENABLE on `BASIC`, the BIOS finds the serial port in IO 5 (`$9000`) and starts BASIC; on `KIM`, the KC Monitor takes over, as on today's KIM. No KIM Board has been built yet; Rev 1.1 will be the first. | README [KIM Board](#kim-board); BIOS 1.x `Kernal.asm` `ProbeSerial` |
 | Keypad Card | 1.0, 1.1 | **Not used by the BIOS** | Its own ROM, the KC Monitor, takes `$C000`–`$FFFF` and drives the PIA; the BIOS's Kernal stays callable at `$A000`–`$B7FF`. | README [Keypad Card](#keypad-card) |
 | Keypad Helper | 1.0, 1.1 | **Nothing to support** | The keypad, behind the Keypad Card: no registers. | Schematic |
 | Keypad LCD Helper | 1.0, 1.1 | **Nothing to support** | The LCD, behind the Keypad Card: no registers. | Schematic |
@@ -410,12 +410,13 @@ None of this repository's boards has an off-board header at its newest revision.
 ## Checking the schematics
 `Tests/check-schematics.mjs`
 
-This script checks the KIM Board's logic by evaluating its netlist, not by reading the gates. It is built on the ACE's checker, written after the ACE's banked RAM latches were wrong twice and both times looked right on paper. It asks KiCad for the KIM Board's netlist, builds the glue logic from the gates it finds there, and drives every address, as a read and as a write, with `PHI2` high and low, the KIM enable jumper fitted and open, a cartridge in the card slot and out, and the IO ENABLE switches all on and then each one off. That is 9,437,184 bus states. A net that nothing drives counts as a failure, so a missing wire fails too.
+This script checks the KIM Board's logic by evaluating its netlist, not by reading the gates. It checks Rev 1.1 and Rev 1.0. It is built on the ACE's checker, written after the ACE's banked RAM latches were wrong twice and both times looked right on paper. It asks KiCad for the KIM Board's netlist, builds the glue logic from the gates it finds there, and drives every address, as a read and as a write, with `PHI2` high and low, the KIM enable jumper fitted and open, a cartridge in the card slot and out, and the IO ENABLE switches all on and then each one off. That is 9,437,184 bus states. A net that nothing drives counts as a failure, so a missing wire fails too.
 
 It checks:
 
 - the memory map in the KIM enable jumper's table, with the jumper in both positions;
 - that at most one chip drives the data bus on any read, except with the jumper set to KIM and a cartridge in;
+- on Rev 1.1, whose RAM takes its output enable from the inverted `RWB`, that the RAM alone drives the bus on a read of `$0000`–`$7FFF` while `PHI2` is low;
 - that the PIA and the KC Monitor's ROM are never selected with the jumper set to BASIC, and that a cartridge pulling `HRDB` low never pulls `KIMB` low;
 - that the ACIA is selected only at `$9000–$93FF`, and only with IO ENABLE switch 5 on;
 - that each select on the breadboard headers is low only in its own 1KB window;
@@ -429,7 +430,7 @@ Run it after any change to the KIM Board's schematic:
 node Tests/check-schematics.mjs
 ```
 
-It needs Node.js and KiCad's `kicad-cli`, which it finds on the `PATH`, at the macOS default location, or through a `KICAD_CLI` environment variable. It takes about 30 seconds, prints `ok` or `FAIL` for each check, and exits non-zero on a failure. It takes another schematic's path as an argument, for checking a modified copy.
+It needs Node.js and KiCad's `kicad-cli`, which it finds on the `PATH`, at the macOS default location, or through a `KICAD_CLI` environment variable. It takes about a minute for the two revisions, prints `ok` or `FAIL` for each check, and exits non-zero on a failure. It takes another schematic's path as an argument, for checking a modified copy with Rev 1.1's rules.
 
 ## Libraries
 `Libraries/`

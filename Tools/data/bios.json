@@ -7,7 +7,7 @@
    "1.1"
   ],
   "category": "compatible",
-  "reason": "Its ROM, U3, holds BIOS 1.x. With KIM ENABLE on `BASIC`, the BIOS finds the serial port in IO 5 (`$9000`) and starts BASIC; on `KIM`, the KC Monitor takes over, as on today's KIM. Rev 1.0 is being brought up.",
+  "reason": "Its ROM, U3, holds BIOS 1.x. With KIM ENABLE on `BASIC`, the BIOS finds the serial port in IO 5 (`$9000`) and starts BASIC; on `KIM`, the KC Monitor takes over, as on today's KIM. No KIM Board has been built yet; Rev 1.1 will be the first.",
   "source": "README [KIM Board](#kim-board); BIOS 1.x `Kernal.asm` `ProbeSerial`"
  },
  {
