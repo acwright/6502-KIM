@@ -14570,12 +14570,6 @@
 		(uuid "7d0e1c54-48f6-4cac-b722-af681d60df69")
 	)
 	(junction
-		(at 50.8 394.97)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7d90ef76-e49e-4d07-a5eb-8462590e6895")
-	)
-	(junction
 		(at 58.42 252.73)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -16168,16 +16162,6 @@
 			(type default)
 		)
 		(uuid "211ec9e8-1d70-4b7b-9ee9-3316eadf0d9b")
-	)
-	(wire
-		(pts
-			(xy 50.8 394.97) (xy 53.34 394.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2145560c-d725-438c-86a0-db9657e05ce4")
 	)
 	(wire
 		(pts
@@ -19181,16 +19165,6 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 394.97) (xy 50.8 400.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "75541843-643d-4529-920f-7c58e7efe210")
-	)
-	(wire
-		(pts
 			(xy 229.87 68.58) (xy 232.41 68.58)
 		)
 		(stroke
@@ -20161,6 +20135,16 @@
 	)
 	(wire
 		(pts
+			(xy 49.53 394.97) (xy 53.34 394.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "900a4e40-873f-4dfc-ae82-15b1159645c2")
+	)
+	(wire
+		(pts
 			(xy 33.02 74.93) (xy 35.56 74.93)
 		)
 		(stroke
@@ -20808,16 +20792,6 @@
 			(type default)
 		)
 		(uuid "a200baad-d328-44f1-912f-69276884436c")
-	)
-	(wire
-		(pts
-			(xy 49.53 394.97) (xy 50.8 394.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a20c0869-e822-48d1-a1aa-1e77b013fa38")
 	)
 	(wire
 		(pts
@@ -21808,16 +21782,6 @@
 			(type default)
 		)
 		(uuid "c2aaf7cf-c922-4330-a2cb-bc93cf2aa5ef")
-	)
-	(wire
-		(pts
-			(xy 50.8 400.05) (xy 73.66 400.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c2c83071-4385-4527-8b74-83ba46516f15")
 	)
 	(wire
 		(pts
@@ -27443,28 +27407,6 @@
 			)
 		)
 	)
-	(global_label "RAEB"
-		(shape output)
-		(at 73.66 400.05 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "605aa861-e886-4589-80a6-77ade154d8f6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 73.66 400.05 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "PHI2"
 		(shape input)
 		(at 450.85 256.54 180)
@@ -28263,7 +28205,7 @@
 			)
 		)
 	)
-	(global_label "RAEB"
+	(global_label "RB"
 		(shape input)
 		(at 71.12 143.51 90)
 		(effects
@@ -35453,7 +35395,7 @@
 				)
 			)
 		)
-		(property "Value" "AS6C62256"
+		(property "Value" "HM62256LP-70"
 			(at 52.07 142.748 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35496,7 +35438,7 @@
 				)
 			)
 		)
-		(property "Digikey" "1450-1033-ND"
+		(property "Digikey" ""
 			(at 40.64 147.32 0)
 			(hide yes)
 			(show_name no)
@@ -35507,7 +35449,7 @@
 				)
 			)
 		)
-		(property "Mouser" "913-AS6C62256-55PCN"
+		(property "Mouser" ""
 			(at 40.64 147.32 0)
 			(hide yes)
 			(show_name no)
@@ -35518,7 +35460,7 @@
 				)
 			)
 		)
-		(property "Jameco" ""
+		(property "Jameco" "82472"
 			(at 40.64 147.32 0)
 			(hide yes)
 			(show_name no)
@@ -45774,7 +45716,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "74HCT00"
+		(property "Value" "74HC00"
 			(at 692.15 334.0099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -45818,7 +45760,7 @@
 				)
 			)
 		)
-		(property "Digikey" "296-1603-5-ND"
+		(property "Digikey" "296-1563-5-ND"
 			(at 685.8 332.74 0)
 			(hide yes)
 			(show_name no)
@@ -45829,7 +45771,7 @@
 				)
 			)
 		)
-		(property "Mouser" "595-SN74HCT00N"
+		(property "Mouser" "595-SN74HC00N"
 			(at 685.8 332.74 0)
 			(hide yes)
 			(show_name no)
@@ -45945,7 +45887,7 @@
 				)
 			)
 		)
-		(property "Value" "74HCT00"
+		(property "Value" "74HC00"
 			(at 135.89 259.4864 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -45988,7 +45930,7 @@
 				)
 			)
 		)
-		(property "Digikey" "296-1603-5-ND"
+		(property "Digikey" "296-1563-5-ND"
 			(at 135.89 265.43 0)
 			(hide yes)
 			(show_name no)
@@ -45999,7 +45941,7 @@
 				)
 			)
 		)
-		(property "Mouser" "595-SN74HCT00N"
+		(property "Mouser" "595-SN74HC00N"
 			(at 135.89 265.43 0)
 			(hide yes)
 			(show_name no)
@@ -51061,7 +51003,7 @@
 				)
 			)
 		)
-		(property "Value" "74HCT00"
+		(property "Value" "74HC00"
 			(at 41.91 389.0264 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51104,7 +51046,7 @@
 				)
 			)
 		)
-		(property "Digikey" "296-1603-5-ND"
+		(property "Digikey" "296-1563-5-ND"
 			(at 41.91 394.97 0)
 			(hide yes)
 			(show_name no)
@@ -51115,7 +51057,7 @@
 				)
 			)
 		)
-		(property "Mouser" "595-SN74HCT00N"
+		(property "Mouser" "595-SN74HC00N"
 			(at 41.91 394.97 0)
 			(hide yes)
 			(show_name no)
@@ -53174,7 +53116,7 @@
 				)
 			)
 		)
-		(property "Value" "74HCT00"
+		(property "Value" "74HC00"
 			(at 60.96 371.2464 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -53217,7 +53159,7 @@
 				)
 			)
 		)
-		(property "Digikey" "296-1603-5-ND"
+		(property "Digikey" "296-1563-5-ND"
 			(at 60.96 377.19 0)
 			(hide yes)
 			(show_name no)
@@ -53228,7 +53170,7 @@
 				)
 			)
 		)
-		(property "Mouser" "595-SN74HCT00N"
+		(property "Mouser" "595-SN74HC00N"
 			(at 60.96 377.19 0)
 			(hide yes)
 			(show_name no)
@@ -54605,7 +54547,7 @@
 				)
 			)
 		)
-		(property "Value" "74HCT00"
+		(property "Value" "74HC00"
 			(at 60.96 386.4864 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -54648,7 +54590,7 @@
 				)
 			)
 		)
-		(property "Digikey" "296-1603-5-ND"
+		(property "Digikey" "296-1563-5-ND"
 			(at 60.96 392.43 0)
 			(hide yes)
 			(show_name no)
@@ -54659,7 +54601,7 @@
 				)
 			)
 		)
-		(property "Mouser" "595-SN74HCT00N"
+		(property "Mouser" "595-SN74HC00N"
 			(at 60.96 392.43 0)
 			(hide yes)
 			(show_name no)

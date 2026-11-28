@@ -23,8 +23,8 @@ Look on the board: the silk prints the revision next to the copyright line. [REV
 
 | Board | Revision | What the silk says | Status | Label |
 |---|---|---|---|---|
-| [KIM Board](#kim-board) | 1.0 | Rev 1.0 | Made, not tested yet | **Untested**: made, but won't be built: its RAM can misread under a heavy load, and Rev 1.1, which fixes that, is built in its place |
-| [KIM Board](#kim-board) | 1.1 | Rev 1.1 | Drawn, not made yet | **Untested**: no diode in the power path, a 74HCT00 at U5, the RAM's output enable from inverted `RWB`, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but no KIM Board has been built yet, and Rev 1.1 will be the first |
+| [KIM Board](#kim-board) | 1.0 | Rev 1.0 | Made, not tested yet | **Untested**: made, not yet assembled or tested |
+| [KIM Board](#kim-board) | 1.1 | Rev 1.1 | Drawn, not made yet | **Untested**: no diode in the power path, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but Rev 1.0 hasn't been built and tested yet |
 | [Keypad Card](#keypad-card) | 1.0 | Rev 1.0 | Made, tested | **Tested** |
 | [Keypad Card](#keypad-card) | 1.1 | Rev 1.1 | Drawn, not made yet | **Proven design**: silkscreen text and the bare card edge |
 | [Keypad Helper](#keypad-helper) | 1.0 | Rev 1.0 | Made, tested | **Tested** |
@@ -38,7 +38,7 @@ These change what you buy or fit. The boards themselves stay as they were made.
 
 | Board | Revision | Parts | Issue |
 |---|---|---|---|
-| KIM Board | 1.0 | U2 | Under a heavy load, such as the 1 MB Flash Cart, or at 2 MHz, this AS6C62256 can return a wrong byte from RAM: it lets go of the data bus too early at the end of a read, and the CPU can read a 0 bit as 1. Programs then crash or misbehave. The supply voltage decides how often. In tests, a board with 5.0 V at the RAM read clean, and one with 5.1 V or more failed, so measure the voltage at the board if you see this. A Hitachi HM62256LP-70, no longer made, does not have the problem. On a Rev 1.0 it can be fixed with two cuts and two wires: see the build notes. |
+| KIM Board | 1.0 | U2 | The silk says AS6C62256; fit the Hitachi HM62256LP-70 listed here, from Jameco. The Alliance AS6C62256 that this parts list ordered until 2026-11-28 has misread on the family's machines, now and then returning a byte with one bit wrong, so that programs crash or misbehave; the Hitachi hasn't, in testing on the ACE and the KIM. |
 | Keypad Card | 1.0 | U3 | The silk says 65C21; fit the W65C21N listed here. |
 
 ### Build notes
@@ -55,14 +55,9 @@ The base plate, the screws, the standoffs and the feet are in the [plate mountin
 
 U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502-BIOS](https://github.com/acwright/6502-BIOS): BIOS 1.x, from its `v1.x` branch, as the KIM is built today, or BIOS 2.x, which the KIM also runs (the KC Monitor calls only `InitSC` and `KernalInit`, at the same addresses in both), and U9 with `Firmware/KC Monitor/KC Monitor.bin`. That takes an EEPROM programmer.
 
-**Building a Rev 1.0:** fit the parts in Rev 1.0's parts list, and run it at 1 MHz, the KIM's clock; a faster can is at the builder's risk. Rev 1.0's boards won't be built: Rev 1.1, which fixes its RAM's output enable, is built in their place (2026-11-23). If you build a Rev 1.0 anyway, these are Rev 1.1's changes:
+**Building a Rev 1.0:** fit the parts in Rev 1.0's parts list, and run it at 1 MHz, the KIM's clock; a faster can is at the builder's risk. No KIM Board has been built yet, so anything the first build finds goes into this note. Rev 1.1's changes:
 - **D5: fit a wire link in its place,** from one pad to the other, not a 1N5819. The diode dropped `VCC` to about 4.6 V, close to the 4.5 V floor of several parts, and Rev 1.1 has none. On a board already built with the diode, remove it and fit the link. Use a centre-positive 5 V supply: nothing on the board protects it from a reversed one.
-- **U5, the `RB`/`WB` gate, is a 74HCT00** in Rev 1.1, where Rev 1.0 has a 74HC00. It matters only above 1 MHz: on the ACE, a 74HC00 lot there let an Alliance AS6C62256 misread at 2 MHz. Fit the 74HC00 in Rev 1.0's parts list; a 74HCT00 fits the same socket, harmless at 1 MHz.
-- **RAM output enable (optional):** U2's output enable, pin 22, is `RB`, which rises as `PHI2` falls, so the AS6C62256 lets go of the data bus before the CPU has finished reading it. Under a heavy load (the 1 MB Flash Cart, or 2 MHz) with more than 5.0 V at the board, the CPU can read a 0 bit as 1 (see [Known issues](#known-issues)). Rev 1.1 takes pin 22 from the inverted `RWB`, which U5 already makes at pin 6. Two cuts and two wires do the same on a Rev 1.0, and do no harm on a board that doesn't need them:
-  - **Cut `RB` on both sides of U2 pin 22,** on the underside, where `RB` comes in from U5 and leaves toward U3, the ROM. Cut 1: on the straight run between U2's two rows of pins, about 7 mm from pin 22. Cut 2: on the straight run out of pin 22 toward U3, about 3 mm from the pin, before the track bends. At each, make two cuts about 1 mm apart with a sharp blade and lift the copper between them. No other track runs within 1 mm of either cut.
-  - **Bridge:** an insulated wire from U5 pin 8 to U3 pin 22, about 6 cm, which puts the ROM back on `RB`. **Signal:** an insulated wire from U2 pin 22 to U5 pin 6, the inverted `RWB`, about 4 cm. Solder both to the joints on the underside, flat against the board and clear of the standoffs.
-  - **Check with the meter, power off:** U2 pin 22 to U5 pin 6, beep; U2 pin 22 to U5 pin 8, no beep (a beep means a cut isn't through); U5 pin 8 to U3 pin 22, beep; U2 pin 22 to pins 21 and 23, no beep.
-  - The circuit is tested on an ACE Board Rev 1.0, the same RAM and gate (2026-11-21 to 2026-11-23): it read clean from 4.5 to 5.24 V at the board, at 1 MHz and 2 MHz, and lost no write in 20 million. These cuts and wires haven't been done on a KIM Board yet. A Hitachi HM62256LP-70 at U2, no longer made, doesn't need the change.
+- **U2: fit the Hitachi HM62256LP-70 the parts list orders,** from Jameco, where the silkscreen says `AS6C62256` (see [Known issues](#known-issues)). Rev 1.1's silkscreen names the Hitachi.
 - **The ACIA's crystal jumpers can't be added.** Rev 1.1's R24, C27, JP2 and JP3 let an R65C51P or a W65C51 run; a Rev 1.0 has no pads for them, so fit the R6551AP, which needs none.
 - **The silkscreen** says `SERIAL (DCE)` at J2 where a Rev 1.0's says `DB9 FEMALE (DCE)`, and draws the two breadboards at their measured size, 165 × 54 mm each, where a Rev 1.0's outlines are 165.1 × 57.15 mm. The same breadboards fit both.
 
@@ -84,7 +79,7 @@ U3 and U9 have to be programmed before they're fitted: U3 with a BIOS from [6502
 
 ### KIM Board Rev 1.1
 
-Drawn, not made yet. **Untested**: no diode in the power path, a 74HCT00 at U5, the RAM's output enable from inverted `RWB`, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but no KIM Board has been built yet, and Rev 1.1 will be the first.
+Drawn, not made yet. **Untested**: no diode in the power path, the ACIA's crystal jumpers (open as made) and silkscreen, each proven on other boards; but Rev 1.0 hasn't been built and tested yet.
 
 Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.1/digikey.csv), [mouser.csv](BOM/KIM%20Board/Rev%201.1/mouser.csv)
 
@@ -115,10 +110,9 @@ Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.1/digikey.csv), [mouser.csv](B
 | SW26 | 1 | RESET | Same Sky (Formerly CUI Devices) TS02-66-50-BK-160-LCR-D | [2223-TS02-66-50-BK-160-LCR-D-ND](https://www.digikey.com/en/products/filter?keywords=2223-TS02-66-50-BK-160-LCR-D-ND) | [179-TS026650BK160LCR](https://www.mouser.com/ProductDetail/179-TS026650BK160LCR) |  |
 | SW27 | 1 | POWER | E-Switch 400MSP1R6BLKM6QE | [EG4326-ND](https://www.digikey.com/en/products/filter?keywords=EG4326-ND) | [612-400MSP1R6BLKM6QE](https://www.mouser.com/ProductDetail/612-400MSP1R6BLKM6QE) |  |
 | U1 | 1 | 65C02 | Western Design Center (WDC) W65C02S6TPG-14 |  | [955-W65C02S6TPG-14](https://www.mouser.com/ProductDetail/955-W65C02S6TPG-14) |  |
-| U2 | 1 | AS6C62256 | Alliance Memory AS6C62256-55PCN | [1450-1033-ND](https://www.digikey.com/en/products/filter?keywords=1450-1033-ND) | [913-AS6C62256-55PCN](https://www.mouser.com/ProductDetail/913-AS6C62256-55PCN) |  |
+| U2 | 1 | HM62256LP-70 | Hitachi HM62256LP-70 |  |  | [Jameco 82472](https://www.jameco.com/z/HM62256LP-70-HITACHI-IC-62256LP-70-Low-Power-CMOS-SRAM-256K-Bit-32Kx8-70ns_82472.html) |
 | U3 | 1 | AT28C256 | Microchip Technology AT28C256-15PU | [AT28C256-15PU-ND](https://www.digikey.com/en/products/filter?keywords=AT28C256-15PU-ND) | [556-AT28C25615PU](https://www.mouser.com/ProductDetail/556-AT28C25615PU) |  |
-| U4, U6, U17 | 3 | 74HC00 | Texas Instruments SN74HC00N | [296-1563-5-ND](https://www.digikey.com/en/products/filter?keywords=296-1563-5-ND) | [595-SN74HC00N](https://www.mouser.com/ProductDetail/595-SN74HC00N) |  |
-| U5 | 1 | 74HCT00 | Texas Instruments SN74HCT00N | [296-1603-5-ND](https://www.digikey.com/en/products/filter?keywords=296-1603-5-ND) | [595-SN74HCT00N](https://www.mouser.com/ProductDetail/595-SN74HCT00N) |  |
+| U4–U6, U17 | 4 | 74HC00 | Texas Instruments SN74HC00N | [296-1563-5-ND](https://www.digikey.com/en/products/filter?keywords=296-1563-5-ND) | [595-SN74HC00N](https://www.mouser.com/ProductDetail/595-SN74HC00N) |  |
 | U7, U10, U11 | 3 | 74HC138 | Texas Instruments SN74HC138N | [296-1575-5-ND](https://www.digikey.com/en/products/filter?keywords=296-1575-5-ND) | [595-SN74HC138N](https://www.mouser.com/ProductDetail/595-SN74HC138N) |  |
 | U8 | 1 | W65C21N | Western Design Center (WDC) W65C21N6TPG-14 |  | [955-W65C21N6TPG-14](https://www.mouser.com/ProductDetail/955-W65C21N6TPG-14) |  |
 | U9 | 1 | AT28C64 | Microchip Technology AT28C64B-15PU | [AT28C64B-15PU-ND](https://www.digikey.com/en/products/filter?keywords=AT28C64B-15PU-ND) | [556-AT28C64B15PU](https://www.mouser.com/ProductDetail/556-AT28C64B15PU) |  |
@@ -156,14 +150,14 @@ J6 is one footprint, built from three strips of header. U13 also takes a 1×16 p
 - **J5:** Male box header with a keying notch, for a 40-way ribbon cable.
 - **J7:** Replaces GCT DCJ200-10-A-K1-K, now obsolete, which older builds used. Its pads and body match this footprint on the datasheet. No board has been built with it yet.
 - **SW1–SW24:** Cherry MX2A RGB Blue, clear housing, as on the owner's Amazon kit. MX1A-E1NN (black housing) is the deeper-stocked alternative; Digi-Key CH196-ND, Mouser 540-MX1A-E1NN.
-- **U5:** The RAM's RB/WB gate (2026-11-11): its TTL thresholds end RB and WB a few ns later after PHI2 falls. The part tested in the ACE's U14.
+- **U2:** Hitachi HM62256LP-70, out of production: buy it from Jameco. The parts lists order it from 2026-11-28, in place of the Alliance AS6C62256 they ordered before. The Alliance has misread on the family's machines, now and then returning a byte with one bit wrong, so that programs crash or misbehave; the Hitachi hasn't, in testing on the ACE and the KIM.
 - **U13:** Common hobby 16×2 LCD; any HD44780-compatible module with the same pinout.
 - **U15:** Rockwell R6551AP, out of production. Do not substitute a W65C51. A Rockwell R65C51P1 or R65C51P2 also works, but only where the board has the ACIA's crystal jumpers and they are closed: the Serial Card and Serial Card Pro (JP2, JP3), the ACE Board 1.1 (JP1, JP2) and the KIM Board 1.1 (JP2, JP3). On a bare crystal it gives no serial.
 - **U16:** Buy from Jameco. Out of production at Digi-Key and Mouser.
 
 ### KIM Board Rev 1.0
 
-Made, not tested yet. **Untested**: made, but won't be built: its RAM can misread under a heavy load, and Rev 1.1, which fixes that, is built in its place.
+Made, not tested yet. **Untested**: made, not yet assembled or tested.
 
 Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.0/digikey.csv), [mouser.csv](BOM/KIM%20Board/Rev%201.0/mouser.csv)
 
@@ -193,7 +187,7 @@ Cart files: [digikey.csv](BOM/KIM%20Board/Rev%201.0/digikey.csv), [mouser.csv](B
 | SW26 | 1 | RESET | Same Sky (Formerly CUI Devices) TS02-66-50-BK-160-LCR-D | [2223-TS02-66-50-BK-160-LCR-D-ND](https://www.digikey.com/en/products/filter?keywords=2223-TS02-66-50-BK-160-LCR-D-ND) | [179-TS026650BK160LCR](https://www.mouser.com/ProductDetail/179-TS026650BK160LCR) |  |
 | SW27 | 1 | POWER | E-Switch 400MSP1R6BLKM6QE | [EG4326-ND](https://www.digikey.com/en/products/filter?keywords=EG4326-ND) | [612-400MSP1R6BLKM6QE](https://www.mouser.com/ProductDetail/612-400MSP1R6BLKM6QE) |  |
 | U1 | 1 | 65C02 | Western Design Center (WDC) W65C02S6TPG-14 |  | [955-W65C02S6TPG-14](https://www.mouser.com/ProductDetail/955-W65C02S6TPG-14) |  |
-| U2 | 1 | AS6C62256 | Alliance Memory AS6C62256-55PCN | [1450-1033-ND](https://www.digikey.com/en/products/filter?keywords=1450-1033-ND) | [913-AS6C62256-55PCN](https://www.mouser.com/ProductDetail/913-AS6C62256-55PCN) |  |
+| U2 | 1 | AS6C62256 | Hitachi HM62256LP-70 |  |  | [Jameco 82472](https://www.jameco.com/z/HM62256LP-70-HITACHI-IC-62256LP-70-Low-Power-CMOS-SRAM-256K-Bit-32Kx8-70ns_82472.html) |
 | U3 | 1 | AT28C256 | Microchip Technology AT28C256-15PU | [AT28C256-15PU-ND](https://www.digikey.com/en/products/filter?keywords=AT28C256-15PU-ND) | [556-AT28C25615PU](https://www.mouser.com/ProductDetail/556-AT28C25615PU) |  |
 | U4–U6, U17 | 4 | 74HC00 | Texas Instruments SN74HC00N | [296-1563-5-ND](https://www.digikey.com/en/products/filter?keywords=296-1563-5-ND) | [595-SN74HC00N](https://www.mouser.com/ProductDetail/595-SN74HC00N) |  |
 | U7, U10, U11 | 3 | 74HC138 | Texas Instruments SN74HC138N | [296-1575-5-ND](https://www.digikey.com/en/products/filter?keywords=296-1575-5-ND) | [595-SN74HC138N](https://www.mouser.com/ProductDetail/595-SN74HC138N) |  |
@@ -233,6 +227,7 @@ J6 is one footprint, built from three strips of header. U13 also takes a 1×16 p
 - **J5:** Male box header with a keying notch, for a 40-way ribbon cable.
 - **J7:** Replaces GCT DCJ200-10-A-K1-K, now obsolete, which older builds used. Its pads and body match this footprint on the datasheet. No board has been built with it yet.
 - **SW1–SW24:** Cherry MX2A RGB Blue, clear housing, as on the owner's Amazon kit. MX1A-E1NN (black housing) is the deeper-stocked alternative; Digi-Key CH196-ND, Mouser 540-MX1A-E1NN.
+- **U2:** Hitachi HM62256LP-70, out of production: buy it from Jameco. The parts lists order it from 2026-11-28, in place of the Alliance AS6C62256 they ordered before. The Alliance has misread on the family's machines, now and then returning a byte with one bit wrong, so that programs crash or misbehave; the Hitachi hasn't, in testing on the ACE and the KIM.
 - **U13:** Common hobby 16×2 LCD; any HD44780-compatible module with the same pinout.
 - **U15:** Rockwell R6551AP, out of production. Do not substitute a W65C51. A Rockwell R65C51P1 or R65C51P2 also works, but only where the board has the ACIA's crystal jumpers and they are closed: the Serial Card and Serial Card Pro (JP2, JP3), the ACE Board 1.1 (JP1, JP2) and the KIM Board 1.1 (JP2, JP3). On a bare crystal it gives no serial.
 - **U16:** Buy from Jameco. Out of production at Digi-Key and Mouser.
