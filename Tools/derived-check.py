@@ -30,11 +30,14 @@ for f in files('Hardware/*/Rev */*.kicad_pcb'):
     if os.path.exists(pd+'/positions.csv'):
         have={l.split(',')[0].lstrip('﻿') for l in open(pd+'/positions.csv',encoding='utf-8').read().splitlines()[1:]}
         if have-want: E.append(f'{tag}: positions.csv lists {sorted(have-want)[:5]}, which aren\'t placed')
-    # a revision not yet made: its zip must be what the PCB exports today
+    # a revision not yet made: every chip in a DIP footprint sits in a socket. A connector (J) on a DIP footprint is a
+    # plug, whose pins go into a chip's socket or holes on the board below (the ACE RAM Patch's J1 and J2, the ACE
+    # Alliance RAM Patch's J1), so it never takes a socket of its own.
     if st!='made':
         for s_,e_ in footprints(t):
             x=t[s_:e_];nm=re.match(r'\n\t\(footprint "([^"]*)"',x).group(1)
-            if nm.startswith('Package_DIP:') and 'Socket' not in nm: E.append(f'{tag} {fp_ref(x)}: {nm} has no socket; a revision not yet made takes Socket_LongPads')
+            if nm.startswith('Package_DIP:') and 'Socket' not in nm and not fp_ref(x).startswith('J'): E.append(f'{tag} {fp_ref(x)}: {nm} has no socket; a revision not yet made takes Socket_LongPads')
+    # a revision not yet made: its zip must be what the PCB exports today
     if st=='drawn':
         z=glob.glob(pd+'/*.zip')
         if not z: E.append(f'{tag}: no production zip');continue

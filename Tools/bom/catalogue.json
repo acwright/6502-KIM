@@ -98,7 +98,7 @@
  "100nF|disc-p2.5": {
   "id": "100nF|disc-p2.5",
   "desc": "100nF, disc-p2.5",
-  "uses": 89,
+  "uses": 92,
   "mpn": "SR205C104KAR",
   "mfr": "KYOCERA AVX",
   "digikey": "478-3187-ND",
@@ -930,7 +930,7 @@
  "74HC00|DIP-14_W7.62mm": {
   "id": "74HC00|DIP-14_W7.62mm",
   "desc": "74HC00, DIP-14_W7.62mm",
-  "uses": 18,
+  "uses": 19,
   "mpn": "SN74HC00N",
   "mfr": "Texas Instruments",
   "digikey": "296-1563-5-ND",
@@ -1247,6 +1247,22 @@
   "review": null,
   "jameco": null
  },
+ "74HCT245|DIP-20_W7.62mm": {
+  "id": "74HCT245|DIP-20_W7.62mm",
+  "desc": "74HCT245, DIP-20_W7.62mm",
+  "uses": 1,
+  "mpn": "SN74HCT245N",
+  "mfr": "Texas Instruments",
+  "digikey": "296-1612-5-ND",
+  "digikey_stock": 1351,
+  "mouser": "595-SN74HCT245N",
+  "mouser_stock": 5391,
+  "lcsc": null,
+  "other": null,
+  "note": null,
+  "review": null,
+  "jameco": null
+ },
  "74HC573|SOIC-20W_7.5x12.8mm_P1.27mm": {
   "id": "74HC573|SOIC-20W_7.5x12.8mm_P1.27mm",
   "desc": "74HC573, SOIC-20W_7.5x12.8mm_P1.27mm",
@@ -1410,7 +1426,7 @@
  "AS6C62256|DIP-28_W15.24mm": {
   "id": "AS6C62256|DIP-28_W15.24mm",
   "desc": "AS6C62256, DIP-28_W15.24mm",
-  "uses": 2,
+  "uses": 3,
   "mpn": "AS6C62256-55PCN",
   "mfr": "Alliance Memory, Inc.",
   "digikey": "1450-1033-ND",
@@ -3622,7 +3638,7 @@
  "pinstrip-machined-1x64-2.54": {
   "id": "pinstrip-machined-1x64-2.54",
   "desc": "Machined pin strip 1×64, 2.54 mm",
-  "uses": 4,
+  "uses": 5,
   "mpn": "800-10-064-10-001000",
   "mfr": "Mill-Max Manufacturing Corp.",
   "digikey": "ED7264-64-ND",
